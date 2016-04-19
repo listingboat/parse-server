@@ -1,0 +1,40 @@
+<div class="pq-analytics-wrap">
+    <div class="semicircle-chart-wrap">
+        <h2 class="ws-subheading-wrap">Connections</h2>
+
+        <p class="ws-subheading-text">Power up your PQ across the key skills for connecting to each workstyle.</p>
+
+        <div id="ScoreText" class="score-text-wrap">
+            <span class="novice-text">Novice</span>
+            <span class="adv-text">Advanced</span>
+            <span class="expert-text">Expert</span>
+            <span class="master-text">Master</span>
+
+            <div id="IdentifyText">Identify@@@: <span id="IdentifyScore"><%= skillGraphData.identify.score %></span></div>
+            <div id="UnderstandText">Understand####: <span
+                        id="UnderstandScore"><%= skillGraphData.understand.score %></span></div>
+            <div id="ConnectText">Connect....: <span id="ConnectScore"><%= skillGraphData.connect.score %></span></div>
+            <div id="PQScoreText"><span
+                        id="PQScore"><%= skillGraphData.identify.score + skillGraphData.understand.score + skillGraphData.connect.score %></span>
+                PQ
+            </div>
+        </div>
+        <div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+        <div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+    </div>
+    <div class="circle-chart-wrap">
+        <h2 class="ws-subheading-wrap">Familiarity</h2>
+
+        <p class="ws-subheading-text">This is your workstyle hierarchy. Grow your familiarity with each type as you
+            train.</p>
+    </div>
+</div>
+
+
+<!--<script type="text/javascript" src="/static/js/application.js"></script>-->
+<!--<script>-->
+//      var json_data = '<%- JSON.stringify(familiarity_json_data) %>';
+//      var radius_factor = '<%= radius_factor %>';
+//      (new FamiliarityCirclesModule()).init(json_data, radius_factor);
+//      (new SkillGraphModule()).init(<%- JSON.stringify(skillGraphData) %>);
+<!--</script>-->

@@ -1,0 +1,63 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	pq_page_js_init();
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content public-profile-wrap">
+	<div class="banner-wrap connector-wrap">
+		<div class="container">
+			<span class="icon-wrap">
+			</span>
+			<p class="about-me-wrap">
+				Donna Ashcomb,  
+				<span>Business Development</span>
+			</p>
+			<img class="superpower-tag" src="<%= asset('assets/images/connector_superpower.png') %>">
+			<a class="ws-btn" href="#">
+				LEARN MORE ABOUT MY PERSONALITY TYPE
+			</a>
+		</div>
+	</div>
+	<div class="personality-profile-wrap">
+		<div class="container">
+			<div class="ws-aligner">
+				<h1 class="ws-heading-wrap">Build Your PQ</h1>
+				<div class="pq-analytics-wrap">
+					<div class="semicircle-chart-wrap">
+						<h2 class="ws-subheading-wrap">Connections</h2>
+						<div id="ScoreText" class="score-text-wrap">
+							<span class="novice-text">Novice</span>
+							<span class="adv-text">Advanced</span>
+							<span class="expert-text">Expert</span>
+							<span class="master-text">Master</span>
+							<div id="IdentifyText">Identify: <span id="IdentifyScore">66</span></div>
+							<div id="UnderstandText">Understand: <span id="UnderstandScore">38</span></div>
+							<div id="ConnectText">Connect: <span id="ConnectScore">24</span></div>
+							<div id="PQScoreText"><span id="PQScore">280</span> PQ</div>
+						</div>
+						<div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+						<div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+					</div>
+					<div class="circle-chart-wrap">
+						<h2 class="ws-subheading-wrap">Familiarity</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="personality-profile-locked">
+			<div class="container">
+				<h1>Unlock your full training profile by first playing a quick game to get a sense of your starting point.</h1>
+				<a href="#" class="white-btn">START YOUR FIT TEST &gt;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

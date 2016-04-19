@@ -1,0 +1,150 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        var options = {};
+        <% if(typeof success !== 'undefined'){ %>
+        options.success = '<%= success %>' ;
+        options.data = JSON.parse('<%- JSON.stringify(userDataForPardot) %>');
+        <% } %>
+        (new UserAccountSettingsModule()).init(options);
+    });
+</script>
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<div class="content js_pardot_url" data-update_pardot_prospect_url="<%= url('user.makePardotCall') %>">
+    <%- include _settings_user_info_header %>
+    <div class="container settings-tabs-wrap">
+        <%- include _settings_nav_partial %>
+        <div class=" settings-tab-content">
+            <form id="update_form" class="setting-form" method="POST">
+                <div class="field-row">
+                    <label class="account-form-label">First Name</label>
+                    <div class="form-group <% if(typeof firstNameError !== 'undefined'){ %>error-wrap<% } %>">
+                        <input id="first_name" name="first_name" type="text" class="form-control input-common"
+                                maxlength="<%= firstNameMaxLength %>" <% if(typeof firstName !== 'undefined'){ %> value="<%= firstName %>" <% } %>
+                                 >
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">
+                                <% if(typeof firstNameError !== 'undefined'){ %>
+                                    <%= firstNameError %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="account-form-label">Last Name</label>
+                    <div class="form-group <% if(typeof lastNameError !== 'undefined'){ %>error-wrap<% } %>">
+                        <input id="last_name" name="last_name" type="text" class="form-control input-common"
+                                maxlength="<%= lastNameMaxLength %>" <% if(typeof lastName !== 'undefined'){ %> value="<%= lastName %>" <% } %>
+                                 >
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">
+                                <% if(typeof lastNameError !== 'undefined'){ %>
+                                    <%= lastNameError %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="account-form-label">Phone Number</label>
+                    <div class="form-group <% if(typeof phoneNumberError !== 'undefined'){ %>error-wrap<% } %>">
+                        <input id="phone_number" name="phone_number" type="text" class="form-control input-common "
+                                <% if(typeof phoneNumber !== 'undefined'){ %> value="<%= phoneNumber %>" <% } %>
+                                >
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">
+                                <% if(typeof phoneNumberError !== 'undefined'){ %>
+                                    <%= phoneNumberError %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="account-form-label">Position Title</label>
+                    <div class="form-group <% if(typeof positionTitleError !== 'undefined'){ %>error-wrap<% } %>">
+                        <input id="position_title" name="position_title" type="text" class="form-control input-common "
+                                maxlength="<%= positionTitleMaxLength %>" <% if(typeof positionTitle !== 'undefined'){ %> value="<%= positionTitle %>" <% } %>
+                                >
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">
+                                <% if(typeof positionTitleError !== 'undefined'){ %>
+                                    <%= positionTitleError %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="account-form-label">Department</label>
+                    <div class="form-group department-select-wrap settings-department-select <% if(typeof departmentError !== 'undefined'){ %>error-wrap<% } %>">
+                        <% if(typeof parentDepartmentList !== "undefined"){ %>
+                            <select id="department" class="selectpicker form-control input-common js-input-text" name="department" >
+                                <% for(var parentDepartmentIndex in parentDepartmentList){ %>
+                                    <option value="<%= parentDepartmentList[parentDepartmentIndex].id %>"
+                                            <% if(typeof department !== 'undefined' && department == parentDepartmentList[parentDepartmentIndex].id){ %>
+                                            selected
+                                            <% } %> ><%= parentDepartmentList[parentDepartmentIndex].get('name') %></option>
+
+                                    <% var childDepartments = childDepartmentsList[parentDepartmentList[parentDepartmentIndex].id] %>
+                                    <% for(var childDepartmentIndex in childDepartments){ %>
+                                        <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>"
+                                                <% if(typeof department !== 'undefined' && department == childDepartments[childDepartmentIndex].id){ %>
+                                                selected
+                                                <% } %> ><%= childDepartments[childDepartmentIndex].get('name') %></option>
+                                    <% } %>
+                                <% } %>
+                            </select>
+
+                            <% }else{ %>
+                            <select id="department" class="selectpicker form-control input-common js-input-text" name="department">
+                                <option value="" selected>UNKNOWN</option>
+                            </select>
+                        <% } %>
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">
+                                <% if(typeof departmentError !== 'undefined'){ %>
+                                    <%= departmentError %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="account-form-label">Email</label>
+                    <div class="form-group setting-msg-wrap">
+                        <input id="user_email" name="user_email" type="text" class="form-control input-common readonly"
+                                <% if(typeof userEmail !== 'undefined'){ %> value="<%= userEmail %>" <% } %>
+                                 readonly>
+                        <a href="mailto:<%= contactUS %>" class="setting-msg">Contact us to change email address</a>
+                    </div>
+                </div>
+                <div class="settings-form-btn">
+                    <button class="btn yellow-btn" >Update Info</button>
+                </div>
+            </form>
+            <div class="modal fade upload-csv-response" id="update-success-modal" tabindex="-1" role="dialog" data-backdrop="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <a class="close-modal" data-dismiss="modal">&times;</a>
+                            <p class="csv-upload-error js_message">Your account has been successfully updated</p>
+                            <a class="btn black-btn" data-dismiss="modal">OK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

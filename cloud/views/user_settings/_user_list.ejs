@@ -1,0 +1,62 @@
+<ul>
+    <% for(var userIndex in userObjectList){ %>
+        <li class="member-details-wrap <%= userObjectList[userIndex].get('primary_personality')? personalityIconMap[userObjectList[userIndex].get('primary_personality').get('name').toLowerCase()] : 'unknown-member-wrap' %> js_user_row" data-user_id="<%= userObjectList[userIndex].id %>">
+            <div class="member-icon-wrap">
+                <span class="member-pq-icon"></span>
+            </div>
+            <div class="member-name-wrap">
+                <h2 class="js_user_row_name_section"><%= userObjectList[userIndex].get('first_name') %> <%= userObjectList[userIndex].get('last_name') %></h2>
+                <h4 class="js_user_row_position_title_section"><%= userObjectList[userIndex].get('occupation') %></h4>
+            </div>
+            <div class="select-department-wrap user-department-wrap">
+                <select class="selectpicker js_user_department_dropdown">
+                    <% for (var parentDepartmentIndex in parentDepartmentList ){ %>
+                        <option value="<%= parentDepartmentList[parentDepartmentIndex].id %>" <% if (typeof userObjectList[userIndex].get('department') !== "undefined" && userObjectList[userIndex].get('department').id === parentDepartmentList[parentDepartmentIndex].id) { %>selected<% } %>><%= parentDepartmentList[parentDepartmentIndex].get('name') %></option>
+                        <% var childDepartments = childDepartmentsList[parentDepartmentList[parentDepartmentIndex].id] %>
+                        <% for (var childDepartmentIndex in childDepartments ){ %>
+                            <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>" <% if (typeof userObjectList[userIndex].get('department') !== "undefined" && userObjectList[userIndex].get('department').id === childDepartments[childDepartmentIndex].id) { %>selected<% } %>><%= childDepartments[childDepartmentIndex].get('name') %></option>
+                        <% } %>
+                    <% } %>
+                </select>
+            </div>
+            <div class="select-department-wrap user-role-wrap">
+                <% if (getPermissionTypeIndex(permissionTypeList, user.get('permission_type')) <= getPermissionTypeIndex(permissionTypeList, userObjectList[userIndex].get('permission_type')) || (!userObjectList[userIndex].get('permission_type') || typeof getPermissionTypeIndex(permissionTypeList, userObjectList[userIndex].get('permission_type')) !== "number" || typeof userObjectList[userIndex].get('permission_type') === "string" && userObjectList[userIndex].get('permission_type').trim() === "")) { %>
+
+                    <select class="selectpicker js_user_permission_type_dropdown">
+                        <% for(var permissionTypeIndex = getPermissionTypeIndex(permissionTypeList, user.get('permission_type')); permissionTypeIndex !== null && permissionTypeIndex < permissionTypeList.length; permissionTypeIndex++){ %>
+                            <option <% if(((!userObjectList[userIndex].get('permission_type') || typeof userObjectList[userIndex].get('permission_type') === "string" && userObjectList[userIndex].get('permission_type').trim() == "") && permissionTypeList[permissionTypeIndex].value  === regularUserPermission) || permissionTypeList[permissionTypeIndex].value === userObjectList[userIndex].get('permission_type')){ %>selected<% } %>
+                                    value="<%= permissionTypeList[permissionTypeIndex].value %>">
+                                <%= permissionTypeList[permissionTypeIndex].displayText %>
+                            </option>
+                        <% } %>
+                    </select>
+                <% } else { %>
+                    <select class="selectpicker disabled js_user_permission_type_dropdown" disabled>
+                        <% var selectedValue = userObjectList[userIndex].get('permission_type') %>
+                        <% var selectedIndex =  getPermissionTypeIndex(permissionTypeList, selectedValue) %>
+                        <option selected
+                                value="<%= selectedValue %>">
+                            <%= permissionTypeList[selectedIndex].displayText %>
+                        </option>
+                    </select>
+                <% } %>
+            </div>
+            <div class="disable-user-link">
+                <a class="js_edit_user_detail_link"
+                   data-user_id="<%= userObjectList[userIndex].id %>"
+                   data-first_name="<%= userObjectList[userIndex].get("first_name") %>"
+                   data-last_name="<%= userObjectList[userIndex].get("last_name") %>"
+                   data-phone_number="<%= userObjectList[userIndex].get("phone_number") %>"
+                   data-position="<%= userObjectList[userIndex].get("occupation") %>"
+                   <% if (typeof userObjectList[userIndex].get('department') !== "undefined"){ %>
+                       data-department="<%= userObjectList[userIndex].get("department").id %>"
+                       data-is_call_center=<%= userObjectList[userIndex].get("department").get('call_data_type') !== undefined %>
+                   <% } %>
+                   data-permission_type="<%= userObjectList[userIndex].get("permission_type") %>"
+                   data-phone_id='<%= userObjectList[userIndex].get("phoneId") ? userObjectList[userIndex].get("phoneId") : "" %>'
+                   data-identifier_source='<%= userObjectList[userIndex].get("identifierSource") ? userObjectList[userIndex].get("identifierSource") : "" %>'
+                        >edit user detail</a>
+            </div>
+        </li>
+    <% } %>
+</ul>

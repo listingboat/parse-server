@@ -1,0 +1,62 @@
+<div class="details-head-wrap">
+    <h2>Where to Focus on Next</h2>
+    <p class="summary-text-wrap">Workstyle are shown from left to right in order of your workstyle hierarchy.<% if (typeof userLeastUnderstoodWorkstyle === "string" && typeof userSecondLeastUnderstoodWorkstyle === "string") { %> You have more difficulty communicating with <span class="<%= personalityThemeTextMap[userLeastUnderstoodWorkstyle.toLowerCase()] %>"><%= userLeastUnderstoodWorkstyle %>s</span> and <span class="<%= personalityThemeTextMap[userSecondLeastUnderstoodWorkstyle.toLowerCase()] %>"><%= userSecondLeastUnderstoodWorkstyle %>s</span>.<% } %></p>
+</div>
+<div class="all-pq-summary">
+    <div class="circular-progress-wrap">
+        <% for(var index in  personalityCirclesData.doughnutGraphData){ %>
+        <div class="single-circle-wrap">
+            <div class="radial-progress <%= personalityCirclesData.doughnutGraphData[index].personalityClass %> <%= personalityCirclesData.doughnutGraphData[index].donutGraphSize %>" data-progress="<%= personalityCirclesData.doughnutGraphData[index].personalityScorePercentage %>" id="pq-progess2">
+                <div class="circle">
+                    <div class="mask full">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="mask half">
+                        <div class="fill"></div>
+                        <div class="fill fix"></div>
+                    </div>
+                </div>
+                <div class="inset">
+                    <p class="score-pq-icon ws-icon-connector"></p>
+                    <div class="custom-pq-tooltip">
+                        <div class="pq-tooltip-content">
+                            <div class="percentage">
+                                <div class="numbers"><span><%= personalityCirclesData.doughnutGraphData[index].personalityScorePercentage %>%</span></div>
+                            </div>
+                            <p>correct</p>
+                        </div>
+                        <div class="tooltip-tail-one"></div>
+                        <div class="tooltip-tail-two"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="progress-circle-label"><%= personalityCirclesData.doughnutGraphData[index].name %></p>
+        </div>
+        <% } %>
+    </div>
+    <div class="stats-summary-text">
+        <% if(typeof userLeastUnderstoodWorkstyle === 'string'){ %>
+        <div class="single-pq-summary <%= userLeastUnderstoodWorkstyle.toLowerCase() %>-pq-summary">
+            <span class="single-pq-icon"></span>
+            <div class="single-pq-text">
+                <h3>Your Least Understood <span>Workstyle</span></h3>
+                <p>The <%= userLeastUnderstoodWorkstyle %> (makes up <%= userLeastUnderstoodWorkstyleUsers %>% of the company)</p>
+                <a href="<%= userLeastUnderstoodWorkstyleUrl? url(userLeastUnderstoodWorkstyleUrl) : '#'%>">Go study up on <%= userLeastUnderstoodWorkstyle %> &gt;</a>
+            </div>
+        </div>
+        <% } %>
+        <% if(typeof teamMostCommonWorkstyle === 'string'){ %>
+        <div class="single-pq-summary <%= teamMostCommonWorkstyle.toLowerCase() %>-pq-summary">
+            <span class="single-pq-icon"></span>
+            <div class="single-pq-text">
+                <h3>Your Team's Most Common <span>Workstyle</span></h3>
+                <p><%= teamMostCommonWorkstyle %> makes up <%= teamMostCommonWorkstyleUsers %>% of the company</p>
+                <a href="<%= typeof teamMostCommonWorkstyleUrlName === "string"? url(teamMostCommonWorkstyleUrlName) : '#' %>">Go to know more about <%= teamMostCommonWorkstyle %> &gt;</a>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+<div class="start-btn-wrap">
+    <a href="<%= url("quiz.start") %>" class="btn green-btn">BECOME A PRO COMMUNICATOR &gt;</a>
+</div>

@@ -1,0 +1,12 @@
+<%- include apply_nav %>
+<div class="predictor-banner banner-wrap <%= headerWrapClass %>">
+    <div class="container">
+        <span class="desc-short">Your contact is likely to be ...</span>
+        <br>
+        <span class="icon-wrap"></span>
+        <img class="superpower-tag" src="<%= asset(superPowerTextImage) %>">
+        <a href="<%= learnMoreLink %>" class="btn black-btn"><%= learnMoreText %></a>
+        <br>
+        <a href="#" class="plain-link js_fetch_questions" data-fetch_questions_url="<%= url('explore.personalityPredictorQuestions') %>">START OVER</a>
+    </div>
+</div>

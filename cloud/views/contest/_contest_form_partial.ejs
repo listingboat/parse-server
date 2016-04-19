@@ -1,0 +1,19 @@
+<div class="js_contest_create_field_section">
+    <div class="contest-field js_error_state_div">
+        <h6>SET CONTEST TYPE</h6>
+        <ul class="contest-types-wrap">
+            <li><label class="radio-select-wrap"><input type="radio" class="js_contest_type_radio" name="contest_type" checked="checked" value="<%= top_pq %>" data-text_value="Top PQ Score"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Top PQ Score</p></label></li>
+            <li><label class="radio-select-wrap"><input type="radio" class="js_contest_type_radio js_top_7_day_pq_contest_type" name="contest_type" value="<%= top_7_day_pq %>" data-text_value="Top 7 Day PQ Score"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Top 7-day PQ Growth (Ends 7 days after contest started)</p></label></li>
+            <li><label class="radio-select-wrap"><input type="radio" class="js_contest_type_radio" name="contest_type" value="<%= other %>" data-text_value="other"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Other: (Text should parallel the sentence "The [contest type]")</p></label>
+                <input type="text" maxlength="<%= contestTextMaxLength %>" class="contest-type-input  form-control js_contest_type_text" placeholder='(Example: "The team with the highest average PQ")'></li>
+        </ul>
+    </div>
+    <div class="contest-field contest-reward-wrap js_error_state_div">
+        <h6>SET AWARD (IT SHOULD MAKE SENSE IN THE SENTENCE "THE WINNER WINS...")</h6>
+        <input type="text" maxlength="<%= contestAwardMaxLength %>" name="contest_award" class="form-control js_contest_award_field" placeholder="(Example: a $100 gift card)">
+    </div>
+    <div class="contest-field js_error_state_div">
+        <h6>CONTEST END DATE (MM/DD/YYYY)</h6>
+        <input type="text" name="contest_end_date" class="contest-date-input form-control js_contest_end_date_field">
+    </div>
+</div>

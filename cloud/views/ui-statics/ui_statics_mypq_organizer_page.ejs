@@ -1,0 +1,255 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+		(new ZeroClipBoardModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ: Organizer
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="banner-wrap pq-banner-wrap organizer-wrap">
+		<div class="container">
+			<div class="question-wrap banner-transparent-wrap">
+				<div class="question-box">
+					<span class="ghost-elem"></span>
+					<div class="ques-box-centered">
+						<h1 class="ques-box-head">Welcome back Shantel,<br> let's continue your training.</h1>
+						<p class="banner-hint-text">Can you get to 200 PQ today?</p>
+						<a href="#" class="white-btn">PLAY A TRAINING GAME</a>
+					</div>
+					<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+				</div>
+			</div>
+		</div>
+		<%- include _quiz_help_modal %>
+	</div>
+	<div class="personality-profile-wrap">
+		<div class="container">
+			<div class="ws-aligner">
+				<h1 class="ws-heading-wrap">Your Workstyle Skill Training Summary</h1>
+				<div class="pq-analytics-wrap">
+					<div class="semicircle-chart-wrap">
+						<h2 class="ws-subheading-wrap">Connections</h2>
+						<div id="ScoreText" class="score-text-wrap">
+							<span class="novice-text">Novice</span>
+							<span class="adv-text">Advanced</span>
+							<span class="expert-text">Expert</span>
+							<span class="master-text">Master</span>
+							<div id="IdentifyText">Identify: <span id="IdentifyScore">66</span></div>
+							<div id="UnderstandText">Understand: <span id="UnderstandScore">38</span></div>
+							<div id="ConnectText">Connect: <span id="ConnectScore">24</span></div>
+							<div id="PQScoreText"><span id="PQScore">280</span> PQ</div>
+						</div>
+						<div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+						<div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+					</div>
+					<div class="circle-chart-wrap">
+						<h2 class="ws-subheading-wrap">Familiarity</h2>
+						<div class="circular-progress-wrap">
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress original-pq-progress pq-progress-6x" data-progress="0" id="pq-progess1">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>95%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Original</p>
+			                </div>
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress connector-pq-progress pq-progress-5x" data-progress="0" id="pq-progess2">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>75%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Connector</p>
+			                </div>
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress doer-pq-progress pq-progress-4x" data-progress="0" id="pq-progess3">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>61%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Doer</p>
+			                </div>
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress dreamer-pq-progress pq-progress-3x" data-progress="0" id="pq-progess4">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>35%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Dreamer</p>
+			                </div>
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress organizer-pq-progress pq-progress-2x" data-progress="0" id="pq-progess5">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>24%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Organizer</p>
+			                </div>
+			                <div class="single-circle-wrap">
+			                    <div class="radial-progress advisor-pq-progress pq-progress-1x" data-progress="0" id="pq-progess6">
+			                        <div class="circle">
+			                            <div class="mask full">
+			                                <div class="fill"></div>
+			                            </div>
+			                            <div class="mask half">
+			                                <div class="fill"></div>
+			                                <div class="fill fix"></div>
+			                            </div>
+			                        </div>
+			                        <div class="inset">
+			                            <p class="score-pq-icon ws-icon-connector"></p>
+			                            <div class="custom-pq-tooltip">
+			                                <div class="pq-tooltip-content">
+			                                    <div class="percentage">
+			                                        <div class="numbers"><span>4%</span></div>
+			                                    </div>
+			                                    <p>correct</p>
+			                                </div>
+			                                <div class="tooltip-tail-one"></div>
+			                                <div class="tooltip-tail-two"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <p class="progress-circle-label">Advisor</p>
+			                </div>
+			            </div>
+					</div>
+				</div>
+				<div class="text-btn-wrap">
+					<a href="#" class="ws-btn black-btn">COMPARE ME AGAINST MY TEAM</a>
+				</div>
+				<h1 class="ws-heading-wrap">Share Your Personality</h1>
+				<div class="share-pq-wrap">
+					<div class="badge-img-wrap">
+						<a href="#" style="display:inline-block;text-decoration:none;">
+							<img class="js-small-badge" src="<%= asset('assets/images/pq-gif/WS_Badge_Organizer.gif') %>" style="margin-right:6px;margin-bottom:4px;">
+							<img class="js-small-badge" src="<%= asset('assets/images/pq-badge/organizer-without-pq-badge.png') %>" style="width: 206px;">
+						</a>
+					</div>
+					<div>
+						<div class="ws-input-group">
+							<input type="text" id="js-copy-me" value="<img>src=http:work.style/CX3GL" readonly/>
+							<button type="button" data-clipboard-target="js-copy-me" id="js-copy-button">COPY</button>
+						</div>
+						<p class="help-text-wrap">
+							Paste the code into your exisiting email footer to let others know your personality type and what makes you special.
+						</p>
+					</div>
+				</div>
+				<div class="bottom-text-wrap">
+					<h4>Showcase your personality</h4>
+					<p>Help people connect with you — and encourage people to learn about their personality!  </p>
+				</div>
+			</div>
+		</div>
+		<div class="personality-profile-locked insight-locked-wrap hide">
+			<div class="container">
+				<img src="<%= asset('assets/images/workstyle_gray_icon.png') %>">
+				<h1>Play your first training game to unlock performance insight...</h1>
+				<a class="start-training-link">Go Play a Training Game&gt;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

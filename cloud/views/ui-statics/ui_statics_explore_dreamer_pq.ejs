@@ -1,0 +1,149 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	initBannerVideo();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Dreamer
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<%- include _explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Dreamer Personality Type</h4>
+				<a class="ws-icon-play play-icon-small js-play-video" href="#" data-video-url="https://www.youtube.com/embed/eIho2S0ZahI"></a>
+				<br>
+				<a href="#" class="personality-detail-link">Learn More About Dreamers</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+				<iframe width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+				<a href="#" class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">Organizer personality types also appreciate it when people are mindful of their time and show responsibility. These personalty types like to receive recognition for their work and need time structure. When an Organizer personality type is in a stressful situation, they may try to overthink for others and do the work themselves if it has to be done right. Showing responsibility and structure will alleviate some of their stress.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide" 
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+
+				<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<p>Organizer personality types tend to keep lists, calendars, and other forms of structured time management. They are often entrusted with high-stakes work because they often show high levels of responsibility and trustworthiness. They like to get to the heart of a problem as fast as possible.</p>
+
+				<h4>How to spot Organizer – language, emails, desk, appearance</h4>
+				<p>Organizer personality types are straightforward, concise, and to the point. Their work areas are neat and organized. They also tend to be neatly dressed and conscious of appearing well put together for others.</p>
+
+				<h4>How do people commonly perceive Organizers?</h4>
+				<p>Organizer personality types tend to be the people in the group others know they can turn to for advice and reliability. They are also perceived as being very rational, hard workers. Oftentimes they lack the ability to be very empathetic to those that prefer someone to sympathize with their emotions. </p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts personality types tend to rationalize and avoid acknowleding their emotions.</p>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the personality types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="#" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

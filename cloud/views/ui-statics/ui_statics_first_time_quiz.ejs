@@ -1,0 +1,27 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content quiz-background <%- skill_type_class %>">
+	<div class="container">
+		<div class="question-wrap">
+			<div class="question-box">
+				<span class="ghost-elem"></span>
+				<div class="first-quiz-wrap ques-box-centered">
+					<h1 class="ques-box-head">First let’s play a quick game to get a sense of your starting point.</h1>
+					<a href="#" class="white-btn">LET'S DO IT!</a>
+				</div>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _quiz_help_modal %>

@@ -1,0 +1,27 @@
+<div class="js_result_section">
+    <div class="leaderboard-container">
+        <div class="team-filter-head container clearfix">
+
+            <% include _department_dropdown_partial.ejs %>
+
+            <% include _search_form_partial.ejs %>
+
+            <% include _pagination_partial.ejs %>
+
+        </div>
+        <div class="container clearfix">
+            <div class="team-filter-sidebar js_personality_filter_wrap">
+                <% include _personality_filter %>
+            </div>
+            <% if (userObjectList && userObjectList.length != 0) { %>
+            <div class="team-list-wrap js_user_list_wrap">
+                <% include _user_list %>
+            </div>
+            <% } else { %>
+            <div class="team-list-wrap no-result-wrap">
+                <% include _empty_user_list %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>

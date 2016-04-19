@@ -1,0 +1,215 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Dreamer", eventValue: 108});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Dreamer
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Dreamer Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Dreamers</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The dreamer is calm, imaginative, and reflective. Their superpower is Imagination. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their workstyle?</h4>
+				<ul class="explore-content-list">
+					<li>The Dreamer lives in a rich, internal world with wonderful imagination and no need for external stimulation.</li>
+					<li>The Dreamer works well with their hands and performs and engages in repetitive tasks without boredom because it limits the time and intensity of interactions with others.</li>
+					<li>They are loners energized by introspection and solitude. They take in the world around them by reflecting about what is happening.</li>
+					<li>The Dreamer finds imaginative solutions when they have clear direction, private time, and their own space.</li>
+				</ul>
+
+				<h4>How to spot the Dreamer</h4>
+				<ul class="explore-content-list">
+					<li>Dreamers dress for the weather and for comfort. Fashion and a sense of personal style are not important.</li>
+					<li>The Dreamer’s workspace will be spartan, functional, and utilitarian.</li>
+					<li>The Dreamer’s tones are unemotional, calm, and soft or flat.</li>
+					<li>Their words will be literal, specific, requesting, and impersonal. They may appear to bounce from one idea to another with no clear pattern. Associational logic is a Dreamer trait.</li>
+				</ul>
+
+				<h4>How people commonly perceive Dreamers</h4>
+				<p>The Dreamer is peaceful, distant, and their Imagination superpower is unlocked when they have solitude. Others may see them as loners and daydreamers. However, in the Dreamer’s rich internal world, they are never bored. The Dreamer finds joy and fulfillment in their inner world. It’s not that they don’t like people; it’s just that they love peacefulness and find being alone more energizing.</p>
+
+				<h4>Typical blindspots for the Dreamer</h4>
+				<p>Exchanges with Dreamers tend to be very literal, very direct, and often can result in one-word responses. Other styles may perceive these responses as signs of frustration or hostility; however, for Dreamers, there is no animosity- they’re just being efficient with their words. These perceptions can create a breakdown in communications and the Dreamer will most likely not be aware.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Dreamers need <strong>solitude</strong>.</p>
+		    	
+				<p><strong>Solitude:</strong> Dreamers tend to withdraw, moving into self-reflective, imaginative reveries or daydreams. They are at peace with themselves and need quality alone time to re-energize.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Dreamers as Managers</h4>
+				<p>The Dreamer is a quiet, calm, soft-spoken manager. A research team or perhaps a remote work team might be a good match for a Dreamer manager. For those reporting to a Dreamer, it’s important to be direct when asking for guidance or specific feedback. Though their language choices will be impersonal, it shouldn’t be taken personally.</p>
+
+				<h4>Meetings with Dreamers</h4>
+				<p>For a productive meeting, avoid placing the Dreamer in a roomful of people and full of stimulation. Exchanges can be literal and very direct. Use directive questions prefaced with “Tell me” to extract specific information from Dreamers. It’s their preference to sit calmly in a meeting and they will wait to be invited to share their thoughts and insights.</p>
+
+				<h4>Dreamers and Decision Making</h4>
+				<p>Dreamers have a rich internal world that allows them to create imaginative solutions to everyday issues. Their mind uses associational logic to see connections that others just don’t see. It’s not their natural response to share these insights with others resulting in missed opportunities unless others invite them into the present with a clear, direct request.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing a Dreamer</h4>
+				<ul class="explore-content-list">
+					<li>Be calm, direct, and deliberate as you state your purpose.</li>
+					<li>Steer clear of “touchy feely” approaches.</li>
+					<li>If presenting in PowerPoint, limit distractions by sticking to black and white with no or minimal pictures and clip art; bullet points are a direct and simple to communicate ideas.</li>
+					<li>Provide a simple solution or option to the problem or situation.</li>
+				</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Dreamers?</h4>
+		    	<ul class="explore-content-list">
+		    		<li>Long periods of time interacting with groups of people</li>
+		    		<li>Situations with lots of excitement or stimulation</li>
+		    		<li>Limited amounts of alone or down time where they can seek solitude</li>
+		    		<li>Non-specific information presented in chaotic, random order without adequate instruction</li>
+		    	</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>Dreamers will advertise an increase of embarrassment or shyness. It becomes difficult for them to process information quickly and they may have trouble keeping up with you. Their language becomes fragmented and disorganized. They may appear to be “all over the map” as they work through the maze in their mind.<br><br>Dreamers will also withdraw from the conversation or situation as distress increases. They passively await the next set of specific instructions to direct them to the next step. Without that, they will stay internally focused to avoid the external demands.</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Dreamers</h4>
+				<p>Dreamers need calm, capable and impersonal support when in distress. Apologies may be seen as too personal while deliberate, methodical, simple, direct instructions are highly useful.<br><br>To avoid conflict, limit the time and the intensity of the interaction. Maintain an impersonal dialog and remember that jokes, playfulness, and being softare not for them. Provide a simple solution to the situation or resolve the situation with minimal interaction.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_AlbertEinstein_TheoreticalPhysicist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Albert Einstein</p>
+		    			<p class="famous-role">Theoretical Physicist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_ForrestGump_ForrestGump.png') %>">
+		    			</div>
+		    			<p class="famous-name">Forrest Gump</p>
+		    			<p class="famous-role">Forrest Gump</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_JohnLennon_Musician.png') %>">
+		    			</div>
+		    			<p class="famous-name">John Lennon</p>
+		    			<p class="famous-role">Musician</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_LunaLovegood_HarryPotter.png') %>">
+		    			</div>
+		    			<p class="famous-name">Luna Lovegood</p>
+		    			<p class="famous-role">Harry Potter</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_NapoleonDynamite_NapoleanDynamite.png') %>">
+		    			</div>
+		    			<p class="famous-name">Napoleon Dynamite</p>
+		    			<p class="famous-role">Napoleon Dynamite</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_PeterParker_Spiderman.png') %>">
+		    			</div>
+		    			<p class="famous-name">Peter Parker</p>
+		    			<p class="famous-role">Spiderman</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_PhoebeBuffay_Friends.png') %>">
+		    			</div>
+		    			<p class="famous-name">Phoebe Buffay</p>
+		    			<p class="famous-role">Friends</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_SteveDitko_ComicBookArtist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Steve Ditko</p>
+		    			<p class="famous-role">Comic Book Artist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_StevenSpielberg_Director.png') %>">
+		    			</div>
+		    			<p class="famous-name">Steven Spielberg</p>
+		    			<p class="famous-role">Director</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_WalterMitty_TheSecretLifeofWalterMitty.png') %>">
+		    			</div>
+		    			<p class="famous-name">Walter Mitty</p>
+		    			<p class="famous-role">The Secret Life of Walter Mitty</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_Yoda_StarWars.png') %>">
+		    			</div>
+		    			<p class="famous-name">Yoda</p>
+		    			<p class="famous-role">Star Wars</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Dreamer/Dreamer_YoYoMa_Cellist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Yo-Yo Ma</p>
+		    			<p class="famous-role">Cellist</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

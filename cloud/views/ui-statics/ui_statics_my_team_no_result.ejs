@@ -1,0 +1,56 @@
+<%- contentFor('title') %>
+| My Team
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content leaderboard-container">
+	<div class="subheader-container">
+		<div class="container">
+			<div class="company-text-wrap">
+				<h1>Microsoft</h1>
+				<h4>Workstyle Team</h4>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="team-filter-head container clearfix">
+			<div class="select-department-wrap">
+				<select class="selectpicker" title="Departments">
+					<option>All</option>
+				    <option>Finance</option>
+				    <option>Marketing</option>
+				    <option>Service</option>
+				    <option>Shipping</option>
+				    <option>Development</option>
+				</select>
+			</div>
+			<form class="search-team-wrap">
+				<input type="text" class="search-input-wrap" placeholder="Search by name, email, or position...">
+				<button class="search-btn"><i class="ws-icon-search"></i></button>
+			</form>
+			<div class="pagination-wrap">
+				<span> 1 - 50 of 599 </span><a href="#" class="pagination-nav-btn ws-icon-left"></a><a href="#" class="pagination-nav-btn ws-icon-right"></a>
+			</div>
+		</div>
+		<div class="container clearfix">
+			<div class="team-filter-sidebar">
+				<ul>
+					<li><a class="pq-options-wrap pq-option-all active" href="#"><i class="ws-icon-workstyle"></i><span>All (559)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-original" href="#"><i class="ws-icon-creative-icon"></i><span>Original (235)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-connector" href="#"><i class="ws-icon-connector"></i><span>Connector (167)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-doer" href="#"><i class="ws-icon-doer"></i><span>Doer (98)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-dreamer" href="#"><i class="ws-icon-dreamer"></i><span>Dreamer (52)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-organizer" href="#"><i class="ws-icon-organizer"></i><span>Organizer (35)</span></a></li>
+					<li><a class="pq-options-wrap pq-option-advisor" href="#"><i class="ws-icon-advisor"></i><span>Advisor (12)</span></a></li>
+				</ul>
+			</div>
+			<div class="team-list-wrap no-result-wrap">
+				<p>Hmm...we didn't find anything matching your search!</p>
+				<a href="#" class="black-btn"><i class="ws-icon-left"></i>Go Back</a><br>
+				<a href="#" class="invite-link-wrap" data-toggle="modal" data-target="#inviteModal">Or invite a coworker!</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>
+<%- include _invite_modal %>

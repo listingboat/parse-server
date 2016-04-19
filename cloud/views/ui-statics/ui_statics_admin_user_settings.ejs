@@ -1,0 +1,352 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	UserSettingModule();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content user-settings-container">
+	<div class="setting-banner-wrap dreamer-settings clearfix">
+		<div class="container">
+			<h2>Jake Swantner <span>Profile</span></h2>
+			<a href="mailto:admin@work.style" class="btn white-round-btn">Contact us</a>
+			<p>Need help with something? </p>
+		</div>
+	</div>
+	<div class="container settings-tabs-wrap">
+		<!-- Nav tabs -->
+		<ul class="settings-nav-wrap" role="tablist">
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#account" class="settings-nav-item js-nav-item" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#password" class="settings-nav-item js-nav-item" aria-controls="password" role="tab" data-toggle="tab">Password</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#faq" class="settings-nav-item js-nav-item" aria-controls="faq" role="tab" data-toggle="tab">Help/FAQ</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#invite" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Invite</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab active">
+				<a href="#usersettings" class="settings-nav-item js-nav-item" aria-controls="usersettings" role="tab" data-toggle="tab">User Settings</a>
+			</li>
+		</ul>
+	</div>
+	<div class="admin-settings-wrap">
+		<div class="user-settings-header">
+			<div class="team-filter-head container clearfix">
+				<div class="select-department-wrap">
+					<select class="selectpicker" title="Departments">
+						<option>All</option>
+						<option>Finance</option>
+						<option>Marketing</option>
+						<option>Service</option>
+						<option>Shipping</option>
+						<option>Development</option>
+					</select>
+				</div>
+				<form class="search-team-wrap">
+					<input type="text" class="search-input-wrap" placeholder="Search by name, email, or position...">
+					<button class="search-btn"><i class="ws-icon-search"></i></button>
+				</form>
+				<div class="pagination-wrap">
+					<span> 1 - 50 of 599 </span><a href="#" class="pagination-nav-btn ws-icon-left"></a><a href="#" class="pagination-nav-btn ws-icon-right"></a>
+				</div>
+			</div>
+			<div class="member-details-wrap user-list-head container">
+                <div class="member-icon-wrap">
+                    <span class="member-pq-icon"></span>
+                </div>
+                <div class="member-name-wrap">
+                    <h2>Staff</h2>
+                </div>
+				<div class="user-department-wrap">
+                    <h2>Reassign Department</h2>
+				</div>
+				<div class="user-role-wrap">
+					<h2>User Type <a class="invite-help-icon" data-toggle="modal" href="#user-setting-help">?</a></h2>
+				</div>
+			</div>
+		</div>
+		<div class="settings-user-list container">
+			<div class="team-list-wrap">
+				<ul>
+					<li class="member-details-wrap advisor-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Monica Stockholm</h2>
+							<h4>Product Manager</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap dreamer-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Dunken Colwell</h2>
+							<h4>Creative Director</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap connector-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>John James III</h2>
+							<h4>CEO</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap original-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Brandon Bookstockerson</h2>
+							<h4>Secretary</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option selected>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap doer-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Rhumana Choudhury</h2>
+							<h4>Data Analyst</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option selected>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option selected>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap organizer-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Judith Wesley</h2>
+							<h4>Chief Marketing Officer/h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option selected>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option selected>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap connector-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>John James III</h2>
+							<h4>CEO</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap original-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>Brandon Bookstockerson</h2>
+							<h4>Secretary</h4>
+						</div>
+						<div class="select-department-wrap user-department-wrap">
+							<select class="selectpicker">
+								<option>Sales : Detroit</option>
+								<option>Sales : Denver</option>
+								<option>Sales : Chicago</option>
+								<option>Marketing : Detroit</option>
+								<option>Marketing : Denver</option>
+								<option>Marketing : Chicago</option>
+								<option>Creative : Chicago</option>
+							</select>
+						</div>
+						<div class="select-department-wrap user-role-wrap">
+							<select class="selectpicker">
+								<option>Administrator</option>
+								<option>Department Supervisor</option>
+								<option>Sub-Department Supervisor</option>
+								<option selected>Regular User</option>
+							</select>
+						</div>
+						<div class="disable-user-link">
+							<a data-toggle="modal" href="#edit-user">edit user detail</a>
+						</div>
+					</li>
+					<li class="member-details-wrap unknown-member-wrap">
+						<div class="member-icon-wrap">
+							<span class="member-pq-icon"></span>
+						</div>
+						<div class="member-name-wrap">
+							<h2>r.choudhury@microsoft.com</h2>
+							<h4>Unknown</h4>
+						</div>
+						<div class="unknown-user-hint">
+							<p>Not Yet Registered</p>
+							<a href="#">Send them a reminder &gt;</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include _delete_user_modal %>
+<% include _user_deleted_modal %>
+<% include _edit_user_details_modal %>
+<% include _user_settings_help_modal %>
+<%- include _footer %>

@@ -1,0 +1,338 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new leaderBoardGraph()).init();
+        (new staticEmployeeViewModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Analytics : Employee View
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+    <div class="leaderboard-graph-container">
+        <div id="id-graph-container" class="graph-plot-area"></div>
+        <div class="container">
+            <div class="company-info-wrap">
+                <h1>Microsoft</h1>
+                <h4>Workstyle Team</h4>
+            </div>
+            <div class="page-switch-wrap">
+                <span class="toggle-label">Directory</span>
+                <div class='toggle'>
+                    <input name="t1" type="hidden" value="0" />
+                    <input id="t1" name="t1" type="checkbox" value="1" />
+                    <div class='btn'>
+                        <label for='t1'>
+                            <div class='toggle-on'></div>
+                            <div class='toggle-handle btn'></div>
+                            <div class='toggle-off btn active'></div>
+                        </label>
+                    </div>
+                </div>
+                <span class="toggle-label">Analytics</span>
+            </div>
+        </div>
+    </div>
+    <div class="all-stats-wrap">
+        <div class="container clearfix">
+            <div class="stats-detail-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Your PQ</span></p>
+                    <p class="stat-number">456</p>
+                    <p class="stat-subtitle">Can you hit 500?</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap wow-pq-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Your PQ Growth</span></p>
+                    <p class="stat-number">+10%</p>
+                    <p class="stat-subtitle">week over week (w.o.w.)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap wow-pq-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Company PQ Growth</span></p>
+                    <p class="stat-number">+5%</p>
+                    <p class="stat-subtitle">week over week (w.o.w.)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap wow-pq-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Highest Company PQ</span></p>
+                    <p class="stat-number">3,100</p>
+                    <p class="stat-subtitle">Christy Christopherson</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap week-stats-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Yours Team's Highest PQ</span></p>
+                    <p class="stat-number">1,208</p>
+                    <p class="stat-subtitle">John Wilx</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-bg-section employee-view-wrap">
+        <div class="container">
+            <div class="stats-toogle-wrap">
+                <a class="stats-toogle-tab active" href="#">Company Stats</a>
+                <a class="stats-toogle-tab" href="#">My Stats</a>
+            </div>
+            <div class="team-pq-graph">
+                <div class="team-graph-header clearfix">
+                    <p class="team-graph-title comparision-graph-title"><span class="blue-text">Your Performance</span> vs. <span class="green-text">Your Team</span></p>
+                    <div class="graph-filters-block">
+                        <span class="day-filter">30 days</span>
+                        <span class="day-filter active">60 days</span>
+                        <span class="day-filter">90 days</span>
+                    </div>
+                </div>
+                <div id="team-pq-graph" class="graph-container"></div>
+            </div>
+            <div class="score-stats-wrap">
+                <div class="single-stats-wrap">
+                    <div class="stats-inner-wrap">
+                        <h2 class="score-title-wrap">Your Score</h2>
+                        <img src="/assets/images/blue-curve.png">
+                        <!--<p class="score-icon-wrap blue-text ws-icon-curve"></p>-->
+                        <p class="stat-score-wrap"><span>338</span>PQ</</p>
+                    </div>
+                </div>
+                <div class="single-stats-wrap">
+                    <div class="stats-inner-wrap">
+                        <h2 class="score-title-wrap">Team Average</h2>
+                        <img src="/assets/images/green-curve.png">
+                        <!--<p class="score-icon-wrap green-text ws-icon-curve"></p>-->
+                        <p class="stat-score-wrap"><span>423</span>PQ</</p>
+                    </div>
+                </div>
+                <div class="single-stats-wrap">
+                    <div class="stats-inner-wrap">
+                        <h2 class="score-title-wrap">Days You Trained</h2>
+                        <img class="bar-image-section" src="/assets/images/bar-image.png">
+                    </div>
+                </div>
+            </div>
+            <div class="overall-stats-container">
+                <div class="team-stats-wrap">
+                    <div class="stats-card-wrap">
+                        <p class="value-wrap"><span class="stats-icon-wrap">+</span>200 <span class="stats-unit-wrap">PQ</span></p>
+                        <p class="stats-sec-text">Your best 7-day PQ gain</p>
+                    </div>
+                </div>
+                <div class="team-stats-wrap">
+                    <div class="stats-card-wrap">
+                        <p class="value-wrap"><span class="stats-icon-wrap">+</span>7 <span class="stats-unit-wrap">days</span></p>
+                        <p class="stats-sec-text">Your Best Training Streak</p>
+                    </div>
+                </div>
+                <div class="team-stats-wrap">
+                    <div class="stats-card-wrap">
+                        <p class="value-wrap"><span class="stats-icon-wrap">-</span>3 <span class="stats-unit-wrap">days</span></p>
+                        <p class="stats-sec-text">Since You Trained Last</p>
+                    </div>
+                </div>
+            </div>
+            <div class="start-btn-wrap">
+                <button class="btn green-btn">BEAT YOUR TEAM AND START WORKING &gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="stats-btm-container container">
+        <div class="details-head-wrap">
+            <h2>Where to Focus on Next</h2>
+            <p class="summary-text-wrap">Workstyle are shown from left to right in order of your workstyle hierarchy. You have more difficulty communicating with <span class="advisor-theme-text">Advisor</span> and <span class="organizer-theme-text">Organizer</span>.</p>
+        </div>
+        <div class="all-pq-summary">
+            <div class="circular-progress-wrap">
+                <div class="single-circle-wrap">
+                    <div class="radial-progress original-pq-progress pq-progress-6x" data-progress="0" id="pq-progess1">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>95%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Original</p>
+                </div>
+                <div class="single-circle-wrap">
+                    <div class="radial-progress connector-pq-progress pq-progress-5x" data-progress="0" id="pq-progess2">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>75%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Connector</p>
+                </div>
+                <div class="single-circle-wrap">
+                    <div class="radial-progress doer-pq-progress pq-progress-4x" data-progress="0" id="pq-progess3">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>61%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Doer</p>
+                </div>
+                <div class="single-circle-wrap">
+                    <div class="radial-progress dreamer-pq-progress pq-progress-3x" data-progress="0" id="pq-progess4">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>35%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Dreamer</p>
+                </div>
+                <div class="single-circle-wrap">
+                    <div class="radial-progress organizer-pq-progress pq-progress-2x" data-progress="0" id="pq-progess5">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>24%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Organizer</p>
+                </div>
+                <div class="single-circle-wrap">
+                    <div class="radial-progress advisor-pq-progress pq-progress-1x" data-progress="0" id="pq-progess6">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                        </div>
+                        <div class="inset">
+                            <p class="score-pq-icon ws-icon-connector"></p>
+                            <div class="custom-pq-tooltip">
+                                <div class="pq-tooltip-content">
+                                    <div class="percentage">
+                                        <div class="numbers"><span>4%</span></div>
+                                    </div>
+                                    <p>correct</p>
+                                </div>
+                                <div class="tooltip-tail-one"></div>
+                                <div class="tooltip-tail-two"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="progress-circle-label">Advisor</p>
+                </div>
+            </div>
+            <div class="stats-summary-text">
+                <div class="single-pq-summary organizer-pq-summary">
+                    <span class="single-pq-icon"></span>
+                    <div class="single-pq-text">
+                        <h3>Your Least Understood <span>Workstyle</span></h3>
+                        <p>The Organizer (makes up 15% of the company)</p>
+                        <a href="">Go study up on Organizer &gt;</a>
+                    </div>
+                </div>
+                <div class="single-pq-summary doer-pq-summary">
+                    <span class="single-pq-icon"></span>
+                    <div class="single-pq-text">
+                        <h3>Your Team's Most Common <span>Workstyle</span></h3>
+                        <p>Doer make up 60% of your company</p>
+                        <a href="">Go to know more about Doer &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="start-btn-wrap">
+            <button class="btn green-btn">BECOME A PRO COMMUNICATOR &gt;</button>
+        </div>
+    </div>
+</div>
+<%- include _footer %>

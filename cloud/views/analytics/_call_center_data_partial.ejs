@@ -1,0 +1,94 @@
+<div class="details-head-wrap">
+    <h2>Your Average Call Length by Workstyle</h2>
+    <p class="summary-text-wrap">Longer call times with certain personalties indicates more communication friction. <% if(typeof userLeastUnderstoodWorkstyle !== "undefined") { %> You have more difficulty communicating with <span class="<%= personalityThemeTextMap[userLeastUnderstoodWorkstyle.toLowerCase()] %>"><%= userLeastUnderstoodWorkstyle %></span> and <span class="<%= personalityThemeTextMap[userSecondLeastUnderstoodWorkstyle.toLowerCase()] %>"><%= userSecondLeastUnderstoodWorkstyle %></span> .<% } %> Keep playing training games to master these workstyles.</p>
+</div>
+<div class="all-pq-summary">
+    <div class="circular-progress-wrap">
+
+        <% for(var index in  personalityCirclesData.callData){ %>
+        <div class="single-circle-wrap non-progress-wrap <%= personalityCirclesData.callData[index].personalityClass %>">
+            <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers">
+                                    <span>
+                                        <%= personalityCirclesData.callData[index].callDuration %> sec
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                <div class="tooltip-tail-one"></div>
+                <div class="tooltip-tail-two"></div>
+            </div>
+            <span class="single-pq-icon"></span>
+            <p class="progress-circle-label"><%= personalityCirclesData.callData[index].name %></p>
+        </div>
+        <% } %>
+
+        <% for(var index in  personalityCirclesData.insufficientDataList){ %>
+            <div class="single-circle-wrap non-progress-wrap no-data-wrap <%= personalityCirclesData.insufficientDataList[index].personalityClass %>">
+                <div class="custom-pq-tooltip">
+                    <span class="pq-tooltip-content">
+                        <span class="percentage">
+                            <span class="numbers">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You receive too few of these calls to make an estimate</span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label"><%= personalityCirclesData.insufficientDataList[index].name %></p>
+            </div>
+        <% } %>
+
+
+    </div>
+    <div class="stats-summary-text">
+
+        <% if(typeof userLeastUnderstoodWorkstyle !== "undefined"){ %>
+            <div class="single-pq-summary <%= userLeastUnderstoodWorkstyle.toLowerCase() %>-pq-summary">
+                <span class="single-pq-icon"></span>
+                <div class="single-pq-text">
+                    <h3>Your Least Understood <span>Workstyle</span></h3>
+                    <p>The <%= userLeastUnderstoodWorkstyle %> (average <%= userLeastUnderstoodWorkstyleScore %> second call)</p>
+                    <a href="<%= url(userLeastUnderstoodWorkstyleUrl)%>">Go study up on <%= userLeastUnderstoodWorkstyle %> &gt;</a>
+                </div>
+            </div>
+        <% }else{ %>
+        <div class="single-pq-summary no-data-summary">
+            <span class="single-pq-icon"></span>
+            <div class="single-pq-text">
+                <h3>Your Least Understood <span>Workstyle</span></h3>
+                <p>Keep making calls to find out!</p>
+                <a href="<%= url('quiz.start') %>" >In the meantime go study up on all the workstyles &gt;</a>
+            </div>
+        </div>
+        <% } %>
+
+        <% if(typeof userMostUnderstoodWorkstyle !== "undefined"){ %>
+            <div class="single-pq-summary <%= userMostUnderstoodWorkstyle.toLowerCase() %>-pq-summary">
+                <span class="single-pq-icon"></span>
+                <div class="single-pq-text">
+                    <h3>Your Most Understood <span>Workstyle</span></h3>
+                    <p>The <%= userMostUnderstoodWorkstyle %> (average <%= userMostUnderstoodWorkstyleScore %> second call)</p>
+                    <a href="<%= url(userMostUnderstoodWorkstyleUrl)%>">Go study up on <%= userMostUnderstoodWorkstyle %> &gt;</a>
+                </div>
+            </div>
+        <% }else{ %>
+            <div class="single-pq-summary no-data-summary">
+                <span class="single-pq-icon"></span>
+                <div class="single-pq-text">
+                    <h3>Your Most Understood <span>Workstyle</span></h3>
+                    <p>Keep making calls to find out!</p>
+                    <a href="<%= url('quiz.start') %>" >In the meantime go study up on all the workstyles &gt;</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+<div class="start-btn-wrap">
+    <a href="<%= url("quiz.start") %>" class="btn green-btn">BECOME A PRO COMMUNICATOR &gt;</a>
+</div>

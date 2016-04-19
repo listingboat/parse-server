@@ -1,0 +1,46 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<div class="content">
+    <%- include _settings_user_info_header %>
+    <div class="container settings-tabs-wrap">
+        <%- include _settings_nav_partial %>
+        <div class=" settings-tab-content">
+            <div class="faq-tab-wrap">
+            	<h2>Help/FAQ</h2>
+	            <ul class="faq-list-wrap">
+		            <li class="faq-list-item">
+    			        <h4>How does workstyle predict my workstyle type?</h4>
+        			    <p>Workstyle uses a statistically validated assessment that identifies an individual's personality structure in accordance with patterns in their language. It has been used by the likes of NASA, Bill Clinton, and Fortune 500 companies to help break down communication barriers.</p>
+	        	    </li>
+		            <li class="faq-list-item">
+			            <h4>What if I don’t agree with the results of my workstyle assessment?</h4>
+                        <p>No problem. Send us an email to <a href="mailto:help@work.style">help@work.style</a> and we’ll review your results with you.</p>
+    	    	    </li>
+	    	        <li class="faq-list-item">
+		    	        <h4>How do I put my Workstyle badge into my email footer?</h4>
+			            <p>
+                        1. Go to your Workstyle homepage (“MY PQ”) and copy the link for the badge at the bottom of the page by pressing the “copy” button next to the badge preview image. Then:</p>
+                        <p>
+                        2. Go to the settings page of your email program and paste the link copied from the Workstyle My PQ page into the email footer editing form and make sure you have your footer activated in your email client.</p>
+		            </li>
+        		    <li class="faq-list-item">
+	        		    <h4>What is a PQ Score?</h4>
+		        	    <p>PQ score is short for “Personality Quotient.” Your overall PQ score reflects your ability to identify, understand, and connect with all six Workstyle personality types in your quiz quests.</p>
+    		        </li>
+	    	        <li class="faq-list-item">
+		    	        <h4>How do I build my PQ Score?</h4>
+    			        <p>Each time you get a question right when you Quest &amp; Quiz you gain PQ points depending on the difficulty level of the question. Keep training to unlock PQ skill levels and ultimately become a workstyle master. Share your progress with others by placing your Workstyle badge into your emails.</p>
+	    	        </li>
+	            </ul>
+            </div>
+        </div>
+    </div>
+</div>

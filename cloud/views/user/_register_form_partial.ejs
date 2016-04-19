@@ -1,0 +1,292 @@
+<div class="container js_url_container"
+     data-register_url="<%= url('user.register') %>"
+     data-migrate_url="<%= url('user.migrate') %>"
+     data-on_boarding_url="<%= url('assessment.onBoardingOne') %>"
+     data-add_user_in_pardot_url="<%= url('user.makePardotCall') %>"
+     data-get_departments_url="<%= url('user.getDepartments') %>"
+        >
+    <div class="register-wrap" >
+
+        <a class="logo-wrap" href="<%= url('user.home') %>"><img src="<%= asset('assets/images/register_page_logo.png') %>"></a>
+        <div class="white-bg-box clearfix js-register-wrap">
+            <form id="registration_form" class="register-form-wrap" method="post" novalidate>
+                <h2>Register for Workstyle</h2>
+                <p class="error-msg" id="form-error">
+                    <% if(typeof formError !== 'undefined'){ %>
+                    <%= formError %>
+                    <% } %>
+                </p>
+                <div class="form-group js-input-group <% if(typeof firstNameError !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="text" id="first_name" class="form-control text-field-wrap js-input-text" maxlength="<%= firstNameMaxLength %>"
+                           placeholder="First Name" name="first_name"
+                            <% if(typeof firstName !== 'undefined'){ %>
+                           value="<%= firstName %>"
+                            <% } %>
+                            >
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof firstNameError !== 'undefined'){ %>
+                            <%= firstNameError %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group js-input-group <% if(typeof lastNameError !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="text" id="last_name" class="form-control text-field-wrap js-input-text" maxlength="<%= lastNameMaxLength %>"
+                           placeholder="Last Name" name="last_name"
+                            <% if(typeof lastName !== 'undefined'){ %>
+                           value="<%= lastName %>"
+                            <% } %>
+                            >
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof lastNameError !== 'undefined'){ %>
+                            <%= lastNameError %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group js-input-group <% if(typeof userEmailError !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="email" id="user_email" class="form-control text-field-wrap js-input-text <% if(typeof isEmailNonEditable === 'boolean' && isEmailNonEditable === true){ %>readonly <% } %>"
+                           maxlength="<%= emailMaxLength %>"
+                           placeholder="Email" name="user_email"
+                            <% if(typeof userEmail !== 'undefined'){ %>
+                           value="<%= userEmail %>"
+                            <% } %>
+                            <% if(typeof isEmailNonEditable === 'boolean' && isEmailNonEditable === true){ %>readonly <% } %>
+                            >
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof userEmailError !== 'undefined'){ %>
+                            <%= userEmailError %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group js-input-group <% if(typeof phoneNumberError !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="text" id="phone_number" class="form-control text-field-wrap js-input-text"
+                           placeholder="Phone Number" name="phone_number"
+                            <% if(typeof phoneNumber !== 'undefined'){ %>
+                           value="<%= phoneNumber %>"
+                            <% } %>
+                            >
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof phoneNumberError !== 'undefined'){ %>
+                            <%= phoneNumberError %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group js-input-group <% if(typeof positionTitleError !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="text" id="position_title" class="form-control text-field-wrap js-input-text" maxlength="<%= positionTitleMaxLength %>"
+                           placeholder="Position Title" name="position_title"
+                            <% if(typeof positionTitle !== 'undefined'){ %>
+                           value="<%= positionTitle %>"
+                            <% } %>
+                            >
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof positionTitleError !== 'undefined'){ %>
+                            <%= positionTitleError %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+
+                <div  id="js_department_div" class="form-group department-select-wrap js-input-group <% if(typeof departmentError !== 'undefined'){ %>error-wrap<% } %> <% if(typeof  parentDepartmentList === 'undefined' ){ %> hide <% } %>">
+                    <% if(typeof  parentDepartmentList !== 'undefined' && parentDepartmentList.length > 0){ %>
+                    <%- include _departments_partial.ejs %>
+                    <% } %>
+                </div>
+
+                <div class="form-group js-input-group <% if(typeof password1Error !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="password" id="password1" class="form-control text-field-wrap js-input-text"
+                           placeholder="New Password" name="password1">
+
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof password1Error !== 'undefined'){ %>
+                            <%= password1Error %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group js-input-group <% if(typeof password2Error !== 'undefined'){ %>error-wrap<% } %>">
+                    <input type="password" id="password2" class="form-control text-field-wrap js-input-text"
+                           placeholder="Repeat New Password" name="password2">
+
+                    <div class="custom-tooltip">
+                        <div class="custom-tooltip-arrow"></div>
+                        <p class="error-text-wrap">
+                            <% if(typeof password2Error !== 'undefined'){ %>
+                            <%= password2Error %>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+                <div class="register-checkbox-wrap">
+                    <label class="checkbox-wrap">
+                        <input type="checkbox" name="stay_loged_in" <% if(typeof stayLogedIn !=='undefined'){ %>checked<% } %>/>
+                        <span>Stay logged in</span>
+                    </label>
+                </div>
+                <div class="register-checkbox-wrap js_open_agreement">
+                    <label class="checkbox-wrap">
+                        <input type="checkbox" class="disabled" name="agree_terms_of_service" id="agree_terms_of_service" <% if(typeof agreeTermsOfService !=='undefined' && agreeTermsOfService === "on"){ %>checked<% } %>/>
+                        <span>I agree to the </span>
+                    </label>
+                    <a class="terms_searvice_link"> terms of service</a>
+                </div>
+                <button id="register" class="btn white-btn" <% if(typeof agreeTermsOfService ==='undefined'){ %>disabled <% } %>>REGISTER</button>
+            </form>
+
+            <div class="register-form-wrap agreement-form-wrap js_agreement_section hide">
+                <span class="ws-icon-close-icon close-form-btn js_agreement_close"></span>
+                <h2>Workstyle Terms of Service Agreement</h2>
+                <div class="agreement-content-wrap">
+                    <h3>Workstyle Terms of Service Agreement</h3>
+                    <div class="agreement-content">
+                        <p>
+                            Welcome to Workstyle, your online resource for building your team’s personality quotient. Workstyle is owned and operated by Mattersight Corporation (“<strong>us</strong>”, “<strong>our</strong>”, “<strong>we</strong>”, or “<strong>Mattersight</strong>”). Your access to and use of Workstyle through the website located at <a href="http://work.style">http://work.style</a> (the “<strong>Website</strong>”) is subject to your compliance with all the terms, conditions, and notices contained or referenced herein (the, “<strong>Policy</strong>”).
+                        </p>
+                        <p>
+                            By accessing or using Workstyle, you acknowledge that you have read this Policy and agree to comply with its terms. This Website is not intended for users under the legal age of consent or for users residing within the European Union, and this Website does not knowingly collect any personal information from such persons. IF YOU ARE NOT ABOVE THE LEGAL AGE OF CONSENT OR RESIDE IN THE EUROPEAN UNION, OR IF YOU DO NOT AGREE TO THIS POLICY, PLEASE DO NOT ACCESS OR USE OUR SERVICES.
+                        </p>
+                        <p>See <a target="_blank" href="http://www.mattersight.com/about-us/patents/">http://www.mattersight.com/about-us/patents</a> for information on Mattersight’s patents.</p>
+                        <a href="#use">Use of the Website</a>
+                        <a href="#registration">Registration</a>
+                        <a href="#rights">Intellectual Property Rights; Copyright Infringement</a>
+                        <a href="#representation">Your Representations</a>
+                        <a href="#privacy">Privacy</a>
+                        <a href="#future-trans">Future Business Transactions</a>
+                        <a href="#website-links">Linking to the Website</a>
+                        <a href="#no-warranties">No Warranties</a>
+                        <a href="#liability">Limitation of Liability</a>
+                        <a href="#waiver">Waiver and Amendment</a>
+                        <a href="#legal-terms">General Legal Terms</a>
+                        <a href="#comments">Comments and Concerns</a>
+                        <ul>
+                            <li id="use">
+                                <h4>1. Use of the Website</h4>
+                                <p>
+                                    Your use of this Website is governed by and subject to compliance with this Policy and the Privacy Policy (collectively, the “Website Policies”).  In addition, all subscriptions to Workstyle are governed by our online click-through <a href="<%= url('user.termsConditions') %>">Terms of Service</a> paper contract, or other stated terms.  You must not commercially exploit our Website (or any portion of it) for your financial gain, unless you have Mattersight’s express written permission to do so.
+                                </p>
+                                <p>
+                                    You may only use our Website in accordance with the terms of the Website Policies, any other terms applicable to the various features of our site and all applicable laws, rules, and regulations.  In the event Mattersight believes that you have failed to comply with all terms applicable to your use of our Website, you agree that we have the right, in our sole discretion and without notice, to terminate your User ID, deactivate or delete your Workstyle account and all information and files in your account, and prohibit you from accessing your account.  Mattersight may also, in its sole discretion and at any time, discontinue the Website, or any part thereof, with or without notice.
+                                    You agree that you do not have any rights in our Website and that we will have no liability to you if the Website is discontinued or your ability to access our Website is terminated.
+                                </p>
+                            </li>
+                            <li id="registration">
+                                <h4>2. Registration and User ID</h4>
+                                <p>You must <a href="<%= url('user.register') %>">register</a> in order to access all of the content on Workstyle.  Upon registering, you will receive a User ID, which is your identity on our Web site and is personal to you.  You are responsible for remembering and safeguarding your User ID.  If you share your User ID with someone else, or you allow a third party to discover your User ID, you could potentially lose control of any personally-identifiable information you have provided to us.  If you have reason to believe that your User ID has been discovered by a third party, you should immediately change your password (please refer to our <a href="<%= url('user.privacyPolicy') %>">Privacy Policy</a> to learn how). Mattersight will not be liable for any loss or damage arising from your failure to comply with the requirements of this paragraph.</p>
+                            </li>
+                            <li id="rights">
+                                <h4>3. Intellectual Property Rights; Copyright Infringement</h4>
+                                <div>
+                                    <p>(a) The Website and its contents and features (including, but not limited to, all information, text, quizzes, images, graphics, video and audio, and the design, selection, and arrangement thereof) are owned by Mattersight, its licensors, or other providers thereof, and are protected by United States and international copyright, trademark, patent, trade secret and other intellectual property or proprietary rights laws, as applicable. No right, title, or interest in or to the Website or any of its content or features is transferred to you, and all rights not expressly granted are expressly reserved by Mattersight. </p>
+                                    <p>(b) The WORKSTYLE name, logo, and all related names, logos, product and service names, designs and slogans, are trademarks of Mattersight. PCM, Process Communication Model, PPI, and Personality Pattern Inventory are registered trademarks of Kahler Communications, Inc., used under license. You may not use such marks without the prior written permission of Mattersight or the trademark owner. </p>
+                                    <p>(c) Mattersight is the sole and exclusive owner of its compilation of the content of the Website.  Because it is protected by United States and international copyright laws, unpermitted copying of any of this content could lead to copyright infringement.  Without limiting the generality of the foregoing, you may not reproduce, copy, alter, create derivative works of, publicly display, publicly perform, republish, download, transfer, or transmit any of the material on the Website. </p>
+                                    <p>(d) Mattersight expects all users of the Website to respect its copyright rights, as well as the copyright rights of others. If you are a copyright owner and you believe that your work has been copied in a way that constitutes copyright infringement, you may request removal of the relevant materials (or access thereto) from the Website by submitting written notification to our Copyright Agent (designated below).  In accordance with the Digital Millennium Copyright Act (17 U.S.C. &sect; 512)(“<strong>DMCA</strong>”), the written notice (the “<strong>DMCA Notice</strong>”) must include all of the following: </p>
+                                        <ol class="roman-list">
+                                            <li>
+                                                <p>Identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Website are covered by a single notification, a representative list of such works; </p>
+                                            </li>
+                                            <li>
+                                                <p>Identification of the material that you claim to be infringing or to be the subject of infringing activity, and information reasonably sufficient to permit us to locate the material; </p>
+                                            </li>
+                                            <li>
+                                                <p>Information reasonably sufficient to permit Mattersight to contact you, such as a mailing address, telephone number, and email address; </p>
+                                            </li>
+                                            <li>
+                                                <p>A statement that you have a good faith belief that the use of the works identified in clause (ii) in the manner complained of is not authorized by you, your agent, or the law; and</p>
+                                            </li>
+                                            <li>
+                                                <p>A statement under penalty of perjury that the information in the DMCA Notice is accurate and that you are authorized to act on behalf of the owner of the allegedly infringed exclusive right.</p>
+                                            </li>
+                                        </ol>
+                                        <p>Our designated Copyright Agent to receive DMCA Notices is:</p>
+                                        <div class="notice-address">
+                                            <p>Mattersight Corporation</p>
+                                            <p>200 W. Madison Street, Suite 3100, Chicago, IL USA</p>
+                                            <p>Attn: Chief IP Officer</p>
+                                            <p>Email: <a href="mailto: legal@mattersight.com">legal@mattersight.com</a></p>
+                                            <p>Tel: <a href="tel: 877.235.6925">877.235.6925</a></p>
+                                        </div>
+                                        <p>
+                                            If your DMCA Notice does not meet all of the requirements of Section 512(c)(3) of the DMCA, then it may not be effective. Note that if you knowingly misrepresent that material on the Website is infringing your copyright, you may be held liable for damages (including costs and legal fees)
+                                        </p>
+                                </div>
+                            </li>
+                            <li id="representation">
+                                <h4>4. Your Representations</h4>
+                                <p>You promise that: (i) you are of legal age to form a binding contract with Mattersight in your jurisdiction; (ii) you will not use the Website in any way that violates any applicable local or international law or regulation; (iii) you will not do anything that could disable, overburden, damage, or impair the Website or interfere with any person’s use of the Website; (iv) you will not use any robot, spider, or other automatic device, process, or means to access the Website for any unlawful purpose or in violation of this Policy; and (v) you will not introduce any viruses, Trojan horses, worms, logic bombs or other forms of malware to the Website.</p>
+                            </li>
+                            <li id="privacy">
+                                <h4>5. Privacy</h4>
+                                <p>All information we collect on the Website is subject to our <a href="<%= url('user.privacyPolicy') %>">Privacy Policy</a>. By using the Website, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy.</p>
+                            </li>
+                            <li id="future-trans">
+                                <h4>6. Future Business Transactions</h4>
+                                <p>As we continue to develop Workstyle, we might determine that it is necessary or desirable to undertake a change of business structure or ownership such as spinning off Workstyle as a separate business from Mattersight, a merger, and/or a sale of all or substantially all our stock or assets. In such transactions, user information generally is one of the transferred business assets.  Under the terms of our Privacy Policy, by providing information to us, you agree that it may be transferred to such parties in these circumstances. However, any party purchasing our assets will be subject to an obligation to maintain the integrity of your personally-identifiable information. </p>
+                            </li>
+                            <li id="website-links">
+                                <h4>7. Linking to the Website</h4>
+                                <p>You may link to the Website’s homepage, but only if you do so in a way that is legal and appropriate and does not damage our reputation. Furthermore, you must not establish a link in a way that suggests any form of association, approval, or endorsement on our part (unless you have received the express written consent of Mattersight’s Chief IP Counsel). Subject to the foregoing, <span class="underline-text">you must not</span>:</p>
+                                <ol class="disc-list">
+                                    <li>
+                                        <p>Establish a link to the Website from any website that you do not own or have the right to link from</p>
+                                    </li>
+                                    <li>
+                                        <p>Cause the Website or portions thereof to be displayed, or appear to be displayed by, framing, deep linking, in-line linking, and the like, on any other website</p>
+                                    </li>
+                                    <li>
+                                        <p>Link to any part of the Website other than the homepage</p>
+                                    </li>
+                                    <li>
+                                        <p>Otherwise take any action with respect to the materials on the Website that is inconsistent with any other provision of the Website Policies</p>
+                                    </li>
+                                </ol>
+                                <p>You agree to cease immediately, on our request, any unauthorized framing or linking. We may withdraw the linking rights granted herein with or without notice.</p>
+                            </li>
+                            <li id="no-warranties">
+                                <h4>8. No Warranties</h4>
+                                <p>THE INFORMATION PRESENTED ON OR THROUGH THE WEBSITE IS MADE AVAILABLE SOLELY FOR GENERAL INFORMATION AND ENTERTAINMENT PURPOSES. YOUR USE OF THE WEBSITE IS AT YOUR OWN RISK. THE WEBSITE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. MATTERSIGHT EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. BECAUSE THE WEBSITE IS PROVIDED TO YOU “AS IS,” YOU AGREE THAT MATTERSIGHT SHALL NOT BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR ANY DELAY IN DELIVERY OF, OR FAILURE TO DELIVER, THE WEBSITE OR ANY OF ITS FEATURES OR FUNCTIONS. BECAUSE THE WEBSITE IS PROVIDED TO YOU “AS AVAILABLE,” YOU AGREE THAT MATTERSIGHT SHALL NOT BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR ANY MODIFICATION, SUSPENSION, OR DISCONTINUANCE OF THE WEBSITE OR OF YOUR ABILITY TO ACCESS IT. WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, MATTERSIGHT ALSO DISCLAIMS ANY WARRANTY THAT THE WEBSITE WILL MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE WEBSITE WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE. </p>
+                            </li>
+                            <li id="liability">
+                                <h4>9. Limitation of Liability</h4>
+                                <p>YOU AGREE THAT, TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL MATTERSIGHT, ITS LICENSORS, EMPLOYEES, AGENTS, OFFICERS OR DIRECTORS BE LIABLE TO YOU OR ANY THIRD-PARTY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOST PROFITS OR LOSS OF GOODWILL, USE, OR DATA (EVEN IF MATTERSIGHT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), ARISING OUT OF OR IN CONNECTION WITH THE USE OF OR INABILITY TO USE THE WEBSITE OR ANY OTHER MATTER RELATING TO THE WEBSITE.  YOU WILL BE RESPONSIBLE FOR ALL CLAIMS AND DAMAGES RESULTING FROM THE MISUSE OF THE WEBSITE BY YOU. Some states do not allow the limitation of liability, so this provision may not apply to you.</p>
+                            </li>
+                            <li id="waiver">
+                                <h4>10. Waiver and Amendment</h4>
+                                <p>If Mattersight fails to insist upon strict performance of your obligations under any of these terms and conditions, or if Mattersight fails to exercise any of the rights or remedies to which it is entitled under this Policy, this will not constitute a waiver of such rights or remedies and will not relieve you from compliance with such obligations. No waiver by Mattersight of any default will constitute a waiver of any subsequent default, and no waiver by Mattersight of any of these terms and conditions will be effective unless it is expressly stated to be a waiver and is communicated to you in writing. We reserve the right, in our sole discretion, to amend the terms of this Policy at any time. Any amendments are effective immediately upon posting to the Website. Your continued use of the Website constitutes your agreement to such amended terms. </p>
+                            </li>
+                            <li id="legal-terms">
+                                <h4>11. General Legal Terms</h4>
+                                <p>You agree that this Policy describes the entire agreement between us with respect to its subject matter.  The Website was created and is operated under the laws of the State of Illinois.  The laws of the State of Illinois will control the terms and conditions provided in this Policy, without giving effect to any principles of conflict of laws. You agree and accept that any legal action or proceeding shall be brought in the federal or state courts for the Cook County, Illinois, and you expressly waive any objection to personal jurisdiction, venue, or forum non conveniens. If a court of competent jurisdiction finds that any provision of Policy is invalid or unenforceable, such provision shall be changed and interpreted so as to best accomplish the objectives of the original provision to the fullest extent allowed by law and the remaining provisions of this Policy will remain in full force and effect. You agree that regardless of any applicable law to the contrary, you cannot file a claim or cause of action arising out of or related to the Website or this Policy more than one (1) year after such claim or cause of action arose.</p>
+                            </li>
+                            <li id="comments">
+                                <h4>12. Comments and Concerns</h4>
+                                <p>The Website is operated by Mattersight Corporation, a Delaware corporation, located at 200 W. Madison Street, Suite 3100, Chicago, Illinois 60606. If you have any comments or concerns, please contact us at <a href="mailto: legal@mattersight.com">legal@mattersight.com</a> or mail us at the above address, to the attention of the Legal Department.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn white-btn" id="accept_agreement">I AGREE TO THE TERMS OF SERVICE</button>
+            </div>
+        </div>
+        <div class="white-bg-box loader-wrap clearfix" style="display: none">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>" class="validate-loader">
+        </div>
+    </div>
+    <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <p class="copyright-text">&copy; Workstyle 2015</p>
+</div>

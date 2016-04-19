@@ -1,0 +1,167 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	pq_page_js_init();
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ: Original
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="banner-wrap original-wrap">
+		<div class="container">
+			<span class="icon-wrap">
+			</span>
+			<p class="about-me-wrap">
+				Jennifer Pinsker,  
+				<span>Account Executive</span>
+			</p>
+			<img class="superpower-tag" src="<%= asset('assets/images/original_superpower.png') %>">
+			<a class="ws-btn" href="#">
+				SEE YOUR FULL PERSONALITY ID
+			</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="ws-aligner">
+			<h1 class="ws-heading-wrap">Build Your PQ</h1>
+			<div class="pq-analytics-wrap">
+				<div class="semicircle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Connections</h2>
+					<div id="ScoreText" class="score-text-wrap">
+						<span class="novice-text">Novice</span>
+						<span class="adv-text">Advanced</span>
+						<span class="expert-text">Expert</span>
+						<span class="master-text">Master</span>
+						<div id="IdentifyText">Identify: <span id="IdentifyScore">66</span></div>
+						<div id="UnderstandText">Understand: <span id="UnderstandScore">38</span></div>
+						<div id="ConnectText">Connect: <span id="ConnectScore">24</span></div>
+						<div id="PQScoreText"><span id="PQScore">280</span> PQ</div>
+					</div>
+					<div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+					<div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+				</div>
+				<div class="circle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Familiarity</h2>
+					<div class="circular-pq-stats-wrap">
+		                <div class="single-circle-wrap non-progress-wrap original-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <span class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>393 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Original</p>
+		                </div>
+		                <div class="single-circle-wrap non-progress-wrap connector-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <span class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>77 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Connector</p>
+		                </div>
+		                <div class="single-circle-wrap non-progress-wrap doer-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <span class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>62 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Doer</p>
+		                </div>
+		                <div class="single-circle-wrap non-progress-wrap dreamer-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <span class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>44 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Dreamer</p>
+		                </div>
+		                <div class="single-circle-wrap non-progress-wrap organizer-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <soan class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>25 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Organizer</p>
+		                </div>
+		                <div class="single-circle-wrap non-progress-wrap advisor-pq-summary">
+		                    <div class="custom-pq-tooltip">
+		                        <span class="pq-tooltip-content">
+		                            <span class="percentage">
+		                                <span class="numbers"><span>11 sec</span></span>
+		                            </span>
+		                        </span>
+		                        <div class="tooltip-tail-one"></div>
+		                        <div class="tooltip-tail-two"></div>
+		                    </div>
+		                    <span class="single-pq-icon"></span>
+		                    <p class="progress-circle-label">Advisor</p>
+		                </div>
+		            </div>
+				</div>
+			</div>
+			<div class="text-btn-wrap">
+				<p>
+					Become a master at personality
+				</p>
+				<a href="#" class="ws-btn black-btn">START A NEW QUEST</a>
+			</div>
+			<h1 class="ws-heading-wrap">Share Your Personality</h1>
+			<div class="share-pq-wrap">
+				<div class="badge-img-wrap">
+					<table>
+						<tr><td style="width:404px"><center><img class="js-large-badge" src="<%= asset('assets/images/original_badge.png') %>" alt=""><img class="js-small-badge" src="<%= asset('assets/images/original_small_badge.png') %>"/ style="display:none;"></center></td></tr>
+						<tr><td style="padding: 10px 6px;"><img style="padding-right:11px;" src="<%= asset('assets/images/link-img.png') %>" alt=""><a style="font-family:'Klavika-Light';font-size:15px;line-height:24px;color:#333333;" href="#">Find your workstyle &gt;</a></td></tr>
+					</table>
+					<div class="radio-group-wrap">
+						<label class="ws-custom-radio js-custom-radio" for="large-badge"><input type="radio" id="large-badge" name="radio" checked/>Large<span class="custom-radio-btn"><span></span></span></label>
+						<label class="ws-custom-radio js-custom-radio" for="small-badge"><input type="radio" id="small-badge" name="radio" />Small<span class="custom-radio-btn"><span></span></span></label>
+					</div>
+				</div>
+				<div>
+					<div class="ws-input-group">
+						<input type="text" id="js-copy-me" value="<img>src=http:work.style/CX3GL" readonly/>
+						<button type="button" data-clipboard-target="js-copy-me" id="js-copy-button">COPY</button>
+					</div>
+					<p class="help-text-wrap">
+						Paste the code into your exisiting email footer to let others know your personality type and what makes you special.
+					</p>
+				</div>
+			</div>
+			<div class="bottom-text-wrap">
+				<h4>Showcase your personality</h4>
+				<p>Help people connect with you — and encourage people to learn about their personality!  </p>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

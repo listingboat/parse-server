@@ -1,0 +1,31 @@
+<div class="setting-nav-bar">
+    <ul class="settings-nav-wrap" role="tablist">
+        <li class="settings-nav-tab <% if(settingType == 'account'){ %>active<% } %>">
+            <a href="<%= url('settings.account') %>" class="settings-nav-item js-nav-item">Account</a>
+        </li>
+        <li role="presentation" class="settings-nav-tab <% if(settingType == 'password'){ %>active<% } %>">
+            <a href="<%= url('settings.password') %>" class="settings-nav-item js-nav-item">Password</a>
+        </li>
+        <li role="presentation" class="settings-nav-tab <% if(settingType == 'faq'){ %>active<% } %>">
+            <a href="<%= url('settings.faq') %>" class="settings-nav-item js-nav-item">Help/FAQ</a>
+        </li>
+        <li role="presentation" class="settings-nav-tab <% if(settingType == 'invite'){ %>active<% } %>">
+            <a href="<%= url('settings.invite') %>" class="settings-nav-item js-nav-item" >Invite</a>
+        </li>
+        <% if(user.get("company") && (isSuperAdmin || isAccountOwner)){ %>
+            <li role="presentation" class="settings-nav-tab <% if(settingType == 'department'){ %>active<% } %>">
+                <a href="<%= url('company.department') %>" class="settings-nav-item js-nav-item" >Department</a>
+            </li>
+        <% } %>
+        <% if(user.get("company") && (isSuperAdmin)){ %>
+            <li role="presentation" class="settings-nav-tab <% if(settingType == 'contest'){ %>active<% } %>">
+                <a href="<%= url('contest.contestPage') %>" class="settings-nav-item js-nav-item" >Contest</a>
+            </li>
+        <% } %>
+        <% if(isSuperAdmin || (user.get("company") && isAccountOwner)){ %>
+            <li role="presentation" class="settings-nav-tab <% if(settingType == 'user_settings'){ %>active<% } %>">
+                <a href="<%= url('userSettings.index') %>" class="settings-nav-item js-nav-item" >User Settings</a>
+            </li>
+        <% } %>
+    </ul>
+</div>

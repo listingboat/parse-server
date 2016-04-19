@@ -1,0 +1,114 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new AssessmentModule()).init({answers: <%- (typeof answers !== 'undefined') ? JSON.stringify(answers) : JSON.stringify(null) %>});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Assessment Overview
+
+<%- contentFor('footer') // intentionally left blank %>
+<%- contentFor('body') %>
+<div class="content assessment-wrap">
+    <div class="container js-assessment-container">
+        <div class="cycle-slideshow assessment-cycle-slideshow js-cycle-slideshow"
+             data-cycle-log="false"
+             data-cycle-timeout="0"
+             data-cycle-fx="scrollHorz"
+             data-cycle-slides="> .js-cycle-slide"
+             data-cycle-speed="800"
+             data-cycle-center-horz="true"
+             data-cycle-auto-height="container"
+             data-cycle-next=".js-slide-next-ques"
+             data-cycle-prev=".js-slide-prev-ques">
+            <div class="js-cycle-slide white-box-wrap prev-question-wrap" data-question-no="<%= question.get('questionNumber') %>">
+                <div class="white-box-content">
+                    <div class="rank-mark-wrap">
+                        <div class="rank-mark"></div>
+                        <span>rank</span>
+                    </div>
+                    <div class="rank-wrap-heading">
+                        <ul class="assessment-radio-wrap">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                        <p class="assessment-text-wrap">
+                            <strong><%= question.get('questionText') %>:</strong>
+                        </p>
+                    </div>
+                    <form class="js-rank-form" id="rank-form">
+                        <% for (var answerIndex = 1; answerIndex <= answerCount; answerIndex++) { %>
+                            <div class="rank-wrap js-rank-wrap">
+                                <ul class="assessment-radio-wrap">
+                                    <% for (var rank = 1; rank <= rankCount; rank++) { %>
+                                        <li>
+                                            <label class="custom-radio-circle js-radio-circle">
+                                                <input type="radio" value="<%= rank %>" name="row<%= answerIndex %>" data-row="<%= rank %>">
+                                                <span class="custom-radio-state"></span>
+                                            </label>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                                <p class="assessment-text-wrap">
+                                    <%- question.get('answer' + answerIndex) %>
+                                </p>
+                            </div>
+                        <% } %>
+                    </form>
+                    <a class="help-icon" href="#id-assessment-help" data-toggle="modal">&#63;</a>
+                </div>
+
+                <div class="onboarding-wrap js-onboarding-wrap">
+                    <div class="onboarding-btn-wrap clearfix">
+                        <p class="ques-count js-ques-count">Question: <span class="js-curr-ques"><%= presentQuestionNumber %></span>/<%= maxQuestionsCount %></p>
+                        <a href="#" class="light-blue-btn js-cycle-next js-slide-next-ques" data-question_next_url="<%= url('assessment.questionNext') %>" data-submit_assessment_url="<%= url('assessment.submitAssessment') %>">NEXT</a>
+                        <a href="#" class="white-btn js-clear-form">CLEAR</a>
+                        <a href="#" class="white-btn js-cycle-prev js-slide-prev-ques <% if(presentQuestionNumber == 1) { %>hide<% } %>" data-question_prev_url="<%= url('assessment.questionPrev') %>">PREVIOUS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade assessment-help-modal" id="id-assessment-help">
+    <div class="modal-dialog">
+        <div class="onboarding-wrap clearfix">
+            <div class="white-border-wrap">
+                <h1 class="onboarding-welcome-title">Workstyle Personality Assessment</h1>
+                <div class="dashed-lines"><span></span><span></span><span></span><span></span><span></span></div>
+                <p class="onboarding-desc-wrap">
+                    Mark the response that best fits you as your first choice: "1" means highest rank. If more than one response fits, rank them sequentially, first, second, third, and so on. <br>
+                    (You do not have to rank every choice, just those that apply to you).
+                </p>
+                <img src="<%= asset('assets/images/assessment_question.png') %>">
+            </div>
+            <div class="onboarding-btn-wrap">
+                <a class="btn black-btn" data-dismiss="modal">OKAY</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade assessment-modal assessment-error-modal" id="assessment-error" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <p class="assessment-modal-text js-assessment-modal-text">Oops, your answer didn’t go through. <br>Please try submitting your answer again. </p>
+            <a href="#" data-dismiss="modal" class="white-btn">OKAY</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade assessment-modal assessment-success-modal" id="assessment-success" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <p class="assessment-modal-text">Workstyle Personality Assessment Complete! <br>Your personality report is ready for you:</p>
+            <a href="#" data-dismiss="modal" class="white-btn success-btn">WHO AM I?</a>
+        </div>
+    </div>
+</div>

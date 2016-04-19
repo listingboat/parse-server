@@ -1,0 +1,29 @@
+<form class="select-wrap add-new-wrap sub-wrap js_add_new_sub_department_form hide">
+    <span class="label-wrap">
+        <input id="new_department" type="text" class="form-control" name="department_name"
+               placeholder="Enter department name..">
+    </span>
+    <input type="hidden" name="time_stamp" value="<%= timeStamp %>">
+    <input class="js_parent_id_field" type="hidden" name="parent_id" value="">
+    <input type="hidden" name="question_type_id_list"
+           value="<%= questionTypeIDList.join(',') %>">
+    <input type="hidden" name="question_type_id_list_hash" value="<%= questionTypeIDListHash %>">
+    <% for(var questionTypeIndex in questionTypeIDList){ %>
+        <span>
+            <label class="checkbox-select-wrap">
+                <input type="checkbox"
+                       name="question_types"
+                       value="<%= questionTypeIDList[questionTypeIndex] %>"
+                        <% if(typeof questionTypeList[questionTypeIndex] !== "undefined" && questionTypeList[questionTypeIndex].get('name').toLowerCase() == DEFAULT_QUESTION_TYPE_NAME){ %>
+                       disabled
+                        <% } %>
+                       checked='checked'>
+                <span class="ws-icon-checkmark"></span>
+            </label>
+        </span>
+    <% } %>
+    <span class="opts-btn-grp">
+        <a class="btn cancel-btn js_cancel_add_department">Cancel</a>
+        <button type="submit" class="btn yellow-btn js_create_new_department">Save</button>
+    </span>
+</form>

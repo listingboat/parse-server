@@ -1,0 +1,22 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	landing_page_init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Register
+
+<%- contentFor('body') %>
+<div class="content landing-background login-background ws-register-wrap">
+	<div class="container">
+		<div class="register-wrap">
+			<a class="logo-wrap" href="/"><img src="<%= asset('assets/images/register_page_logo.png') %>"></a>
+			<div class="white-bg-box loader-wrap clearfix">
+				<img src="<%= asset('assets/images/workstyle_loading_white.gif') %>" class="validate-loader">
+			</div>
+		</div>
+		<p class="copyright-text">&copy; Workstyle 2015</p>
+	</div>
+</div>

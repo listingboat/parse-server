@@ -1,0 +1,215 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Original", eventValue: 105});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Original
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Original Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Originals</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The Original is spontaneous, creative, and playful. Their superpower is Creativity. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<ul class="explore-content-list">
+					<li>The Original has the ability to play and enjoy the moment. They live in the present and are easy going; they go with the flow.</li>
+					<li>The Original thinks outside the box and is a creative problem solver. They color outside the lines because that’s what makes them unique and different (but not better than anyone else).</li>
+					<li>The Original reacts to people, things, and situations with pronounced likes and dislikes. Things are great or horrible; fantastic or lousy.</li>
+					<li>If they are interested in it or have a passion about it, Originals can successfully achieve any goal. They are motivated by cool, unique, different, and fun work.</li>
+				</ul>
+
+				<h4>How to spot the Original</h4>
+				<ul class="explore-content-list">
+					<li>The Original dresses with their own style, reinforcing their individuality. You may see bright or unusual colors and unique jewelry, watches, clothing, and shoes set them apart.</li>
+					<li>Their workspaces are full of stimulation such as posters, toys, and games. The more stimulation around them, the easier it is for them to focus and to work. Other types struggle to focus in the midst of a lot of activity, but for Originals, it actually helps them focus better.</li>
+					<li>The Original’s language tone is animated and exaggerated.</li>
+					<li>The Original’s language choice is casual and expressive. They are able to paint pictures with their words.</li>
+				</ul>
+
+				<h4>How people commonly perceive Originals</h4>
+				<p>Originals are seen as “walking to the beat of their own drum.” They respond to life in the present and with energy, enthusiasm, and creativity. Those innate traits make up their Creativity superpower. Others may see them as the life of the party and look to the Original for the next fun thing to do. The Original finds that problematic because planning and organizing the fun is work- and “work” for them is typically not fun. It’s definitely not living in the moment. Spontaneity, creativity, playfulness – those are the traits of the Original.</p>
+
+				<h4>Typical blind spots for the Original</h4>
+				<p>In pressure-filled situations, the Original’s humor may be misinterpreted as inappropriate. At other times, their casual, laid back approach to life can sometimes be misinterpreted as being lazy or disengaged with long, drawn-out, and complicated processes.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Originals need <strong>Contact</strong>.</p>
+		    	
+				<p><strong>Contact:</strong> Originals are energized by stimulation and fun interaction. The want their environment to include cool new technology, music, games, bright lights, and favorite posters or pictures. They love plenty of interaction with others—preferably fun people. This is contact. A simple high-five is all the praise they need for a job well done. It says, “You get me!”</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Originals as Managers</h4>
+				<p>The Original’s preferred management style is laissez-faire. Structure, rules, processes weigh down the Original’s ability to be creative and energetic. If you work for an Original, provide updates that are easy to follow and not overburdened with detail.</p>
+
+				<h4>Meetings with Originals</h4>
+				<p>Start the meeting with a fun activity, quick joke, or interesting YouTube video. These short spurts of fun are energy bursts for the Original and immediately engages and says, “Hey, this meeting will be different than all those other Booorrrriiiinnngggg ones!” Lay out what is needed and when; bonus points for creativity and keeping it light.</p>
+
+				<h4>Originals and Decision Making</h4>
+				<p>Originals are out of the box thinkers with the ability to see a problem or a situation from a different perspective. They respond enthusiastically to the fun or unusual aspects of the decision making process. The outcome may be unconventional but guaranteed to show creativity!</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing an Original</h4>
+				<ul class="explore-content-list">
+					<li>Start your presentation with something different, something unique. Let the Original know that you subscribe to the theory “you don’t have to be serious to be successful.”</li>
+					<li>Present information with creativity and an interactive exchange.</li>
+					<li>If presenting in PowerPoint, different colors, fonts and animated clip art are excellent for the Original.</li>
+					<li>Make it easy for the Original to become engaged. Adding relevant humor or a video clip lightens the discussion without getting off track.</li>
+				</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Originals?</h4>
+				<ul class="explore-content-list">
+					<li>Repetitive, boring tasks</li>
+					<li>Directives to look like everyone else</li>
+					<li>People or situations that just make things complicated and hard</li>
+					<li>Prolonged periods of isolation</li>
+				</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>Originals will initially “try hard” by struggling and exaggerating effort while in distress because things have become difficult. This can invite miscommunication. Their think to themselves “why are they doing this to me?” They will play the victim role and sound burdened. As things get worse they will become angry and blame others for the problem. “Yes, but” will generally couch their objections to your efforts of assistance.</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Originals</h4>
+				<p>De-escalating Original distress is as easy as stepping in and taking over the problem.<br><br>To avoid conflict, let the Original know that they are fully supported and you won’t let them down. If they know the safety net is in place ready to catch them if things become too difficult, they can enjoy life fully.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+	    		<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_AryaStark_GameofThrones.png') %>">
+		    			</div>
+		    			<p class="famous-name">Arya Stark</p>
+		    			<p class="famous-role">Game of Thrones</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_CameronTucker_ModernFamily.png') %>">
+		    			</div>
+		    			<p class="famous-name">Cameron Tucker</p>
+		    			<p class="famous-role">Modern Family</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_CharlieChaplin_Actor.png') %>">
+		    			</div>
+		    			<p class="famous-name">Charlie Chaplin</p>
+		    			<p class="famous-role">Actor</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_EllenDeGeneres_TheEllenDeGeneresShow.png') %>">
+		    			</div>
+		    			<p class="famous-name">Ellen DeGeneres</p>
+		    			<p class="famous-role">The Ellen DeGeneres Show</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_JimmyFallon_TheTonightShow.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jimmy Fallon</p>
+		    			<p class="famous-role">The Tonight Show</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_MichaelScott_TheOffice.png') %>">
+		    			</div>
+		    			<p class="famous-name">Michael Scott</p>
+		    			<p class="famous-role">The Office</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_MichaelStrahan_LivewithKellyandMichael.png') %>">
+		    			</div>
+		    			<p class="famous-name">Michael Strahan</p>
+		    			<p class="famous-role">Live with Kelly and Michael</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_PeterQuill_GuardiansoftheGalaxy.png') %>">
+		    			</div>
+		    			<p class="famous-name">Peter Quill</p>
+		    			<p class="famous-role">Guardians of the Galaxy</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_RobinWilliams_Actor.png') %>">
+		    			</div>
+		    			<p class="famous-name">Robin Williams</p>
+		    			<p class="famous-role">Actor</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_RonBurgundy_Anchorman.png') %>">
+		    			</div>
+		    			<p class="famous-name">Ron Burgundy</p>
+		    			<p class="famous-role">Anchorman</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_SybilCrawley_DowntonAbbey.png') %>">
+		    			</div>
+		    			<p class="famous-name">Sybil Crawley</p>
+		    			<p class="famous-role">Downton Abbey</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Original/Original_TamronHall_TheTodayShow.png') %>">
+		    			</div>
+		    			<p class="famous-name">Tamron Hall</p>
+		    			<p class="famous-role">The Today Show</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

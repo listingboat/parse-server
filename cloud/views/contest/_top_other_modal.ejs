@@ -1,0 +1,31 @@
+<div class="contest-detail-modal modal fade" id="explore-contest">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="ws-icon-close-icon close" data-dismiss="modal" aria-label="Close"></a>
+				<h1 class="modal-title">Beat the Contest, Get Rewarded!</h1>
+				<p class="modal-subtitle">CONTEST AT <%= contest.get('company').get('name') %> <%= (typeof formatedLongDate ===  "string")? ('by ' + formatedLongDate) : '' %> WINS</p>
+				<a class="contest-rules-link" href="#contest-rules" data-toggle="modal">See contest rules</a>
+			</div>
+			<div class="modal-body contest-detail-content">
+				<div class="contest-modal-banner custom-contest-modal">
+					<div class="contest-badge-wrap">
+						<span class="ws-icon-top-pq-badge contest-badge-icon"></span>
+					</div>
+					<div class="contest-rewards-wrap">
+						<h2><%= contest.get('text') %> Gets:</h2>
+						<h1><%= contest.get('award') %></h1>
+					</div>
+				</div>
+				<div class="contest-details-wrap">
+					<div class="contest-btm-wrap">
+						<p class="contest-btm-text">PLAY A FEW MINUTES A DAY TO WIN!</p>
+						<a class="btn black-btn" href="<%= url('quiz.start') %>">GO TRAIN TO WIN</a><br>
+						<a data-dismiss="modal" aria-label="Close" class="change-contest-link">Not right now, I'll come back later</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _contest_rules_modal.ejs %>

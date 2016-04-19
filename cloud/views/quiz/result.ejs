@@ -1,0 +1,75 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new QuestionModule()).resize_bubble();
+        (new QuizResultModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('footer') %>
+<%- contentFor('body') %>
+
+<div class="content quiz-background js-animate-background <%- skillWrapperClass %>">
+    <div class="container js-data-container" data-is_first_quiz="<%= isFirstQuiz %>">
+        <div class="question-wrap">
+            <div class="question-box white-box quiz-result">
+                <% if(locals.userQuizScore == 0) { %>
+                    <h2 class="result-comment">Keep Training.</h2>
+                <% } else { %>
+                    <h2 class="result-comment">Great work!</h2>
+                <% } %>
+                <div class="result-wrapper">
+                    <div class="result-detail-wrapper<% if(skillCount == 3) { %> score-wrap<% } else if(skillCount > 0) { %> right-separate<% } %>">
+                        <p class="result-bubble js-cal-width js-result-bubble" title="+<%= userQuizScore %> PQ">
+                            <span><span class="pq-score">+<%= userQuizScore %></span> PQ</span></p>
+                        <p class="result-msg">You earned <%= userQuizScore %> out of <%= quizMaxScore %> possible PQ points!</p>
+                    </div>
+                    
+                    <% if(locals.IdentifyLevel) { %>
+                        <div class="result-detail-wrapper<% if(skillCount > 1) { %> right-separate<% } %>">
+                            <p class="result-bubble js-result-bubble">
+                                <span class="skill-level"><%= IdentifyLevel %> <br>Identify</span>
+                            </p>
+                            <p class="result-msg">
+                                You obtained <%= IdentifyLevel %> status in Identify!
+                            </p>
+                        </div>
+                    <% } %>
+
+                    <% if(locals.UnderstandLevel) { %>
+                        <div class="result-detail-wrapper<% if(skillCount > 2 || locals.ConnectLevel) { %> right-separate<% } %>">
+                            <p class="result-bubble js-result-bubble">
+                                <span class="skill-level"><%= UnderstandLevel %> <br>Understand</span>
+                            </p>
+                            <p class="result-msg">
+                                You obtained <%= UnderstandLevel %> status in Understand!
+                            </p>
+                        </div>
+                    <% } %>
+
+                    <% if(locals.ConnectLevel) { %>
+                        <div class="result-detail-wrapper">
+                            <p class="result-bubble js-result-bubble">
+                                <span class="skill-level"><%= ConnectLevel %> <br>Connect</span>
+                            </p>
+                            <p class="result-msg">
+                                You obtained <%= ConnectLevel %> status in Connect!
+                            </p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="proceed-links">
+                    <a class="black-btn next-link" href="<%= url('quiz.question') %>"> KEEP TRAINING!</a>
+                    <a class="done-link" href="<%= url('user.myPQ') %>"> I'm done for now </a>
+                </div>
+                <a class="help-icon" data-toggle="modal" href="#quiz-help">&#63;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<% include _profile_unlocked_modal %>
+<% include _quiz_help_modal %>

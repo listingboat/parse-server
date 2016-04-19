@@ -1,0 +1,216 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Organizer", eventValue: 103});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Organizer
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Organizer Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Organizers</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The Organizer is logical, responsible, and organized. Their superpower is Planning. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<ul class="explore-content-list">
+					<li>The Organizer first thinks logically rather than feels. They automatically identify and categorize people and things, quickly taking in and synthesizing facts and ideas.</li>
+					<li>Work energizes the Organizer. They’re a planner, a scheduler, and someone who puts work ahead of play. To-do lists keep them on track to focus on what’s next.</li>
+					<li>The Organizer focuses on the “how”, so process is key. They need specific information and accurate data in order to understand and categorize what they are taking in.</li>
+					<li>They prefer to work in a linear, logical fashion so order is important for them. A project always starts with A and ends with Z. Each step along the way is checked off before moving on to the next.</li>
+				</ul>
+
+				<h4>How to spot the Organizer</h4>
+				<ul class="explore-content-list">
+					<li>Organizers dress for the situation and are typically neat, clean, tidy, and pressed.</li>
+					<li>Their workspace will be organized and functional and you may find awards and certificates highlighting their accomplishments.</li>
+					<li>Their language tone is more factual, unemotional, computer-like, and data-oriented.</li>
+					<li>Their languageuse indicates or shows evidence of their logic, thought process, and rationale. For example, Organizers are more likely to ask time-specific questions in order to help them plan effectively.</li>
+				</ul>
+
+				<h4>How people commonly perceive Organizers</h4>
+				<p>Organizers have a natural ability to logically schedule and structure their work, their days, and their lives. Those innate traits are why their superpower is Planning. Organizers focus on what’s next on their list of things to do and this approach of “work now, play later” can create an illusion that they never relax and just enjoy life. They may not join in the Monday morning chatter at the start of a meeting only because they are already thinking about how much they need to do today.</p>
+
+				<h4>Typical blind spots for the Organizer</h4>
+				<p>With their focus on work, Organizers aren’t always aware that other styles like to start a meeting with a friendly “hello, how are you?” or stories about the weekend.  The Organizer is very goal-oriented so the social aspects of being on a team are not as high a priority as the actual work.  When deadlines are looming, the Organizer becomes even more focused on the tasks at hand and has even less energy for anything not work-related.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Organizers need recognition for <strong>work</strong> and <strong>time structure</strong>.</p>
+		    	
+				<p><strong>Work</strong>: The Organizer is goal oriented and achievement oriented. These core workstyle types desire confirmation that what they have done has been noticed. Awards, bonuses, a pat on the back motivate them – all ways of recognizing that they have done a good job.</p>
+				
+				<p><strong>Time Structure:</strong> A time structure need refers to the need for knowing what is to be done and when. People with time structure needs plan for today, tomorrow, and next week. When left alone to relax in the sun, people with a time structure “need” will likely mentally ask themselves “What am I going to do? What are my plans?”</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Organizers as Managers</h4>
+				<p>The Organizer is a structured, process-driven, manager. Regularly scheduled status meetings with agendas bring structure and order to the team. Organizer managers would like succinct updates, emails, and presentations with specific order (i.e. chronological, milestones, categorical) so that it makes sense to them.</p>
+
+				<h4>Meetings with Organizers</h4>
+				<p>Agendas, objectives, and timeframes help the Organizer to not only know what’s coming (no surprises), it also helps them track meeting progress towards achieving a clear meeting goal. It’s important to start and finish on time because the Organizer already scheduled their day with items before and after the meeting with no room for variance. Running 5 minutes over has the Organizer worrying over their disrupted schedule rather than remaining present with you.</p>
+
+				<h4>Organizers and Decision Making</h4>
+				<p>Organizers prefer a democratic approach to decision making. The goal needs to be clearly defined and they require data and specific information especially in response to their questions. Organizers need to understand the “how” in order to arrive at a logical outcome and any associated timelines.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing an Organizer</h4>
+				<ul class="explore-content-list">
+					<li>Start by stating the goal so they have context for the discussion.</li>
+					<li>Present information in a logical, orderly fashion.</li>
+					<li>If presenting in PowerPoint, different colors, fonts and animated clip art can be very distracting; bullet points and succinct titles are best.</li>
+					<li>Demonstrate that you have done your homework, give the “reason for” and the “logic of” what you are discussing and encourage questions.</li>
+				</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Organizers?</h4>
+				<ul class="explore-content-list">
+					<li>Lack of information</li>
+					<li>Broken processes</li>
+					<li>People not thinking clearly enough or fast enough</li>
+					<li>Surprises created by poor planning</li>
+				</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>When in distress, organizers tend to over-specify, over-qualify, and over-detail which invites miscommunication. Their thinking is “If I provide all data- meaning each and every single piece of the correct, accurate, specific, precise data- then obviously, without question or doubt, I have proven beyond question that I am certainly adequate and competent.”<br><br>If over compensation doesn’t work, Organizers in distress will continue to over-control the situation and become frustrated with people who don’t think clearly enough or fast enough. Organizers do not delegate well when in distress.</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Organizers</h4>
+				<p>To de-escalate conflict with an Organizer in distress, demonstrate that you are as responsible, logical, and organized as they are. Provide information or updates that they can use to be back in control of the situation.<br><br>To avoid conflict, be prepared for meetings and do your homework. Provide an agenda and a clear explanation of goals whether it's a quick question or a meeting. Recognize their thinking with a “that makes sense” or “good idea.” Provide a timeline as appropriate and be specific.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_AndersonCooper_AndersonCooper360.png') %>">
+		    			</div>
+		    			<p class="famous-name">Anderson Cooper</p>
+		    			<p class="famous-role">Anderson Cooper 360</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_Aristotle_Philosopher.png') %>">
+		    			</div>
+		    			<p class="famous-name">Aristotle</p>
+		    			<p class="famous-role">Philosopher</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_BarackObama_President.png') %>">
+		    			</div>
+		    			<p class="famous-name">Barack Obama</p>
+		    			<p class="famous-role">President</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_BenjaminFranklin_FoundingFather.png') %>">
+		    			</div>
+		    			<p class="famous-name">Benjamin Franklin</p>
+		    			<p class="famous-role">Founding Father</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_ClaireDunphy_ModernFamily.png') %>">
+		    			</div>
+		    			<p class="famous-name">Claire Dunphy</p>
+		    			<p class="famous-role">Modern Family</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_JeanineMatthews_Divergent.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jeanine Matthews</p>
+		    			<p class="famous-role">Divergent</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_JimHalpert_TheOffice.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jim Halpert</p>
+		    			<p class="famous-role">The Office</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_MarthaStewart_Businesswoman.png') %>">
+		    			</div>
+		    			<p class="famous-name">Martha Stewart</p>
+		    			<p class="famous-role">Businesswoman</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_MonicaGellar_Friends.png') %>">
+		    			</div>
+		    			<p class="famous-name">Monica Gellar</p>
+		    			<p class="famous-role">Friends</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_RobertCrawley_DowntonAbbey.png') %>">
+		    			</div>
+		    			<p class="famous-name">Robert Crawley</p>
+		    			<p class="famous-role">Downton Abbey</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_RyanStone_Gravity.png') %>">
+		    			</div>
+		    			<p class="famous-name">Ryan Stone</p>
+		    			<p class="famous-role">Gravity</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Organizer/Organizer_SheldonCooper_TheBigBangTheory.png') %>">
+		    			</div>
+		    			<p class="famous-name">Sheldon Cooper</p>
+		    			<p class="famous-role">The Big Bang Theory</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

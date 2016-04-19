@@ -1,0 +1,35 @@
+<div class="container pq-public-btm-wrap dreamer-public-profile">
+    <p class="pq-head-text">The Dreamer personality is one of six Workstyle personality types.</p>
+    <h2 class="pq-personality-text">Dreamers are calm, imaginative, and reflective.</h2>
+    <p class="pq-head-text">When communicating and emailing with a Dreamer workstyle, be calm, give clear direction, and steer clear of “touchy feely” approaches. Present direct, simple, and unadorned bullet points.</p>
+    <p class="pq-head-text">By taking these factors into account, you will increase your chances of successfully connecting and communicating with a Dreamer workstyle type.</p>
+    <div class="famous-pq-wrap">
+        <h1>Famous Dreamers</h1>
+        <div class="famous-pq-images">
+            <div class="famous-people-image">
+                <img src="/assets/images/Dreamer/Dreamer_AlbertEinstein_TheoreticalPhysicist.png">
+                <h5>Albert Einstein</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Dreamer/Dreamer_JohnLennon_Musician.png">
+                <h5>John Lennon</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Dreamer/Dreamer_LunaLovegood_HarryPotter.png">
+                <h5>Luna Lovegood</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Dreamer/Dreamer_PeterParker_Spiderman.png">
+                <h5>Peter Parker</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Dreamer/Dreamer_PhoebeBuffay_Friends.png">
+                <h5>Phoebe Buffay</h5>
+            </div>
+        </div>
+    </div>
+    <a href="<%= homePageURL %>" class="btn workstyle-btn">What's Your Workstyle?</a>
+    <% if(typeof logged_out !== 'undefined' && logged_out) { %>
+        <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <% } %>
+</div>

@@ -1,0 +1,87 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	pq_page_js_init();
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ: Organizer
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="banner-wrap organizer-wrap">
+		<div class="container">
+			<span class="icon-wrap">
+			</span>
+			<p class="about-me-wrap">
+				Jason Wesbecher,  
+				<span>Chief Marketing Officer</span>
+			</p>
+			<img class="superpower-tag" src="<%= asset('assets/images/organizer_superpower.png') %>">
+			<a class="ws-btn" href="#">
+				SEE YOUR FULL PERSONALITY ID
+			</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="ws-aligner">
+			<h1 class="ws-heading-wrap">Build Your PQ</h1>
+			<div class="pq-analytics-wrap">
+				<div class="semicircle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Connections</h2>
+					<div id="ScoreText" class="score-text-wrap">
+						<span class="novice-text">Novice</span>
+						<span class="adv-text">Advanced</span>
+						<span class="expert-text">Expert</span>
+						<span class="master-text">Master</span>
+						<div id="IdentifyText">Identify: <span id="IdentifyScore">66</span></div>
+						<div id="UnderstandText">Understand: <span id="UnderstandScore">38</span></div>
+						<div id="ConnectText">Connect: <span id="ConnectScore">24</span></div>
+						<div id="PQScoreText"><span id="PQScore">280</span> PQ</div>
+					</div>
+					<div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+					<div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+				</div>
+				<div class="circle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Familiarity</h2>
+				</div>
+			</div>
+			<div class="text-btn-wrap">
+				<p>
+					Become a master at personality
+				</p>
+				<a href="#" class="ws-btn black-btn">START A NEW QUEST</a>
+			</div>
+			<h1 class="ws-heading-wrap">Share Your Personality</h1>
+			<div class="share-pq-wrap">
+				<div class="badge-img-wrap">
+					<table>
+						<tr><td style="width:404px"><center><img class="js-large-badge" src="<%= asset('assets/images/organizer_badge.png') %>" alt=""><img class="js-small-badge" src="<%= asset('assets/images/organizer_small_badge.png') %>"/ style="display:none;"></center></td></tr>
+						<tr><td style="padding: 10px 6px;"><img style="padding-right:11px;" src="<%= asset('assets/images/link-img.png') %>" alt=""><a style="font-family:'Klavika-Light';font-size:15px;line-height:24px;color:#333333;" href="#">Find your workstyle &gt;</a></td></tr>
+					</table>
+					<div class="radio-group-wrap">
+						<label class="ws-custom-radio js-custom-radio" for="large-badge"><input type="radio" id="large-badge" name="radio" checked/>Large<span class="custom-radio-btn"><span></span></span></label>
+						<label class="ws-custom-radio js-custom-radio" for="small-badge"><input type="radio" id="small-badge" name="radio" />Small<span class="custom-radio-btn"><span></span></span></label>
+					</div>
+				</div>
+				<div>
+					<div class="ws-input-group">
+						<input type="text" id="js-copy-me" value="<img>src=http:work.style/CX3GL" readonly/>
+						<button type="button" data-clipboard-target="js-copy-me" id="js-copy-button">COPY</button>
+					</div>
+					<p class="help-text-wrap">
+						Paste the code into your exisiting email footer to let others know your personality type and what makes you special.
+					</p>
+				</div>
+			</div>
+			<div class="bottom-text-wrap">
+				<h4>Showcase your personality</h4>
+				<p>Help people connect with you — and encourage people to learn about their personality!  </p>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

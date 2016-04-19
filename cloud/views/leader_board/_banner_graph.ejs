@@ -1,0 +1,27 @@
+<div class="leaderboard-graph-container js_graph_container <% if(
+        typeof locals.personalityGraphClassMap[(locals.personalitySelected || '').toLowerCase()] !== 'undefined'
+) { %><%= locals.personalityGraphClassMap[(locals.personalitySelected || '').toLowerCase()] %><% } %>"
+     data-analytics_url="<%= ((typeof locals.isAccountOwner === 'boolean' && locals.isAccountOwner) || (typeof locals.isSuperAdmin === 'boolean' && locals.isSuperAdmin))? url('analytics.accountOwnerAnalytics') : ((typeof locals.isSupervisor === "boolean") && locals.isSupervisor? url("analytics.supervisorAnalytics") : url("analytics.userAnalytics")) %>"
+     data-leader_board_index_url="<%= url("leaderBoard.index") %>"
+     data-is_account_owner="<%= locals.isAccountOwner %>"
+        >
+    <div id="id-graph-container" class="graph-plot-area"></div>
+    <div class="container">
+            <% include _analytics_banner_header.ejs %>
+        <div class="page-switch-wrap">
+            <span class="toggle-label">Directory</span>
+            <div class='toggle'>
+                <input name="analytics_switch" type="hidden" value="0" />
+                <input class="disable" id="analytics_switch" name="analytics_switch" type="checkbox" value="1" />
+                <div class='btn'>
+                    <label for='analytics_switch'>
+                        <div class='toggle-on'></div>
+                        <div class='toggle-handle btn'></div>
+                        <div class='toggle-off btn active'></div>
+                    </label>
+                </div>
+            </div>
+            <span class="toggle-label">Analytics</span>
+        </div>
+    </div>
+</div>

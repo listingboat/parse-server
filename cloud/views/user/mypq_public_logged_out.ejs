@@ -1,0 +1,26 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ
+
+<%- contentFor('footer') %>
+
+<%- contentFor('body') %>
+<div class="content pq-profile-view">
+    <div class="banner-wrap <%= headerWrapperClass %>">
+        <div class="container">
+            <span class="icon-wrap"></span>
+            <p class="about-me-wrap">
+                <%= user.get('first_name') %> <%= user.get('last_name') %>,
+                <span><%= user.get('occupation') %></span>
+            </p>
+            <img class="superpower-tag" src="<%= superPowerTagLineMap[primaryPersonality.get('name').toLocaleLowerCase()] %>">
+        </div>
+    </div>
+    <%- personalityDescriptionPartial %>
+</div>

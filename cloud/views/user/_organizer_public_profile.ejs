@@ -1,0 +1,35 @@
+<div class="container pq-public-btm-wrap organizer-public-profile">
+    <p class="pq-head-text">The Organizer personality is one of six Workstyle personality types.</p>
+    <h2 class="pq-personality-text">Organizers are typically logical, responsible, and organized.</h2>
+    <p class="pq-head-text">When communicating and emailing with an Organizer workstyle, outline goals and present information in a logical, orderly fashion. Use data to prove a point.</p>
+    <p class="pq-head-text">By taking these factors into account, you will increase your chances of successfully connecting and communicating with an Organizer workstyle type.</p>
+    <div class="famous-pq-wrap">
+        <h1>Famous Organizers</h1>
+        <div class="famous-pq-images">
+            <div class="famous-people-image">
+                <img src="/assets/images/Organizer/Organizer_BarackObama_President.png">
+                <h5>Barack Obama</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Organizer/Organizer_BenjaminFranklin_FoundingFather.png">
+                <h5>Benjamin Franklin</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Organizer/Organizer_JeanineMatthews_Divergent.png">
+                <h5>Jeanine Matthews</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Organizer/Organizer_MonicaGellar_Friends.png">
+                <h5>Monica Gellar</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Organizer/Organizer_SheldonCooper_TheBigBangTheory.png">
+                <h5>Sheldon Cooper</h5>
+            </div>
+        </div>
+    </div>
+    <a href="<%= homePageURL %>" class="btn workstyle-btn">What's Your Workstyle?</a>
+    <% if(typeof logged_out !== 'undefined' && logged_out) { %>
+        <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <% } %>
+</div>

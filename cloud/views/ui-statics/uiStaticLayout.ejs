@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="width=1200" name='viewport'/>
+
+    <link rel="icon" type="image/x-icon" href="<%= asset('assets/images/favicon.ico') %>">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Work Style
+       <%- title %>
+    </title>
+</head>
+<body<% if (typeof header_footer != 'undefined' && !header_footer ) { %> class="without-header-footer"<% } else if(typeof has_footer != 'undefined' && !has_footer) { %> class="without-footer"<% } %>>
+    <%- body %>
+    <script type="text/javascript" src="/static/js/application.js"></script>
+    <% if (locals.script) { %>
+        <%- script %>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class="modal fade profile-unlocked-modal advisor-profile" id="profile-unlocked-modal" tabindex="-1" role="dialog" data-backdrop="true">
+    <!-- Values for variable "personality_type" are-
+        advisor-profile,
+        connector-profile,
+        doer-profile,
+        dreamer-profile,
+        organizer-profile,
+        original-profile
+     -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="profile-unlocked-head">Congratulations <%= user.get('first_name') %></h2>
+                <p class="profile-unlocked-desc">You've unlocked your Workstyle profile and email badge!</p>
+                <div class="clearfix profile-desc-wrap">
+                    <div class="badge-img-wrap">
+                        <a style="display:inline-block;text-decoration:none;">
+                            <img src="<%= badgeGifUrl %>" class="js_badge_gif" style="margin-right:6px;margin-bottom:4px;">
+                            <img src="<%= badgeWithoutPQUrl %>" class="js-small-badge">
+                        </a>
+                    </div>
+                    <div class="code-copy-wrap">
+                        <h4>Help others connect with you:</h4>
+                        <p class="help-text-wrap">Paste the code below into your exisiting email footer to add a email badge to your emails that lets others know your workstyle type and what makes you special.</p>
+                        <div class="ws-input-group">
+                            <input type="text" id="js-copy-me" data-public_profile_url="<%= publicProfileURL %>" data-home_page_url="<%= homePageUrl %>" data-thumbnail_path="<%= thumbnailPath %>" readonly />
+                            <button type="button" data-clipboard-target="copy-me" id="js-copy-button">COPY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-btn-wrap clearfix">
+            <a href="<%= url('user.myPQ') %>" class="white-btn">Continue to My PQ profile &gt;</a>
+        </div>
+    </div>
+</div>
+<div class="hide">
+    <div id="copy-me">
+    </div>
+</div>

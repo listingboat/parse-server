@@ -1,0 +1,35 @@
+<div class="container pq-public-btm-wrap advisor-public-profile">
+    <p class="pq-head-text">The Advisor personality is one of six Workstyle personality types.</p>
+    <h2 class="pq-personality-text">Advisors are dedicated, observant, and conscientious.</h2>
+    <p class="pq-head-text">When communicating and emailling with an Advisor workstyle, start by stating why your proposal is important, leverage well-known sources to build credibilty, and show outward signs of respect to the Advisor and their opinions.</p>
+    <p class="pq-head-text">By taking these factors into account, you will increase your chances of successfully connecting and communicating with an Advisor workstyle type.</p>
+    <div class="famous-pq-wrap">
+        <h1>Famous Advisors</h1>
+        <div class="famous-pq-images">
+            <div class="famous-people-image">
+                <img src="/assets/images/Advisor-images/advisor_martin_luther_king_jr.png">
+                <h5>Martin Luther King Jr.</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Advisor-images/advisor_hillary_clinton.png">
+                <h5>Hillary Clinton</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Advisor-images/advisor_peggy_olsen.png">
+                <h5>Peggy Olsen</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Advisor-images/advisor_katniss_everdeen.png">
+                <h5>Katniss Everdeen</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Advisor-images/advisor_yoda.png">
+                <h5>Yoda, I Am</h5>
+            </div>
+        </div>
+    </div>
+    <a href="<%= homePageURL %>" class="btn workstyle-btn">What's Your Workstyle?</a>
+    <% if(typeof logged_out !== 'undefined' && logged_out) { %>
+        <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <% } %>
+</div>

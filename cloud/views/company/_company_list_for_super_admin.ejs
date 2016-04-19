@@ -1,0 +1,9 @@
+<div class="select-company-wrap js-select-company %>">
+    <label class="account-form-label">Do Department Setup For Company:</label>
+    <select class="selectpicker js_company_select" data-get_company_department_settings_url="<%= url("company.getDepartmentSettingPage") %>">
+        <option value="" selected disabled>Select Company</option>
+        <% for (var companyIndex in companyList) { %>
+        <option value="<%= companyList[companyIndex].id %>"><%= companyList[companyIndex].get('name') %></option>
+        <% } %>
+    </select>
+</div>

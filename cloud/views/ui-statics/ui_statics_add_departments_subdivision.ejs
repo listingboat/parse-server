@@ -1,0 +1,80 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	UserSettingModule();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="setting-banner-wrap dreamer-settings clearfix">
+		<div class="container">
+			<h2>Jake Swantner <span>Profile</span></h2>
+			<a href="mailto:admin@work.style" class="btn white-round-btn">Contact us</a>
+			<p>Need help with something? </p>
+		</div>
+	</div>
+	<div class="container settings-tabs-wrap">
+		<!-- Nav tabs -->
+		<ul class="settings-nav-wrap" role="tablist">
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#account" class="settings-nav-item js-nav-item" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#password" class="settings-nav-item js-nav-item" aria-controls="password" role="tab" data-toggle="tab">Password</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#faq" class="settings-nav-item js-nav-item" aria-controls="faq" role="tab" data-toggle="tab">Help/FAQ</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#invite" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Invite</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content settings-tab-content">
+			<div role="tabpanel" class="tab-pane" id="account">
+				<%- include _settings_tab_account %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="password">
+				<%- include _settings_tab_password %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="faq">
+				<%- include _settings_tab_faq %>
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="invite">
+				<div class="invite-tab-wrap clearfix">
+					<div class="add-department-wrap add-subdivision-wrap">
+						<h3 class="invite-head"><span>Step 2 of 3</span> Add Department Subdivisions <a href="#" class="invite-help-icon" data-toggle="modal" data-target="#invite-help">?</a></h3>
+						<p class="send-invite-title">Below are the general departments you've created.You can now add regional, or specification sub-divisions to each to add analytics granularity.</p>
+						<form>
+							<div class="add-text-wrap">
+								<h4 class="subdivision-title">Sales</h4>
+								<div class="form-group active"><input type="text" class="form-control" placeholder="+ Click to add department"><a href="#" class="cancel-input">X</a></div>
+							</div>
+							<div class="add-text-wrap">
+								<!-- Note : Adding active class to form-group wrap will hide the cancel-input(close icon) wrap from respective wrap -->
+								<h4 class="subdivision-title">Customer Service</h4>
+								<div class="form-group"><input type="text" class="form-control" placeholder="+ Click to add department" value="Sales - NYC"><a href="#" class="cancel-input">X</a></div>
+								<div class="form-group"><input type="text" class="form-control" placeholder="+ Click to add department" value="Sales - Austin"><a href="#" class="cancel-input">X</a></div>
+								<div class="form-group active"><input type="text" class="form-control" placeholder="+ Click to add department"><a href="#" class="cancel-input">X</a></div>
+							</div>
+							<div class="btm-btn-wrap">
+								<a class="btn yellow-btn yellow-white-btn" href="#">BACK</a>
+								<button class="btn yellow-btn">NEXT</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include _invite_help_modal %>
+<%- include _footer %>

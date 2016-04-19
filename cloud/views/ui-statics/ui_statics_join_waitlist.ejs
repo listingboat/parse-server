@@ -1,0 +1,72 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	landing_page_init();
+    	successModalInit();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Register
+
+<%- contentFor('body') %>
+<div class="content landing-background login-background ws-register-wrap join-waitlist-wrap">
+	<div class="container">
+		<div class="register-wrap">
+			<a class="logo-wrap" href="/"><img src="<%= asset('assets/images/register_page_logo.png') %>"></a>
+			<div class="waitlist-register-wrap js-join-form">
+				<div class="white-bg-box clearfix">
+					<form class="register-form-wrap">
+						<h2>Join the Workstyle Waitlist</h2>
+						<div class="form-group js-input-group">
+							<input type="text" id="username" class="form-control text-field-wrap js-input-text"  placeholder="First Name">
+							<div class="custom-tooltip">
+								<div class="custom-tooltip-arrow"></div>
+								<p class="error-text-wrap">* Required Field</p>
+							</div>
+						</div>
+						<div class="form-group js-input-group">
+							<input type="text" class="form-control text-field-wrap js-input-text" placeholder="Last Name">
+							<div class="custom-tooltip">
+								<div class="custom-tooltip-arrow"></div>
+								<p class="error-text-wrap">* Required Field</p>
+							</div>
+						</div>
+						<div class="form-group js-input-group error-wrap">
+						    <input type="email" class="form-control text-field-wrap js-input-text" placeholder="Email">
+						    <div class="custom-tooltip">
+								<div class="custom-tooltip-arrow"></div>
+								<p class="error-text-wrap">* Please check to make sure your e-mail is correct.</p>
+							</div>
+					    </div>
+					    <div class="form-group js-input-group">
+							<input type="tel" class="form-control text-field-wrap js-input-text" placeholder="Phone">
+							<div class="custom-tooltip">
+								<div class="custom-tooltip-arrow"></div>
+								<p class="error-text-wrap">* Required Field</p>
+							</div>
+						</div>
+						<div class="form-group js-input-group">
+							<input type="text" class="form-control text-field-wrap js-input-text" placeholder="Company">
+							<div class="custom-tooltip">
+								<div class="custom-tooltip-arrow"></div>
+								<p class="error-text-wrap">* Required Field</p>
+							</div>
+						</div>
+						<button type="button" class="btn white-btn js-join-btn">JOIN THE WAITLIST</button>
+					</form>
+				</div>
+				<p class="login-now-wrap">Already have an account? <a href="#">Log in</a></p>
+			</div>
+			<div class="register-success-wrap js-success-wrap">
+				<div class="white-bg-box waitlist-confirm-wrap clearfix">
+					<h2>Success!</h2>
+					<p>We’ll be in touch once Workstyle is available for your team.</p>
+					<a href="#" class="btn white-btn">TELL OTHERS ABOUT WORKSTYLE</a>
+				</div>
+				<a class="return-link" href="/ui-statics/login-page">&lt;&lt; Return Home</a>
+			</div>
+		</div>
+		<p class="copyright-text">&copy; Workstyle 2015</p>
+	</div>
+</div>

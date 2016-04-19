@@ -1,0 +1,37 @@
+<header<% if (locals.extra_class) { %> class="<%- extra_class %>"<% } %>>
+	<div class="container">
+		<a class="logo-wrap" href="/"><img src="<%= asset('assets/images/home_style_logo.png') %>"></a>
+		<% if(typeof nav_items === 'undefined') {%>
+			<ul class="head-nav">
+				<li class="nav-items<% if(locals.my_pq) { %> active<% } %>">
+					<a href="#">My PQ</a>
+				</li>
+				<li class="nav-items<% if(locals.about_me) { %> active<% } %>">
+					<a href="#">About Me</a>
+				</li>
+				<li class="nav-items<% if(locals.explore) { %> active<% } %>">
+					<a href="/ui-statics/explore-overview">Explore</a>
+				</li>
+				<li class="nav-items<% if(locals.quest_quiz) { %> active<% } %>">
+					<a href="/ui-statics/quiz-start">Quest &amp; Quiz</a>
+				</li>
+				<li class="nav-items<% if(locals.my_team) { %> active<% } %>">
+					<a href="/ui-statics/my-team">My Team</a>
+				</li>
+			</ul>
+		<% } %>
+		<div class="overflow-menu-wrap">
+			<button type="button" class="nav-toggle js-nav-toggle" data-toggle="collapse" data-target="#id-collapsable-menu" aria-expanded="false" aria-controls="id-collapsable-menu">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<ul class="overflow-menu collapse js-overflow-menu" id="id-collapsable-menu">
+				<li><a href="#" class="menu-item"><i class="ws-icon-add-user"></i>Invite</a></li>
+				<li><a href="#" class="menu-item"><i class="ws-icon-gear"></i>Settings</a></li>
+				<li><a href="#" class="menu-item"><i class="ws-icon-question"></i>Help</a></li>
+				<li><a href="#" class="menu-item"><i class="ws-icon-logout"></i>Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</header>

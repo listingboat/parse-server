@@ -1,0 +1,32 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Assessment Result
+
+<%- contentFor('body') %>
+<div class="content banner-wrap <%= headerWrapperClass %> pre-test-banner">
+    <div class="container">
+        <span class="icon-wrap">
+        </span>
+        <p class="about-me-wrap">
+            <%= user.get('first_name') %> <%= user.get('last_name') %>,
+            <span><%= user.get('occupation') %></span>
+        </p>
+        <p class="self-description-wrap">
+            <img class="superpower-tag" src="<%= asset(superPowerTagLineMap[primaryPersonality.get('name').toLocaleLowerCase()]) %>">
+        </p>
+        <a href="<%= url('user.myReport') %>" class="black-btn">Take me to my full report</a>
+    </div>
+</div>
+
+<div class="modal fade video-modal" id="id-video-modal" data-backdrop="false" data-keyboard="false">
+    <div class="modal-dialog">
+        <iframe width="1200" height="538" frameborder="0" allowfullscreen></iframe>
+        <a href="#" data-dismiss="modal" class="close-video glyphicon glyphicon-remove" title="Close video"></a>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| UI Static Templates
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content container">
+	<div class="full-page-loader">
+		<div class="page-loader-wrap">
+			<img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+			<h1>Loading...</h1>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

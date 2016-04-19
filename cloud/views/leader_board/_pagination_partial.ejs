@@ -1,0 +1,15 @@
+<div class="pagination-wrap js_pagination_wrap">
+				<span>
+                    <span class="js_range_first"><%= ((pageToDisplay - 1) * userPerPage) + 1 %></span>
+                    <span class="js_pagination_last_index
+                    <% if((((pageToDisplay - 1) * userPerPage) + 1) == (((pageToDisplay - 1) * userPerPage) + userObjectList.length)){ %>
+                        hide
+                    <% }%>
+                    ">
+                        - <span class="js_range_last"><%= ((pageToDisplay - 1) * userPerPage) + userObjectList.length %></span>
+                    </span>
+                    of <span class="js_total_count"> <%= userCount %> </span>
+                </span>
+    <a href="#" class="pagination-nav-btn ws-icon-left js_prev_page disabled"></a>
+    <a href="#" class="pagination-nav-btn ws-icon-right js_next_page<% if(userCount <= userPerPage) { %> disabled <% } %>"></a>
+</div>

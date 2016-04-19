@@ -1,0 +1,280 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new leaderBoardGraph()).init();
+        (new staticEmployeeViewModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Analytics : Admin View
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+    <div class="leaderboard-graph-container">
+        <div id="id-graph-container" class="graph-plot-area hide-title"></div>
+        <div class="container">
+            <a href="#" class="back-link-wrap">
+                <span class="ws-icon-arrow-left back-link-icon"></span> Back to Company View
+            </a>
+            <div class="company-info-wrap">
+                <h1>Microsoft</h1>
+                <h4>Workstyle Team</h4>
+            </div>
+            <div class="page-switch-wrap">
+                <span class="toggle-label">Directory</span>
+                <div class='toggle'>
+                    <input name="t1" type="hidden" value="0" />
+                    <input id="t1" name="t1" type="checkbox" value="1" />
+                    <div class='btn'>
+                        <label for='t1'>
+                            <div class='toggle-on'></div>
+                            <div class='toggle-handle btn'></div>
+                            <div class='toggle-off btn active'></div>
+                        </label>
+                    </div>
+                </div>
+                <span class="toggle-label">Analytics</span>
+            </div>
+        </div>
+    </div>
+    <div class="all-stats-wrap">
+        <div class="container clearfix">
+            <div class="stats-detail-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Team PQ Rank</span></p>
+                    <p class="stat-number">5th</p>
+                    <p class="stat-subtitle">of 12 teams</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap">
+                <div class="stats-content wow-pq-wrap">
+                    <p class="stat-title"><span>Team PQ Growth w.o.w.</span></p>
+                    <p class="stat-number"><span>+</span>5%</p>
+                    <p class="stat-subtitle">week over week (w.o.w.)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap">
+                <div class="stats-content wow-pq-wrap">
+                    <p class="stat-title"><span>Highest</span></p>
+                    <p class="stat-number">1245</p>
+                    <p class="stat-subtitle">Joe Sample</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Avg PQ</span></p>
+                    <p class="stat-number">117</p>
+                    <p class="stat-subtitle">(+2% w.o.w)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap week-stats-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Trained this Week</span></p>
+                    <p class="stat-number">44%</p>
+                    <p class="stat-subtitle">of assessed (55)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stats-container-wrap container">
+        <div class="stats-toogle-wrap">
+            <a class="stats-toogle-tab active" href="#">Company Stats</a>
+            <a class="stats-toogle-tab" href="#">My Stats</a>
+        </div>
+        <div class="overall-stats-container">
+            <div class="team-stats-wrap">
+                <p class="stats-title">TOP PERFORMING TEAM</p>
+                <h3 class="team-name-wrap">Sales Chicago</h3>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap">+</span><span class="stats-value-wrap">23</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">monthly PQ growth</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap">
+                <p class="stats-title">LOWEST PERFORMING TEAM</p>
+                <h3 class="team-name-wrap">Customer Service</h3>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap">+</span><span class="stats-value-wrap">5</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">monthly PQ growth</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap pq-stats-wrap organizer-stats-wrap">
+                <p class="stats-title">MOST UNDERSTOOD WORKSTYLE</p>
+                <h3 class="team-name-wrap">Organizer</h3><span class="glyphicon glyphicon-triangle-top"></span>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"></span><span class="stats-value-wrap">99</span></p>
+                    <p class="stats-sec-text">sec average call time</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap pq-stats-wrap doer-stats-wrap">
+                <p class="stats-title">LEAST UNDERSTOOD WORKSTYLE</p>
+                <h3 class="team-name-wrap">Doer</h3><span class="glyphicon glyphicon-triangle-bottom"></span>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"></span><span class="stats-value-wrap">230</span></p>
+                    <p class="stats-sec-text">sec average call time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-bg-section">
+        <div class="container">
+            <div class="team-pq-graph">
+                <div class="team-graph-header clearfix">
+                    <p class="team-graph-title comparision-graph-title"><span class="blue-text">Your Performance</span> vs. <span class="green-text">Your Team</span></p>
+                    <div class="graph-filters-block">
+                        <span class="day-filter">30 days</span>
+                        <span class="day-filter active">60 days</span>
+                        <span class="day-filter">90 days</span>
+                    </div>
+                </div>
+                <div id="team-pq-graph" class="graph-container"></div>
+            </div>
+            <p class="table-title-wrap">
+                <span>Employee-Level</span>
+                Training Performance
+            </p>
+            <div class="team-details-list">
+                <div class="team-detail-row">
+                    <span class="team-name-section">Employee</span>
+                    <span>PQ Score</span>
+                    <span class="percent-unit-section">W.O.W. PQ Growth</span>
+                    <span>Beat 7 days PQ Gain</span>
+                    <span>Best Training Streak (days)</span>
+                    <span class="percent-unit-section">Days Since Last Trained</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Joe Sample</span>
+                    <span>1280</span>
+                    <span class="percent-unit-section">10%</span>
+                    <span>1009</span>
+                    <span>7</span>
+                    <span class="percent-unit-section">0</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Daisy Duke</span>
+                    <span>1100</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>109</span>
+                    <span>3</span>
+                    <span class="percent-unit-section">2</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Elmer Fudd</span>
+                    <span>1002</span>
+                    <span class="percent-unit-section">2%</span>
+                    <span>230</span>
+                    <span>2</span>
+                    <span class="percent-unit-section">1</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Polly Parker</span>
+                    <span>943</span>
+                    <span class="percent-unit-section">11%</span>
+                    <span>201</span>
+                    <span>1</span>
+                    <span class="percent-unit-section">2</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">David HesselHoff</span>
+                    <span>345</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>100</span>
+                    <span>4</span>
+                    <span class="percent-unit-section">10</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Charlie Brown</span>
+                    <span>231</span>
+                    <span class="percent-unit-section">2%</span>
+                    <span>200</span>
+                    <span>1</span>
+                    <span class="percent-unit-section">23</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Rocky Balboa</span>
+                    <span>123</span>
+                    <span class="percent-unit-section">34%</span>
+                    <span>100</span>
+                    <span>1</span>
+                    <span class="percent-unit-section">25</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">John Conner</span>
+                    <span>111</span>
+                    <span class="percent-unit-section">23%</span>
+                    <span>88</span>
+                    <span>1</span>
+                    <span class="percent-unit-section">25</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Inigo Montoya</span>
+                    <span>54</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>49</span>
+                    <span>1</span>
+                    <span class="percent-unit-section">25</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Fabio</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">25</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Joe Sample</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Daisy Duke</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Elmer Fudd</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">1</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Polly Parker</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">2</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">David Parker</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">0%</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="percent-unit-section">10</span>
+                </div>
+            </div>
+            <div class="table-footer-wrap clearfix">
+                <div class="pagination-wrap">
+                    <span> 1 - 15 of 99 </span><a href="#" class="pagination-nav-btn ws-icon-left"></a><a href="#" class="pagination-nav-btn ws-icon-right"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include _footer %>

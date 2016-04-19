@@ -1,0 +1,24 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Onboarding Step One
+
+<%- contentFor('footer') // intentionally left blank %>
+<%- contentFor('body') %>
+<div class="content onboarding-flow-wrap">
+    <div class="container">
+        <div class="onboarding-wrap">
+            <div class="white-border-wrap">
+                <h1 class="onboarding-welcome-title">First, lets find out who you really are...</h1>
+                <div class="dashed-lines"><span></span><span></span><span></span><span></span><span></span></div>
+                <p class="onboarding-desc-wrap">We’ll take you through a personality identification questionaire <br>to identify your workstyle and your superpower.</p>
+                <a class="btn black-btn" href="<%= url('assessment.intro') %>">TAKE MY WORKSTYLE PERSONALITY ASSESSMENT &gt;</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,218 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new PlayExploreVideoModule()).init({eventLabel: "Advisor", eventValue: 107});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Advisor
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Advisor Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Advisors</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The Advisor is dedicated, observant, and conscientious. Their superpower is Commitment. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+			data-cycle-log="false"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+		    	<ul class="explore-content-list">
+		    		<li>The Advisor judges and evaluates based upon their belief and values system. They are dedicated, observant, and conscientious.</li>
+		    		<li>The Advisor is energized by commitment to a greater goal. They are passionate about what they believe in and will support the underdog in effort to do what is right or what should be done.</li>
+		    		<li>The Advisor focuses on the “why” so showing them evidence is important. Credible sources as well as irrefutable supporting documentation are key to affirming their commitment.</li>
+		    		<li>Advisors will find the flaw in any situation. In their perspective, it’s better to make someone aware of a mistake earlier rather than knowingly permitting the possibility of the person being wrong later.</li>
+		    	</ul>
+
+				<h4>How to spot the Advisor</h4>
+				<ul class="explore-content-list">
+					<li>The Advisor dresses appropriately for the organization and typically conservatively. They often wear service pins, power bracelets that support a mission they’re committed to, or logos that show affinity with what brands represent.</li>
+					<li>Advisors workspaces are functional and you’re likely to find motivational posters and awards that signify company or team successes. Their pictures represent important events in their life or places that have historical or cultural significance.</li>
+					<li>Their language tones are formal and professional.</li>
+					<li>The Advisor’s word choices reinforce the right and wrong, the black and white. You’ll hear them talk about what they“believe” and what people “should” do.</li>
+				</ul>
+
+				<h4>How people commonly perceive Advisors</h4>
+				<p>The Advisor is a very loyal and committed team member, employee, and colleague. Their beliefs and standards are generally well known and they can be counted on to stand up for or crusade for the underdog and what’s right. The Advisor has a lot of leadership orientation. They self-select at an early age to be the ones to do the right thing, to lead the way, and to coach and teach others. Their strong belief-driven personality is why their superpower is Commitment.</p>
+
+				<h4>Typical blind spots for the Advisor</h4>
+				<p>With their commitment to doing the right thing, Advisors don’t always welcome others’ feedback and suggestions in a positive light. In fact, they may interpret it as criticism or as a lack of respect and respond by pointing out additional flaws or injustices in a very critical and direct manner. This can make others unwilling to work with the Advisor or to avoid their input, which can be detrimental to the initiative.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Advisors have a need for recognition of their <strong>convictions</strong> and their <strong>work (for the greater good)</strong>.</p>
+
+		    	<p><strong>Convictions:</strong> It’s important to Advisors that people listen to their values and their beliefs. Advisors are energized by debating with others as an opportunity for them to demonstrate the depth of their convictions. Other people’s acknowledgement that they are right, or, another’s belief in an opposing view as strongly as they believe in their own perspectivemeets their needs concerning conviction.</p>
+		    	
+		    	<p><strong>Work (for the greater good):</strong> Advisors also need to feel respected for their contribution to the team or the organization. While the Organizer needs recognition for their work, Advisors need recognition for their work for the greater good. You’ll hear that need in the language they use when they talk about their contributions. They are committed to doing the right thing; doing what people should do given circumstances.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Advisors as Managers</h4>
+		    	<p>Advisors pay attention to the big picture and have the ability to see what’s wrong in it. They may sound critical as they point out the flaws in an idea or situation, however, Advisors are committed to their “job” of ensuring mistakes are corrected so that the company moves forward in the right direction. Advisor managers would like respect to be shown through formal and appropriate updates, emails, and presentations. Include the “why” in communicating concepts with them so they don’t have to ask. They like to mentor and advise as this is what a manager “should” do.</p>
+
+		    	<h4>Meetings with Advisors</h4>
+		    	<p>Advisors work best when surrounded by people who share their high standards of integrity, dependability, and trust. They tend to prefer working one-on-one versus with a team. If you have a specific issue that you would like their support on, it’s best to approach them ahead of time for their opinion and support so that any of their concerns can be aired ahead of time and appropriately addressed in order to achieve “the right thing.”</p>
+
+		    	<h4>Advisors and Decision Making</h4>
+		    	<p>Advisors prefer a democratic approach to decision making. They consider it important for decisions to be vetted properly; as a result they feel it is their responsibility to ask probing questions that may not always sound supportive in order to ensure that the final decision is the “right thing to do.” In their perspective it’s more important to do something right than quickly.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing an Advisor</h4>
+				<ul class="explore-content-list">
+					<li>Start by stating why the goal or the decision is important.</li>
+					<li>Leverage well-known sources to build credibility.</li>
+					<li>If presenting in PowerPoint, be formal and double check what you’re presenting to ensure that there are no typos, that fonts are all the same color and size, and that you are using an appropriate template.</li>
+					<li>Ask for and respond to the Advisor’s opinion with respect.</li>
+				</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Advisors?</h4>
+				<ul class="explore-content-list">
+					<li>Disrespect for organization, team, the underdog</li>
+					<li>Lack of respect for the Advisor’s belief system</li>
+					<li>No importance placed on why an action is being contemplated or taken</li>
+					<li>People not standing up for what is important, what is right- injustice</li>
+				</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>The Advisor’s flaw-finding tendency becomes much more pronounced when in distress. If people respond to their feedback with resistance or don’t appropriately prioritize their “suggestions,” they may become indignant and find even more flaws.<br><br>Rhetorical questions, a soapbox sermon on what people should do and why are also advertisements that their core psychological needs are not being met. Their thought is “If I don’t get them to understand why this is so important, then I am afraid of what might happen.”</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Advisors</h4>
+				<p>To de-escalate an Advisor in distress, show your respect. “You believe as strongly as I do; can we agree to disagree?” “Clearly you are passionate about this; thank you for sharing your point of view. How can we work together to do the right thing?”<br><br>To avoid conflict, be prepared for meetings as a sign of respect. Communicate upfront why something is happening. Another sign of respect is to ask for their opinions by soliciting their opinions with phrases like “I’m very interested in what you think about this” or “what have we missed so far?”</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_VioletCrawley_DowntonAbbey.png') %>">
+		    			</div>
+		    			<p class="famous-name">Dowager Violet Crowley</p>
+		    			<p class="famous-role">Downton Abbey</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_HarryPotter_HarryPotter.png') %>">
+		    			</div>
+		    			<p class="famous-name">Harry Potter</p>
+		    			<p class="famous-role">Harry Potter</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_HillaryClinton_Politician.png') %>">
+		    			</div>
+		    			<p class="famous-name">Hillary Clinton</p>
+		    			<p class="famous-role">Politician</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_KatnissEverdeen_TheHungerGames.png') %>">
+		    			</div>
+		    			<p class="famous-name">Katniss Everdeen</p>
+		    			<p class="famous-role">The Hunger Games</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_MalalaYousafzai_Activist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Malala Yousafzai</p>
+		    			<p class="famous-role">Activist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_MartinLutherKingJr._Activist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Martin Luther King Jr.</p>
+		    			<p class="famous-role">Activist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_MitchellDunphy_ModernFamily.png') %>">
+		    			</div>
+		    			<p class="famous-name">Mitchell Dunphy</p>
+		    			<p class="famous-role">Modern Family</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_NelsonMandela_SouthAfricanPresident.png') %>">
+		    			</div>
+		    			<p class="famous-name">Nelson Mandela</p>
+		    			<p class="famous-role">South African President</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_OliviaPope_Scandal.png') %>">
+		    			</div>
+		    			<p class="famous-name">Olivia Pope</p>
+		    			<p class="famous-role">Scandal</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_PeggyOlson_MadMen.png') %>">
+		    			</div>
+		    			<p class="famous-name">Peggy Olson</p>
+		    			<p class="famous-role">MadMen</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_PharrellWilliams_TheVoice.png') %>">
+		    			</div>
+		    			<p class="famous-name">Pharrell Williams</p>
+		    			<p class="famous-role">The Voice</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Advisor/Advisor_Red_OrangeistheNewBlack.png') %>">
+		    			</div>
+		    			<p class="famous-name">Red</p>
+		    			<p class="famous-role">Orange is the New Black</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

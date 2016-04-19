@@ -1,0 +1,18 @@
+<%- contentFor('title') %>
+| PDF Report : Personality Details
+
+<%- contentFor('header') //intentionally left blank %>
+<%- contentFor('footer') //intentionally left blank  %>
+<%- contentFor('body') %>
+<div class="clearfix js_pdf_page" id="user_personality">
+    <img width="79%" src="<%= asset(personalityDescriptionBody) %>">
+	<div class="right-col-wrap">
+	    <img width="99%" class="hierarchy-img" src="<%= asset('assets/images/pdf-report-images/hierarchy.svg') %>">
+	    <% for(index=0; index<personalityOrder.length; index++){ %>
+	        <div class="single-pq-img">
+                <img width="100%" class="pq-icon-img pq-img-size-<%= (6-index) %>x" src="<%= asset(personalityPqIconsMap[personalityOrder[index].toLowerCase()]) %>"><br>
+                <img class="pq-img-label" src="<%= asset(personalityPqTextMap[personalityOrder[index].toLowerCase()]) %>">
+            </div>
+	    <% } %>
+	</div>
+</div>

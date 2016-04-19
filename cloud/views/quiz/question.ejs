@@ -1,0 +1,39 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new QuestionModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+<%- contentFor('footer') //footer not required here %>
+<%- contentFor('body') %>
+<div class="content quiz-background <%- skillWrapperClass %> js-quiz-background">
+    <div class="container">
+        <% if(typeof loadQuizFromSession !== 'undefined' && loadQuizFromSession) { %>
+            <p class="js_restore_quiz_message restore_quiz_message">Restoring Last Quiz Session...</p>
+        <% } %>
+        <div class="cycle-slideshow" data-cycle-log=false data-cycle-center-horz=true data-cycle-fx="scrollHorz" data-cycle-speed="1000" data-cycle-timeout="0" data-cycle-slides="> .js-question-wrap" data-cycle-next=".js-slide-next-ques">
+            <% if(selectedQuestion.get('question_type') == 'video_question'){ %>
+            <%- include _video_based_quiz_question %>
+            <% }else if(selectedQuestion.get('question_type') == 'audio_question'){ %>
+            <%- include _audio_based_quiz_question %>
+            <% }else if(selectedQuestion.get('question_type') == 'image_options_1x4'){ %>
+            <%- include _1x4_image_based_quiz_question %>
+            <% }else if(selectedQuestion.get('question_type') == 'image_options_2x2'){ %>
+            <%- include _2x2_image_based_quiz_question %>
+            <% }else{ %>
+            <%- include _next_question %>
+            <% } %>
+        </div>
+    </div>
+</div>
+<div id="loader-container" class="full-page-loader hide">
+    <div class="page-loader-wrap">
+        <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+		<h1>Loading...</h1>
+	</div>
+</div>
+<% include _quiz_help_modal %>

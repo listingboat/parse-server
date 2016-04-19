@@ -1,0 +1,104 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new PdfReportModule()).init({downloadPdf: <%= downloadPdf %>});
+        (new PlayExploreVideoModule()).init({eventLabel: "About me", eventValue: 101});
+    });
+</script>
+
+<%- contentFor('title') %>
+| About Me
+
+<%- contentFor('footer') //footer not required here %>
+
+<%- contentFor('body') %>
+<div class="content">
+    <%- include ../explore/explore_nav %>
+    <div class="banner-wrap <%= headerWrapperClass %> about-me-banner">
+        <div class="container">
+            <span class="icon-wrap"></span>
+            <p class="about-me-wrap">
+                <%= user.get('first_name') %> <%= user.get('last_name') %>,
+                <span><%= user.get('occupation')%></span>
+            </p>
+            <img class="superpower-tag" src="<%= asset(superPowerTagLineMap[primaryPersonality.get('name').toLocaleLowerCase()]) %>"><br>
+            <a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+                <img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+            </a><br>
+            <a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About <%=primaryPersonality.get('name') %>s</a>
+        </div>
+        <div class="video-section js-video-section hidden">
+            <div class="container">
+                <div class="iframe-wrap iframe-abt-me-wrap">
+                    <iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+                    <a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="ws-aligner">
+            <div class="pq-details-wrap">
+                <h1>You have superpowers you never knew about...</h1>
+                <p><% if(primaryPersonality.get('name')== 'Advisor') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Commitment. You have an outstanding ability to uphold what you believe is right.<% } %><% if(primaryPersonality.get('name')== 'Original') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Creativity. You have an outstanding ability to think outside of the box and creative problem solve.<% } %><% if(primaryPersonality.get('name')== 'Organiser') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Planning. You have an outstanding ability to quickly take in and synthesize facts and ideas towards a goal.<% } %><% if(primaryPersonality.get('name')== 'Doer') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Resourcefulness. You have an outstanding ability to adapt to any situation to achieve what you want.<% } %><% if(primaryPersonality.get('name')== 'Dreamer') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Imagination. You have an outstanding ability to leverage abstract thinking to create imaginative solutions.<% } %><% if(primaryPersonality.get('name')== 'Connector') { %>Your workstyle comes with its own unique superpower- the thing you do better than any other workstyle. Your superpower is Relationships. You have an outstanding ability to empathize with, connect with, and care for others.<% } %></p>
+            </div>
+            <div class="seprator-wrap"></div>
+            <div class="pq-summary-wrap">
+                <ul class="pq-summary-icons">
+                    <li>
+                        <span class="<%= badgeClassMap[coreType] %>"></span>
+                        <h4>Your Core Workstyle</h4>
+                    </li>
+                </ul>
+                <ul class="pq-summary-text">
+                    <li>
+                        <h3>Your Personality Strengths Are:</h3>
+                        <p><%= strength %></p>
+                    </li>
+                    <li>
+                        <h3>Your Psychological Needs Are:</h3>
+                        <p><%= psychNeed %></p>
+                    </li>
+                    <li>
+                        <h3>Your Distress Response:</h3>
+                        <p><%= distressResponse %></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="seprator-wrap"></div>
+            <div class="pq-details-wrap pq-spectrum-wrap ">
+                <h1>Your Workstyle Spectrum</h1>
+                <p>Though you have a core workstyle, you have within you qualities of all of six workstyles. You simply “access” the other workstyles less often. <b>Here is your hierarchy</b> organized from your core to least commonly accessed workstyle.</p>
+            </div>
+            <ul class="all-pq-details">
+                <% for(index=0; index<personalityOrder.length; index++){ %>
+                <li class="each-pq-detail <%= iconClassMap[personalityOrder[index].toLowerCase()] %>">
+                    <div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-<%= (6-index) %>x"></span></div>
+                    <div class="pq-text-wrap">
+                        <h2>The <%= personalityOrder[index] %></h2>
+                        <p><%= personalityDescriptionMap[personalityOrder[index].toLowerCase()] %> <a class="pq-more-link" href="<%= url(learnMorePersonalityUrlNameMap[personalityOrder[index].toLowerCase()]) %>" >Learn more&gt;</a></p>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+            <div class="seprator-wrap"></div>
+            <div class="btn-text-wrap">
+                <p>Your quest is to power up your strengths for all six workstyles by learning to identify, understand, and connect with them.</p>
+                <a class="btn black-btn" href="<%= url('quiz.start') %>">GO QUEST AND QUIZ</a><br>
+				<a class="btn black-hollow-btn print-btn js_print_report_btn" data-get_report_url="<%= url('user.pdfReport') %>">PRINT REPORT</a>
+            </div>
+        </div>
+    </div>
+    <div class="js_pdf_report hide"></div>
+</div>
+<div class="content container hide js-full-page-loader">
+    <div class="full-page-loader">
+        <div class="page-loader-wrap">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+</div>
+<%= include _pdf_report_modal.ejs %>

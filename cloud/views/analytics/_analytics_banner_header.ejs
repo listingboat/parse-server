@@ -1,0 +1,32 @@
+<% if(typeof showBackLink !== "undefined" && showBackLink === true){ %>
+<a class="back-link-wrap js_back_link_wrap"
+<% if (department.get('parent_department') !== undefined) { %>
+    data-parent_id="<%= department.get('parent_department').id %>"
+    data-back_link_url="<%= url("analytics.supervisorAnalytics") %>"
+    data-parent_key="department_id"
+<% } else { %>
+    data-parent_id="<%= department.get('company').id %>"
+    data-back_link_url="<%= url("analytics.accountOwnerAnalytics") %>"
+    data-parent_key="companyId"
+<% } %>>
+    <span class="ws-icon-arrow-left back-link-icon"></span> Back to <%= (department.get('parent_department') !== undefined) ? department.get('parent_department').get('name') : 'Company View' %>
+</a>
+<% } %>
+<% if(typeof isSuperAdmin !== "undefined" && isSuperAdmin === true){ %>
+<div class="select-company-dd js_company_analytics_select">
+    <select class="selectpicker js_company_list">
+        <% for(var index in companyList){ %>
+        <option value="<%= companyList[index].id %>"
+                <% if(typeof company !== 'undefined' && company.id == companyList[index].id){ %>
+                selected
+                <% } %>><%= companyList[index].get("name") %></option>
+        <% } %>
+    </select>
+    <h4 class="js_team_title"><%= (typeof department === "undefined") ? "Workstyle Analytics" : department.get("name") %></h4>
+</div>
+<% }else{ %>
+<div class="company-info-wrap js_company_analytics_select">
+    <h1 class="js_account_owner_company_name"><%= company.get("name") %></h1>
+    <h4 class="js_team_title"><%= (typeof department === "undefined") ? "Workstyle Analytics" : department.get("name") %></h4>
+</div>
+<% } %>

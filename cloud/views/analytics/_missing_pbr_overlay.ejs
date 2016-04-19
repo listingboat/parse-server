@@ -1,0 +1,129 @@
+<div class="call-company-container">
+    <div class="no-data-overlay">
+        <p>UH OH! WE'RE MISSING SOME DATA TO GIVE YOU USEFUL TIPS ON YOUR CALL PERFORMANCE</p>
+        <a class="btn black-btn js_fix_pbr_request_link" data-request_url="<%= url('user.fixPbrRequest') %>">CLICK HERE TO FIX IT</a>
+    </div>
+    <div class="all-pq-summary">
+        <div class="circular-progress-wrap">
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap original-pq-summary">
+                <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+                        </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Original</p>
+            </div>
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap connector-pq-summary">
+                <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+                        </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Connector</p>
+            </div>
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap doer-pq-summary">
+                <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+                        </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Doer</p>
+            </div>
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap dreamer-pq-summary">
+                <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+                        </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Dreamer</p>
+            </div>
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap organizer-pq-summary">
+                <div class="custom-pq-tooltip">
+                    <soan class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+
+                        <div class="tooltip-tail-one"></div>
+                        <div class="tooltip-tail-two"></div>
+                    </soan></div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Organizer</p>
+            </div>
+            <div class="single-circle-wrap no-data-wrap non-progress-wrap advisor-pq-summary">
+                <div class="custom-pq-tooltip">
+                        <span class="pq-tooltip-content">
+                            <span class="percentage">
+                                <span class="numbers"><span class="no-data-value">...</span><span class="no-data-label">You recieve too few of these calls to make an estimate</span></span>
+                            </span>
+                        </span>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+                <span class="single-pq-icon"></span>
+                <p class="progress-circle-label">Advisor</p>
+            </div>
+        </div>
+        <div class="stats-summary-text">
+            <div class="single-pq-summary no-data-summary">
+                <span class="single-pq-icon"></span>
+                <div class="single-pq-text">
+                    <h3>Your Least Understood <span>Workstyle</span></h3>
+                    <p>The Organizer (makes up 15% of the company)</p>
+                    <a href="">Go study up on Organizer &gt;</a>
+                </div>
+            </div>
+            <div class="single-pq-summary no-data-summary">
+                <span class="single-pq-icon"></span>
+                <div class="single-pq-text">
+                    <h3>Your Team's Most Common <span>Workstyle</span></h3>
+                    <p>Doer make up 60% of your company</p>
+                    <a href="">Go to know more about Doer &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade upload-csv-response js_fix_pbr_request_success_modal" id="update-success-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-error js_message">Your Request Has Been Sent</p>
+                <a class="btn black-btn" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade upload-csv-response js_fix_pbr_request_fail_modal" id="update-success-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-error js_message">Something Went Wrong</p>
+                <a class="btn black-btn" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="question-wrap js-question-wrap js_question_wrap_container" data-skill-class="<%- skillWrapperClass %>" data-question_type="<%= selectedQuestion.get('question_type') %>">
+    <div class="question-box image-question-wrap js_question_wrap">
+        <p class="ques-text"><%= selectedQuestion.get('question_text') %></p>
+        <div class="clearfix multimedia-question-wrap">
+            <div class="multimedia-wrap">
+                <div class="audio-player">
+                    <audio id="audio-player" src="<%= selectedQuestion.get('media_src') %>" type="audio/mp3" controls="controls"></audio>
+                </div>
+            </div>
+            <ul class='options-wrap js-options-container clearfix js_options_wrap' data-validation_path="<%= url('quiz.response') %>" data-score_recalculation_path="<%= url('quiz.recalculateScore') %>" data-question_id="<%= selectedQuestion.id %>">
+                <% for(var optionIndex in options){ %>
+                <li>
+                    <label class="options-answer js-radio-label">
+                        <input type="radio" name="option" value="<%= options[optionIndex].id %>" class="js-radio js_option_input">
+                        <span class="option-index"><%= ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")[optionIndex] %></span>
+                        <p class="option-text js-option-text"><%= options[optionIndex].get('option_text') %></p>
+                        <span class="option-fill js-option-fill"></span>
+                    </label>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <a class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+    </div>
+    <div class="question-detail clearfix">
+        <p class="ques-count js_ques_count" data-ques_index="<%= questionIndex %>" data-max_quiz_question="<%= maxQuizQuestion %>" >Question <%= questionIndex %>/<%= maxQuizQuestion %></p>
+        <% if(questionIndex < maxQuizQuestion) { %>
+            <a href="#" class="black-btn hide js_next js_next_ques_btn js-slide-next-ques">NEXT</a>
+        <% } else { %>
+            <a href="<%= url('quiz.result') %>"class="black-btn hide js_next">Finish</a>
+        <% } %>
+        <p class="skill-name"><%= selectedQuestion.get('category_type') && selectedQuestion.get('category_type').get('name')? selectedQuestion.get('category_type').get('name') + ' - ' : '' %><%= skillName %><span class="<%= skillIconClass %>"></span></p>
+    </div>
+</div>

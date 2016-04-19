@@ -1,0 +1,41 @@
+<div class="modal fade profile-unlocked-modal advisor-profile" id="profile-unlocked-modal" tabindex="-1" role="dialog" data-backdrop="true">
+	<!-- Values for variable "personality_type" are-
+		advisor-profile,
+		connector-profile,
+		doer-profile,
+		dreamer-profile,
+		organizer-profile,
+		original-profile
+	 -->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h2 class="profile-unlocked-head">Congratulations Jason!</h2>
+				<p class="profile-unlocked-desc">You've unlocked your Workstyle profile and email badge!</p>
+				<div class="clearfix profile-desc-wrap">
+					<div class="badge-img-wrap">
+						<table>
+							<tr><td style="width:404px"><center><img class="js-large-badge" src="<%= asset('assets/images/advisor_badge.png') %>" alt=""><img class="js-small-badge" src="<%= asset('assets/images/advisor_small_badge.png') %>"/ style="display:none;"></center></td></tr>
+							<tr><td style="padding: 10px 6px;"><a style="font-family:'Klavika-Light';font-size:15px;line-height:24px;color:#333333;" href="#">Find your workstyle &gt;</a></td></tr>
+						</table>
+						<div class="radio-group-wrap">
+							<label class="ws-custom-radio js-custom-radio" for="large-badge"><input type="radio" id="large-badge" name="radio" checked/>Large<span class="custom-radio-btn"><span></span></span></label>
+							<label class="ws-custom-radio js-custom-radio" for="small-badge"><input type="radio" id="small-badge" name="radio" />Small<span class="custom-radio-btn"><span></span></span></label>
+						</div>
+					</div>
+					<div class="code-copy-wrap">
+						<h4>Help others connect with you:</h4>
+						<p class="help-text-wrap">Paste the code below into your exisiting email footer to add a email badge to your emails that lets others know your personality type and what makes you special.</p>
+						<div class="ws-input-group">
+							<input type="text" id="js-copy-me" value="<img>src=http:work.style/CX3GL" readonly />
+							<button type="button" data-clipboard-target="js-copy-me" id="js-copy-button">COPY</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-btn-wrap clearfix">
+			<a href="#" class="white-btn">Continue to My PQ profile &gt;</a>
+		</div>
+	</div>
+</div>

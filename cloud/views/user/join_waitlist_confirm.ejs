@@ -1,0 +1,36 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.js-success-wrap').addClass('animate-wrap');
+    });
+    (new JoinWaitListSuccessModule()).init({
+            firstName: "<%= firstName %>",
+            lastName: "<%= lastName %>",
+            companyName: "<%= companyName %>",
+            email: "<%= email %>",
+            listName: "<%= listName %>",
+            hash: "<%= hash %>",
+            timeStamp: "<%= timeStamp %>"
+    }, "<%= url('user.makePardotCall') %>");
+</script>
+
+<%- contentFor('title') %>
+| Register
+<%- contentFor('header')%>
+<%- contentFor('body') %>
+<div class="content landing-background login-background ws-register-wrap">
+    <div class="container">
+        <div class="register-wrap">
+            <a class="logo-wrap" href="/"><img src="<%= asset('assets/images/register_page_logo.png') %>"></a>
+            <div class="register-success-wrap js-success-wrap">
+                <div class="white-bg-box waitlist-confirm-wrap clearfix">
+                    <h2>Success!</h2>
+                    <p>We’ll be in touch once Workstyle is available for your team.</p>
+                    <a class="btn white-btn" href="mailto:?subject=<%= mailSubject %>&body=<%= mailBody %>">TELL OTHERS ABOUT WORKSTYLE</a>
+                </div>
+            </div>
+            <a class="return-link" href="<%= url('user.home') %>">&lt;&lt; Return Home</a>
+        </div>
+    </div>
+</div>
+<%- contentFor('footer') %>

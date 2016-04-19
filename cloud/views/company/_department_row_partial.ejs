@@ -1,0 +1,30 @@
+<div class="select-wrap js_department_row <% if(typeof parentDepartment !== "undefined"){ %><%= 'sub-wrap js_sub_of_' +parentDepartment.id %> <% } %>" data-department_id="<%= department.id %>">
+    <span class="label-wrap"><%= department.get('name').toUpperCase() %></span>
+    <% for(var questionTypeIndex in questionTypeList){ %>
+    <span>
+        <label class="checkbox-select-wrap js_question_type_values">
+            <input type="checkbox"
+               name="<%= department.id + '_' + questionTypeList[questionTypeIndex] %>"
+               value="<%= questionTypeList[questionTypeIndex] %>"
+               data-hash="<%= getDepartmentQuestionTypeHash(department.id, questionTypeList[questionTypeIndex]) %>"
+                <% if(typeof departmentQuestionTypeMap !== 'undefined' && typeof departmentQuestionTypeMap[questionTypeList[questionTypeIndex]] !== 'undefined'){ %>
+               checked='checked'
+                <% } %>
+               <% if(questionTypeList[questionTypeIndex] === DEFAULT_QUESTION_TYPE_ID){ %>disabled
+                <% } %>
+            >
+            <span class="ws-icon-checkmark"></span>
+        </label>
+    </span>
+    <% } %>
+    <span>
+        <% if(typeof parentDepartment === 'undefined'){ %>
+        <a class="js_add_sub_department_form add-sub-depart-link">
+            Add Sub-department
+        </a>
+        <% } %>
+    </span>
+    <% //if(!departmentList[index].get("user_count") && defaultDepartment.toLowerCase() !== departmentList[index].get("name_lower_case").toLowerCase()){  %>
+    <% //<a class="js_remove_department_link">remove</a>  %>
+    <% //}  %>
+</div>

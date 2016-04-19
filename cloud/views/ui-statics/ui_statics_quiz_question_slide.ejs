@@ -1,0 +1,144 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	initQuizOptionSelect();
+    	initQuestionSlide();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content quiz-background <%- skill_type_class %> js-quiz-background">
+	<div class="container">
+		<div class="cycle-slideshow" data-cycle-log=false data-cycle-center-horz=true data-cycle-fx="scrollHorz" data-cycle-speed="1000" data-cycle-timeout="0" data-cycle-slides="> .js-question-wrap" data-cycle-next=".js-slide-next-ques">
+			<div class="question-wrap js-question-wrap" data-skill-class="skill-connect">
+				<div class="question-box">
+					<p class="ques-text">Question: Phoebe LOVES Starbucks! She just loves saying the word Frappppacccccciiiinnnooooooo with extra gusto! You regularly grab a Starbucks coffee on your way to work in the morning, but if Phoebe sees you with the cup, she gets bummed that you didn’t tell her you were going. How could you respond?</p>
+					<ul class="options-wrap js-radio-wrap">
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>A</span>
+								<p class="option-text">Explain it’s not a personal offense, it’s just that grabbing coffee on your way into the office is convenient.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>B</span>
+								<p class="option-text">Ignore her because she’s being too emotional about something that has nothing to do with her.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>C</span>
+								<p class="option-text">Apologize and schedule a meeting with her the next morning to go to Starbucks together.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>D</span>
+								<p class="option-text">Ask if you need to call a WAHHHHHHmbulance and tell her you’ll grab her for a coffee date at some point that week.</p>
+							</label>
+						</li>
+					</ul>
+					<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+				</div>
+				<div class="question-detail clearfix">
+					<p class="ques-count">Question 4/5</p>
+					<a href="#" class="black-btn js-slide-next-ques">NEXT</a>
+					<p class="skill-name">Skill: Connect<span class="ws-icon-user"></span></p>
+				</div>
+			</div>
+			<div class="question-wrap js-question-wrap" data-skill-class="skill-identify">
+				<div class="question-box">
+					<p class="ques-text">Question: Phoebe LOVES Starbucks! She just loves saying the word Frappppacccccciiiinnnooooooo with extra gusto! You regularly grab a Starbucks coffee on your way to work in the morning, but if Phoebe sees you with the cup, she gets bummed that you didn’t tell her you were going. How could you respond?</p>
+					<ul class="options-wrap js-radio-wrap">
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>A</span>
+								<p class="option-text">Explain it’s not a personal offense, it’s just that grabbing coffee on your way into the office is convenient.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>B</span>
+								<p class="option-text">Ignore her because she’s being too emotional about something that has nothing to do with her.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>C</span>
+								<p class="option-text">Apologize and schedule a meeting with her the next morning to go to Starbucks together.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>D</span>
+								<p class="option-text">Ask if you need to call a WAHHHHHHmbulance and tell her you’ll grab her for a coffee date at some point that week.</p>
+							</label>
+						</li>
+					</ul>
+					<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+				</div>
+				<div class="question-detail clearfix">
+					<p class="ques-count">Question 4/5</p>
+					<a href="#" class="black-btn js-slide-next-ques">NEXT</a>
+					<p class="skill-name">Skill: Identify<span class="ws-icon-magnify"></span></p>
+				</div>
+			</div>
+			<div class="question-wrap js-question-wrap" data-skill-class="skill-understand">
+				<div class="question-box">
+					<p class="ques-text">Question: Phoebe LOVES Starbucks! She just loves saying the word Frappppacccccciiiinnnooooooo with extra gusto! You regularly grab a Starbucks coffee on your way to work in the morning, but if Phoebe sees you with the cup, she gets bummed that you didn’t tell her you were going. How could you respond?</p>
+					<ul class="options-wrap js-radio-wrap">
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>A</span>
+								<p class="option-text">Explain it’s not a personal offense, it’s just that grabbing coffee on your way into the office is convenient.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>B</span>
+								<p class="option-text">Ignore her because she’s being too emotional about something that has nothing to do with her.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>C</span>
+								<p class="option-text">Apologize and schedule a meeting with her the next morning to go to Starbucks together.</p>
+							</label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+								<input type="radio" name="answer" class="js-radio">
+								<span>D</span>
+								<p class="option-text">Ask if you need to call a WAHHHHHHmbulance and tell her you’ll grab her for a coffee date at some point that week.</p>
+							</label>
+						</li>
+					</ul>
+					<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+				</div>
+				<div class="question-detail clearfix">
+					<p class="ques-count">Question 4/5</p>
+					<a href="#" class="black-btn js-slide-next-ques">NEXT</a>
+					<p class="skill-name">Skill: Understand<span class="ws-icon-book"></span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _quiz_help_modal %>

@@ -1,0 +1,14 @@
+<div class="select-department-wrap">
+    <select class="selectpicker js_department_filter" title="Departments">
+        <option value="" <% if (!locals.deparmentId || locals.deparmentId.trim() == '') { %>checked<% } %>>All</option>
+        <% for(var departmentIndex in parentDepartmentList){ %>
+        <option value="<%= parentDepartmentList[departmentIndex].id %>" <% if (typeof locals.deparmentId === "string"
+                && locals.deparmentId.trim() == parentDepartmentList[departmentIndex].id) { %>selected<% } %>><%= parentDepartmentList[departmentIndex].get('name') %></option>
+        <% var childDepartments = childDepartmentsList[parentDepartmentList[departmentIndex].id] %>
+        <% for (var childDepartmentIndex in childDepartments){ %>
+        <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>" <% if (typeof locals.deparmentId === "string"
+                && locals.deparmentId.trim() == childDepartments[childDepartmentIndex].id) { %>selected<% } %>><%= childDepartments[childDepartmentIndex].get('name') %></option>
+        <% } %>
+        <% } %>
+    </select>
+</div>

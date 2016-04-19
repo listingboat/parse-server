@@ -1,0 +1,29 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Internal Server Error
+
+<%- contentFor('header') %>
+<%- contentFor('footer') %>
+
+<%- contentFor('body') %>
+<div class="content error-page-wrap">
+	<div class="container js_error_data"
+            <% if(typeof reportUrl !== 'undefined'){ %>
+            data-report_url="<%= reportUrl %>"
+            data-report_hash="<%= reportHash %>"
+            data-report_time_stamp="<%= reportTimeStamp %>"
+            <% } %>
+            >
+		<a href="<%= url('user.home') %>" class="logo-colored">
+			<img src="<%= asset('assets/images/workstyle_logo_colored.png') %>">
+		</a>
+		<h2>500 internal servor error</h2>
+		<p>Oops, looks like a neuron misfired.</p>
+		<span>Please try again:)</span>
+	</div>
+</div>

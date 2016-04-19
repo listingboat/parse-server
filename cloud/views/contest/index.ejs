@@ -1,0 +1,72 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new ContestModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<div class="content">
+    <%- include ../settings/_settings_user_info_header %>
+    <div class="container settings-tabs-wrap">
+        <%- include ../settings/_settings_nav_partial %>
+        <div class=" settings-tab-content">
+            <div role="tabpanel" class="tab-pane" id="invite">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="department">
+            </div>
+            <div role="tabpanel" class="tab-pane active" id="contest">
+                <form calss="js_new_contest_form">
+                    <div class="contest-setup-wrap js_contest_box_wrap">
+                        <h3 class="contest-title">Setup & Review Contest to Encourge Training</h3>
+                        <p class="contest-help-text">CREATE A CONTEST TO ENCOURAGE EMPLOYEES TO TRAIN. BY ENTERING A CONTEST TYPE, AN AWARD AMOUNT, AND A CONTEST END DATE BELOW. EMPLOYEES WILL SEE A BANNER ANNOUNCING THE CONTEST ON THEIR HOMEPAGE UNTIL THE END OF THE CONTEST.</p>
+                        <p class="contest-help-text">CONTESTS END AT 11:59PM EST ON THE CONTEST END DATE. WE WILL NOTIFY YOU AND THE COMPANY'S ACCOUNT OWNERS BY EMAIL WITH THE USER'S INFORMATION SO YOU CAN REACH OUT TO THEM AND PROVIDE THEM WITH THEIR REWARD.</p>
+                        <div class="error-msg-wrap js_error_message_div hide"></div>
+                        <div class="contest-inner-wrap js_contest_fields_area">
+                            <div class="contest-field select-department-wrap js_error_state_div">
+                                <h6>SELECT CONTEST COMPANY</h6>
+                                <select class="selectpicker js_company_select" title="Select company" name="company_id"
+                                        data-get_company_contest_url="<%= url("contest.getCompanyContest") %>"
+                                        data-create_new_contest_url="<%= url('contest.createNewContest') %>"
+                                        data-cancel_contest_url="<%= url('contest.deleteContest') %>"
+                                        data-contest_start_mail_request_url="<%= url('contest.sendContestStartMailController') %>"
+                                        >
+                                    <% for(var index in companyList){ %>
+                                    <option value="<%= companyList[index].id %>"><%= companyList[index].get("name") %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="contest-btm-wrap js_create_contest_button_section hide">
+                            <p class="contest-btm-text">BY PRESSING START CONTEST, YOU WILL ACTIVATE THE CONTEST AND A CONTEST ANNOUNCEMENT EMAIL WILL BE SENT TO EVERYONE REGISTERED WITH WORKSTYLE AT THE COMPANY.</p>
+                            <a class="btn yellow-btn js_start_contest_link">START CONTEST</a>
+                        </div>
+                        <div class="contest-btm-wrap js_contest_detail_button_section hide">
+                            <a class="btn yellow-btn">GO TO TRAINING ANALYTICS</a><br>
+                            <a class="btn black-hollow-btn js_cancel_contest_link">CANCEL CONTEST</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade upload-csv-response" id="error-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-error js_message"></p>
+                <a class="btn black-btn" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+<% include _end_contest_confirmation_modal.ejs %>
+<% include _start_contest_confirmation_modal.ejs %>
+<% include _contest_started_modal.ejs %>
+<% include _contest_canceled_modal.ejs %>

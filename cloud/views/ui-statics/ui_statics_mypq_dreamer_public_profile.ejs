@@ -1,0 +1,61 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	pq_page_js_init();
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ: Dreamer Public Profile
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content public-profile-wrap">
+	<div class="banner-wrap dreamer-wrap">
+		<div class="container">
+			<span class="icon-wrap">
+			</span>
+			<p class="about-me-wrap">
+				Jennifer Pinsker,  
+				<span>Account Executive</span>
+			</p>
+			<img class="superpower-tag" src="<%= asset('assets/images/dreamer_superpower.png') %>">
+			<a class="ws-btn" href="#">
+				LEARN MORE ABOUT MY PERSONALITY TYPE
+			</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="ws-aligner">
+			<h1 class="ws-heading-wrap">Jennifer's PQ Stats</h1>
+			<div class="pq-analytics-wrap">
+				<div class="semicircle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Connections</h2>
+					<div id="ScoreText" class="score-text-wrap">
+						<span class="novice-text">Novice</span>
+						<span class="adv-text">Advanced</span>
+						<span class="expert-text">Expert</span>
+						<span class="master-text">Master</span>
+						<div id="IdentifyText">Identify: <span id="IdentifyScore">66</span></div>
+						<div id="UnderstandText">Understand: <span id="UnderstandScore">38</span></div>
+						<div id="ConnectText">Connect: <span id="ConnectScore">24</span></div>
+						<div id="PQScoreText"><span id="PQScore">280</span> PQ</div>
+					</div>
+					<div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+					<div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+				</div>
+				<div class="circle-chart-wrap">
+					<h2 class="ws-subheading-wrap">Familiarity</h2>
+				</div>
+			</div>
+			<div class="text-btn-wrap">
+				<p>
+					Keep improving your PQ score!
+				</p>
+				<a href="#" class="ws-btn black-btn">START TRAINING</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

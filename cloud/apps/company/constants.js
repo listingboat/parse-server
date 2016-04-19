@@ -1,0 +1,3 @@
+exports.DEFAULT_DEPARTMENT_NAME = "Other";
+exports.DEFAULT_QUESTION_TYPE_NAME = "The Basics";
+exports.COMPANY_NAME_MAX_LENGTH = 50;

@@ -1,0 +1,67 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+		(new QuestionModule()).audioQuizQuestionBindings(".js_question_wrap_container");
+		(new QuestionModule()).audioQuizQuestionBindings(".js_question_wrap_container");
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('body') %>
+<%- include _header %>
+
+<div class="content quiz-background <%- skill_type_class %>">
+	<div class="container">
+		<div class="question-wrap init-transition js_question_wrap_container">
+			<div class="question-box image-question-wrap">
+				<p class="ques-text">Which workstyle is the character in this audio clip?</p>
+				<div class="clearfix multimedia-question-wrap">
+					<div class="multimedia-wrap">
+						<div class="audio-player">
+							<audio id="audio-player" src="http://www.w3schools.com/tags/horse.mp3" type="audio/mp3" controls="controls"></audio>
+						</div>
+					</div>
+					<ul class='options-wrap js-options-container clearfix'>
+						<li>
+							<label class="options-answer js-radio-label">
+	                            <input type="radio" name="option" class="js-radio js_option_input">
+	                            <span class="option-index">A</span>
+	                            <p class="option-text js-option-text">The Connector</p>
+	                            <span class="option-fill js-option-fill"></span>
+	                        </label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+	                            <input type="radio" name="option" class="js-radio js_option_input">
+	                            <span class="option-index">B</span>
+	                            <p class="option-text js-option-text">The Original</p>
+	                            <span class="option-fill js-option-fill"></span>
+	                        </label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+	                            <input type="radio" name="option" class="js-radio js_option_input">
+	                            <span class="option-index">C</span>
+	                            <p class="option-text js-option-text">The Advisor</p>
+	                            <span class="option-fill js-option-fill"></span>
+	                        </label>
+						</li>
+						<li>
+							<label class="options-answer js-radio-label">
+	                            <input type="radio" name="option" class="js-radio js_option_input">
+	                            <span class="option-index">D</span>
+	                            <p class="option-text js-option-text">The Dreamer</p>
+	                            <span class="option-fill js-option-fill"></span>
+	                        </label>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _quiz_help_modal %>

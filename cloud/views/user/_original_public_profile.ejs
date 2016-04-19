@@ -1,0 +1,35 @@
+<div class="container pq-public-btm-wrap original-public-profile">
+    <p class="pq-head-text">The Original personality is one of six Workstyle personality types.</p>
+    <h2 class="pq-personality-text">Originals are spontaneous, creative, and playful.</h2>
+    <p class="pq-head-text">When communicating and emailing with an Original workstyle, point out what’s different or unique and show that you understand that you don’t have to be serious to be successful. Present information with creativity and an interactive exchange that will keep an original engaged.</p>
+    <p class="pq-head-text">By taking these factors into account, you will increase your chances of successfully connecting and communicating with an Original workstyle type.</p>
+    <div class="famous-pq-wrap">
+        <h1>Famous Originals</h1>
+        <div class="famous-pq-images">
+            <div class="famous-people-image">
+                <img src="/assets/images/Original/Original_AryaStark_GameofThrones.png">
+                <h5>Arya Stark</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Original/Original_CharlieChaplin_Actor.png">
+                <h5>Charlie Chaplin</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Original/Original_EllenDeGeneres_TheEllenDeGeneresShow.png">
+                <h5>Ellen DeGeneres</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Original/Original_JimmyFallon_TheTonightShow.png">
+                <h5>Jimmy Fallon</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Original/Original_RobinWilliams_Actor.png">
+                <h5>Robin Williams</h5>
+            </div>
+        </div>
+    </div>
+    <a href="<%= homePageURL %>" class="btn workstyle-btn">What's Your Workstyle?</a>
+    <% if(typeof logged_out !== 'undefined' && logged_out) { %>
+        <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <% } %>
+</div>

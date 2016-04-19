@@ -1,0 +1,48 @@
+<div class="js-cycle-slide white-box-wrap next-question-wrap" data-question-no="<%= question.get('questionNumber') %>">
+    <div class="white-box-content">
+        <div class="rank-mark-wrap">
+            <div class="rank-mark"></div>
+            <span>rank</span>
+        </div>
+        <div class="rank-wrap-heading">
+            <ul class="assessment-radio-wrap">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <p class="assessment-text-wrap">
+                <strong><%= question.get('questionText') %>:</strong>
+            </p>
+        </div>
+        <form class="js-rank-form" id="rank-form">
+            <% for (var answerIndex = 1; answerIndex <= answerCount; answerIndex++) { %>
+                <div class="rank-wrap js-rank-wrap">
+                    <ul class="assessment-radio-wrap">
+                        <% for (var rank = 1; rank <= rankCount; rank++) { %>
+                            <li>
+                                <label class="custom-radio-circle js-radio-circle">
+                                    <input type="radio" value="<%= rank %>" name="row<%= answerIndex %>" data-row="<%= rank %>">
+                                    <span class="custom-radio-state"></span>
+                                </label>
+                            </li>
+                        <% } %>
+                    </ul>
+                    <p class="assessment-text-wrap">
+                        <%- question.get('answer' + answerIndex) %>
+                    </p>
+                </div>
+            <% } %>
+        </form>
+        <a class="help-icon" href="#id-assessment-help" data-toggle="modal">&#63;</a>
+    </div>
+    <div class="onboarding-wrap js-onboarding-wrap">
+        <div class="onboarding-btn-wrap clearfix">
+            <p class="ques-count js-ques-count">Question: <span class="js-curr-ques"><%= presentQuestionNumber %></span>/<%= maxQuestionsCount %></p>
+            <a href="#" class="light-blue-btn js-cycle-next js-slide-next-ques" data-question_next_url="<%= url('assessment.questionNext') %>" data-submit_assessment_url="<%= url('assessment.submitAssessment') %>">NEXT</a>
+            <a href="#" class="white-btn js-clear-form">CLEAR</a>
+            <a href="#" class="white-btn js-cycle-prev js-slide-prev-ques <% if(presentQuestionNumber == 1) { %>hide<% } %>" data-question_prev_url="<%= url('assessment.questionPrev') %>">PREVIOUS</a>
+        </div>
+    </div>
+</div>

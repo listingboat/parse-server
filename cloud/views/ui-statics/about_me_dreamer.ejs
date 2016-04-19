@@ -1,0 +1,118 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| About Me : Dreamer
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="banner-wrap dreamer-wrap about-me-banner">
+		<div class="container">
+			<span class="icon-wrap"></span>
+			<p class="about-me-wrap">
+				Jason Wesbecher,  
+				<span>Chief Marketing Officer</span>
+			</p>
+			<img class="superpower-tag" src="<%= asset('assets/images/dreamer_superpower.png') %>">
+		</div>
+	</div>
+	<div class="container">
+		<div class="ws-aligner">
+			<div class="pq-details-wrap">
+				<h1>You have superpowers you never knew about...</h1>
+				<p>Your main personality traits and super strengths are based on your “core” personality type. Oftentimes individuals “phase” to a secondary personality type, meaning they adopt some of the strengths, needs, and qualities of another personality type. If your secondary type is the same as your core type, you have not gone through a phase transition.</p>
+			</div>
+			<div class="pq-summary-wrap">
+				<ul class="pq-summary-icons">
+					<li>
+						<span class="ws-icon-dreamer-badge"></span>
+						<h4>Your Core Type</h4>
+					</li>
+					<li>
+						<span class="ws-icon-advisor-badge"></span>
+						<h4>Your Secondary Type</h4>
+					</li>
+				</ul>
+				<ul class="pq-summary-text">
+					<li>
+						<h3>Your Personality Strengths Are:</h3>
+						<p>Compassionate, Sensitive, and Warm. Dedicated, Observant, Conscientious. Your super power is relationships.</p>
+					</li>
+					<li>
+						<h3>Your Psychological Needs Are:</h3>
+						<p>Recognition for work and convictions. Recognition for work, time structure.</p>
+					</li>
+					<li>
+						<h3>Your Mild Distress Reaction Is Typically:</h3>
+						<p>Over thinks for others, have to do it themselves if it has to be done right, expects self to be perfect.</p>
+					<li>
+						<h3>Your Severe Distress Reaction Is Typically:</h3>
+						<p>Pushes beliefs, feels righteous, demands perfection.</p>
+					</li>
+				</ul>
+			</div>
+			<div class="pq-details-wrap pq-spectrum-wrap ">
+				<h1>Your Personality Spectrum</h1>
+				<p>Though you have a core personality type, you have within you qualities of all 
+				six types. You simply “access” the other types less often. Here is your hierarchy
+				organized from your core to least commonly accessed personality type:</p>
+			</div>
+			<ul class="all-pq-details">
+					<li class="each-pq-detail dreamer-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-6x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Dreamer</h2>
+						<p>Calm, imaginitive, reflective. Imagination super power. <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+				<li class="each-pq-detail doer-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-5x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Doer</h2>
+						<p>Adaptable, persuasive, charming. Charm super power. <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+				<li class="each-pq-detail organizer-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-4x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Organizer</h2>
+						<p>Logical, responsible, organized. Solutions super power. <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+				<li class="each-pq-detail advisor-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-3x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Advisor</h2>
+						<p>Dedicated, observant, conscientious. Beliefs super power.  <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+				<li class="each-pq-detail original-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-2x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Original</h2>
+						<p>Spontaneous, creative, and playful. Ideas super power.  <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+				<li class="each-pq-detail connector-pq-wrap">
+					<div class="pq-icon-wrap"><span class="pq-icon-size pq-wrap-1x"></span></div>
+					<div class="pq-text-wrap">
+						<h2>The Connector</h2>
+						<p>Compassionate, sensitive, warm. Relationships super power. <a class="pq-more-link" href="#">Learn more&gt;</a></p>
+					</div>
+				</li>
+			</ul>
+			<div class="btn-text-wrap">
+				<p>Your quest is to power up your strengths for all six personality types by learning to identify, understand, and connect with them.</p>
+				<button class="btn black-btn">GO TEST AND QUIZ</button><br>
+				<a href="#" class="btn black-hollow-btn print-btn" data-toggle="modal" data-target="#print-report-modal">PRINT REPORT</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>
+<%- include _print_report_modal %>

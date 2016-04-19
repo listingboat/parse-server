@@ -1,0 +1,43 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	(new QuestionModule()).resize_bubble();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content quiz-background <%- skill_type_class %>">
+	<div class="container">
+		<div class="question-wrap">
+			<div class="question-box white-box quiz-result">
+				<h2 class="result-comment">Great work!</h2>
+				<div class="result-wrapper">
+					<div class="result-detail-wrapper">
+						<p class="result-bubble js-cal-width js-result-bubble">
+							<span><span class="pq-score">+2</span> PQ</span></p>
+						<p class="result-msg">You earned 7 out of 9 possible PQ points!</p>
+					</div>
+					<div class="result-detail-wrapper">
+						<p class="result-bubble js-result-bubble">
+							<span class="skill-level">Advanced <br>Identity</span>
+						</p>
+						<p class="result-msg">
+							You obtained Advanced status in Identify!
+						</p>
+					</div>
+				</div>
+				<div class="proceed-links">
+					<a class="black-btn next-link" href="#"> KEEP TRAINING!</a>
+					<a class="done-link" href="#"> I'm done for now </a>
+				</div>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _quiz_help_modal %>

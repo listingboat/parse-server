@@ -1,0 +1,83 @@
+<%- include apply_nav %>
+<div class="container predictor-slide-wrap">
+    <div class="cycle-slideshow js_cycle"
+         data-cycle-timeout="0"
+         data-cycle-log="false"
+         data-cycle-slides="> .js-predictor-question"
+         data-cycle-auto-height="container"
+         data-allow-wrap="false"
+         data-cycle-center-horz="true"
+         data-cycle-fx="scrollHorz">
+        <div class="predictor-question-wrap js-predictor-question js_block_1">
+            <h5>Question 1 of 4:</h5>
+
+            <p><%= questionsObject.initial.question_text %></p>
+
+            <div class="clearfix js-radio-wrap">
+                <label for="initial_type_a" class="ques-option js-radio-label">
+                    <input id="initial_type_a" name='initial' type="radio" class="js-radio js_initial_option js_option" value="type_a">
+                    <span>A</span>
+
+                    <p><%= questionsObject.initial.option_a %></p>
+                </label>
+                <label for="initial_type_b" class="ques-option js-radio-label">
+                    <input id="initial_type_b" name="initial" type="radio" class="js-radio js_initial_option js_option" value="type_b">
+                    <span>B</span>
+                    <p><%= questionsObject.initial.option_b %></p>
+                </label>
+            </div>
+        </div>
+        <% for(var index = 0; index < 3; index++) { %>
+            <div class="predictor-question-wrap js-predictor-question js_block_<%= index + 2 %>">
+                <h5>Question <%= index + 2 %> of 4:</h5>
+
+                <div class="predictor-question-wrap js_type_a">
+                    <p><%= questionsObject.type_a[index].question_text %></p>
+
+                    <div class="clearfix js-radio-wrap">
+                        <label for="type_a_index_<%= index + 1 %>_option_a" class="ques-option js-radio-label">
+                            <input type="radio" id="type_a_index_<%= index + 1 %>_option_a" name="type_a_question_index_<%= index + 1 %>" value="option_a" class="js-radio js_option">
+                            <span>A</span>
+
+                            <p><%= questionsObject.type_a[index].option_a %></p>
+                        </label>
+                        <label for="type_a_index_<%= index + 1 %>_option_b" class="ques-option js-radio-label">
+                            <input type="radio" id="type_a_index_<%= index + 1 %>_option_b" name="type_a_question_index_<%= index + 1 %>" value="option_b" class="js-radio js_option">
+                            <span>B</span>
+
+                            <p><%= questionsObject.type_a[index].option_b %></p>
+                        </label>
+                        <label for="type_a_index_<%= index + 1 %>_option_c" class="ques-option js-radio-label">
+                            <input type="radio" id="type_a_index_<%= index + 1 %>_option_c" name="type_a_question_index_<%= index + 1 %>" value="option_c" class="js-radio js_option">
+                            <span>C</span>
+
+                            <p><%= questionsObject.type_a[index].option_c %></p>
+                        </label>
+                    </div>
+                </div>
+                <div class="predictor-question-wrap js_type_b">
+                    <p><%= questionsObject.type_b[index].question_text %></p>
+
+                    <div class="clearfix js-radio-wrap">
+                        <label for="type_b_index_<%= index + 1 %>_option_a" class="ques-option js-radio-label">
+                            <input type="radio" id="type_b_index_<%= index + 1 %>_option_a" name="type_b_question_index_<%= index + 1 %>" value="option_a" class="js-radio js_option">
+                            <span>A</span>
+
+                            <p><%= questionsObject.type_b[index].option_a %></p>
+                        </label>
+                        <label for="type_b_index_<%= index + 1 %>_option_b" class="ques-option js-radio-label">
+                            <input type="radio" id="type_b_index_<%= index + 1 %>_option_b" name="type_b_question_index_<%= index + 1 %>" value="option_b" class="js-radio js_option">
+                            <span>B</span>
+
+                            <p><%= questionsObject.type_b[index].option_b %></p>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        <% } %>
+    </div>
+    <div class="slide-control-wrap clearfix js_finish_url" data-finish_url="<%= url('explore.personalityPredictorResult') %>">
+        <a href="#" class="js-prev black-hollow-btn hide">PREVIOUS</a>
+    </div>
+</div>

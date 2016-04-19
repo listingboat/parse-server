@@ -1,0 +1,35 @@
+<div class="container pq-public-btm-wrap doer-public-profile">
+    <p class="pq-head-text">The Doer personality is one of six Workstyle personality types. </p>
+    <h2 class="pq-personality-text">Doers are adaptable, persuasive, and charming.</h2>
+    <p class="pq-head-text">When communicating and emailing with a Doer workstyle, start with the bottom line, keep points short, focus on the actionable, and give things an edge to keep the conversation interesting.</p>
+    <p class="pq-head-text">By taking these factors into account, you will increase your chances of successfully connecting and communicating with a Doer workstyle type.</p>
+    <div class="famous-pq-wrap">
+        <h1>Famous Doers</h1>
+        <div class="famous-pq-images">
+            <div class="famous-people-image">
+                <img src="/assets/images/Doer/Doer_BarneyStinson_HowIMetYourMother.png">
+                <h5>Barney Stinson</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Doer/Doer_FrankUnderwood_HouseofCards.png">
+                <h5>Frank Underwood</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Doer/Doer_JoanRivers_Actress.png">
+                <h5>Joan Rivers</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Doer/Doer_MarthaLevinson_DowntonAbbey.png">
+                <h5>Martha Levinson</h5>
+            </div>
+            <div class="famous-people-image">
+                <img src="/assets/images/Doer/Doer_SalvadorDali_Artist.png">
+                <h5>Salvador Dali</h5>
+            </div>
+        </div>
+    </div>
+    <a href="<%= homePageURL %>" class="btn workstyle-btn">What's Your Workstyle?</a>
+    <% if(typeof logged_out !== 'undefined' && logged_out) { %>
+        <p class="login-now-wrap">Already have an account? <a href="<%= url('user.auth') %>">Log in</a></p>
+    <% } %>
+</div>

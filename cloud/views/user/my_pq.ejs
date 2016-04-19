@@ -1,0 +1,103 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new PQPageModule().init({
+            renderScoreSection: <%= locals.renderScoreSection %>,
+            skillGraphData: <%- JSON.stringify(locals.skillGraphData) || 'undefined' %>,
+            batchCount: <%= locals.batchCount || 1 %>,
+            hashTimeStamp: <%= locals.hashTimeStamp || 0 %>,
+            batchCountHash: '<%= locals.batchCountHash || ''%>',
+            getUserResponsesUrl: '<%= url('user.getUserResponses') %>',
+            recalculateCacheTableUrl: '<%= url('user.recalculateCacheTable') %>',
+        }));
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ
+
+<%- contentFor('body') %>
+<div class="content">
+    <div class="banner-wrap <%= headerWrapperClass %> pq-banner-wrap">
+        <div class="container">
+            <div class="question-wrap banner-transparent-wrap">
+				<div class="question-box">
+					<span class="ghost-elem"></span>
+					<div class="ques-box-centered">
+						<h1 class="ques-box-head">Welcome back <%= user.get('first_name') %>,<br> let's continue your training.</h1>
+                        <% if(typeof nextTargetPq === "number"){ %>
+						    <p class="banner-hint-text">Can you get to <%= nextTargetPq %> PQ today?</p>
+                        <% } %>
+						<a href="<%= url('quiz.question') %>" class="white-btn">PLAY A TRAINING GAME</a>
+					</div>
+					<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+				</div>
+			</div>
+        </div>
+        <%- include ../quiz/_quiz_help_modal %>
+    </div>
+    <div class="container my-pq-wrap">
+        <div class="ws-aligner">
+            <h1 class="ws-heading-wrap">Your Workstyle Skill Training Summary</h1>
+            <div class="pq-analytics-wrap">
+                <div class="semicircle-chart-wrap">
+                    <h2 class="ws-subheading-wrap">Connections</h2>
+                    <p class="ws-subheading-text">Power up your PQ across the key skills for connecting to each workstyle.</p>
+                    <div id="ScoreText" class="score-text-wrap">
+                        <span class="novice-text">Novice</span>
+                        <span class="adv-text">Advanced</span>
+                        <span class="expert-text">Expert</span>
+                        <span class="master-text">Master</span>
+                        <div id="IdentifyText">Identify: <span id="IdentifyScore"><% if(renderScoreSection){ %><%= skillGraphData.identify.score %><% } %></span></div>
+                        <div id="UnderstandText">Understand: <span id="UnderstandScore"><% if(renderScoreSection){ %><%= skillGraphData.understand.score %><% } %></span></div>
+                        <div id="ConnectText">Connect: <span id="ConnectScore"><% if(renderScoreSection){ %><%= skillGraphData.connect.score %><% } %></span></div>
+                        <div id="PQScoreText"><span id="PQScore"><% if(renderScoreSection){ %><%= skillGraphData.identify.score + skillGraphData.understand.score + skillGraphData.connect.score %><% } %></span> PQ</div>
+                    </div>
+                    <div id="ScoreBackground" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+                    <div id="ScoreGraph" style="min-width: 360px; height: 450px; max-width: 650px; margin: 0 auto"></div>
+                </div>
+                <div class="circle-chart-wrap js_circle_section">
+                    <% if(renderScoreSection){ %>
+                    <%= include _my_pq_personality_donut_graph.ejs %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="text-btn-wrap">
+                <a href="<%= url('analytics.userAnalytics') %>" class="ws-btn black-btn">COMPARE ME AGAINST MY TEAM</a>
+            </div>
+            <h1 class="ws-heading-wrap">Share Your Personality</h1>
+            <div class="share-pq-wrap">
+                <div class="badge-img-wrap">
+                    <a style="display:inline-block;text-decoration:none;">
+						<img src="<%= badgeGifUrl %>" class="js_badge_gif" style="margin-right:6px;margin-bottom:4px;">
+						<img src="<%= badgeWithoutPQUrl %>" class="js-small-badge">
+					</a>
+                </div>
+                <div>
+                    <div class="ws-input-group">
+                        <input type="text" id="js-copy-me" data-public_profile_url="<%= publicProfileURL %>" data-home_page_url="<%= homePageUrl %>" data-thumbnail_path="<%= thumbnailPath %>" readonly/>
+                        <button type="button" data-clipboard-target="copy-me" id="js-copy-button">COPY</button>
+                    </div>
+                    <p class="help-text-wrap">
+                        Paste the code into your exisiting email footer to let others know your workstyle type and what makes you special.
+                    </p>
+                </div>
+            </div>
+            <div class="bottom-text-wrap">
+                <h4>Showcase your personality</h4>
+                <p>Help people connect with you — and encourage people to learn about their personality!  </p>
+            </div>
+        </div>
+        <div class="full-page-loader overlay-loader-wrap js_half_page_loader <% if (renderScoreSection){ %>hide<% } %>">
+            <div class="page-loader-wrap">
+                <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+                <h1>Loading...</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hide">
+    <div id="copy-me">
+    </div>
+</div>

@@ -1,0 +1,218 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Doer", eventValue: 106});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Doer
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Doer Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Doers</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The Doer is adaptable, persuasive, and charming. Their superpower is Resourcefulness. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<ul class="explore-content-list">
+					<li>The Doer is charismatic, persuasive, action-oriented, and they thrive on excitement.</li>
+					<li>“Fire, Aim, Ready” describes the Doer’s ability to be adaptable, move quickly, and land on their feet in almost any situation. They are opportunistic and often entrepreneurial in spirit.</li>
+					<li>The Doer is not risk-averse. In their perspective, without risk, there is no reward. The bigger the risk, the bigger the reward.</li>
+					<li>They can be charming or overly obvious when they are looking to make something happen.</li>
+				</ul>
+
+				<h4>How to spot the Doer</h4>
+				<ul class="explore-content-list">
+					<li>Doers dress to impress; they think if you’ve got it, flaunt it. Flashy jewelry and clothes that make a statement all show the world they’ve made it.</li>
+					<li>Their workspace showcases trophies, pictures with celebrities, or of exclusive vacation spots highlighting their action-oriented and “winning” outlook.</li>
+					<li>Their tones express excitement, intensity, urgency, or ultra-smoothness.</li>
+					<li>Their words indicate or evidence their bias towards action and making things happen. For example, the Doer is looking for the bottom-line, to seize the day, and to put the pedal to the metal.</li>
+				</ul>
+
+				<h4>How people commonly perceive Doers</h4>
+				<p>Doers are natural-born sales people who thrive on excitement, and it’s obvious to those around them. They are adrenaline junkies and always looking for that thrill. They are charming, quick, get-it-done-now people. Planning is not their first inclination; instead, being resourceful and adaptable allows them to land on their feet in any situation. Their “I’ll figure it out when I need to” tendencies are why their superpower is Resourcefulness.</p>
+
+				<h4>Typical blindspots for the Doer</h4>
+				<p>The Doer will distract from or ignore the data in an attempt to manipulate the situation. They also focus on the “when” and not the “why” or “how” while looking for opportunities to control the outcome. These scenarios can make others feel disrespected, unimportant, and can even lead to resentment.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Doers have a need for <strong>Incidence</strong>.</p>
+
+				<p><strong>Incidence:</strong> A person who needs incidence needs a great deal of excitement in a short period of time. They prefer to structure their own time with no 9 to 5! They want a world that they are in charge of and where the risks equal the rewards and they control the odds of winning.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Doers as Managers</h4>
+				<p>The Doer is an autocratic leader, managing through control of the team. Their leadership style can be a good fit in situations requiring control and little margin for error. This style can cause friction in highly independent team environments. If reporting to a Doer, remember, “there’s no crying in baseball!”</p>
+
+				<h4>Meetings with Doers</h4>
+				<p>Doers have a bias for action so get to the point and don’t beat around the bush. Take charge and give direct and specific answers or instructions. They don’t want to know why; they want to know when.</p>
+
+				<h4>Doers and Decision Making</h4>
+				<p>Doers want to be the person in charge and have control over the decision-making process and outcome. They want to know what’s in it for them and they don’t want to get bogged down in the minutia. Bottomline, a decision is about creating a winning situation.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing a Doer</h4>
+		    	<ul class="explore-content-list">
+		    		<li>Start with the bottomline; they want to know there’s a deal to be made.</li>
+		    		<li>They want a deal that acknowledges their power.</li>
+		    		<li>If presenting in PowerPoint, keep it short, focused on action and give it some edge to keep things interesting for the Doer.</li>
+		    		<li>Be ready to handle firm and direct responses to your points; know that the Doer is looking to see if you have the clout to make this happen.</li>
+		    	</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Doers?</h4>
+		    	<ul class="explore-content-list">
+		    		<li>Slow-moving, detail-laden, unclear direction</li>
+		    		<li>Rules, regulations, people who slow down the action</li>
+		    		<li>Situations where they have to rely on others</li>
+		    		<li>No or low risk, no opportunity to win</li>
+		    	</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>In distress, Doers look out for #1 and expect others to fend for themselves. They use their charm and skills of persuasion to gain control of the situation.<br><br>And if that doesn’t work, Doers will manipulate, bend the rules or stir the pot to create incidence. The Doer might create mistrust or animosity in others by stirring the pot and then stepping back to watch the action. Doers believe that “If you can’t take the heat, get outta the kitchen.”</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Doers</h4>
+				<p>Doers want to hear that you have the clout and the power to get things done or to make the situation right. Be direct with them and if it can’t be handled immediately, be clear that you are taking responsibility and will get it done.<br><br>To avoid conflict, offer quick-hit solutions upfront. Make them feel “special” and that they are getting something no one else is. Avoid lots of detail and be confident in your responses. If they sense a weakness, they will manipulate it; it’s just how they are hardwired.</p>
+
+				<h4>What are their typical biases or blind spots?</h4>
+				<p>Thoughts workstyle types tend to rationalize and avoid acknowleding their emotions.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_BarneyStinson_HowIMetYourMother.png') %>">
+		    			</div>
+		    			<p class="famous-name">Barney Stinson</p>
+		    			<p class="famous-role">How I Met Your Mother</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_DonaldTrump_Businessman.png') %>">
+		    			</div>
+		    			<p class="famous-name">Donald Trump</p>
+		    			<p class="famous-role">Businessman</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_DonDraper_MadMen.png') %>">
+		    			</div>
+		    			<p class="famous-name">Don Draper</p>
+		    			<p class="famous-role">Mad Men</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_FrankUnderwood_HouseofCards.png') %>">
+		    			</div>
+		    			<p class="famous-name">Frank Underwood</p>
+		    			<p class="famous-role">House of Cards</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_JamesBond_007.png') %>">
+		    			</div>
+		    			<p class="famous-name">James Bond</p>
+		    			<p class="famous-role">007</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_JerryMaguire_JerryMaguire.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jerry Maguire</p>
+		    			<p class="famous-role">Jerry Maguire</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_JoanRivers_Actress.png') %>">
+		    			</div>
+		    			<p class="famous-name">Joan Rivers</p>
+		    			<p class="famous-role">Actress</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_MarkCuban_Businessman.png') %>">
+		    			</div>
+		    			<p class="famous-name">Mark Cuban</p>
+		    			<p class="famous-role">Businessman</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_MarthaLevinson_DowntonAbbey.png') %>">
+		    			</div>
+		    			<p class="famous-name">Martha Levinson</p>
+		    			<p class="famous-role">Downton Abbey</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_PresidentCoin_TheHungerGames.png') %>">
+		    			</div>
+		    			<p class="famous-name">President Coin</p>
+		    			<p class="famous-role">The Hunger Games</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_RaymondReddington_TheBlacklist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Raymond Reddington</p>
+		    			<p class="famous-role">The Blacklist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Doer/Doer_SalvadorDali_Artist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Salvador Dali</p>
+		    			<p class="famous-role">Artist</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

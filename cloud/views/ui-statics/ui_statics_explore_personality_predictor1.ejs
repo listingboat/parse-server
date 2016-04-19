@@ -1,0 +1,27 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Personality Predictor
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content js_content">
+	<%- include _explore_nav %>
+	<div class="predictor-wrap">
+		<div class="container">
+			<div class="question-wrap">
+				<div class="question-box predictor-box">
+					<h2>Workstyle Personality Predictor</h2>
+					<p>Have someone without a Workstyle Badge to ID their personality type? No problem- use our personality predictor to help you predict their personality type.</p>
+					<a href="/ui-statics/explore-personality-predictor-2" class="white-hollow-btn">GET STARTED</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

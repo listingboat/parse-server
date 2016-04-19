@@ -1,0 +1,108 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	InitDatepicker();
+    	ToggleModal();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="setting-banner-wrap dreamer-settings clearfix">
+		<div class="container">
+			<h2>Jake Swantner <span>Profile</span></h2>
+			<a href="mailto:admin@work.style" class="btn white-round-btn">Contact us</a>
+			<p>Need help with something? </p>
+		</div>
+	</div>
+	<div class="container settings-tabs-wrap">
+		<!-- Nav tabs -->
+		<ul class="settings-nav-wrap" role="tablist">
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#account" class="settings-nav-item js-nav-item" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#password" class="settings-nav-item js-nav-item" aria-controls="password" role="tab" data-toggle="tab">Password</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#faq" class="settings-nav-item js-nav-item" aria-controls="faq" role="tab" data-toggle="tab">Help/FAQ</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#invite" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Invite</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#department" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Department</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab active">
+				<a href="#contest" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Contest</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content settings-tab-content">
+			<div role="tabpanel" class="tab-pane" id="account">
+				<%- include _settings_tab_account %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="password">
+				<%- include _settings_tab_password %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="faq">
+				<%- include _settings_tab_faq %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invite">
+			</div>
+			<div role="tabpanel" class="tab-pane" id="department">
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="contest">
+				<form>
+					<div class="contest-setup-wrap">
+						<h3 class="contest-title">Setup & Review Contest to Encourge Training</h3>
+						<p class="contest-help-text">CREATE A CONTEST TO ENCOURAGE EMPLOYEES TO TRAIN. BY ENTERING A CONTEST TYPE, AN AWARD AMOUNT, AND A CONTEST END DATE BELOW. EMPLOYEES WILL SEE A BANNER ANNOUNCING THE CONTEST ON THEIR HOMEPAGE UNTIL THE END OF THE CONTEST.</p>
+						<p class="contest-help-text">CONTESTS END AT 11:59PM EST ON THE CONTEST END DATE. WE WILL NOTIFY YOU AND THE COMPANY'S ACCOUNT OWNERS BY EMAIL WITH THE USER'S INFORMATION SO YOU CAN REACH OUT TO THEM AND PROVIDE THEM WITH THEIR REWARD.</p>
+						<div class="contest-inner-wrap">
+							<div class="contest-field select-department-wrap">
+								<h6>SELECT CONTEST COMPANY</h6>
+								<select class="selectpicker" title="Select company">
+									<option>Microsoft</option>
+									<option>Chemex</option>
+									<option>Apple</option>
+									<option>Santex</option>
+								</select>
+							</div>
+							<div class="contest-field">
+								<h6>SET CONTEST TYPE</h6>
+								<ul class="contest-types-wrap">
+									<li><label class="radio-select-wrap"><input type="radio" name="contest_type"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Top PQ Score</p></label></li>
+									<li><label class="radio-select-wrap"><input type="radio" name="contest_type"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Top 7-day PQ Growth (Ends 7 days after contest started)</p></label></li>
+									<li><label class="radio-select-wrap"><input type="radio" name="contest_type"><span class="ws-icon-checkmark"></span><p class="contest-type-label">Other: (Text should parallel the sentence "The [contest type]")</p></label>
+									<input type="text" class="contest-type-input  form-control" placeholder='(Example: "The team with the highest average PQ")'></li>
+								</ul>
+							</div>
+							<div class="contest-field contest-reward-wrap">
+								<h6>SET AWARD (IT SHOULD MAKE SENSE IN THE SENTENCE "THE WINNER WINS...")</h6>
+								<input type="text" class="form-control" placeholder="(Example: a $100 gift card)">
+							</div>
+							<div class="contest-field">
+								<h6>CONTEST END DATE (MM/DD/YYYY)</h6>
+								<input type="text" class="contest-date-input form-control">
+							</div>
+						</div>
+						<div class="contest-btm-wrap">
+							<p class="contest-btm-text">BY PRESSING START CONTEST, YOU WILL ACTIVATE THE CONTEST AND A CONTEST ANNOUNCEMENT EMAIL WILL BE SENT TO EVERYONE REGISTERED WITH WORKSTYLE AT THE COMPANY.</p>
+							<a class="btn yellow-btn" data-toggle="modal" href="#start-contest">START CONTEST</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include _start_contest_confirmation_modal.ejs %>
+<%- include _contest_started_modal.ejs %>
+<%- include _footer %>

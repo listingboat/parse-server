@@ -1,0 +1,10 @@
+<ul>
+    <li><a class="pq-options-wrap pq-option-all js_personality_filter <% if (!personalitySelected){ %>active<% } %>" data-personality="" href="#"><i class="ws-icon-workstyle"></i><span>All (<%= totalUserCount %>)</span></a></li>
+    <% for(var personalityIndex in personalityCountList){ %>
+        <li><a class="pq-options-wrap pq-option-<%= personalityCountList[personalityIndex].name.toLowerCase() %> js_personality_filter
+        <% if (personalitySelected == personalityCountList[personalityIndex].name  ){ %>active<% } %>"
+               data-personality="<%= personalityCountList[personalityIndex].name %>" href="#"><i class="<%= personalityFilterIconMap[personalityCountList[personalityIndex].name.toLowerCase()] %>"></i>
+            <span><%= personalityCountList[personalityIndex].name %> (<%= personalityCountList[personalityIndex].count %>)</span>
+        </a></li>
+    <% } %>
+</ul>

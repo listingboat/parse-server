@@ -1,0 +1,36 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Personality Predictor
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<%- include _explore_nav %>
+	<div class="predictor-banner banner-wrap connector-wrap">
+		<!--
+			Classes for different personality type
+			connector-wrap
+			advisor-wrap
+			original-wrap
+			organizer-wrap
+			doer-wrap
+			dreamer-wrap 
+		-->
+		<div class="container">
+			<span class="desc-short">Your contact might be a ...</span>
+			<br>
+			<span class="icon-wrap"></span>
+			<img class="superpower-tag" src="<%= asset('assets/images/connector_superpower.png') %>">
+			<a href="#" class="btn black-btn">LEARN MORE ABOUT CONNECTORS</a>
+			<br>
+			<a href="#" class="plain-link">START OVER</a>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

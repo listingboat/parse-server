@@ -1,0 +1,790 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+
+    	assessmentCycleInit();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Assessment Overview
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content assessment-wrap">
+	<div class="container">
+		<div class="cycle-slideshow js-cycle-slideshow"
+		 data-cycle-log="false" 
+		 data-cycle-timeout="0" 
+		 data-cycle-fx="scrollHorz" 
+		 data-cycle-slides="> .js-cycle-slide" 
+		 data-cycle-speed="800"
+		 data-cycle-center-horz="true" 
+		 data-cycle-auto-height="container"
+		 data-allow-wrap="false">
+			<div class="js-cycle-slide white-box-wrap" data-question-no="1">
+				<div class="rank-mark-wrap">
+					<div class="rank-mark"></div>
+					<span>rank</span>
+				</div>
+				<div class="rank-wrap-heading">
+					<ul class="assessment-radio-wrap">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+					<p class="assessment-text-wrap">
+						<strong>I would prefer my work/study area or room to be:</strong>
+					</p>
+				</div>
+				<form class="js-rank-form">
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Warm and cozy, with soft earth colors.</strong>
+							My "nest" is important to me. The smell of candles and flowers, comfortable furniture and pleasant music are important to me.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Function, organized, and tidy.</strong> I like things kept clean and in their proper places. <strong>Awards, diplomas, or pictures should be hung symmetrically and kept in place.</strong>
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Organized and functional.</strong> An environment that has a traditional flavor and a certain cultured, cosmopolitan, or sophisticated atmosphere.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place where I can enjoy myself.</strong> I would have posters, games for people, and maybe collections of fun things.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Expensive looking with thick carpets and fancy furniture.</strong> I like bright colors like reds and blacks.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place to work or live.</strong> My environment is not that important to me, so I would not take all that effort to have flowers or candles. I would prefer a place more to myself out of the flow of traffic.
+						</p>
+					</div>
+				</form>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#id-assessment-help">&#63;</a>
+			</div>
+			<div class="js-cycle-slide white-box-wrap" data-question-no="2">
+				<div class="rank-mark-wrap">
+					<div class="rank-mark"></div>
+					<span>rank</span>
+				</div>
+				<div class="rank-wrap-heading">
+					<ul class="assessment-radio-wrap">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+					<p class="assessment-text-wrap">
+						<strong>I would prefer my work/study area or room to be:</strong>
+					</p>
+				</div>
+				<form class="js-rank-form">
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Warm and cozy, with soft earth colors.</strong>
+							My "nest" is important to me. The smell of candles and flowers, comfortable furniture and pleasant music are important to me.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Function, organized, and tidy.</strong> I like things kept clean and in their proper places. <strong>Awards, diplomas, or pictures should be hung symmetrically and kept in place.</strong>
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Organized and functional.</strong> An environment that has a traditional flavor and a certain cultured, cosmopolitan, or sophisticated atmosphere.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place where I can enjoy myself.</strong> I would have posters, games for people, and maybe collections of fun things.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Expensive looking with thick carpets and fancy furniture.</strong> I like bright colors like reds and blacks.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place to work or live.</strong> My environment is not that important to me, so I would not take all that effort to have flowers or candles. I would prefer a place more to myself out of the flow of traffic.
+						</p>
+					</div>
+				</form>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#id-assessment-help">&#63;</a>
+			</div>
+			<div class="js-cycle-slide white-box-wrap" data-question-no="3">
+				<div class="rank-mark-wrap">
+					<div class="rank-mark"></div>
+					<span>rank</span>
+				</div>
+				<div class="rank-wrap-heading">
+					<ul class="assessment-radio-wrap">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+					<p class="assessment-text-wrap">
+						<strong>I would prefer my work/study area or room to be:</strong>
+					</p>
+				</div>
+				<form class="js-rank-form">
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row1">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Warm and cozy, with soft earth colors.</strong>
+							My "nest" is important to me. The smell of candles and flowers, comfortable furniture and pleasant music are important to me.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row2">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Function, organized, and tidy.</strong> I like things kept clean and in their proper places. <strong>Awards, diplomas, or pictures should be hung symmetrically and kept in place.</strong>
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row3">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Organized and functional.</strong> An environment that has a traditional flavor and a certain cultured, cosmopolitan, or sophisticated atmosphere.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row4">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place where I can enjoy myself.</strong> I would have posters, games for people, and maybe collections of fun things.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row5">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>Expensive looking with thick carpets and fancy furniture.</strong> I like bright colors like reds and blacks.
+						</p>
+					</div>
+					<div class="rank-wrap">
+						<ul class="assessment-radio-wrap">
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+							<li>
+								<label class="custom-radio-circle">
+									<input type="radio" name="row6">
+									<span class="custom-radio-state"></span>
+								</label>
+							</li>
+						</ul>
+						<p class="assessment-text-wrap">
+							<strong>A place to work or live.</strong> My environment is not that important to me, so I would not take all that effort to have flowers or candles. I would prefer a place more to myself out of the flow of traffic.
+						</p>
+					</div>
+				</form>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#id-assessment-help">&#63;</a>
+			</div>
+		</div>
+		<div class="onboarding-wrap">
+			<div class="onboarding-btn-wrap clearfix">
+				<p class="ques-count">Question: <span class="js-curr-ques">1</span>/40</p>
+				<a href="#" class="light-blue-btn js-cycle-next">NEXT</a>
+				<a href="#" class="white-btn js-clear-form">CLEAR</a>
+				<a href="#" class="white-btn js-cycle-prev">PREVIOUS</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade assessment-modal assessment-error-modal" id="assessment-error" tabindex="-1" role="dialog" data-backdrop="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<a href="/" class="logo-colored"><img src="<%= asset('assets/images/logo_big.png') %>"></a>
+			<p class="assessment-modal-text">Oops, your answer didn’t go through. <br>Please try submitting your answer again. </p>
+			<a href="#" data-dismiss="modal" class="white-btn">OKAY</a>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade assessment-modal assessment-success-modal" id="assessment-success" tabindex="-1" role="dialog" data-backdrop="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<a href="/" class="logo-colored"><img src="<%= asset('assets/images/logo_big.png') %>"></a>
+			<p class="assessment-modal-text">Workstyle Personality Assessment Complete! <br>Your personality report is ready for you:</p>
+			<a href="#" data-dismiss="modal" class="white-btn success-btn">WHO AM I?</a>
+		</div>
+	</div>
+</div>
+
+<%- include _assessment_help %>

@@ -1,0 +1,44 @@
+<% if (userObjectList && userObjectList.length != 0){ %>
+    <ul>
+        <% for (var userIndex in userObjectList){ %>
+            <li class="member-details-wrap js_user_element
+            <% if(userObjectList[userIndex].get('primary_personality')){ %>
+                <%= personalityIconMap[userObjectList[userIndex].get('primary_personality').get('name').toLowerCase()] %>
+            <% } else { %>
+                unknown-member-wrap
+            <% }%> ">
+                <a class="user_list_ele_link js_user_list_link"
+                    <% if(userObjectList[userIndex].get('primary_personality')){ %>
+                       href="<%= url('user.myPQPublic', {id: userObjectList[userIndex].id}) %>"
+                    <% }%> >
+                    <div class="member-icon-wrap">
+                      <span class="member-pq-icon"></span>
+                    </div>
+                    <div class="member-name-wrap">
+                        <h2><%= userObjectList[userIndex].get('first_name') %> <%= userObjectList[userIndex].get('last_name') %> </h2>
+                        <h4><%= (userObjectList[userIndex].get('occupation')? userObjectList[userIndex].get('occupation') : "UNKNOWN") %></h4>
+                    </div>
+                    <span data-mail_to_link="mailto:<%= userObjectList[userIndex].get('email') %>" class="email-link-wrap ws-icon-envelop js_user_mail_to"></span>
+
+                    <div class="member-name-wrap superpower-detail-wrap">
+                        <% if (typeof userObjectList[userIndex].get('primary_personality') !== "undefined"){ %>
+                            <h2><%= userObjectList[userIndex].get('primary_personality').get('name') %></h2>
+                            <h4><%= userObjectList[userIndex].get('primary_personality').get('superpower') %> Superpower</h4>
+                        <% } else { %>
+                            <h2>UNKNOWN</h2>
+                            <h4>UNKNOWN</h4>
+                        <% } %>
+                    </div>
+                    <div class="pq-score-wrap">
+                      <% if(typeof userObjectList[userIndex].get('pq_score') !== "undefined"){ %>
+                          <p class="pq-score"><%= userObjectList[userIndex].get('pq_score') %></p>
+                          <span>PQ</span>
+                      <% } %>
+                    </div>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+<% } else { %>
+    <%- include _empty_user_list %>
+<% } %>

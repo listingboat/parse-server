@@ -1,0 +1,82 @@
+<div class="user-settings-modal edit-user-modal modal fade js_edit_user_detail_modal" id="edit-user">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Edit User Detail</h4>
+         </div>
+         <div class="modal-body modal-btn-group">
+            <form class="edit-detail-form js_user_detail_form">
+               <div class="field-row">
+                  <label class="account-form-label">First name</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_edit_modal_first_name_field" name="first_name" maxlength="<%= firstNameMaxLength %>">
+                  </div>
+               </div>
+               <div class="field-row">
+                  <label class="account-form-label">Last name</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_edit_modal_last_name_field" name="last_name"  maxlength="<%= lastNameMaxLength %>">
+                  </div>
+               </div>
+               <div class="field-row">
+                  <label class="account-form-label">Phone number</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_edit_modal_phone_number_field" name="phone_number">
+                  </div>
+               </div>
+               <div class="field-row">
+                  <label class="account-form-label">Position</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_edit_modal_position_title_field" name="position_title" maxlength="<%= positionTitleMaxLength %>">
+                  </div>
+               </div>
+               <div class="field-row">
+                  <label class="account-form-label">Department</label>
+                  <div class="form-group js_input_container department-select-wrap settings-department-select">
+                     <select id="edit_modal_department_select" class="selectpicker form-control input-common js_edit_modal_select_department_field" name="department">
+                        <% for (var parentDepartmentIndex in parentDepartmentList ){ %>
+                            <option value="<%= parentDepartmentList[parentDepartmentIndex].id %>"><%= parentDepartmentList[parentDepartmentIndex].get('name') %></option>
+                            <% var childDepartments = childDepartmentsList[parentDepartmentList[parentDepartmentIndex].id] %>
+                            <% for (var childDepartmentIndex in childDepartments ){ %>
+                                <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>"><%= childDepartments[childDepartmentIndex].get('name') %></option>
+                            <% } %>
+                        <% } %>
+                     </select>
+                  </div>
+               </div>
+               <div class="field-row">
+                  <label class="account-form-label">User Type</label>
+                  <div class="form-group js_input_container department-select-wrap settings-department-select">
+                     <select id="edit_modal_permission_type_select" class="selectpicker form-control input-common js_edit_modal_select_permission_type_field" name="permission_type">
+                        <% for(var permissionTypeIndex = getPermissionTypeIndex(permissionTypeList, user.get('permission_type')); permissionTypeIndex !== null && permissionTypeIndex < permissionTypeList.length; permissionTypeIndex++){ %>
+                            <option value="<%= permissionTypeList[permissionTypeIndex].value %>">
+                                <%= permissionTypeList[permissionTypeIndex].displayText %>
+                            </option>
+                        <% } %>
+                    </select>
+                  </div>
+               </div>
+               <div class="field-row js_phone_id_wrap hide">
+                  <label class="account-form-label">Phone ID</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_phone_id" name="phoneId" maxlength="<%= phoneIdMaxLength %>">
+                  </div>
+               </div>
+               <div class="field-row js_phone_id_wrap hide">
+                  <label class="account-form-label">Source ID</label>
+                  <div class="form-group js_input_container">
+                     <input type="text" class="form-control input-common js_source_id" name="identifierSource" maxlength="<%= identifierSourceMaxLength %>">
+                  </div>
+               </div>
+               <div class="btm-btn-wrap">
+                  <button class="btn yellow-btn js_submit_user_detail">UPDATE INFO</button>
+                  <a href="#" data-dismiss="modal" aria-label="Close" class="btn black-btn">CANCEL</a>
+               </div>
+               <div class="btn-link-wrap">
+                  <a class="js_delete_user_link">Delete User</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

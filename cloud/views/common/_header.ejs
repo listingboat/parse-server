@@ -1,0 +1,38 @@
+<header<% if (locals.extra_class) { %> class="<%- extra_class %>"<% } %>>
+    <div class="container">
+        <a class="logo-wrap" href="<%= url('user.home') %>"><img src="<%= asset('assets/images/home_style_logo.png') %>"></a>
+        <% if(typeof logged_out === 'undefined' || !logged_out) { %>
+            <% if(typeof nav_items === 'undefined') {%>
+                <ul class="head-nav">
+                    <li class="nav-items<% if(locals.my_pq) { %> active<% } %>">
+                        <a href="<%= url('user.myPQ') %>">Play</a>
+                    </li>
+                    <li class="nav-items<% if(locals.explore) { %> active<% } %>">
+                        <a href="<%= url('user.myReport') %>">Explore</a>
+                    </li>
+                    <% if (locals.companyExists) { %>
+                        <li class="nav-items<% if(locals.leader_board) { %> active<% } %>">
+                            <a href="<%= url('leaderBoard.index') %>">Connect</a>
+                        </li>
+                    <% } %>
+                    <li class="nav-items<% if(locals.apply) { %> active<% } %>">
+                        <a href="<%= url('explore.personalityPredictor') %>">Apply</a>
+                    </li>
+                </ul>
+            <% } %>
+            <div class="overflow-menu-wrap">
+                <button type="button" class="nav-toggle js-nav-toggle" data-toggle="collapse" data-target="#id-collapsable-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="overflow-menu collapse js-overflow-menu" id="id-collapsable-menu">
+                    <li><a href="<%= url('settings.invite') %>" class="menu-item"><i class="ws-icon-add-user"></i>Invite</a></li>
+                    <li><a href="<%= url('settings.account') %>" class="menu-item"><i class="ws-icon-gear"></i>Settings</a></li>
+                    <li><a href="<%= url('settings.faq') %>" class="menu-item"><i class="ws-icon-question"></i>Help</a></li>
+                    <li><a href="<%= url('user.signOut') %>" class="menu-item"><i class="ws-icon-logout"></i>Logout</a></li>
+                </ul>
+            </div>
+        <% } %>
+    </div>
+</header>

@@ -1,0 +1,9 @@
+<div class="rewards-notify-banner custom-reward-banner js_rewards_banner" data-contest_id="<%= contest.id %>" style="display:none">
+	<div class="container">
+		<p class="contest-banner-text">Win <%= contest.get('award') %> in Contest at your company <%= (typeof formatedLongDate ===  "string")? ('by ' + formatedLongDate) : '' %>!</p>
+		<div class="pull-right banner-right-section">
+			<a href="#explore-contest" class="btn js_show_contest_modal" data-toggle="modal">FIND OUT MORE</a>
+			<a href="#" class="ws-icon-close-icon dismiss-banner js_dismiss_banner"></a>
+		</div>
+	</div>
+</div>

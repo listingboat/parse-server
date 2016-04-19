@@ -1,0 +1,40 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new PlayVideoModule()).init({eventLabel: "Onboarding Instructions", eventValue: 100});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Onboarding Step One
+
+<%- contentFor('footer') // intentionally left blank %>
+<%- contentFor('body') %>
+<div class="content onboarding-flow-wrap onboarding-one-wrap">
+	<div class="container">
+		<div class="onboarding-wrap clearfix">
+			<div class="onboarding-content">
+				<h1 class="onboarding-welcome-title">Welcome to Workstyle</h1>
+				<div class="dashed-lines"><span></span><span></span><span></span><span></span><span></span></div>
+				<p class="onboarding-desc-wrap">You have a workstyle type with special strengths you didn’t <br>know about and we can help you uncover it...</p>
+			</div>
+			<div class="white-border-wrap video-thumbnail-wrap">
+				<a class="ws-play-video play-icon-wrap js-play-video <%= bind_class %>" href="#" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<img src="<%= video_thumbnail %>" width="100%">
+				<div class="video-section js-video-section hidden">
+					<div class="container">
+						<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+						<a href="#" class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+					</div>
+				</div>
+			</div>
+			<div class="onboarding-btn-wrap">
+                    <a id="next-step-btn" href="<%= url('assessment.onBoardingTwo') %>" class="black-btn disabled">NEXT</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| My PQ
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content banner-wrap advisor-wrap pre-test-banner">
+	<div class="container">
+		<span class="icon-wrap">
+		</span>
+		<p class="about-me-wrap">
+			Stan Oberweiss,  
+			<span>Product Manager</span>
+		</p>
+		<img class="superpower-tag" src="<%= asset('assets/images/advisor_superpower.png') %>">
+		<a href="#" class="personality-detail-link">Learn More About Advisors</a>
+		<a href="#" class="ws-icon-play play-icon-xsmall js-play-video"></a>
+		<a href="#" class="black-btn">Take me to my full report</a>
+	</div>
+</div>
+<%- include _footer %>

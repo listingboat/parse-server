@@ -1,0 +1,49 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new SuperAdminDepartmentSetupModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Department Settings
+
+<%- contentFor('body') %>
+
+<div class="content">
+    <%- include _settings_user_info_header %>
+    <div class="container settings-tabs-wrap">
+        <%- include ../settings/_settings_nav_partial %>
+        <div class=" settings-tab-content">
+            <% if(isSuperAdmin){ %>
+            <%= include _company_list_for_super_admin.ejs %>
+            <% } %>
+
+            <div class="invite-tab-wrap clearfix js_company_department_section">
+            </div>
+        </div>
+        <div class="modal fade upload-csv-response" id="id-upload-csv-error" tabindex="-1" role="dialog" data-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <a class="close-modal" data-dismiss="modal">&times;</a>
+                        <p class="csv-upload-error js_message"></p>
+                        <a class="btn black-btn" data-dismiss="modal">TRY AGAIN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<% include _add_department_help_modal %>
+
+<div class="content container hide js-full-page-loader">
+    <div class="full-page-loader">
+        <div class="page-loader-wrap">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+</div>

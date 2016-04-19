@@ -1,0 +1,119 @@
+<div class="all-stats-wrap">
+    <div class="container clearfix">
+        <div class="stats-detail-wrap">
+            <div class="stats-content">
+                <p class="stat-title"><span>Your PQ</span></p>
+                <p class="stat-number"><%= typeof userPQ === "number"? userPQ : '---' %></p>
+                <p class="stat-subtitle">Can you hit <%= typeof nextPQTarget === "number"? nextPQTarget : '---' %>?</p>
+            </div>
+        </div>
+        <div class="stats-detail-wrap wow-pq-wrap">
+            <div class="stats-content">
+                <p class="stat-title"><span>Your PQ Growth</span></p>
+                <p class="stat-number"><span><%= (typeof user7DayGain === "number")?(user7DayGain >= 0 ? '+' : '-') : "" %></span><%= (typeof user7DayGain === "number")? Math.abs(user7DayGain) : '---' %></p>
+                <p class="stat-subtitle">last 7 day gain</p>
+            </div>
+        </div>
+        <div class="stats-detail-wrap wow-pq-wrap">
+            <div class="stats-content">
+                <p class="stat-title"><span>Company PQ Growth</span></p>
+                <p class="stat-number"><span><%= (typeof company7DayGain === "number")?(company7DayGain >= 0 ? '+' : '-') : "" %></span><%= (typeof company7DayGain === "number")? Math.abs(company7DayGain) : '---' %></p>
+                <p class="stat-subtitle">last 7 day gain</p>
+            </div>
+        </div>
+        <div class="stats-detail-wrap wow-pq-wrap">
+            <div class="stats-content">
+                <p class="stat-title"><span>Highest Company PQ</span></p>
+                <p class="stat-number"><%= companyHigestPQScore %></p>
+                <p class="stat-subtitle"><%= companyHighestPQUser %></p>
+            </div>
+        </div>
+        <div class="stats-detail-wrap week-stats-wrap">
+            <div class="stats-content">
+                <p class="stat-title"><span>Yours Team's Highest PQ</span></p>
+                <p class="stat-number"><%= departmentHigestPQScore %></p>
+                <p class="stat-subtitle"><%= departmentHighestPQUser %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gray-bg-section employee-view-wrap">
+    <% if(locals.isAccountOwner || locals.isSuperAdmin || locals.isSupervisor) {%>
+    <div class="stats-toogle-wrap">
+        <% if(locals.isAccountOwner || locals.isSuperAdmin) {%>
+        <a class="stats-toogle-tab js_switch_view_in_analytics" data-view_request_url="<%= url("analytics.accountOwnerAnalytics") %>">Company Stats</a>
+        <% } %>
+        <a class="stats-toogle-tab js_switch_view_in_analytics" data-view_request_url="<%= url("analytics.supervisorAnalytics") %>">Team Stats</a>
+        <a class="stats-toogle-tab active js_switch_view_in_analytics" data-view_request_url="<%= url("analytics.userAnalytics") %>" >My Stats</a>
+    </div>
+    <% } %>
+    <div class="container">
+        <div class="team-pq-graph">
+            <div class="team-graph-header clearfix">
+                <p class="team-graph-title comparision-graph-title"><span class="blue-text">Your Performance</span> vs. <span class="green-text">Your Team</span></p>
+                <div class="graph-filters-block">
+                    <span class="day-filter js_day_filter active" data-days ="30">30 days</span>
+                    <span class="day-filter js_day_filter" data-days ="60">60 days</span>
+                    <span class="day-filter js_day_filter" data-days ="90">90 days</span>
+                </div>
+            </div>
+            <div id="team-pq-graph" class="graph-container"></div>
+        </div>
+        <div class="score-stats-wrap">
+            <div class="single-stats-wrap">
+                <div class="stats-inner-wrap">
+                    <h2 class="score-title-wrap">Your Score</h2>
+                    <img src="/assets/images/blue-curve.png">
+                    <!--<p class="score-icon-wrap blue-text ws-icon-curve"></p>-->
+                    <p class="stat-score-wrap"><span><%= typeof userPQ === "number"? userPQ : '0' %></span>PQ</p>
+                </div>
+            </div>
+            <div class="single-stats-wrap">
+                <div class="stats-inner-wrap">
+                    <h2 class="score-title-wrap">Team Average</h2>
+                    <img src="/assets/images/green-curve.png">
+                    <!--<p class="score-icon-wrap green-text ws-icon-curve"></p>-->
+                    <p class="stat-score-wrap"><span><%= departmentAvgScore %></span>PQ</p>
+                </div>
+            </div>
+            <div class="single-stats-wrap">
+                <div class="stats-inner-wrap">
+                    <h2 class="score-title-wrap">Days You Trained</h2>
+                    <img class="bar-image-section" src="/assets/images/bar-image.png">
+                </div>
+            </div>
+        </div>
+        <div class="overall-stats-container">
+            <div class="team-stats-wrap">
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap">+</span><%= best7DayPQ %> <span class="stats-unit-wrap">PQ</span></p>
+                    <p class="stats-sec-text">Your best 7-day PQ gain</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap">
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"><%= (typeof bestStreak === "number") ? ((bestStreak < 0) ? "-" : "+")  : "" %></span><%= Math.abs(bestStreak) %> <span class="stats-unit-wrap">days</span></p>
+                    <p class="stats-sec-text">Your Best Training Streak</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap">
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"><%= (typeof currentStreak === "number") ? ((currentStreak < 0) ? "-" : " ")  : "" %></span><%= Math.abs(currentStreak) %> <span class="stats-unit-wrap">days</span></p>
+                    <p class="stats-sec-text">Since You Trained Last</p>
+                </div>
+            </div>
+        </div>
+        <div class="start-btn-wrap">
+            <a href="<%= url("quiz.start") %>" class="btn green-btn">BEAT YOUR TEAM, START TRAINING &gt;</a>
+        </div>
+    </div>
+</div>
+<div class="stats-btm-container container <%if(personalityCirclesData.isCallDataDepartmentEmployee){%>call-company-wrap<% } %>">
+    <%if(personalityCirclesData.missingPBR){%>
+    <% include _missing_pbr_overlay.ejs %>
+    <% }else if(personalityCirclesData.isCallDataDepartmentEmployee){%>
+    <% include _call_center_data_partial.ejs %>
+    <% }else{ %>
+    <% include _doughnut_graph_partial.ejs %>
+    <% } %>
+</div>

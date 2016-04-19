@@ -1,0 +1,225 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new leaderBoardGraph()).init();
+        (new analyticsGraphModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Analytics : Admin View
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+    <div class="leaderboard-graph-container">
+        <div id="id-graph-container" class="graph-plot-area"></div>
+        <div class="container">
+            <div class="company-info-wrap">
+                <h1>Microsoft</h1>
+                <h4>Workstyle Team</h4>
+            </div>
+            <div class="page-switch-wrap">
+                <span class="toggle-label">Directory</span>
+                <div class='toggle'>
+                    <input name="t1" type="hidden" value="0" />
+                    <input id="t1" name="t1" type="checkbox" value="1" />
+                    <div class='btn'>
+                        <label for='t1'>
+                            <div class='toggle-on'></div>
+                            <div class='toggle-handle btn'></div>
+                            <div class='toggle-off btn active'></div>
+                        </label>
+                    </div>
+                </div>
+                <span class="toggle-label">Analytics</span>
+            </div>
+        </div>
+    </div>
+    <div class="all-stats-wrap">
+        <div class="container clearfix">
+            <div class="stats-detail-wrap wow-pq-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>PQ Growth w.o.w.</span></p>
+                    <p class="stat-number"><span>+</span>5%</p>
+                    <p class="stat-subtitle">week over week (w.o.w.)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap wow-pq-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Highest</span></p>
+                    <p class="stat-number">3,100</p>
+                    <p class="stat-subtitle">Christy Christopherson</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Avg PQ</span></p>
+                    <p class="stat-number">209</p>
+                    <p class="stat-subtitle">(+2% w.o.w.)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap week-stats-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Workstyle Assessed</span></p>
+                    <p class="stat-number">76%</p>
+                    <p class="stat-subtitle">of all invited (350)</p>
+                </div>
+            </div>
+            <div class="stats-detail-wrap week-stats-wrap">
+                <div class="stats-content">
+                    <p class="stat-title"><span>Trained this Week</span></p>
+                    <p class="stat-number">36%</p>
+                    <p class="stat-subtitle">of assessed (266)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stats-container-wrap container">
+        <div class="stats-toogle-wrap">
+            <a class="stats-toogle-tab active" href="#">Company Stats</a>
+            <a class="stats-toogle-tab" href="#">My Stats</a>
+        </div>
+        <div class="overall-stats-container">
+            <div class="team-stats-wrap">
+                <p class="stats-title">TOP PERFORMING TEAM</p>
+                <h3 class="team-name-wrap">Sales Chicago</h3>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap">+</span><span class="stats-value-wrap">23</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">monthly PQ growth</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap">
+                <p class="stats-title">LOWEST PERFORMING TEAM</p>
+                <h3 class="team-name-wrap">Customer Service</h3>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap">+</span><span class="stats-value-wrap">5</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">monthly PQ growth</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap pq-stats-wrap organizer-stats-wrap">
+                <p class="stats-title">BEST UNDERSTOOD TEAM</p>
+                <h3 class="team-name-wrap">Organizer</h3><span class="glyphicon glyphicon-triangle-top"></span>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"></span><span class="stats-value-wrap">10</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">of the company</p>
+                </div>
+            </div>
+            <div class="team-stats-wrap pq-stats-wrap doer-stats-wrap">
+                <p class="stats-title">LEAST UNDERSTOOD</p>
+                <h3 class="team-name-wrap">Doer</h3><span class="glyphicon glyphicon-triangle-bottom"></span>
+                <span class="short-border"></span>
+                <div class="stats-card-wrap">
+                    <p class="value-wrap"><span class="stats-icon-wrap"></span><span class="stats-value-wrap">45</span><span class="percent-sign">%</span></p>
+                    <p class="stats-sec-text">of the company</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-bg-section">
+        <div class="container">
+            <div class="team-pq-graph">
+                <div class="team-graph-header clearfix">
+                    <p class="team-graph-title"><span>Team-level</span> Average PQs</p>
+                    <div class="graph-filters-block">
+                        <span class="day-filter">30 days</span>
+                        <span class="day-filter active">60 days</span>
+                        <span class="day-filter">90 days</span>
+                    </div>
+                </div>
+                <div id="team-pq-graph" class="graph-container"></div>
+            </div>
+            <p class="help-text-section js-help-section clearfix">
+                <span class="ws-icon-caution"></span>
+                <span>Click on team names in the table below to display in graph</span>
+                <a href="#" class="close-icon-wrap js-close-btn">Close <span class="ws-icon-close-icon"></span></a>
+            </p>
+            <div class="team-details-list">
+                <div class="team-detail-row">
+                    <span class="team-name-section">Team</span>
+                    <span class="percent-unit-section">W.O.W. PQ Growth</span>
+                    <span>Lowest PQ</span>
+                    <span>Highest PQ</span>
+                    <span>Avg PQ</span>
+                    <span class="percent-unit-section">Trained this week</span>
+                </div>
+                <div class="team-detail-row team-green-wrap">
+                    <span class="team-name-section">Sales - Chicago</span>
+                    <span class="percent-unit-section">10%</span>
+                    <span>5</span>
+                    <span>3,100</span>
+                    <span>200</span>
+                    <span class="percent-unit-section">36%</span>
+                </div>
+                <div class="team-detail-row team-purple-wrap">
+                    <span class="team-name-section">Sales - Denver</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>10</span>
+                    <span>500</span>
+                    <span>500</span>
+                    <span class="percent-unit-section">40%</span>
+                </div>
+                <div class="team-detail-row team-blue-wrap">
+                    <span class="team-name-section">Customer Service</span>
+                    <span class="percent-unit-section">2%</span>
+                    <span>0</span>
+                    <span>1,002</span>
+                    <span>50</span>
+                    <span class="percent-unit-section">20%</span>
+                </div>
+                <div class="team-detail-row team-orange-wrap">
+                    <span class="team-name-section">Marketing - Chicago</span>
+                    <span class="percent-unit-section">11%</span>
+                    <span>5</span>
+                    <span>3,100</span>
+                    <span>200</span>
+                    <span class="percent-unit-section">36%</span>
+                </div>
+                <div class="team-detail-row team-red-wrap">
+                    <span class="team-name-section">Sales - Chicago</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>10</span>
+                    <span>500</span>
+                    <span>500</span>
+                    <span class="percent-unit-section">40%</span>
+                </div>
+                <div class="team-detail-row team-yellow-wrap">
+                    <span class="team-name-section">Sales - Denver</span>
+                    <span class="percent-unit-section">2%</span>
+                    <span>0</span>
+                    <span>1,002</span>
+                    <span>50</span>
+                    <span class="percent-unit-section">20%</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Sales - Austin</span>
+                    <span class="percent-unit-section">8%</span>
+                    <span>23</span>
+                    <span>2,200</span>
+                    <span>60</span>
+                    <span class="percent-unit-section">30%</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Customer Service</span>
+                    <span class="percent-unit-section">11%</span>
+                    <span>2</span>
+                    <span>200</span>
+                    <span>30</span>
+                    <span class="percent-unit-section">10%</span>
+                </div>
+                <div class="team-detail-row">
+                    <span class="team-name-section">Marketing - Austin</span>
+                    <span class="percent-unit-section">28%</span>
+                    <span>43</span>
+                    <span>3,200</span>
+                    <span>50</span>
+                    <span class="percent-unit-section">40%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include _footer %>

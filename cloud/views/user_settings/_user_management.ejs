@@ -1,0 +1,92 @@
+<div class="user-settings-header">
+    <div class="team-filter-head container clearfix">
+        <div class="select-department-wrap">
+            <div class="select-department-wrap">
+                <select class="selectpicker js_department_filter" title="All" data-invited_user_url=<%= url('userSettings.invitedUsers') %>>
+                    <option value="" <% if (!locals.departmentId || locals.departmentId.trim() == '') { %>selected="selected"<% } %>>All</option>
+                    <% for(var parentDepartmentIndex in parentDepartmentList){ %>
+                        <option value="<%= parentDepartmentList[parentDepartmentIndex].id %>" <% if (typeof locals.departmentId === "string"
+                                && locals.departmentId.trim() == parentDepartmentList[parentDepartmentIndex].id) { %>selected="selected"<% } %>><%= parentDepartmentList[parentDepartmentIndex].get('name') %></option>
+
+                        <% var childDepartments = childDepartmentsList[parentDepartmentList[parentDepartmentIndex].id] %>
+                        <% for(var childDepartmentIndex in childDepartments){ %>
+                            <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>" <% if (typeof locals.departmentId === "string"
+                                    && locals.departmentId.trim() == childDepartments[childDepartmentIndex].id) { %>selected="selected"<% } %>><%= childDepartments[childDepartmentIndex].get('name') %></option>
+                        <% } %>
+                    <% } %>
+                    <option value="invitedUsers" class="js_invited_user_option" <% if (typeof locals.departmentId === "string"
+                        && locals.departmentId.trim() == 'invitedUsers') { %>selected="selected"<% } %>>Invited Users</option>
+                </select>
+            </div>
+        </div>
+        <form class="search-team-wrap js_search_form">
+            <input type="text" class="search-input-wrap js_search_box" placeholder="Search by name, email, or position..."
+                   <% if(typeof searchKey === "string" && searchKey.trim !== ""){ %> value="<%= searchKey %>"<% } %>
+                    >
+            <button class="search-btn"><i class="ws-icon-search"></i></button>
+        </form>
+        <div class="pagination-wrap js_pagination_wrap">
+            <span>
+                <span class="js_range_first"><%= ((pageToDisplay - 1) * userPerPage) + 1 %></span>
+                <span class="js_pagination_last_index
+                <% if((((pageToDisplay - 1) * userPerPage) + 1) == (((pageToDisplay - 1) * userPerPage) + userCount)){ %>
+                    hide
+                <% } %>
+                ">
+                    - <span class="js_range_last"><%= ((pageToDisplay - 1) * userPerPage) + userCount %></span>
+                </span>
+                of <span class="js_total_count"> <%= totalCount %> </span>
+            </span>
+            <a href="#" class="pagination-nav-btn ws-icon-left js_prev_page <% if(pageToDisplay == 1){ %> disabled <% } %>"></a>
+            <a href="#"
+               class="pagination-nav-btn ws-icon-right js_next_page<% if(totalCount <= userPerPage * pageToDisplay) { %> disabled <% } %>"></a>
+        </div>
+    </div>
+    <div class="member-details-wrap user-list-head container js_user_list_header">
+        <div class="member-icon-wrap">
+            <span class="member-pq-icon"></span>
+        </div>
+        <div class="member-name-wrap">
+            <h2>Staff</h2>
+        </div>
+        <div class="user-department-wrap">
+            <h2>Reassign Department</h2>
+        </div>
+        <div class="user-role-wrap">
+            <h2>User Type <a class="invite-help-icon" data-toggle="modal" href="#user-setting-help">?</a></h2>
+        </div>
+    </div>
+    <div class="member-details-wrap user-list-head container js_invited_user_list_header hide">
+        <div class="member-icon-wrap">
+            <span class="member-pq-icon"></span>
+        </div>
+        <div class="member-name-wrap">
+            <h2>Invited User</h2>
+        </div>
+        <div class="user-department-wrap">
+            <h2></h2>
+        </div>
+        <div class="user-role-wrap">
+            <h2></h2>
+        </div>
+    </div>
+</div>
+<div class="settings-user-list container">
+    <div class="team-list-wrap js_user_list_wrap <% if(!Array.isArray(userObjectList) || userObjectList.length === 0){ %> no-result-wrap <% } %> "
+         data-fetch_user_list_url="<%= url('userSettings.index') %>"
+         data-change_department_url="<%= url('userSettings.changeDepartment') %>"
+         data-change_permission_type_url="<%= url('userSettings.changePermissionType') %>"
+         data-delete_user_url="<%= url('userSettings.deleteUser') %>"
+         data-delete_user_prospect_url="<%= url('userSettings.deleteUserProspect') %>"
+         data-edit_user_detail_url="<%= url('userSettings.editUserDetail') %>"
+         data-update_pardot_data_url="<%= url('user.makePardotCall') %>"
+            >
+        <% if(Array.isArray(userObjectList) && userObjectList.length == 0){ %>
+            <% include _empty_user_list.ejs %>
+        <% }else if(typeof showInvitedUser !== "undefined" && showInvitedUser === true){ %>
+            <% include _invited_user_list.ejs %>
+        <% } else {%>
+            <% include _user_list %>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<select id="department" class="selectpicker form-control text-field-wrap js-input-text" name="department">
+    <option value="" selected disabled>Select Your Department</option>
+    <% for(var parentDepartmentIndex in parentDepartmentList){ %>
+        <option value="<%= parentDepartmentList[parentDepartmentIndex].id %>"
+                <% if(typeof department !== 'undefined' && department == parentDepartmentList[parentDepartmentIndex].id){ %>
+                selected
+                <% } %> ><%= parentDepartmentList[parentDepartmentIndex].get('name') %></option>
+
+        <% var childDepartments = childDepartmentsList[parentDepartmentList[parentDepartmentIndex].id] %>
+        <% for(var childDepartmentIndex in childDepartments){ %>
+            <option class="sub-department-select" value="<%= childDepartments[childDepartmentIndex].id %>"
+                    <% if(typeof department !== 'undefined' && department == childDepartments[childDepartmentIndex].id){ %>
+                    selected
+                    <% } %> ><%= childDepartments[childDepartmentIndex].get('name') %></option>
+        <% } %>
+    <% } %>
+</select>
+<div class="custom-tooltip">
+    <div class="custom-tooltip-arrow"></div>
+    <p class="error-text-wrap">
+        <% if(typeof departmentError !== 'undefined'){ %>
+        <%= departmentError %>
+        <% } %>
+    </p>
+</div>

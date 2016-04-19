@@ -1,0 +1,35 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        landing_page_init();
+        (new CommonModule()).init();
+        (new RegistrationModule()).init({
+            enableDepartmentCheck : <%= (typeof enableDepartmentCheck === "boolean") ? enableDepartmentCheck : false %>
+        });
+    });
+</script>
+
+<%- contentFor('header') %>
+<%- contentFor('title') %>
+| Register
+
+<%- contentFor('body') %>
+<div class="content landing-background login-background ws-register-wrap">
+
+    <%- include _register_form_partial %>
+
+    <div class="modal fade upload-csv-response" id="migration-fail" tabindex="-1" role="dialog"
+         data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a class="close-modal" data-dismiss="modal">&times;</a>
+                    <p class="csv-upload-error js_message">We found existing assessment results for you but they were not properly imported.</p>
+                    <a class="btn black-btn" id="try-again" data-dismiss="modal">Try Again</a>
+                    <a class="btn black-btn" id="retake-assessment" data-dismiss="modal">Retake Assessment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- contentFor('footer') %>

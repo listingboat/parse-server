@@ -1,0 +1,20 @@
+<div class="js_contest_detail_div" data-contest_id="<%= contestId %>">
+    <% if(typeof contestHeading === "string"){ %>
+        <div class="contest-field">
+            <h6>CURRENT CONTEST</h6>
+            <h2><%= contestHeading %></h2>
+        </div>
+    <% } %>
+    <% if(typeof contestAward !== "undefined"){ %>
+        <div class="contest-field">
+            <h6>CURRENT CONTEST AWARD</h6>
+            <h2><%= contestAward %></h2>
+        </div>
+    <% } %>
+    <% if(typeof formattedEndDate === "string"){ %>
+        <div class="contest-field">
+            <h6>CONTEST END DATE (AT 11:59:59 PM CST)</h6>
+            <h2><%= formattedEndDate %></h2>
+        </div>
+    <% } %>
+</div>

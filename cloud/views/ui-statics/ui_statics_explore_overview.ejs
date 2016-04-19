@@ -1,0 +1,44 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	initBannerVideo();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Overview
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<%- include _explore_nav %>
+	<div class="explore-banner-wrap overview-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<h4>Overview — How Workstyle Works</h4>
+				<p>Individual personality structure is comprised of six, separate and mutually exclusive behavior types, called Organizer, Connector, Original, Doer, Dreamer, and Advisor.</p>
+				<a class="ws-icon-play play-icon-big js-play-video" href="#" data-video-url="https://www.youtube.com/embed/eIho2S0ZahI"></a>
+				<br>
+				<a href="#" class="extra-link">Learn More About Workstyle</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+				<iframe width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+				<a href="#" class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner">
+		<p class="personality-description">The relative amount of time a person experiences and demonstrates the behaviors of a given type floor. These second-by-second behaviors – categorized by words, tones, gestures, postures and facial expressions – can be observed objectively with significantly high reliability. Additionally, test-retest reliability research indicates that once a person's condominium order is set, that order seldom changes.</p>
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the personality types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="#" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

@@ -1,0 +1,37 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+		(new CommonModule()).init();
+		initBannerVideo();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Onboarding Step One
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content onboarding-flow-wrap">
+	<div class="container">
+		<div class="onboarding-wrap clearfix">
+			<div class="white-border-wrap">
+				<h1 class="onboarding-welcome-title">Welcome to Workstyle</h1>
+				<div class="dashed-lines"><span></span><span></span><span></span><span></span><span></span></div>
+				<p class="onboarding-desc-wrap">You have a personality type with special strengths you didn’t <br>know about and we can help you uncover them.</p>
+				<a href="#" class="ws-icon-play play-icon-wrap js-play-video" href="#" data-video-url="https://www.youtube.com/embed/eIho2S0ZahI"></a>
+				<br>
+				<a href="#" class="learn-more-link">Learn More About Workstyle</a>
+				
+				<div class="video-section js-video-section hidden">
+					<div class="container">
+						<iframe width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+						<a href="#" class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+					</div>
+				</div>
+			</div>
+			<div class="onboarding-btn-wrap">
+				<a href="/ui-statics/onboarding-step-two" class="black-btn">NEXT</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new PersonalityPredictorModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Personality Predictor
+
+<%- contentFor('body') %>
+<div class="content js_content">
+    <%- include apply_nav %>
+    <div class="predictor-wrap">
+        <div class="container">
+            <div class="question-wrap">
+                <div class="question-box predictor-box">
+                    <h2>Workstyle Personality Predictor</h2>
+                    <p>Need to connect with someone without a workstyle badge? No problem- use our personality predictor to help predict their workstyle.</p>
+                    <a href="#" class="white-hollow-btn js_fetch_questions" data-fetch_questions_url="<%= url('explore.personalityPredictorQuestions') %>">GET STARTED</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<h2 class="ws-subheading-wrap">Familiarity</h2>
+<p class="ws-subheading-text">This is your workstyle spectrum and how well you perform on each in training.</p>
+<div class="circular-progress-wrap">
+    <% for(var index in  doughnutGraphData){ %>
+    <div class="single-circle-wrap">
+        <div class="radial-progress <%= doughnutGraphData[index].personalityClass %> <%=doughnutGraphData[index].donutGraphSize %>" data-progress="<%= doughnutGraphData[index].personalityScorePercentage %>" id="pq-progess2">
+            <div class="circle">
+                <div class="mask full">
+                    <div class="fill"></div>
+                </div>
+                <div class="mask half">
+                    <div class="fill"></div>
+                    <div class="fill fix"></div>
+                </div>
+            </div>
+            <div class="inset">
+                <p class="score-pq-icon ws-icon-connector"></p>
+                <div class="custom-pq-tooltip">
+                    <div class="pq-tooltip-content">
+                        <div class="percentage">
+                            <div class="numbers"><span><%= doughnutGraphData[index].personalityScorePercentage %>%</span></div>
+                        </div>
+                        <p>correct</p>
+                    </div>
+                    <div class="tooltip-tail-one"></div>
+                    <div class="tooltip-tail-two"></div>
+                </div>
+            </div>
+        </div>
+        <p class="progress-circle-label"><%= doughnutGraphData[index].name %></p>
+    </div>
+    <% } %>
+</div>

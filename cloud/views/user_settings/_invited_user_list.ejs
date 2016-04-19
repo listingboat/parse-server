@@ -1,0 +1,28 @@
+<ul>
+    <% for(var userIndex in userObjectList){ %>
+        <li class="member-details-wrap unknown-member-wrap">
+            <div class="member-icon-wrap">
+                <span class="member-pq-icon"></span>
+            </div>
+            <div class="member-name-wrap invite-member-name">
+                <h2><%= userObjectList[userIndex].get('email') %></h2>
+                <h4>Unknown</h4>
+            </div>
+            <div class="unknown-user-hint">
+                <p>Not Yet Registered</p>
+                <a class="js_send_invite_reminder"
+                    data-invited_user_id="<%= userObjectList[userIndex].id %>"
+                    data-send_reminder_url="<%= url('userSettings.sendInviteReminder') %>"
+                >Send them a reminder &gt;</a>
+            </div>
+            <div class="disable-user-link remove-invite-link">
+                <a class="js_remove_invited_user"
+                    data-invited_user_email="<%= userObjectList[userIndex].get('email') %>"
+                    data-invited_user_company="<%= userObjectList[userIndex].get('company').id %>"
+                    data-remove_invited_user_url="<%= url('userSettings.removeInvitedUser') %>"
+                    data-delete_invited_prospect_url="<%= url('userSettings.deleteInvitedUserProspect') %>"
+                >remove user</a>
+            </div>
+        </li>
+    <% } %>
+</ul>

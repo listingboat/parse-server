@@ -1,0 +1,191 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        <% if(typeof graphPersonality !== 'undefined') { %>
+            var graphPersonality = "<%= graphPersonality %>";
+            (new PersonalityDistributionGraph()).init(graphPersonality);
+        <% } else { %>
+            (new PersonalityDistributionGraph()).init();
+        <% } %>
+    });
+</script>
+
+<%- contentFor('title') %>
+| My Team
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+    <div class="leaderboard-graph-container <% if(typeof profileGraph !== 'undefined') { %><%= profileGraph %><% } %>">
+        <div id="id-graph-container" class="graph-plot-area"></div>
+    </div>
+    <div>
+        <div class="team-filter-head container clearfix">
+            <div class="select-department-wrap">
+                <select class="selectpicker" title="Departments">
+                    <option>All</option>
+                    <option>Finance</option>
+                    <option>Marketing</option>
+                    <option>Service</option>
+                    <option>Shipping</option>
+                    <option>Development</option>
+                </select>
+            </div>
+            <form class="search-team-wrap">
+                <input type="text" class="search-input-wrap" placeholder="Search by name, email, or position...">
+                <button class="search-btn"><i class="ws-icon-search"></i></button>
+            </form>
+            <div class="pagination-wrap">
+                <span> 1 - 50 of 599 </span><a href="#" class="pagination-nav-btn ws-icon-left"></a><a href="#" class="pagination-nav-btn ws-icon-right"></a>
+            </div>
+        </div>
+        <div class="container clearfix">
+            <div class="team-filter-sidebar">
+                <ul>
+                    <li><a class="pq-options-wrap pq-option-all active" href="#"><i class="ws-icon-workstyle"></i><span>All (559)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-original" href="#"><i class="ws-icon-creative-icon"></i><span>Original (235)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-connector" href="#"><i class="ws-icon-connector"></i><span>Connector (167)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-doer" href="#"><i class="ws-icon-doer"></i><span>Doer (98)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-dreamer" href="#"><i class="ws-icon-dreamer"></i><span>Dreamer (52)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-organizer" href="#"><i class="ws-icon-organizer"></i><span>Organizer (35)</span></a></li>
+                    <li><a class="pq-options-wrap pq-option-advisor" href="#"><i class="ws-icon-advisor"></i><span>Advisor (12)</span></a></li>
+                </ul>
+            </div>
+            <div class="team-list-wrap">
+                <ul>
+                    <li class="member-details-wrap advisor-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>Monica Stockholm</h2>
+                            <h4>Product Manager</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Advisor</h2>
+                            <h4>Commitment Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">697</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap dreamer-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>Dunken Colwell</h2>
+                            <h4>Creative Director</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Dreamer</h2>
+                            <h4>Imagination Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">609</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap connector-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>John Jams lll</h2>
+                            <h4>CEO</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Connector</h2>
+                            <h4>Relationships Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">597</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap original-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>Brandon Bookstockerson</h2>
+                            <h4>Secretary</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Original</h2>
+                            <h4>Creativity Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">432</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap doer-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>Rhumana Choudhury</h2>
+                            <h4>Secretary</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Doer</h2>
+                            <h4>Resourcefulness Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">305</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap organizer-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>Judith Wesley</h2>
+                            <h4>Chief Marketing Officer</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Organizer</h2>
+                            <h4>Planning Superpower</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">115</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                    <li class="member-details-wrap unknown-member-wrap">
+                        <div class="member-icon-wrap">
+                            <span class="member-pq-icon"></span>
+                        </div>
+                        <div class="member-name-wrap">
+                            <h2>r.chadhary@yahoo.com</h2>
+                            <h4>Unknown</h4>
+                        </div>
+                        <a class="email-link-wrap ws-icon-mail"></a>
+                        <div class="member-name-wrap superpower-detail-wrap">
+                            <h2>Unknown</h2>
+                            <h4>unknown</h4>
+                        </div>
+                        <div class="pq-score-wrap">
+                            <p class="pq-score">0</p>
+                            <span>PQ</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="series-tooltip hidden js-tooltip">
+    <span class="caret tooltip-arrow"></span>
+    <p></p>
+</div>
+<%- include _footer %>

@@ -1,0 +1,30 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Assessment Overview
+
+<%- contentFor('footer') // intentionally left blank %>
+<%- contentFor('body') %>
+<div class="content onboarding-flow-wrap">
+    <div class="container">
+        <div class="onboarding-wrap clearfix">
+            <div class="white-border-wrap">
+                <h1 class="onboarding-welcome-title">Workstyle Personality Assessment</h1>
+                <div class="dashed-lines"><span></span><span></span><span></span><span></span><span></span></div>
+                <p class="onboarding-desc-wrap">
+                    Mark the response that best fits you as your first choice: "1" means highest rank. If more than one response fits, rank them sequentially, first, second, third, and so on. <br>
+                    (You do not have to rank every choice, just those that apply to you).
+                </p>
+                <img src="<%= asset('assets/images/assessment_question.png') %>">
+            </div>
+            <div class="onboarding-btn-wrap">
+                <a href="<%= url('assessment.question') %>" class="btn black-btn">OKAY</a>
+            </div>
+        </div>
+    </div>
+</div>

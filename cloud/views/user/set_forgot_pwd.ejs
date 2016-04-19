@@ -1,0 +1,46 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        landing_page_init();
+        (new SetNewPasswordModule()).init();
+        (new ParseSetForgotPasswordModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Reset Forgot Password
+
+<%- contentFor('body') %>
+
+<div class="content flat-bg">
+    <div class="container">
+        <div class="reset-form-wrap">
+            <a href="/" class="logo-colored">
+                <img src="<%= asset('assets/images/login_page_logo.png') %>">
+            </a>
+            <div class="reset-form-box">
+                <h2>Set Your New Workstyle Password</h2>
+                <form id='form' class="reset-form" action="#">
+                    <div class="form-group js-input-group">
+                        <input id="password1" type="password" class="form-control input-common" placeholder="New Password" name="new_password">
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap"></p>
+                        </div>
+                    </div>
+                    <div class="form-group js-input-group">
+                        <input id="password2" type="password" class="form-control input-common" placeholder="Repeat New Password">
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap"></p>
+                        </div>
+                    </div>
+                    <input name='utf-8' type='hidden' value='✓' />
+                    <input name="username" id="username" type="hidden" />
+                    <input name="token" id="token" type="hidden" />
+                    <button class="btn green-btn">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

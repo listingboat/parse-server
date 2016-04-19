@@ -1,0 +1,127 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        UserSettingModule();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+    <div class="setting-banner-wrap dreamer-settings clearfix">
+        <div class="container">
+            <h2>Jake Swantner <span>Profile</span></h2>
+            <a href="mailto:admin@work.style" class="btn white-round-btn">Contact us</a>
+            <p>Need help with something? </p>
+        </div>
+    </div>
+    <div class="container settings-tabs-wrap">
+        <!-- Nav tabs -->
+        <ul class="settings-nav-wrap" role="tablist">
+            <li role="presentation" class="settings-nav-tab">
+                <a href="#account" class="settings-nav-item js-nav-item" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+            </li>
+            <li role="presentation" class="settings-nav-tab">
+                <a href="#password" class="settings-nav-item js-nav-item" aria-controls="password" role="tab" data-toggle="tab">Password</a>
+            </li>
+            <li role="presentation" class="settings-nav-tab">
+                <a href="#faq" class="settings-nav-item js-nav-item" aria-controls="faq" role="tab" data-toggle="tab">Help/FAQ</a>
+            </li>
+            <li role="presentation" class="settings-nav-tab">
+                <a href="#invite" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Invite</a>
+            </li>
+            <li role="presentation" class="settings-nav-tab">
+                <a href="#department" class="settings-nav-item js-nav-item" aria-controls="department" role="tab" data-toggle="tab">Department</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content settings-tab-content">
+            <div role="tabpanel" class="tab-pane" id="account">
+                <%- include _settings_tab_account %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="password">
+                <%- include _settings_tab_password %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="faq">
+                <%- include _settings_tab_faq %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="invite">
+                <%- include _settings_tab_invite %>
+            </div>
+            <div role="tabpanel" class="tab-pane active" id="department">
+                <div class="invite-tab-wrap clearfix">
+                    <div class="add-department-wrap">
+                        <h3 class="invite-head">Add or modify department & their respective trainings: <a href="#" class="invite-help-icon" data-toggle="modal" data-target="#invite-help">?</a></h3>
+                        <form>
+                            <div class="select-training-wrap select-sub-department">
+                                <div class="list-wrapper">
+                                    <div class="select-wrap">
+                                        <span class="label-wrap"></span>
+                                        <span>THE BASICS</span>
+                                        <span>SALES</span>
+                                        <span>RETENTION</span><span></span></div>
+                                    <div class="select-wrap">
+                                        <span class="label-wrap">ACCOUNTING</span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span><span><a href="#" class="add-sub-depart-link">Add Sub-department</a></span>
+                                    </div>
+                                    <div class="select-wrap">
+                                        <span class="label-wrap">SALES</span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span><span><a href="#" class="add-sub-depart-link">Add Sub-department</a></span>
+                                    </div>
+                                    <div class="select-wrap sub-wrap">
+                                        <span class="label-wrap">SALES-AUSTIN</span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span><span></span>
+                                    </div>
+                                    <div class="select-wrap sub-wrap">
+                                        <span class="label-wrap">SALES-NYC</span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span><span></span>
+                                    </div>
+                                    <div class="select-wrap add-new-wrap sub-wrap">
+                                        <span class="label-wrap"><input type="text" class="form-control" placeholder="Enter Sub-department name.."></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span class="opts-btn-grp"><a href="#" class="btn cancel-btn">Cancel</a><button class="btn yellow-btn">Save</button></span>
+                                    </div>
+                                    <div class="select-wrap">
+                                        <span class="label-wrap">MARKETING</span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span><span><a href="#" class="add-sub-depart-link">Add Sub-department</a></span>
+                                    </div>
+                                    <div class="select-wrap add-new-wrap">
+                                        <span class="label-wrap"><input type="text" class="form-control" placeholder="Enter department name.."></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox" checked= "true" disabled><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span><label class="checkbox-select-wrap"><input type="checkbox"><span class="ws-icon-checkmark"></span></label></span>
+                                        <span class="opts-btn-grp"><a href="#" class="btn cancel-btn">Cancel</a><button class="btn yellow-btn">Save</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#" class="btn yellow-btn add-dept">Add Department</a>
+                                <p class="add-help-text">Need to delete or edit department listing? <a href="#">Contact Us</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include _invite_help_modal %>
+<%- include _footer %>

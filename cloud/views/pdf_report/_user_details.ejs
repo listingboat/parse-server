@@ -1,0 +1,15 @@
+<%- contentFor('title') %>
+| PDF Report : Personality Matters
+
+<%- contentFor('header') //intentionally left blank %>
+<%- contentFor('footer') //intentionally left blank  %>
+<%- contentFor('body') %>
+<div id="user_details" class="js_pdf_page" style="text-align: center;">
+    <img width="48%" src="<%= asset('assets/images/pdf-report-images/cover2.svg') %>" />
+</div>
+<div>
+    <input type="hidden" id="user_first_name" value="<%= user.get('first_name') %>">
+    <input type="hidden" id="user_last_name" value="<%= user.get('last_name') %>">
+    <input type="hidden" id="user_occupation" value="<%= user.get('occupation') %>">
+    <input type="hidden" id="text_color" value="<%= textColor %>">
+<div>

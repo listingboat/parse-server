@@ -1,0 +1,129 @@
+<%- contentFor('header') //intentionally left blank %>
+<%- contentFor('footer') //intentionally left blank  %>
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Intro
+<%- contentFor('body') %>
+<div class="container">
+    <div class="pull-right">
+        <span class="js_user_name"></span>
+        <a class="js_logout">Logout</a>
+    </div>
+    <h4 class="intro-title"><span>P</span>ERSONALITY <span>P</span>ATTERN <span>I</span>NVENTORY<span>&reg;</span></h4>
+    <h5 class="intro-sub-heading">Instructions</h5>
+    <p>
+        Each of the questions  in  this  inventory  contains six self-descriptive  responses.  Read  each
+        response carefully and  decide which  ones fit you.  Mark the  response that best fits you  as your
+        first choice.  If more than one response fits, rank them sequentially, first, second, third, and so on.
+        <span class="intro-sub-heading">Note: You do NOT have to rank every choice, only those that apply to you.</span>
+    </p>
+    <div class="clearfix">
+        <div class="pull-left">
+            <div class="question"><span>Desserts I like inciude </span></div>
+            <div>
+                <div class="answers clearfix">
+                    <div class="left">
+                        <div class="column"><span>1</span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="1" name="col1" value="1"></span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="2" name="col1" value="1" checked></span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="3" name="col1" value="1"></span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="4" name="col1" value="1"></span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="5" name="col1" value="1"></span></div>
+                        <div class="column"><span><input disabled type="radio" data-row="6" name="col1" value="1"></span></div>
+                    </div>
+                    <div class="left">
+                        <div  class="column"><span>2</span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="1" name="col2" value="2" checked></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="2" name="col2" value="2"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="3" name="col2" value="2"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="4" name="col2" value="2"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="5" name="col2" value="2"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="6" name="col2" value="2"></span></div>
+                    </div>
+                    <div class="left">
+                        <div  class="column"><span>3</span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="1" name="col3" value="3"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="2" name="col3" value="3"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="3" name="col3" value="3"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="4" name="col3" value="3" checked></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="5" name="col3" value="3"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="6" name="col3" value="3"></span></div>
+                    </div>
+                    <div class="left">
+                        <div  class="column"><span>4</span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="1" name="col4" value="4"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="2" name="col4" value="4"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="3" name="col4" value="4"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="4" name="col4" value="4"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="5" name="col4" value="4"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="6" name="col4" value="4"></span></div>
+                    </div>
+                    <div class="left">
+                        <div  class="column"><span>5</span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="1" name="col5" value="5"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="2" name="col5" value="5"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="3" name="col5" value="5"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="4" name="col5" value="5"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="5" name="col5" value="5"></span></div>
+                        <div  class="column"><span><input disabled type="radio" data-row="6" name="col5" value="5"></span></div>
+                    </div>
+                    <div>
+                        <div  class="column"></div>
+                        <div  class="column"><span>apple pie</span></div>
+                        <div  class="column"><span>cherry pie</span></div>
+                        <div  class="column"><span>candy bars</span></div>
+                        <div  class="column"><span>chocolate cake</span></div>
+                        <div  class="column"><span>ice cream</span></div>
+                        <div  class="column"><span>fig bars</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="pull-left">
+            <div>
+                <p class="right-explain">
+                    In this example, our respondent has indicated a strongest preference by clicking on the first
+                    radio button for cherry pie, a lesser preference for apple pie and an even less preference for
+                    chocolate cake. She did not click on any of the radio buttons for candy bars, ice cream or
+                    fig bars.
+                </p>
+            </div>
+            <div class="right-explain">
+                <p>FOR BEST RESULTS:</p>
+                <div>
+                    <ul>
+                        <li>Be honest with yourself.</li>
+                        <li>Take this when you are rested and are "yourself'</li>
+                        <li>Give yourself plenty of time</li>
+                        <li>This is a non-threatening, and even fun, inventory, so we invite you to relax and enjoy the process</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <p>
+            Each question in this inventory is displayed one at a time. Next to each question there are several "buttons".
+            When you are finished with a question, press the "Next" button to move to the next question. If you make a
+            mistake and select a response that you didn't want to select, the "Clear" button will blank all responses for
+            the question so you may start again. You may review your previous questions at any time by pressing the
+            "Previous" button. When you have completed all of the questions, there will be a "Submit" button for you to mark
+            your Inventory as completed and submit it for scoring.
+        </p>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary js-start-assessment" style="display: none;">Begin your inventory</button>
+        <button type="button" class="btn btn-default js-back-assessment" style="display: none;">Back to assessment</button>
+    </div>
+</div>
+<div class="loader-container js-loader">
+    <div class="loader-bg"></div>
+    <img class="loader-img" src="<%= asset('assets/images/loader-big.gif') %>"/>
+</div>

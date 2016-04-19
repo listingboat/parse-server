@@ -1,0 +1,18 @@
+<% if(typeof isSuperAdmin !== "undefined" && isSuperAdmin === true){ %>
+<div class="select-company-dd js_company_analytics_select">
+    <select class="selectpicker js_company_list">
+        <% for(var index in companyList){ %>
+        <option value="<%= companyList[index].id %>"
+                <% if(typeof company !== 'undefined' && company.id == companyList[index].id){ %>
+                selected
+                <% } %>><%= companyList[index].get("name") %></option>
+        <% } %>
+    </select>
+    <h4 class="js_team_title">Workstyle Team</h4>
+</div>
+<% }else{ %>
+<div class="company-info-wrap js_company_analytics_select">
+    <h1 class="js_account_owner_company_name"><%= company.get("name") %></h1>
+    <h4 class="js_team_title">Workstyle Team</h4>
+</div>
+<% } %>

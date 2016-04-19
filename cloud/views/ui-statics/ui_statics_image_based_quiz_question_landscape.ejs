@@ -1,0 +1,59 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	(new QuestionModule()).imageQuizQuestionBindings(".js_question_wrap_container");
+    });
+</script>
+
+<%- contentFor('title') %>
+| Quest &amp; Quiz
+
+<%- contentFor('body') %>
+<%- include _header %>
+
+<div class="content quiz-background <%- skill_type_class %>">
+	<div class="container">
+		<div class="question-wrap js_question_wrap_container init-transition">
+			<div class="question-box image-question-wrap">
+				<p class="ques-text">Which of the following looks like the workshop an advisor would have ?</p>
+				<ul class='options-wrap image-landscape-wrap clearfix' id='image-option-container'>
+					<li>
+						<label class="image-option-wrap options-answer js-image-option">
+							<input type="radio" name="option">
+							<img src="<%= asset('assets/images/Option_1p.jpg') %>"/>
+							<span class="option-index">A</span>
+							<span class="option-fill js-option-fill"></span>
+						</label>
+					</li>
+					<li>
+						<label class="image-option-wrap options-answer js-image-option">
+							<input type="radio" name="option">
+							<img src="<%= asset('assets/images/Option_2p.jpg') %>"/>
+							<span class="option-index">B</span>
+							<span class="option-fill js-option-fill"></span>
+						</label>
+					</li>
+					<li>
+						<label class="image-option-wrap options-answer js-image-option">
+							<input type="radio" name="option">
+							<img src="<%= asset('assets/images/Option_3p.jpg') %>"/>
+							<span class="option-index">C</span>
+							<span class="option-fill js-option-fill"></span>
+						</label>
+					</li>
+					<li>
+						<label class="image-option-wrap options-answer js-image-option">
+							<input type="radio" name="option" >
+							<img src="<%= asset('assets/images/Option_4p.jpg') %>"/>
+							<span class="option-index">D</span>
+							<span class="option-fill js-option-fill"></span>
+						</label>
+					</li>
+				</ul>
+				<a href="#" class="help-icon" data-toggle="modal" data-target="#quiz-help">&#63;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<% include _quiz_help_modal %>

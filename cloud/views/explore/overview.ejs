@@ -1,0 +1,46 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Workstyle Overview", eventValue: 102});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Overview
+
+<%- contentFor('body') %>
+<div class="content">
+    <%- include explore_nav %>
+    <div class="explore-banner-wrap overview-banner">
+	    <div class="container">
+		    <div class="explore-banner-content">
+			    <h4>Overview — How Workstyle Works</h4>
+			    <a class="ws-play-video play-icon-big js-play-video" data-video-url="<%= video_url %>">
+				    <img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+			    <br>
+			    <a class="extra-link js-play-video" data-video-url="<%= video_url %>">Learn More About Workstyle</a>
+	        </div>
+    </div>
+	    <div class="video-section js-video-section hidden">
+		    <div class="container">
+                <div class="iframe-wrap">
+				    <iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+				    <a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+		    </div>
+        </div>
+    </div>
+    <div class="big-aligner">
+	    <p class="personality-description">Workstyle provides insights into why people do what at work, at home, and at play. By learning about the unique behavioral patterns and communication preferences for each workstyle &#8211; those of the Organizer, the Connector, the Original, the Doer, the Dreamer, and the Advisor &#8211; you'll more successfully interact with others in every area of your life!</p>
+	    <div class="start-quest-wrap clearfix">
+		    <div class="start-quest">
+			    <h4>Ready to Test Your Knowledge?</h4>
+			    <p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+            </div>
+		    <a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+        </div>
+    </div>
+</div>

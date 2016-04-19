@@ -1,0 +1,29 @@
+<div class="question-box white-box response-wrap js-question-box" data-next_ques_url="<%= url('quiz.nextQues') %>" data-question="<%= question %>">
+    <p class="ques-text"><%= question.get('question_text') %></p>
+    <div class="clearfix">
+        <div class="response-desc">
+            <h4>
+                <% if(option.get('is_correct')) { %>
+                <span class="ws-icon-square-check"></span>
+                Correct!
+                <% } else { %>
+                <span class="ws-icon-square-cross"></span>
+                Good Try!
+                <% } %>
+            </h4>
+            <% if(question.get('explanation_text')){ %>
+                <p><%= question.get('explanation_text') %></p>
+            <% } %>
+        </div>
+        <% if(option.get('is_correct')) { %>
+        <div class="points-earned">
+            <p class="result-bubble validation-bubble js-cal-width js-result-bubble">
+                <span><strong>+</strong><span class="pq-score"><%= question.get('difficulty').get('score') %></span>PQ</span>
+            </p>
+            <span>Points Earned</span>
+        </div>
+        <% } %>
+
+    </div>
+    <a class="help-icon" data-toggle="modal" href="#quiz-help">&#63;</a>
+</div>

@@ -1,0 +1,62 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        <% var options = {};%>
+        <% options.isSuperAdmin = locals.isSuperAdmin; %>
+        <% options.viewType = locals.viewType; %>
+        <% options.personalityGraphClassMap = locals.personalityGraphClassMap; %>
+        <% options.personalityCountList = locals.bannerGraphData.personalityCountList; %>
+        <% options.totalCount = locals.bannerGraphData.totalUserCount; %>
+        <%if(locals.viewType === "account_owner_view" || locals.viewType === "supervisor_parent_department_view") { %>
+            <% options.topDefaultDepartmentAnalyticsData = locals.topDefaultDepartmentAnalyticsData; %>
+            <% options.topDefaultDepartments = locals.topDefaultDepartments; %>
+        <% } %>
+        <%if(locals.viewType === "supervisor_view") { %>
+            <% options.companyName = locals.companyName; %>
+            <% options.departmentName = locals.departmentName; %>
+            <% options.departmentAnalyticsGraphData = locals.departmentAnalyticsGraphData; %>
+            <% options.companyAnalyticsGraphData = locals.companyAnalyticsGraphData; %>
+        <% } %>
+        <%if(locals.viewType === "employee_view") { %>
+            <% options.graph1data = locals.graph1data; %>
+            <% options.graph2data = locals.graph2data; %>
+            <% options.userTrainedGraph = locals.userTrainedGraph; %>
+            <% options.companyAnalyticsGraphData = locals.companyAnalyticsGraphData; %>
+        <% } %>
+        (new SwitchBetweenAnalyticsAndLeaderBoardModule()).init(<%- JSON.stringify(options) %>);
+    });
+</script>
+
+<%- contentFor('title') %>
+| My Team
+<%- contentFor('body') %>
+<div class="content">
+
+    <%= include _banner_graph.ejs %>
+
+    <div class="js_result_section">
+        <%if(locals.viewType === "account_owner_view") { %>
+            <%= include _account_owner_analytics.ejs %>
+        <% } else if(locals.viewType === "supervisor_view") { %>
+            <%= include _supervisor_analytics.ejs %>
+        <% } else if(locals.viewType === "supervisor_parent_department_view") { %>
+            <%= include _supervisor_parent_department.ejs %>
+        <% } else if(locals.viewType === "employee_view") { %>
+            <%= include _user_analytics.ejs %>
+        <% } %>
+    </div>
+</div>
+<div class="series-tooltip hidden js-tooltip">
+    <span class="caret tooltip-arrow"></span>
+    <p></p>
+</div>
+
+<div class="content container hide js-full-page-loader">
+    <div class="full-page-loader">
+        <div class="page-loader-wrap">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+</div>

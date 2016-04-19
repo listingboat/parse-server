@@ -1,0 +1,114 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new UserSettingsModule()).init(<%- JSON.stringify({
+            totalCount: locals.totalCount,
+            userPerPage: locals.userPerPage,
+            isSuperAdmin: locals.isSuperAdmin,
+            companyId: locals.company.id
+        }) %>);
+    });
+</script>
+<%- contentFor('title') %>
+| User Settings
+
+<%- contentFor('body') %>
+<div class="content user-settings-container">
+    <%- include ../settings/_settings_user_info_header %>
+    <div class="container settings-tabs-wrap">
+        <%- include ../settings/_settings_nav_partial %>
+    </div>
+    <% if (typeof isSuperAdmin !== 'undefined' && isSuperAdmin) { %>
+        <div class="dept-header-dropdown-wrap container js-select-company %>">
+            <p>Do User Setup for Company:</p>
+            <select class="selectpicker select-department-wrap js_company_select">
+                <option value="" selected disabled>Select Company</option>
+                    <% for (var companyIndex in companyList) { %>
+                        <option <% if(company.id === companyList[companyIndex].id){ %>selected<% } %> value="<%= companyList[companyIndex].id %>"><%= companyList[companyIndex].get('name') %></option>
+                    <% } %>
+            </select>
+        </div>
+    <% } %>
+    <div class="admin-settings-wrap js_user_settings_wrap">
+        <% include _user_management %>
+    </div>
+</div>
+<div class="user-settings-modal user-types-modal modal fade" id="user-setting-help">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <a href="#" class="ws-icon-close-icon close" data-dismiss="modal" aria-label="Close"></a>
+            <h4 class="modal-title">User Types</h4>
+         </div>
+         <div class="modal-body">
+            <p class="modal-help-text"><span>Super Administrator Account</span> users can see company-level analytics for all companies and get full user controls.</p>
+            <p class="modal-help-text"><span>Administrator Account</span> users can see company-level analytics and get full user controls.</p>
+            <p class="modal-help-text"><span>Department Supervisors</span> can see all of their respective department's sub-team analytics.</p>
+            <p class="modal-help-text"><span>Regular User</span> can see analytics of itself only.</p>
+            <div class="modal-btn-group">
+               <a href="#" data-dismiss="modal" aria-label="Close" class="btn black-btn">OKAY</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<% include _edit_user_details_modal.ejs %>
+<% include _deletion_updation_success_modal.ejs%>
+<div class="user-settings-modal modal fade" id="delete-user">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Permanently Delete User form Workstyle</h4>
+         </div>
+         <div class="modal-body modal-btn-group">
+            <a data-dismiss="modal" aria-label="Close" class="btn white-btn">CANCEL</a><a class="btn black-btn js_delete_user_modal_link">DELETE</a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="content container hide js-full-page-loader">
+    <div class="full-page-loader">
+        <div class="page-loader-wrap">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade upload-csv-response js_error_modal" id="id-department-name-error-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-error js_message"></p>
+                <a class="btn black-btn" data-dismiss="modal">Oops.. Something Went Wrong.</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade upload-csv-response" id="id-invite-reminder-success" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-success">Reminder sent!</p>
+                <a class="btn black-btn" data-dismiss="modal">OKAY</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade upload-csv-response" id="id-remove-invite-success" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-success">User Succesfully Removed!</p>
+                <a class="btn black-btn" data-dismiss="modal">OKAY</a>
+            </div>
+        </div>
+    </div>
+</div>

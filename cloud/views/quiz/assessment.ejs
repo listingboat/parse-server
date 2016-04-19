@@ -1,0 +1,88 @@
+<%- contentFor('header') //intentionally left blank %>
+<%- contentFor('footer') //intentionally left blank  %>
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+    });
+</script>
+<%- contentFor('title') %>
+| Assessment
+<%- contentFor('body') %>
+<div class="container">
+    <div class="pull-right">
+        <span class="js_user_name"></span>
+        <a class="js_logout">Logout</a>
+    </div>
+    <h3>Personality Pattern Inventory&reg;</h3>
+    <div class="js-question-container" style="display: none;">
+        <div class="question"><span class="js-question"></span></div>
+        <div class="answers clearfix">
+            <div class="left">
+                <div class="column"><span>1</span></div>
+                <div class="column"><span><input type="radio" data-row="1" name="col1" value="1"></span></div>
+                <div class="column"><span><input type="radio" data-row="2" name="col1" value="1"></span></div>
+                <div class="column"><span><input type="radio" data-row="3" name="col1" value="1"></span></div>
+                <div class="column"><span><input type="radio" data-row="4" name="col1" value="1"></span></div>
+                <div class="column"><span><input type="radio" data-row="5" name="col1" value="1"></span></div>
+                <div class="column"><span><input type="radio" data-row="6" name="col1" value="1"></span></div>
+            </div>
+            <div class="left">
+                <div  class="column"><span>2</span></div>
+                <div  class="column"><span><input type="radio" data-row="1" name="col2" value="2"></span></div>
+                <div  class="column"><span><input type="radio" data-row="2" name="col2" value="2"></span></div>
+                <div  class="column"><span><input type="radio" data-row="3" name="col2" value="2"></span></div>
+                <div  class="column"><span><input type="radio" data-row="4" name="col2" value="2"></span></div>
+                <div  class="column"><span><input type="radio" data-row="5" name="col2" value="2"></span></div>
+                <div  class="column"><span><input type="radio" data-row="6" name="col2" value="2"></span></div>
+            </div>
+            <div class="left">
+                <div  class="column"><span>3</span></div>
+                <div  class="column"><span><input type="radio" data-row="1" name="col3" value="3"></span></div>
+                <div  class="column"><span><input type="radio" data-row="2" name="col3" value="3"></span></div>
+                <div  class="column"><span><input type="radio" data-row="3" name="col3" value="3"></span></div>
+                <div  class="column"><span><input type="radio" data-row="4" name="col3" value="3"></span></div>
+                <div  class="column"><span><input type="radio" data-row="5" name="col3" value="3"></span></div>
+                <div  class="column"><span><input type="radio" data-row="6" name="col3" value="3"></span></div>
+            </div>
+            <div class="left">
+                <div  class="column"><span>4</span></div>
+                <div  class="column"><span><input type="radio" data-row="1" name="col4" value="4"></span></div>
+                <div  class="column"><span><input type="radio" data-row="2" name="col4" value="4"></span></div>
+                <div  class="column"><span><input type="radio" data-row="3" name="col4" value="4"></span></div>
+                <div  class="column"><span><input type="radio" data-row="4" name="col4" value="4"></span></div>
+                <div  class="column"><span><input type="radio" data-row="5" name="col4" value="4"></span></div>
+                <div  class="column"><span><input type="radio" data-row="6" name="col4" value="4"></span></div>
+            </div>
+            <div class="left">
+                <div  class="column"><span>5</span></div>
+                <div  class="column"><span><input type="radio" data-row="1" name="col5" value="5"></span></div>
+                <div  class="column"><span><input type="radio" data-row="2" name="col5" value="5"></span></div>
+                <div  class="column"><span><input type="radio" data-row="3" name="col5" value="5"></span></div>
+                <div  class="column"><span><input type="radio" data-row="4" name="col5" value="5"></span></div>
+                <div  class="column"><span><input type="radio" data-row="5" name="col5" value="5"></span></div>
+                <div  class="column"><span><input type="radio" data-row="6" name="col5" value="5"></span></div>
+            </div>
+            <div class="left answer-options">
+                <div  class="column"></div>
+                <div  class="column"><span class="js-answer1"></span></div>
+                <div  class="column"><span class="js-answer2"></span></div>
+                <div  class="column"><span class="js-answer3"></span></div>
+                <div  class="column"><span class="js-answer4"></span></div>
+                <div  class="column"><span class="js-answer5"></span></div>
+                <div  class="column"><span class="js-answer6"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row btn-block">
+        <button class="btn btn-primary js-previous">&laquo; Previous Question</button>
+        <button class="btn btn-primary js-clear">Clear This Question</button>
+        <button class="btn btn-primary js-next">Next Question &raquo;</button>
+        <button class="btn btn-primary js-submit" style="display: none;">Submit</button>
+        <a class="btn btn-primary" href="/quiz/intro?start=0">Help</a>
+    </div>
+</div>
+<div class="loader-container js-loader">
+    <div class="loader-bg"></div>
+    <img class="loader-img" src="<%= asset('assets/images/loader-big.gif') %>"/>
+</div>

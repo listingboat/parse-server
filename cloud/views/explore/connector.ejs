@@ -1,0 +1,217 @@
+<%- contentFor('script') %>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+		(new PlayExploreVideoModule()).init({eventLabel: "Connector", eventValue: 104});
+    });
+</script>
+
+<%- contentFor('title') %>
+| Explore Connector
+
+<%- contentFor('body') %>
+<div class="content">
+	<%- include explore_nav %>
+	<div class="banner-wrap <%- personality_banner_class %> explore-banner">
+		<div class="container">
+			<div class="explore-banner-content">
+				<span class="icon-wrap"></span>
+				<h4>The Connector Workstyle Type</h4>
+				<a class="ws-play-video play-icon-small js-play-video" data-video-url="<%= video_url %>">
+					<img class="js_video_play_button" src="<%= asset('assets/images/ws_play_button.gif') %>">
+				</a>
+				<br>
+				<a class="personality-detail-link js-play-video" data-video-url="<%= video_url %>">Learn More About Connectors</a>
+			</div>
+		</div>
+		<div class="video-section js-video-section hidden">
+			<div class="container">
+                <div class="iframe-wrap">
+					<iframe width="100%" height="100%" frameborder="0" class="wistia_embed" name="wistia_embed" allowfullscreen></iframe>
+					<a class="close-video js-close-video glyphicon glyphicon-remove" title="Close video"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="big-aligner explore-pq-wrap">
+		<p class="personality-description">The Connector is compassionate, sensitive, and warm. Their superpower is Relationships. Learn to identify, understand, and connect with them by exploring our guide below.</p>
+		<div id="custom-explore-pager" class="cycle-pager explore-pager-wrap <%- personality_type_slide %>">
+		    <a href="#" class="explore-pager">About</a>
+		    <a href="#" class="explore-pager">Needs</a>
+		    <a href="#" class="explore-pager">In the Office</a>
+		    <a href="#" class="explore-pager">Persuasion</a>
+		    <a href="#" class="explore-pager">Conflict</a>
+		    <a href="#" class="explore-pager">Famous People</a>
+		</div>
+		<div class="cycle-slideshow explore-cycle-slide"
+		    data-cycle-fx="scrollHorz"
+		    data-cycle-timeout="0"
+		    data-cycle-pager="#custom-explore-pager"
+		    data-cycle-pager-template=""
+		    data-cycle-slides="> .js-slide-container"
+		    data-cycle-auto-height="container"
+		    >
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What’s their work style?</h4>
+				<ul class="explore-content-list">
+					<li>The Connector feels first and is a true people person. They give unconditional acceptance to those around them and put effort into making them feel comfortable.</li>
+					<li>People energize the Connector. They are naturally nurturing and give to others freely. They are quick to build rapport.</li>
+					<li>They are warm, sensitive, and instinctively empathetic.</li>
+					<li>The Connector also has a well-developed intuitive sense. They’re able to look at both sides of the equation and trust their feelings (their “gut”) when making a decision.</li>
+				</ul>
+
+				<h4>How to spot the Connector</h4>
+				<ul class="explore-content-list">
+					<li>Connectors dress for others. They want to look nice and well put together for others. They tend to prefer earth tones and things that feel good to wear.</li>
+					<li>Connectors’ workspaces are usually warm, comfortable, and inviting—just like their personalities. Their desks and walls are decorated with photos of friends and family or scenes that evoke great memories.</li>
+					<li>Their authentic, warm, sensitive, and caring tones invite you to be comfortable with them. They are quick with a smile and to notice when you are having a tough day.</li>
+					<li>Connectors use personal, caring language. They are non-confrontational even if they’re upset with you. Their stories include details about friends, family, and co-workers.</li>
+				</ul>
+
+				<h4>How people commonly perceive Connectors</h4>
+				<p>People are key to the Connector’s Relationships superpower, which is why people enjoy doing business with Connectors. Connectors go out of their way to make interactions pleasant and their empathetic nature allows Connectors to relate to the needs of others. They are the cheerleaders and “people focused” in a group. Some might be concerned that Connectors are too social and not focused on “the plan.” Yet, they’re as focused on a goal as other styles; except they’re focused on how the team will work together to achieve the goal.</p>
+
+				<h4>Typical blindspots for the Connector</h4>
+				<p>With their focus on people, Connectors can sometimes interpret someone else’s focus on work as a lack of interest in them personally. A lack of personalized attention to the Connector can prompt them to question whether they are performing sufficiently in their work. At times they may respond by pulling away thinking that you’ll seek them out if you truly appreciate them.</p>
+			</div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<p>Connectors need recognition for <strong>person</strong> and <strong>sensory input</strong>.</p>
+
+				<p><strong>Person:</strong> The Connector needs recognition of their person. They need others to accept them just the way they are, without conditions or strings attached or any performance required. Some examples include phrases such as “I appreciate you”, “I like you” or “I’m glad you are part of the team.”</p>
+
+				<p><strong>Sensory input:</strong> Their other psychological need is sensory input. Sights, smells, touches, tastes, and sounds are all important to the Connector. These inputs make them feel good and energized. When their environment is pleasant, comfortable, and relaxing, it gives them energy.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Connectors as Managers</h4>
+				<p>Connectors are nurturing and empathetic managers; they naturally have a very high EQ (emotional quotient). They have a bias towards a work environment where you can spend much of your time in group situations. They prefer groups that support you and function as a team and with which you can identify and feel a sense of belonging.</p>
+
+				<h4>Meetings with Connectors</h4>
+				<p>Connectors WANT to have a positive, mutually satisfying relationship with you.<br><br>Start the meeting with a quick personal check-in! For a Connector, this approach reinforces the idea that working together “we can accomplish anything.” Connectors work best as part of a team in which they feel accepted, wanted, and noticed as an individual. They get energy from their peers.</p>
+
+				<h4>Connectors and Decision Making</h4>
+				<p>Team and group consensus is very important to the Connector. They’re harmonious by nature and will use language to bring people together. So in making a decision, they will want to ensure everyone agrees with the outcome. Sometimes Connectors won’t feel comfortable voicing their opinion if there is dissension; invite the Connector to share their feelings because their intuition on any given topic is valuable input.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>Impacting and Influencing a Connector</h4>
+				<ul class="explore-content-list">
+					<li>Start conversations and interactions with a personal exchange.</li>
+					<li>Include personal stories as the way to convey specific points and messages.</li>
+					<li>If presenting in PowerPoint, clip art and colors can be pleasing and appealing visual stimuli.</li>
+					<li>Include the impact on people, customers, and employees to demonstrate your own emotional intelligence.</li>
+				</ul>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<h4>What causes distress for Connectors?</h4>
+		    	<ul class="explore-content-list">
+		    		<li>Impersonal or unemotional interactions</li>
+		    		<li>Criticism or other messaging that creates a feeling of inadequacy</li>
+		    		<li>Other people arguing or not getting along</li>
+		    		<li>Being ignored</li>
+		    	</ul>
+
+				<h4>How do they communicate distress?</h4>
+				<p>When they become distressed, they can become self-deprecating and inappropriately laugh at themselves. Statements can sound like questions with a lilt-up at the end. Distressed tones can also sound overwhelmed, overwrought, confused, uncertain and/or timid. These are signals to the world that they are uncertain and/or uncomfortable.<br><br>When they first become distressed, they will over-accommodate. "If I'm nice enough, they'll like me. If I'm too demanding, they won't like/help me."<br><br>If that doesn't work, then they will become confused and make mistakes. Their worry that you really don't care about them will progressively increase as well.</p>
+
+				<h4>Tips for de-escalating or avoiding conflict with Connectors</h4>
+				<p>De-escalating the Connector’s distress starts with asking, “Are you okay?” Reach out to check in on them personally. Reinforce that you are there to help them and work with them, together.<br><br>To avoid conflict, if you need information from a Connector, ask for their help. They’ll feel good about getting involved. And thank them personally for their contributions.</p>
+		    </div>
+		    <div class="explore-slide-container js-slide-container">
+		    	<div class="famous-ppl-row">
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_CoraCrawley_DowntonAbbey.png') %>">
+		    			</div>
+		    			<p class="famous-name">Cora Crowley</p>
+		    			<p class="famous-role">Downton Abbey</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_JenniferLopez_Singer.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jennifer Lopez</p>
+		    			<p class="famous-role">Singer</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_JimmyCarter_President.png') %>">
+		    			</div>
+		    			<p class="famous-name">Jimmy Carter</p>
+		    			<p class="famous-role">President</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_Joy_InsideOut.png') %>">
+		    			</div>
+		    			<p class="famous-name">Joy</p>
+		    			<p class="famous-role">Inside Out</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_LeonardHofstadter_TheBigBangTheory.png') %>">
+		    			</div>
+		    			<p class="famous-name">Leonard Cooper</p>
+		    			<p class="famous-role">The Big Bang Theory</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_LisaLing_Journalist.png') %>">
+		    			</div>
+		    			<p class="famous-name">Lisa Ling</p>
+		    			<p class="famous-role">Journalist</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_PamHalpert_TheOffice.png') %>">
+		    			</div>
+		    			<p class="famous-name">Pam Halpert</p>
+		    			<p class="famous-role">The Office</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_PhilDunphy_ModernFamily.png') %>">
+		    			</div>
+		    			<p class="famous-name">Phil Dunphy</p>
+		    			<p class="famous-role">Modern Family</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_PrimroseEverdeen_TheHungerGames.png') %>">
+		    			</div>
+		    			<p class="famous-name">Primrose Everdeen</p>
+		    			<p class="famous-role">The Hunger Games</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_PrincessDiana_PrincessofWales.png') %>">
+		    			</div>
+		    			<p class="famous-name">Princess Diana</p>
+		    			<p class="famous-role">Princess of Wales</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_RachelGreen_Friends.png') %>">
+		    			</div>
+		    			<p class="famous-name">Rachel Green</p>
+		    			<p class="famous-role">Friends</p>
+		    		</div>
+		    		<div class="famous-block">
+		    			<div class="famous-img-wrapper">
+		    				<img src="<%= asset('assets/images/Connector/Connector_TaylorSwift_Singer.png') %>">
+		    			</div>
+		    			<p class="famous-name">Taylor Swift</p>
+		    			<p class="famous-role">Singer</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+
+		<div class="start-quest-wrap clearfix">
+			<div class="start-quest">
+				<h4>Ready to Test Your Knowledge?</h4>
+				<p>See how well you understand the workstyle types and power up on your abilities. Each game helps make you a stronger communicator.</p>
+			</div>
+			<a href="<%= url('quiz.start') %>" class="black-btn">START A NEW QUEST</a>
+		</div>
+	</div>
+</div>

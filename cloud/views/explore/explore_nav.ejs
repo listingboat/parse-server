@@ -1,0 +1,28 @@
+<div class="explore-nav-wrap">
+	<ul class="container explore-nav-list">
+		<li>
+			<a class="explore-nav-tab predictor-tab<% if (locals.about_me) { %> active<% } %>" href="<%= url('user.myReport') %>">My Report</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab overview-tab<% if (locals.overview_page) { %> active<% } %>" href="<%= url('explore.overview') %>">Overview</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab organizer-tab<% if (locals.organizer_page) { %> active<% } %>" href="<%= url('explore.organizer') %>">The Organizer</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab connector-tab<% if (locals.connector_page) { %> active<% } %>" href="<%= url('explore.connector') %>">The Connector</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab original-tab<% if (locals.original_page) { %> active<% } %>" href="<%= url('explore.original') %>">The Original</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab doer-tab<% if (locals.doer_page) { %> active<% } %>" href="<%= url('explore.doer') %>">The Doer</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab advisor-tab<% if (locals.advisor_page) { %> active<% } %>" href="<%= url('explore.advisor') %>">The Advisor</a>
+		</li>
+		<li>
+			<a class="explore-nav-tab dreamer-tab<% if (locals.dreamer_page) { %> active<% } %>" href="<%= url('explore.dreamer') %>">The Dreamer</a>
+		</li>
+	</ul>
+</div>

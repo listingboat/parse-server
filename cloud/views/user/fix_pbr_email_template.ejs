@@ -1,0 +1,13 @@
+<%- contentFor('title') %>
+| Fix PBR Data Email Template
+
+<%- contentFor('email_head') %>
+PBR Data Missing
+
+<%- contentFor('email_body') %>
+<%= userName %> submitted a help request to notify admin that his/her Phone ID and Identifier Source are not configured.<br/>
+User ID: <%= userId %><br/>
+Email: <%= userEmail %><br/>
+<% if(typeof userCompany !== "undefined"){ %>
+    Company: <%= userCompany.get("name") %><br/>
+<% } %>

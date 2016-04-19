@@ -1,0 +1,86 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	initQuizOptionSelect();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Personality Predictor
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<%- include _explore_nav %>
+	<div class="container predictor-slide-wrap">
+		<div class="cycle-slideshow"
+		 data-cycle-timeout="0" 
+		 data-cycle-log="false"
+		 data-cycle-slides="> .js-predictor-question"
+		 data-cycle-next=".js-next"
+		 data-cycle-prev=".js-prev"
+		 data-cycle-auto-height="container"
+		 data-allow-wrap="false"
+		 data-cycle-center-horz="true" 
+		 data-cycle-fx="scrollHorz">
+		 	<div class="predictor-question-wrap js-predictor-question">
+		 		<h5>Question 4 of 5:</h5>
+		 		<p>Is the person more likely to have a neat desk or a messy desk?</p>
+		 		<div class="clearfix js-radio-wrap">
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>A</span>
+		 				<p>Clean Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>B</span>
+		 				<p>Messy Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>C</span>
+		 				<p>Clean Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>D</span>
+		 				<p>Messy Desk</p>
+		 			</label>
+		 		</div>
+		 	</div>
+		 	<div class="predictor-question-wrap js-predictor-question">
+		 		<h5>Question 4 of 5:</h5>
+		 		<p>Is the person more likely to have a neat desk or a messy desk?</p>
+		 		<div class="clearfix js-radio-wrap">
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>A</span>
+		 				<p>Clean Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>B</span>
+		 				<p>Messy Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>C</span>
+		 				<p>Clean Desk</p>
+		 			</label>
+		 			<label class="ques-option js-radio-label">
+		 				<input type="radio" class="js-radio">
+		 				<span>D</span>
+		 				<p>Messy Desk</p>
+		 			</label>
+		 		</div>
+		 	</div>
+		</div>
+		<div class="slide-control-wrap clearfix">
+			<a href="#" class="js-next black-btn">NEXT</a>
+			<a href="#" class="js-prev black-hollow-btn">PREVIOUS</a>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

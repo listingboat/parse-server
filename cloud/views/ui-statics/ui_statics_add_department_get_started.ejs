@@ -1,0 +1,72 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	(new CommonModule()).init();
+    	UserSettingModule();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Settings
+
+<%- contentFor('body') %>
+<%- include _header %>
+<div class="content">
+	<div class="setting-banner-wrap dreamer-settings clearfix">
+		<div class="container">
+			<h2>Jake Swantner <span>Profile</span></h2>
+			<a href="mailto:admin@work.style" class="btn white-round-btn">Contact us</a>
+			<p>Need help with something? </p>
+		</div>
+	</div>
+	<div class="container settings-tabs-wrap">
+		<!-- Nav tabs -->
+		<ul class="settings-nav-wrap" role="tablist">
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#account" class="settings-nav-item js-nav-item" aria-controls="account" role="tab" data-toggle="tab">Account</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#password" class="settings-nav-item js-nav-item" aria-controls="password" role="tab" data-toggle="tab">Password</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#faq" class="settings-nav-item js-nav-item" aria-controls="faq" role="tab" data-toggle="tab">Help/FAQ</a>
+			</li>
+			<li role="presentation" class="settings-nav-tab">
+				<a href="#invite" class="settings-nav-item js-nav-item" aria-controls="invite" role="tab" data-toggle="tab">Invite</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content settings-tab-content">
+			<div role="tabpanel" class="tab-pane" id="account">
+				<%- include _settings_tab_account %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="password">
+				<%- include _settings_tab_password %>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="faq">
+				<%- include _settings_tab_faq %>
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="invite">
+				<div class="invite-tab-wrap clearfix">
+					<div class="invite-wrap">
+						<h3 class="invite-head">Employee Invite Setup</h3>
+						<p class="send-invite-title">LET'S SETUP YOUR COMPANY BEFORE SENDING INVITES</p>
+						<button type='button' class="btn yellow-btn js_send_invite">GET STARTED</button>
+					</div>
+					<div class="invite-wrap friend-invite">
+						<form id="invite-friend-form">
+							<h3 class="invite-head">Invite a Friend</h3>
+							<div class="friend-invite-wrap">
+								<p class="send-invite-title">PASTE YOUR FRIEND'S EMAIL BELOW:</p>
+								<input type="email" class="form-control js_friend_email">
+							</div>
+							<button type="submit" class="btn yellow-btn js_invite_friend" >SEND INVITE</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include _footer %>

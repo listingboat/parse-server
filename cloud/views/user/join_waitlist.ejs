@@ -1,0 +1,98 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        landing_page_init();
+        (new JoinWaitListModule()).init();
+    });
+</script>
+
+<%- contentFor('title') %>
+| Register
+<%- contentFor('header')%>
+<%- contentFor('body') %>
+<div class="content landing-background login-background ws-register-wrap join-waitlist-wrap">
+    <div class="container">
+        <div class="register-wrap">
+            <a class="logo-wrap" href="/"><img src="<%= asset('assets/images/register_page_logo.png') %>"></a>
+            <div class="waitlist-register-wrap js-join-form">
+                <div class="white-bg-box clearfix">
+                    <form id="join_waitlist_form" class="register-form-wrap" method ="post">
+                        <h2>Join the Workstyle Waitlist</h2>
+                        <div class="form-group js-input-group <% if(typeof firstNameError !== 'undefined'){ %>error-wrap<% } %>">
+                            <input type="text" id="first_name" name="first_name" class="form-control text-field-wrap js-input-text"  placeholder="First Name"
+                                    maxlength="<%= firstNameMaxLength %>" <% if(typeof firstName !== 'undefined'){ %> value="<%= firstName %>" <% } %>
+                                    >
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">
+                                    <% if(typeof firstNameError !== 'undefined'){ %>
+                                    <%= firstNameError %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group js-input-group <% if(typeof lastNameError !== 'undefined'){ %>error-wrap<% } %>">
+                            <input type="text" id="last_name" name="last_name" class="form-control text-field-wrap js-input-text" placeholder="Last Name"
+                                    maxlength="<%= lastNameMaxLength %>" <% if(typeof lastName !== 'undefined'){ %> value="<%= lastName %>" <% } %>
+                                    >
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">
+                                    <% if(typeof lastNameError !== 'undefined'){ %>
+                                    <%= lastNameError %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group js-input-group <% if(typeof userEmailError !== 'undefined'){ %>error-wrap<% } %>">
+                            <input type="email" id="user_email" name="user_email" class="form-control text-field-wrap js-input-text" placeholder="Email"
+                                    maxlength="<%= emailMaxLength %>" <% if(typeof userEmail !== 'undefined'){ %> value="<%= userEmail %>" <% } %>
+                                    novalidate>
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">
+                                    <% if(typeof userEmailError !== 'undefined'){ %>
+                                    <%= userEmailError %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group js-input-group <% if(typeof phoneNumberError !== 'undefined'){ %>error-wrap<% } %>">
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control text-field-wrap js-input-text" placeholder="Phone"
+                                    <% if(typeof phoneNumber !== 'undefined'){ %> value="<%= phoneNumber %>" <% } %>
+                                    >
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">
+                                    <% if(typeof phoneNumberError !== 'undefined'){ %>
+                                    <%= phoneNumberError %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group js-input-group <% if(typeof companyError !== 'undefined'){ %>error-wrap<% } %>">
+                            <input type="text" id="company" name="company" class="form-control text-field-wrap js-input-text" placeholder="Company"
+                                    <% if(typeof company !== 'undefined'){ %> value="<%= company %>" <% } %>
+                                    >
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">
+                                    <% if(typeof companyError !== 'undefined'){ %>
+                                    <%= companyError %>
+                                    <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <button class="btn white-btn js-join-btn">JOIN THE WAITLIST</button>
+                    </form>
+                </div>
+                <p class="login-now-wrap">Already have an account? <a href="<%= url('user.signIn') %>">Log in</a></p>
+            </div>
+            <div class="white-bg-box loader-wrap clearfix" style="display: none">
+                <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>" class="validate-loader">
+            </div>
+        </div>
+        <p class="copyright-text">&copy; Workstyle 2015</p>
+    </div>
+</div>
+<%- contentFor('footer') %>

@@ -1,0 +1,45 @@
+<div class="modal fade upload-csv-modal add-new-company-modal" id="id-add-company-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Add New Company</h2>
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <form id="add-company-form" class="add-company-wrap">
+                    <div class="form-group js_new_company_name_wrap">
+                        <input type="text" class="form-control input-common js_new_company_name" maxlength=<%= companyNameMaxLength %> placeholder="Company Name">
+                        <div class="custom-tooltip">
+                            <div class="custom-tooltip-arrow"></div>
+                            <p class="error-text-wrap">* Required Field</p>
+                        </div>
+                    </div>
+                    <div class="add-text-wrap">
+                        <div class="form-group active js_active js_new_domain_div" data-domain_index="">
+                            <input type="text" class="form-control js_new_domain_field" placeholder="Click to add company domain">
+                            <div class="custom-tooltip">
+                                <div class="custom-tooltip-arrow"></div>
+                                <p class="error-text-wrap">* Required Field</p>
+                            </div>
+                            <a class="cancel-input js_remove_domain_anchor">X</a>
+                        </div>
+                    </div>
+                    <div class="clearfix reset-btn-wrap">
+                        <a href="#" data-dismiss="modal" class="btn black-hollow-btn js-reset-form">Cancel</a>
+                        <button type="button" class="black-btn btn js_add_company" data-add_company_url="<%= url('company.addNewCompany') %>"
+                        data-add_pardot_list_url="<%= url('company.addPardotListToCompany')%>">ADD</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade upload-csv-response" id="id-company-added-success-modal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a class="close-modal" data-dismiss="modal">&times;</a>
+                <p class="csv-upload-error js_message">Company Successfully Added</p>
+                <a class="btn black-btn" data-dismiss="modal">OKAY</a>
+            </div>
+        </div>
+    </div>
+</div>

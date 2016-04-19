@@ -1,0 +1,40 @@
+<%- contentFor('script') %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        (new CommonModule()).init();
+        (new SwitchBetweenAnalyticsAndLeaderBoardModule()).init(<%- JSON.stringify({
+            companyName: locals.company.get('name'),
+            graphPersonality: locals.personalitySelected,
+            personalityGraphClassMap: locals.personalityGraphClassMap,
+            personalityCountList: locals.personalityCountList,
+            personalitySelected: locals.personalitySelected,
+            totalCount: locals.totalUserCount,
+            userPerPage: locals.userPerPage,
+            isSuperAdmin: locals.isSuperAdmin,
+            companyId: locals.company.id
+        }) %>);
+    });
+</script>
+
+<%- contentFor('title') %>
+| My Team
+<%- contentFor('body') %>
+<div class="content">
+
+    <%= include _banner_graph.ejs %>
+
+    <%= include _team_directory.ejs %>
+</div>
+<div class="series-tooltip hidden js-tooltip">
+    <span class="caret tooltip-arrow"></span>
+    <p></p>
+</div>
+
+<div class="content container hide js-full-page-loader">
+    <div class="full-page-loader">
+        <div class="page-loader-wrap">
+            <img src="<%= asset('assets/images/workstyle_loading_white.gif') %>">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+</div>
