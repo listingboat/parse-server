@@ -1,20 +1,20 @@
 // All controllers for Settings app
 
-var configs =require('cloud/app_settings.js'),
-    settingUtils = require('cloud/apps/settings/utils.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    companyUtils = require('cloud/apps/company/utils.js'),
-    userUtils = require('cloud/apps/user/utils.js'),
-    analyticsUtils = require('cloud/apps/analytics/utils.js'),
-    quizUtils = require('cloud/apps/quiz/utils.js'),
-    secret = require('cloud/secret.js'),
-    appSettings = require('cloud/app_settings.js'),
+var configs =require('./cloud/app_settings.js'),
+    settingUtils = require('./cloud/apps/settings/utils.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    companyUtils = require('./cloud/apps/company/utils.js'),
+    userUtils = require('./cloud/apps/user/utils.js'),
+    analyticsUtils = require('./cloud/apps/analytics/utils.js'),
+    quizUtils = require('./cloud/apps/quiz/utils.js'),
+    secret = require('./cloud/secret.js'),
+    appSettings = require('./cloud/app_settings.js'),
     _ = require('underscore'),
-    md5 = require('cloud/packages/md5.js'),
-    settingConstants = require('cloud/apps/settings/constants.js'),
-    userConstants = require('cloud/apps/user/constants.js'),
-    companyConstants = require('cloud/apps/company/constants.js'),
-    commonConstants = require('cloud/apps/common/constants.js');
+    md5 = require('./cloud/packages/md5.js'),
+    settingConstants = require('./cloud/apps/settings/constants.js'),
+    userConstants = require('./cloud/apps/user/constants.js'),
+    companyConstants = require('./cloud/apps/company/constants.js'),
+    commonConstants = require('./cloud/apps/common/constants.js');
 
 // controller that renders account setting page
 exports.accountSettingsController = function(req, res){
@@ -269,7 +269,7 @@ exports.sendInviteController = function(req, res){
             sliceFrom = index;
             sliceTo = (emailList.length - index < settingConstants.PARDOT_INVITE_OBJECT_LENGTH) ? emailList.length : settingConstants.PARDOT_INVITE_OBJECT_LENGTH + index;
             emailListString = emailList.slice(sliceFrom, sliceTo).toString();
-            hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + emailListString + companyPardotName + companyPardotListId + timeStamp + secret.securityKey2);
+            hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + emailListString + companyPardotName + companyPardotListId + timeStamp + secret.securityKey2);
             pardotCallObjects.push({inviteeList: emailList.slice(sliceFrom, sliceTo), hash: hash, timeStamp: timeStamp});
         }
         return pardotCallObjects;
@@ -350,7 +350,7 @@ exports.inviteFriendController = function (req, res) {
 
     function getPardotCallData(email){
         var timeStamp = (new Date()).getTime(),
-            hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + appSettings.PARDOTS_LIST_NAMES.FRIEND_INVITE_LIST + timeStamp + secret.securityKey2);
+            hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + appSettings.PARDOTS_LIST_NAMES.FRIEND_INVITE_LIST + timeStamp + secret.securityKey2);
         return {
             email: email,
             listName: appSettings.PARDOTS_LIST_NAMES.FRIEND_INVITE_LIST,
@@ -413,7 +413,7 @@ exports.addInviteeInPardotController = function(req, res){
         if(invitees.length > 0) {
             inviteeListString = invitees.toString();
 
-            hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + inviteeListString + companyPardotName + companyPardotListId + timeStamp + secret.securityKey2);
+            hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + inviteeListString + companyPardotName + companyPardotListId + timeStamp + secret.securityKey2);
             if (hash == hashReceived) {
                 settingUtils.addProspectToInviteList(companyPardotName, invitees, companyPardotListId, successCallback);
             }

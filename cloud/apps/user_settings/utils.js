@@ -1,8 +1,8 @@
-var userConstants = require('cloud/apps/user/constants.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    userSettingsConstants = require('cloud/apps/user_settings/constants.js'),
-    appSettings = require('cloud/app_settings.js'),
-    secret = require('cloud/secret.js');
+var userConstants = require('./cloud/apps/user/constants.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    userSettingsConstants = require('./cloud/apps/user_settings/constants.js'),
+    appSettings = require('./cloud/app_settings.js'),
+    secret = require('./cloud/secret.js');
 
 exports.getPermissionTypeIndex = function (permissionTypeList, permissionType) {
     var index = null;
@@ -177,7 +177,7 @@ exports.updateUserDetails = function(formData, user, successCallback, errorCallb
     }
 
     timeStamp = (new Date()).getTime();
-    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + user.get('email') + user.get('first_name') + user.get('last_name') + timeStamp + secret.securityKey2);
+    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + user.get('email') + user.get('first_name') + user.get('last_name') + timeStamp + secret.securityKey2);
 
     objectsToSave.push(user);
 

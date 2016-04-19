@@ -1,8 +1,8 @@
-var leaderBoardConstants = require('cloud/apps/leader_board/constants.js'),
+var leaderBoardConstants = require('./cloud/apps/leader_board/constants.js'),
     _ = require('underscore'),
-    userConstants = require('cloud/apps/user/constants.js'),
-    companyUtils = require('cloud/apps/company/utils.js'),
-    commonUtils = require('cloud/apps/common/utils.js');
+    userConstants = require('./cloud/apps/user/constants.js'),
+    companyUtils = require('./cloud/apps/company/utils.js'),
+    commonUtils = require('./cloud/apps/common/utils.js');
 
 // renders explore page(s)
 exports.leaderBoardController = function (req, res) {

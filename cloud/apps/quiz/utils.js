@@ -1,6 +1,6 @@
-var constants = require('cloud/apps/quiz/constants'),
-    userUtils = require('cloud/apps/user/utils.js'),
-    companyConstants = require('cloud/apps/company/constants.js')
+var constants = require('./cloud/apps/quiz/constants'),
+    userUtils = require('./cloud/apps/user/utils.js'),
+    companyConstants = require('./cloud/apps/company/constants.js')
     _ = require('underscore');
 
 // Function that returns User's personality Score object for the personality.

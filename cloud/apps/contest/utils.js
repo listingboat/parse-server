@@ -1,7 +1,7 @@
-var commonUtils = require('cloud/apps/common/utils.js'),
-    commonConstants = require('cloud/apps/common/constants.js'),
-    contestConstants = require('cloud/apps/contest/constants.js'),
-    appSettings = require('cloud/app_settings.js'),
+var commonUtils = require('./cloud/apps/common/utils.js'),
+    commonConstants = require('./cloud/apps/common/constants.js'),
+    contestConstants = require('./cloud/apps/contest/constants.js'),
+    appSettings = require('./cloud/app_settings.js'),
     _ = require('underscore');
 
 

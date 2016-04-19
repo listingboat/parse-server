@@ -48,16 +48,16 @@ exports.PROTOCOL_FOR_WORK_STYLE = "http://";
 // override app settings with custom environment
 var _ = require('underscore');
 try {
-    var setupEnvironment = require('cloud/setup_environment.js');
+    var setupEnvironment = require('./cloud/setup_environment.js');
 }catch(error){
     setupEnvironment = {environment: 'development'}
 }
-var environment = require('cloud/environment/' + setupEnvironment.environment + '.js');
+var environment = require('./cloud/environment/' + setupEnvironment.environment + '.js');
 
 exports = _.extend(exports, environment);
 
 try{
     // local overrides
-    localEnvironment = require('cloud/environment/local.js');
+    localEnvironment = require('./cloud/environment/local.js');
     exports = _.extend(exports, localEnvironment);
 }catch(error){} // ignores if local.js does not exists

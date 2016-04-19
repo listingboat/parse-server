@@ -1,10 +1,10 @@
-var userUtils = require('cloud/apps/user/utils'),
-    quizUtils = require('cloud/apps/quiz/utils'),
-    quizConstants = require('cloud/apps/quiz/constants'),
-    appSettings = require('cloud/app_settings.js'),
-    userConstants = require('cloud/apps/user/constants'),
-    secret = require('cloud/secret.js'),
-    commonUtils = require('cloud/apps/common/utils');
+var userUtils = require('./cloud/apps/user/utils'),
+    quizUtils = require('./cloud/apps/quiz/utils'),
+    quizConstants = require('./cloud/apps/quiz/constants'),
+    appSettings = require('./cloud/app_settings.js'),
+    userConstants = require('./cloud/apps/user/constants'),
+    secret = require('./cloud/secret.js'),
+    commonUtils = require('./cloud/apps/common/utils');
 
 // All controllers for quiz app
 
@@ -202,7 +202,7 @@ exports.answerValidationController = function (req, res) {
                             Parse.Object.saveAll(objectsToSave, { // bulk save response and user
                                 success: function () {
                                     changedScoreData.hashTimeStamp = (new Date()).getTime();    // time stamp for security so data can't be tempered
-                                    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + changedScoreData.totalScoreIncrement + changedScoreData.userScoreIncrement + questionSkillId + questionPersonalityId + changedScoreData.hashTimeStamp + secret.securityKey2);
+                                    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + changedScoreData.totalScoreIncrement + changedScoreData.userScoreIncrement + questionSkillId + questionPersonalityId + changedScoreData.hashTimeStamp + secret.securityKey2);
                                     var context = {
                                         question: question,
                                         option: optionObject,
@@ -244,7 +244,7 @@ exports.recalculateScoreController = function (req, res) {
 
     // validate received score change
     function validateReceivedData(changedScoreData, hash){
-        var reGeneratedHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + changedScoreData.totalScoreIncrement + changedScoreData.userScoreIncrement + questionSkillId + questionPersonalityId + changedScoreData.hashTimeStamp + secret.securityKey2);
+        var reGeneratedHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + changedScoreData.totalScoreIncrement + changedScoreData.userScoreIncrement + questionSkillId + questionPersonalityId + changedScoreData.hashTimeStamp + secret.securityKey2);
         return (hash == reGeneratedHash);
     }
 
@@ -261,7 +261,7 @@ exports.recalculateScoreController = function (req, res) {
                 context.batchCount++;
             }
             context.hashTimeStamp = changedScoreData.hashTimeStamp;    // time stamp is used in hash for security
-            context.batchCountHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + context.batchCount + context.hashTimeStamp + secret.securityKey2);
+            context.batchCountHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + context.batchCount + context.hashTimeStamp + secret.securityKey2);
             context.getUserResponsesUrl = (req.app.namedRoutes.build('user.getUserResponses'));
             context.recalculateCacheTableUrl = (req.app.namedRoutes.build('user.recalculateCacheTable'));
             res.send(context);

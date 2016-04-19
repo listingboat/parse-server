@@ -1,13 +1,13 @@
 // All controllers for contest app
 
-var configs =require('cloud/app_settings.js'),
-    contestUtils = require('cloud/apps/contest/utils.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    analyticsUtils = require('cloud/apps/analytics/utils.js'),
+var configs =require('./cloud/app_settings.js'),
+    contestUtils = require('./cloud/apps/contest/utils.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    analyticsUtils = require('./cloud/apps/analytics/utils.js'),
     _ = require('underscore'),
-    appSettings = require('cloud/app_settings.js'),
-    contestConstants = require('cloud/apps/contest/constants.js'),
-    commonConstants = require('cloud/apps/common/constants.js');
+    appSettings = require('./cloud/app_settings.js'),
+    contestConstants = require('./cloud/apps/contest/constants.js'),
+    commonConstants = require('./cloud/apps/common/constants.js');
 
 // controller to render contest page with the company drop down
 exports.contestPageController = function(req, res){

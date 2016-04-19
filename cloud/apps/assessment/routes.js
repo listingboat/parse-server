@@ -1,8 +1,8 @@
 // Provides endpoints for explore pages
 
 exports.controllers = function (app) {
-    var controller = require('cloud/apps/assessment/controller.js'), // explore app controller path
-        decorators = require('cloud/decorators');
+    var controller = require('./cloud/apps/assessment/controller.js'), // explore app controller path
+        decorators = require('./cloud/decorators');
 
     app.get('/assessment/onboarding-1', 'assessment.onBoardingOne', [
         decorators.loginRequired, decorators.assessmentInComplete],  controller.onBoardingStepOneController); // route to Overview page of explore app

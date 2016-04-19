@@ -1,11 +1,11 @@
-var appSettings = require('cloud/app_settings.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    logger = require('cloud/packages/loggly.js'),
-    commonConstants = require('cloud/apps/common/constants.js'),
-    userConstants = require('cloud/apps/user/constants.js'),
-    companyConstants = require('cloud/apps/company/constants.js'),
-    userUtils = require('cloud/apps/user/utils.js'),
-    secret = require('cloud/secret.js'),
+var appSettings = require('./cloud/app_settings.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    logger = require('./cloud/packages/loggly.js'),
+    commonConstants = require('./cloud/apps/common/constants.js'),
+    userConstants = require('./cloud/apps/user/constants.js'),
+    companyConstants = require('./cloud/apps/company/constants.js'),
+    userUtils = require('./cloud/apps/user/utils.js'),
+    secret = require('./cloud/secret.js'),
     _ = require('underscore');
 
 // function that adds the given email list in invite list at pardot
@@ -326,7 +326,7 @@ exports.updateUserInfo = function(form_data, currentUser, departmentList, succes
             lastName = form_data.lastName;
             timeStamp = (new Date()).getTime();
             // don't change the sequence of hashing to check sequence check app/user/utils/ function: "validateDataForPardotCall"
-            hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + timeStamp + secret.securityKey2);
+            hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + timeStamp + secret.securityKey2);
             successCallback({
                 email: email,
                 firstName: firstName,

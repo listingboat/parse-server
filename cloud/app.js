@@ -1,11 +1,11 @@
 var express = require('express'), // integrate express framework
-    expressLayouts = require('cloud/packages/express-layout'), // express layout plugin to manage templates layout
+    expressLayouts = require('./cloud/packages/express-layout'), // express layout plugin to manage templates layout
     parseExpressHttpsRedirect = require('parse-express-https-redirect'),
     parseExpressCookieSession = require('parse-express-cookie-session'), // express session cookie plugin
-    secret = require('cloud/secret'), // contains secret key
-    Router = require('cloud/packages/router'), // plugin to override express routes. It supports reversing of url
-    app_settings = require('cloud/app_settings.js'),
-    asset_helper = (require('cloud/asset_helper.js')).asset_helper(),
+    secret = require('./cloud/secret'), // contains secret key
+    Router = require('./cloud/packages/router'), // plugin to override express routes. It supports reversing of url
+    app_settings = require('./cloud/app_settings.js'),
+    asset_helper = (require('./cloud/asset_helper.js')).asset_helper(),
     env = app_settings.PRODUCTION? 'production': 'development';
     router = new Router(),
     app = express();
@@ -14,7 +14,7 @@ var express = require('express'), // integrate express framework
 router.extendExpress(app); // overriding app routes
 router.registerAppHelpers(app); // adding helper for app
 asset_helper.registerAssetHelper(app, env); // adding helper for app
-app.set('views', 'cloud/views'); // set path for ejs templates
+app.set('views', './cloud/views'); // set path for ejs templates
 app.set('view engine', 'ejs'); // integrate ejs with app
 app.use(parseExpressHttpsRedirect());  // Require user to be on HTTPS.
 app.use(expressLayouts); // integrate express layout with app
@@ -34,7 +34,7 @@ app.use(function(req, res, next){
         var securityKey1 = secret.securityKey1,
             securityKey2 = secret.securityKey2,
             reportTimeStamp = new Date().getTime(),
-            hash = require('cloud/packages/md5.js').hex_md5(securityKey1 + reportTimeStamp + securityKey2);
+            hash = require('./cloud/packages/md5.js').hex_md5(securityKey1 + reportTimeStamp + securityKey2);
         return {hash: hash, timeStamp: reportTimeStamp};
     }
 
@@ -127,40 +127,40 @@ app.use(function(req, res, next) {
 });
 
 // Assessment controllers
-(require('cloud/apps/assessment/routes')).controllers(app);
+(require('./cloud/apps/assessment/routes')).controllers(app);
 
 // Common controllers
-(require('cloud/apps/common/routes')).controllers(app);
+(require('./cloud/apps/common/routes')).controllers(app);
 
 // Explore controllers
-(require('cloud/apps/explore/routes')).controllers(app);
+(require('./cloud/apps/explore/routes')).controllers(app);
 
 // Quiz controllers
-(require('cloud/apps/quiz/routes')).controllers(app);
+(require('./cloud/apps/quiz/routes')).controllers(app);
 
 // User controllers
-(require('cloud/apps/user/routes')).controllers(app);
+(require('./cloud/apps/user/routes')).controllers(app);
 
 // Settings controllers
-(require('cloud/apps/settings/routes')).controllers(app);
+(require('./cloud/apps/settings/routes')).controllers(app);
 
 // Company controllers
-(require('cloud/apps/company/routes')).controllers(app);
+(require('./cloud/apps/company/routes')).controllers(app);
 
 // Leader Board controllers
-(require('cloud/apps/leader_board/routes')).controllers(app);
+(require('./cloud/apps/leader_board/routes')).controllers(app);
 
 // User Settings controllers
-(require('cloud/apps/user_settings/routes')).controllers(app);
+(require('./cloud/apps/user_settings/routes')).controllers(app);
 
 // Analytics controllers
-(require('cloud/apps/analytics/routes')).controllers(app);
+(require('./cloud/apps/analytics/routes')).controllers(app);
 
 // contest controllers
-(require('cloud/apps/contest/routes')).controllers(app);
+(require('./cloud/apps/contest/routes')).controllers(app);
 
 // UI Statics endpoints
-app.use('/ui-statics', require('cloud/apps/ui-statics/routes'));
+app.use('/ui-statics', require('./cloud/apps/ui-statics/routes'));
 
 // robots.txt for web crawlers
 app.use('/robots.txt', function(req, res){

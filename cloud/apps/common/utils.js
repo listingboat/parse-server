@@ -1,7 +1,7 @@
-var secret = require('cloud/secret.js'),
-    appSettings = require('cloud/app_settings.js'),
-    user_constants = require('cloud/apps/user/constants.js'),
-    commonConstants = require('cloud/apps/common/constants.js'),
+var secret = require('./cloud/secret.js'),
+    appSettings = require('./cloud/app_settings.js'),
+    user_constants = require('./cloud/apps/user/constants.js'),
+    commonConstants = require('./cloud/apps/common/constants.js'),
     _ = require('underscore');
 
 
@@ -391,7 +391,7 @@ exports.getAbsoluteUrlForWorkstyle = function (relativePath) {
 };
 
 exports.validateReportErrorData = function (hash, timeStamp) {
-    var newHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + timeStamp + secret.securityKey2);
+    var newHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + timeStamp + secret.securityKey2);
     return hash == newHash;
 };
 

@@ -1,12 +1,12 @@
 var _ = require('underscore'),
-    user_constants = require('cloud/apps/user/constants.js'),
-    quizConstants = require('cloud/apps/quiz/constants.js'),
-    secret = require('cloud/secret.js'),
-    appSettings = require('cloud/app_settings.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    commonConstants = require('cloud/apps/common/constants.js'),
-    companyConstants = require('cloud/apps/company/constants.js'),
-    analyticsConstants = require('cloud/apps/analytics/constants.js');
+    user_constants = require('./cloud/apps/user/constants.js'),
+    quizConstants = require('./cloud/apps/quiz/constants.js'),
+    secret = require('./cloud/secret.js'),
+    appSettings = require('./cloud/app_settings.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    commonConstants = require('./cloud/apps/common/constants.js'),
+    companyConstants = require('./cloud/apps/company/constants.js'),
+    analyticsConstants = require('./cloud/apps/analytics/constants.js');
 
 // Function that saves the calculated scores in User_Personality_Score class (caching).
 // Arguments: 1. 'familiarityCircleData': final json data that contains score, inner_circle and outer_circle value for personality(s).
@@ -896,10 +896,10 @@ exports.registerUser = function(form_data, invite, departmentList, successCallba
                 listName = appSettings.PARDOTS_LIST_NAMES['REGISTER_LIST'];
                 timeStamp = (new Date()).getTime();
                 if(companyName) {
-                    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + companyName + listName + timeStamp + secret.securityKey2);
+                    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + companyName + listName + timeStamp + secret.securityKey2);
                 }
                 else{
-                    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + listName + timeStamp + secret.securityKey2);
+                    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + listName + timeStamp + secret.securityKey2);
                 }
                 successCallback({
                     firstName: firstName,
@@ -967,9 +967,9 @@ exports.putUserInWaitList = function(form_data, successcallback, errorCallback) 
 
     if(companyName){    // checks if company name is in form data
         wait_list_object.set('company', companyName);
-        hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + companyName + listName + timeStamp + secret.securityKey2);
+        hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + companyName + listName + timeStamp + secret.securityKey2);
     } else {
-        hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + listName + timeStamp + secret.securityKey2);
+        hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + firstName + lastName + listName + timeStamp + secret.securityKey2);
     }
 
     wait_list_object.save(null).then(function(object){
@@ -1154,7 +1154,7 @@ exports.findOldAssessmentResult = function(user, successCallback, errorCallback)
                             email = user.get('email');
                             listName = appSettings.PARDOTS_LIST_NAMES['MIGRATED_ASSESSMENT_COMPLETE'];
                             timeStamp = (new Date()).getTime();
-                            hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + listName + timeStamp + secret.securityKey2);
+                            hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + listName + timeStamp + secret.securityKey2);
                             successCallback({
                                 success: true,
                                 isNewUser: true,
@@ -1398,7 +1398,7 @@ exports.validateDataForPardotCall = function(req, successCallback) {
         stringToHash += timeStamp;
     }
     stringToHash += secret.securityKey2;
-    hash = require('cloud/packages/md5.js').hex_md5(stringToHash);
+    hash = require('./cloud/packages/md5.js').hex_md5(stringToHash);
     if (hash == hashReceived) {
         successCallback(true, userDict, listName);
     }
@@ -1496,7 +1496,7 @@ exports.getScoreMap = function (userResponses, batchNumber) {
             responseMap.personalityScore[personality].score += score;
         }
     }
-    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseMap + secret.securityKey2);
+    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseMap + secret.securityKey2);
     return {hash: hash, responseData: responseMap};
 };
 
@@ -1548,7 +1548,7 @@ exports.validateResponseBatches = function (responseBatches) {
         };
     for (var index in responseBatches) {
 
-        regeneratedHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches[index].responseData + secret.securityKey2);
+        regeneratedHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches[index].responseData + secret.securityKey2);
         if (responseBatches[index].hash == regeneratedHash) {
             for (var key in  userResponseMap.skillScore) {
                 userResponseMap.skillScore[key].maxScore += (responseBatches[index].responseData.skillScore[key].maxScore);

@@ -1,13 +1,13 @@
 var _ = require('underscore'),
-    companyUtils = require('cloud/apps/company/utils.js'),
-    configs = require('cloud/app_settings.js'),
-    userSettingsConstants = require('cloud/apps/user_settings/constants.js'),
-    userConstants = require('cloud/apps/user/constants.js'),
-    leaderBoardConstants = require('cloud/apps/leader_board/constants.js'),
-    analyticsUtils = require('cloud/apps/analytics/utils.js'),
-    commonUtils = require('cloud/apps/common/utils.js'),
-    userSettingsUtils = require('cloud/apps/user_settings/utils.js'),
-    appSettings = require('cloud/app_settings.js');
+    companyUtils = require('./cloud/apps/company/utils.js'),
+    configs = require('./cloud/app_settings.js'),
+    userSettingsConstants = require('./cloud/apps/user_settings/constants.js'),
+    userConstants = require('./cloud/apps/user/constants.js'),
+    leaderBoardConstants = require('./cloud/apps/leader_board/constants.js'),
+    analyticsUtils = require('./cloud/apps/analytics/utils.js'),
+    commonUtils = require('./cloud/apps/common/utils.js'),
+    userSettingsUtils = require('./cloud/apps/user_settings/utils.js'),
+    appSettings = require('./cloud/app_settings.js');
 
 // renders explore page(s)
 exports.getUserSettingsPageController = function (req, res) {

@@ -1,11 +1,11 @@
 // All controllers for explore app
-var assessmentConstants = require('cloud/apps/assessment/constants'),
-    userUtils = require('cloud/apps/user/utils'),
-    assessmentUtils = require('cloud/apps/assessment/utils'),
-    userConstants = require('cloud/apps/user/constants.js'),
-    appSettings = require('cloud/app_settings.js'),
+var assessmentConstants = require('./cloud/apps/assessment/constants'),
+    userUtils = require('./cloud/apps/user/utils'),
+    assessmentUtils = require('./cloud/apps/assessment/utils'),
+    userConstants = require('./cloud/apps/user/constants.js'),
+    appSettings = require('./cloud/app_settings.js'),
     _ = require('underscore'),
-    commonUtils = require('cloud/apps/common/utils.js');
+    commonUtils = require('./cloud/apps/common/utils.js');
 
 
 // on boarding flow step one controller

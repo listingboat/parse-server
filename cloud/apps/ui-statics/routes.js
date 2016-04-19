@@ -3,9 +3,9 @@
 module.exports = function () {
     var express = require('express'),
         app = express(),
-        controller = require('cloud/apps/ui-statics/controller.js'), // ui-statics app controller path
-        app_settings = require('cloud/app_settings.js'),
-        asset_helper = (require('cloud/asset_helper.js')).asset_helper(),
+        controller = require('./cloud/apps/ui-statics/controller.js'), // ui-statics app controller path
+        app_settings = require('./cloud/app_settings.js'),
+        asset_helper = (require('./cloud/asset_helper.js')).asset_helper(),
         env = app_settings.PRODUCTION ? 'production' : 'development';
 
     asset_helper.registerAssetHelper(app, env); // adding helper for app
