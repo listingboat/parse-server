@@ -1,7 +1,7 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 
 // add app.js to initialize cloud app
-require('./cloud/app.js');
+require('cloud/app.js');
 var appSettings = require('./cloud/app_settings.js'),
     commonUtils = require('./cloud/apps/common/utils.js'),
     analyticsBackgroundJob = require('./cloud/apps/analytics/background_job.js').analyticsBackgroundJob;
