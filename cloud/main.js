@@ -1,20 +1,21 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 
 // add app.js to initialize cloud app
-require('cloud/app.js');
-var appSettings = require('./cloud/app_settings.js'),
-    commonUtils = require('./cloud/apps/common/utils.js'),
-    analyticsBackgroundJob = require('./cloud/apps/analytics/background_job.js').analyticsBackgroundJob;
-    companyConstants = require('./cloud/apps/company/constants.js');
+require('./app.js');
+var appSettings = require('./app_settings.js'),
+    commonUtils = require('./apps/common/utils.js'),
+    analyticsBackgroundJob = require('./apps/analytics/background_job.js').analyticsBackgroundJob;
+    companyConstants = require('./apps/company/constants.js');
 
 // JOBS
+/*
 Parse.Cloud.job("publishKahlerJob", function(request, status) {
     var userQuery = new Parse.Query("User");
     userQuery.get(request.params.user, {
         success: function (user) {
             Parse.Config.get().then(function (config) {
-                var soap = require('./cloud/packages/soap.js');
-                var xmlReader = require('./cloud/packages/xmlreader.js');
+                var soap = require('cloud/packages/soap.js');
+                var xmlReader = require('cloud/packages/xmlreader.js');
                 var SOAPClient = soap.SOAPClient;
                 var SOAPClientParameters = soap.SOAPClientParameters;
                 var params = new SOAPClientParameters();
@@ -136,7 +137,7 @@ Parse.Cloud.define("publishKahler", function (request, response) {
         });
     });
 });
-
+ */
 // TODO: remove Parse.Cloud.beforeDelete when beforeDelete for it is defined in parse-develop
 // Parse.Cloud does not have beforeDelete defined in parse develop app
 Parse.Cloud.beforeDelete = Parse.Cloud.beforeDelete || function(){};

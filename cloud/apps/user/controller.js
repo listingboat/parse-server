@@ -1,16 +1,16 @@
 // All controllers for user app
-var utils = require('./cloud/apps/user/utils.js'),
+var utils = require('./utils.js'),
     _ = require('underscore'),
     path = require('path'),
-    userConstants = require('./cloud/apps/user/constants.js'),
-    quizConstants = require('./cloud/apps/quiz/constants.js'),
-    appSettings = require('./cloud/app_settings.js'),
-    commonUtils = require('./cloud/apps/common/utils.js'),
-    secret = require('./cloud/secret.js'),
-    commonConstants = require('./cloud/apps/common/constants.js'),
-    quizUtils = require('./cloud/apps/quiz/utils.js'),
-    analyticsUtils = require('./cloud/apps/analytics/utils.js'),
-    companyUtils = require('./cloud/apps/company/utils.js');
+    userConstants = require('./constants.js'),
+    quizConstants = require('../quiz/constants.js'),
+    appSettings = require('../../app_settings.js'),
+    commonUtils = require('../common/utils.js'),
+    secret = require('../../secret.js'),
+    commonConstants = require('../common/constants.js'),
+    quizUtils = require('../quiz/utils.js'),
+    analyticsUtils = require('../analytics/utils.js'),
+    companyUtils = require('../company/utils.js');
 
 exports.homeController = function (req, res) {
     var user = Parse.User.current();
@@ -163,7 +163,7 @@ exports.myPQController = function (req, res) {
                 context['batchCount']++;
             }
             context['hashTimeStamp'] = (new Date()).getTime();    // time stamp is used in hash for security
-            context['batchCountHash'] = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + context['batchCount'] + context['hashTimeStamp'] + secret.securityKey2);
+            context['batchCountHash'] = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + context['batchCount'] + context['hashTimeStamp'] + secret.securityKey2);
             res.render('user/my_pq', context);
         }, errorCallback);
     }
@@ -273,7 +273,7 @@ exports.publicMyPQController = function (req, res) {
                 context['batchCount']++;
             }
             context['hashTimeStamp'] = (new Date()).getTime();
-            context['batchCountHash'] = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + context['batchCount'] + context['hashTimeStamp'] + userId + secret.securityKey2);
+            context['batchCountHash'] = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + context['batchCount'] + context['hashTimeStamp'] + userId + secret.securityKey2);
             context['renderScoreSection'] = false;    // flag to indicate not to load score section along with the page
             res.render('user/my_pq_same_company_profile', context);
         }, errorCallback);
@@ -799,7 +799,7 @@ exports.getUserResponsesController = function (req, res) {
         if (userId) {    // if user is is given
             var userQuery = new Parse.Query(Parse.User),
             // validate user id with hash
-                regeneratedHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + batchCount + hashTimeStamp + userId + secret.securityKey2);
+                regeneratedHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + batchCount + hashTimeStamp + userId + secret.securityKey2);
             if (regeneratedHash == batchCountHash) {    // is valid user id
                 userQuery.get(userId).then(function (user) {
                     successCallback(user);    // fetch user object and return
@@ -845,10 +845,10 @@ exports.recalculateCacheTableScoresController = function (req, res) {
         var indexCount = [], isValid = true,
             regeneratedHash;
         if (!userId) {    // if no user id recived don't use userID in hash
-            regeneratedHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches.length + hashTimeStamp + secret.securityKey2);
+            regeneratedHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches.length + hashTimeStamp + secret.securityKey2);
         }
         else {
-            regeneratedHash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches.length + hashTimeStamp + userId + secret.securityKey2);
+            regeneratedHash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + responseBatches.length + hashTimeStamp + userId + secret.securityKey2);
         }
         if (batchCountHash == regeneratedHash) {
             // check if every index is occurred exectly one time

@@ -1,8 +1,8 @@
 // Provides endpoints for user
 
 exports.controllers = function (app) {
-    var controller = require('./cloud/apps/user/controller.js'), // user app controller path
-        decorators = require('./cloud/decorators');
+    var controller = require('./controller.js'), // user app controller path
+        decorators = require('../../decorators');
 
     app.get('/', 'user.home', controller.homeController);
     app.get('/forgot-password', 'user.forgotPassword', controller.forgotPasswordController);

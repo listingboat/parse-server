@@ -1,11 +1,11 @@
-var  md5 = require('./cloud/packages/md5.js'),
-    secret = require('./cloud/secret.js'),
-    quizUtils = require('./cloud/apps/quiz/utils.js'),
-    userUtils = require('./cloud/apps/user/utils.js'),
+var  md5 = require('../../packages/md5.js'),
+    secret = require('../../secret.js'),
+    quizUtils = require('../quiz/utils.js'),
+    userUtils = require('../user/utils.js'),
     _ = require('underscore'),
-    companyConstants = require('./cloud/apps/company/constants.js'),
-    appSettings = require('./cloud/app_settings.js'),
-    commonUtils = require('./cloud/apps/common/utils.js');
+    companyConstants = require('../company/constants.js'),
+    appSettings = require('../../app_settings.js'),
+    commonUtils = require('../common/utils.js');
 
 
 

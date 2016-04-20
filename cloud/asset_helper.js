@@ -1,6 +1,6 @@
 (function(exports) {
     exports.asset_helper = function(assetHashes) {
-        assetHashes = assetHashes || (require('./cloud/asset_hash.js')).assetHashes;
+        assetHashes = assetHashes || (require('./asset_hash.js')).assetHashes;
         exports.registerAssetHelper = function (app, env) {
             var assetHelper = (env === 'production') ? exports.asset : function (path, throwError) {
                 return exports.asset(path, ((typeof throwError === "undefined") ? true : throwError));

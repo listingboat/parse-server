@@ -1,8 +1,8 @@
 // Provides endpoints for user
 
 exports.controllers = function (app) {
-    var controller = require('./cloud/apps/settings/controller.js'), // user app controller path
-        decorators = require('./cloud/decorators');
+    var controller = require('./controller.js'), // user app controller path
+        decorators = require('../../decorators');
 
     app.get('/settings/account', 'settings.account', [decorators.loginRequired], controller.accountSettingsController); // routes for Get request on  user account settings
     app.post('/settings/account', 'settings.account', [decorators.loginRequired], controller.accountSettingUpdateController); // routes for Post request on user account settings

@@ -1,11 +1,15 @@
 var express = require('express'), // integrate express framework
-    expressLayouts = require('./cloud/packages/express-layout'), // express layout plugin to manage templates layout
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    cookieParser = require('cookie-parser'),
+    cookieSession = require('cookie-session'),
+    expressLayouts = require('./packages/express-layout'), // express layout plugin to manage templates layout
     parseExpressHttpsRedirect = require('parse-express-https-redirect'),
     parseExpressCookieSession = require('parse-express-cookie-session'), // express session cookie plugin
-    secret = require('./cloud/secret'), // contains secret key
-    Router = require('./cloud/packages/router'), // plugin to override express routes. It supports reversing of url
-    app_settings = require('./cloud/app_settings.js'),
-    asset_helper = (require('./cloud/asset_helper.js')).asset_helper(),
+    secret = require('./secret'), // contains secret key
+    Router = require('./packages/router'), // plugin to override express routes. It supports reversing of url
+    app_settings = require('./app_settings.js'),
+    asset_helper = (require('./asset_helper.js')).asset_helper(),
     env = app_settings.PRODUCTION? 'production': 'development';
     router = new Router(),
     app = express();
@@ -14,18 +18,28 @@ var express = require('express'), // integrate express framework
 router.extendExpress(app); // overriding app routes
 router.registerAppHelpers(app); // adding helper for app
 asset_helper.registerAssetHelper(app, env); // adding helper for app
-app.set('views', './cloud/views'); // set path for ejs templates
+app.set('views', 'cloud/views'); // set path for ejs templates
 app.set('view engine', 'ejs'); // integrate ejs with app
 app.use(parseExpressHttpsRedirect());  // Require user to be on HTTPS.
 app.use(expressLayouts); // integrate express layout with app
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(express.cookieParser(secret.cookie_key)); // telling express to use secret key for cookie
-app.use(express.cookieSession(secret.cookie_key)); // telling express to use secret key for cookie
+app.use(bodyParser());
+app.use(methodOverride());
+app.use(cookieParser(secret.cookie_key)); // telling express to use secret key for cookie
+app.use(cookieSession({keys:[secret.cookie_key]})); // telling express to use secret key for cookie
 app.use(parseExpressCookieSession({ // cookie configuration
     fetchUser: true
 }));
 // Define all the endpoints
+var ParseServer = require('parse-server').ParseServer;
+var path = require('path');
+
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+
+if (!databaseUri) {
+    console.log('DATABASE_URI not specified, falling back to localhost.');
+}
+
+
 
 // Middleware to add error callback in req object
 app.use(function(req, res, next){
@@ -34,7 +48,7 @@ app.use(function(req, res, next){
         var securityKey1 = secret.securityKey1,
             securityKey2 = secret.securityKey2,
             reportTimeStamp = new Date().getTime(),
-            hash = require('./cloud/packages/md5.js').hex_md5(securityKey1 + reportTimeStamp + securityKey2);
+            hash = require('cloud/packages/md5.js').hex_md5(securityKey1 + reportTimeStamp + securityKey2);
         return {hash: hash, timeStamp: reportTimeStamp};
     }
 
@@ -85,6 +99,7 @@ app.use(function(req, res, next){
 
 // Add Google Analytics, HotJar, SumoMe tracking id in template context
 app.use(function(req, res, next){
+    console.log("app.use");
     res.locals = res.locals || {};
     res.locals.GOOGLE_ANALYTICS_TRACKING_ID = app_settings.GOOGLE_ANALYTICS_TRACKING_ID;
     res.locals.HOT_JAR_TRACKING_ID = app_settings.HOT_JAR_TRACKING_ID;
@@ -127,40 +142,40 @@ app.use(function(req, res, next) {
 });
 
 // Assessment controllers
-(require('./cloud/apps/assessment/routes')).controllers(app);
+(require('./apps/assessment/routes')).controllers(app);
 
 // Common controllers
-(require('./cloud/apps/common/routes')).controllers(app);
+(require('./apps/common/routes')).controllers(app);
 
 // Explore controllers
-(require('./cloud/apps/explore/routes')).controllers(app);
+(require('./apps/explore/routes')).controllers(app);
 
 // Quiz controllers
-(require('./cloud/apps/quiz/routes')).controllers(app);
+(require('./apps/quiz/routes')).controllers(app);
 
 // User controllers
-(require('./cloud/apps/user/routes')).controllers(app);
+(require('./apps/user/routes')).controllers(app);
 
 // Settings controllers
-(require('./cloud/apps/settings/routes')).controllers(app);
+(require('./apps/settings/routes')).controllers(app);
 
 // Company controllers
-(require('./cloud/apps/company/routes')).controllers(app);
+(require('./apps/company/routes')).controllers(app);
 
 // Leader Board controllers
-(require('./cloud/apps/leader_board/routes')).controllers(app);
+(require('./apps/leader_board/routes')).controllers(app);
 
 // User Settings controllers
-(require('./cloud/apps/user_settings/routes')).controllers(app);
+(require('./apps/user_settings/routes')).controllers(app);
 
 // Analytics controllers
-(require('./cloud/apps/analytics/routes')).controllers(app);
+(require('./apps/analytics/routes')).controllers(app);
 
 // contest controllers
-(require('./cloud/apps/contest/routes')).controllers(app);
+(require('./apps/contest/routes')).controllers(app);
 
 // UI Statics endpoints
-app.use('/ui-statics', require('./cloud/apps/ui-statics/routes'));
+app.use('/ui-statics', require('./apps/ui-statics/routes'));
 
 // robots.txt for web crawlers
 app.use('/robots.txt', function(req, res){
@@ -211,4 +226,24 @@ app.use(function(err, req, res, next) {
     }
 });
 
-app.listen();
+/*var api = new ParseServer({
+    databaseURI: databaseUri || 'mongodb://mattersight:Abc123@ds011261.mlab.com:11261/heroku_tn8vd0q9',
+    cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/main.js',
+    appId: process.env.APP_ID || 'emnNcRVhoszLtAzLWWOdcW7O9TjL4KnN7QH7cDQC',
+    masterKey: process.env.MASTER_KEY || 'ELl0QP5W8yL30HmnIECAjSXEmwEL3OoZUt7qVIY4', //Add your master key here. Keep it secret!
+    serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+    liveQuery: {
+        classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+    }
+});
+
+// Serve static assets from the /public folder
+app.use('/public', express.static(path.join(__dirname, '/public')));
+
+// Serve the Parse API on the /parse URL prefix
+var mountPath = process.env.PARSE_MOUNT || '/parse';
+app.use(mountPath, api);
+*/
+app.listen(1337, function () {
+    console.log ("Express listening on 1337");
+});

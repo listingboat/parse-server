@@ -1,9 +1,9 @@
-var assessmentConstants = require('./cloud/apps/assessment/constants'),
-    userConstants = require('./cloud/apps/user/constants.js'),
-    commonUtils = require('./cloud/apps/common/utils.js'),
-    secret = require('./cloud/secret.js'),
-    appSettings = require('./cloud/app_settings.js'),
-    soap = require('./cloud/packages/soap.js');
+var assessmentConstants = require('./constants'),
+    userConstants = require('../user/constants.js'),
+    commonUtils = require('../common/utils.js'),
+    secret = require('../../secret.js'),
+    appSettings = require('../../app_settings.js'),
+    soap = require('../../packages/soap.js');
 
 // Function that applies validations on ranks received from user.
 exports.ranksValidationsCheck = function(ranksDict) {
@@ -443,7 +443,7 @@ exports.callKahlerAPI = function(user, assessment, successCallback, errorCallbac
 
     Parse.Config.get().then(
         function (config) {
-            var xmlReader = require('./cloud/packages/xmlreader.js');
+            var xmlReader = require('cloud/packages/xmlreader.js');
             var SOAPClient = soap.SOAPClient;
             var SOAPClientParameters = soap.SOAPClientParameters;
             var params = new SOAPClientParameters();
@@ -555,7 +555,7 @@ exports.callKahlerAPI = function(user, assessment, successCallback, errorCallbac
 exports.getDataForAssessmentCompletePardotCall = function(email, successCallback){
     var hash, listName, timeStamp = (new Date()).getTime();
     listName = appSettings.PARDOTS_LIST_NAMES['ASSESSMENT_COMPLETE'];
-    hash = require('./cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + listName + timeStamp + secret.securityKey2);
+    hash = require('cloud/packages/md5.js').hex_md5(secret.securityKey1 + email + listName + timeStamp + secret.securityKey2);
     successCallback({
         success: true,
         email: email,

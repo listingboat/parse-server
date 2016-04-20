@@ -1,5 +1,5 @@
-var userConstants = require('./cloud/apps/user/constants.js'),
-    commonConstants = require('./cloud/apps/common/constants.js'),
+var userConstants = require('./apps/user/constants.js'),
+    commonConstants = require('./apps/common/constants.js'),
     _ = require('underscore');
 exports.loginRequired = function (req, res, next) {
     var currentUser = Parse.User.current();

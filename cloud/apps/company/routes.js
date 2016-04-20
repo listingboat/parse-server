@@ -1,8 +1,8 @@
 // Provides endpoints for user
 
 exports.controllers = function (app) {
-    var controller = require('./cloud/apps/company/controller.js'), // user app controller path
-        decorators = require('./cloud/decorators');
+    var controller = require('./controller.js'), // user app controller path
+        decorators = require('../../decorators');
 
     app.get('/company/departments', 'company.department', [decorators.loginRequired, decorators.adminRequired, decorators.companyExists], controller.companyDepartmentSettingController); // routes for edit department page
     app.get('/company/get-department-setting-page', 'company.getDepartmentSettingPage', [decorators.loginRequired, decorators.adminRequired, decorators.companyExists], controller.superAdminDepartmentSettingsController); // routes for edit department page

@@ -1,4 +1,4 @@
-var XRegExp = require('cloud/packages/xregexp').XRegExp;
+var XRegExp = require('./xregexp').XRegExp;
 
 exports = module.exports = Route;
 
