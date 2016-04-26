@@ -1,0 +1,197 @@
+.doer-wrap {
+	background: url('@{image-path-url}/doer_bg.jpg');
+	&.about-me-banner {
+		background: url('@{image-path-url}/doer_banner_bg.png');
+	}
+	&:after {
+		.overlay-opacity(@doer-theme,0.95);
+	}
+	.icon-wrap {
+		.doer-badge();
+	}
+	.superpower-tag {
+		margin: 32px auto;
+		padding-right: 10px;
+	}
+	&.predictor-banner:after {
+		.overlay-opacity(@doer-theme,1);
+	}
+	.ws-btn {
+		&:hover,&:focus {
+			background-color: #fff;
+			border-color: @doer-theme;
+			color: @doer-theme;
+		}
+	}
+	&.pq-banner-wrap {
+		&:after {
+			.quiz-gradient(@doer-theme,@doer-gradient,0.9,20%,0.9,99%);
+		}
+	}
+}
+.doer-pq-wrap {
+	.pq-icon-size {
+		.ws-icon();
+		background-color: @doer-theme;
+		&:before {
+			content: "b";
+		}
+	}
+	.pq-more-link {
+		color: @doer-theme;
+	}
+}
+.doer-slideshow {
+	> a:hover {
+		color: @doer-theme;
+	}
+	.cycle-pager-active {
+		color: @doer-theme;
+	}
+}
+.doer-profile {
+	.profile-unlocked-head {
+		color: @doer-theme;
+	}
+}
+.doer-settings {
+	&.setting-banner-wrap {
+		background: @doer-theme;
+	}
+	.white-round-btn {
+		color: @doer-theme;
+		&:hover {
+			color: @doer-theme;
+		}
+	}
+}
+.doer-public-profile {
+	.workstyle-btn {
+		background: @doer-theme;
+		&:hover {
+			background: lighten(@doer-theme, 5%);
+		}
+	}
+}
+.doer-member-wrap {
+	.member-pq-icon {
+		.ws-icon();
+		background-color: @doer-theme;
+		&:before {
+			content: "b";
+		}
+	}
+	.superpower-detail-wrap {
+		> h2 {
+			color: @doer-theme;
+		}
+	}
+	&:hover {
+		background-color: lighten(@doer-theme,40%);
+	}
+}
+.pq-option-doer {
+	&:hover {
+		color: @doer-theme;
+	}
+	&.active {
+		color: @doer-theme;
+		border-left: 6px solid @doer-theme;
+	}
+}
+.leaderboard-graph-container {
+	&.doer-graph {
+		background: @doer-theme;
+	}
+}
+.doer-stats-wrap {
+	.stats-title {
+		color: @doer-theme;
+	}
+	.glyphicon {
+		color: @doer-theme;
+	}
+	.stats-icon-wrap {
+		.ws-icon();
+		background-color: @doer-theme;
+		&:before {
+			content: 'b';
+		}
+	}
+}
+.team-red-wrap {
+	&.team-detail-row {
+		&:hover {
+			background-color: lighten(@doer-theme,40%);
+		}
+	}
+	.team-name-section {
+        color: @doer-theme;
+    }
+}
+.doer-pq-summary {
+	.single-pq-icon {
+		.ws-icon();
+		background-color: @doer-theme;
+		&:before {
+			content: 'b';
+		}
+	}
+	.single-pq-text {
+		> a {
+			color: @doer-theme;
+			&:hover, &:focus {
+				color: @doer-theme;
+			}
+		}
+	}
+	&.single-circle-wrap {
+		> .custom-pq-tooltip {
+	        .pq-tooltip-content {
+	            border-color: @doer-theme;
+	            color: @doer-theme;
+	        }
+	        .tooltip-tail-one {
+	            border-color: @doer-theme transparent transparent transparent;
+	        }
+	    }
+	}
+}
+.doer-pq-progress {
+	&.radial-progress {
+		@progress-theme-color: @doer-theme;
+		@icon-content: 'b';
+		.setColorVariables(@progress-theme-color, @icon-content);
+	}
+}
+.doer-theme-text {
+	color: @doer-theme;
+}
+.doer-details-report {
+	.report-pq-icon {
+		.doer-badge();
+		color: @doer-theme;
+	}
+	.report-user-name, .report-pq-details-head {
+		color: @doer-theme;
+	}
+	.report-pq-details {
+		border-color: @doer-theme;
+	}
+	.web-link-wrap {
+		color: @doer-theme;
+		&:hover, &:focus {
+			color: @doer-theme;
+		}
+	}
+}
+.doer-pq-report {
+	.report-pq-tags, .famous-pq-name {
+		color: @doer-theme;
+	}
+}
+.doer-user-detail {
+	.report-username {
+		color: @doer-theme;
+	}
+}

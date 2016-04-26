@@ -1,0 +1,173 @@
+// Font mixins
+.avenir-next-condensed-medium() {
+	font-family: 'AvenirNextCondensed-Medium';
+	font-style: normal;
+	font-weight: normal;
+}
+.klavika-bold() {
+	font-family: 'Klavika-Bold';
+	font-style: normal;
+	font-weight: normal;
+}
+.klavika-light() {
+	font-family: 'Klavika-Light';
+	font-style: normal;
+	font-weight: normal;
+}
+.klavika-medium() {
+	font-family: 'Klavika-Medium';
+	font-style: normal;
+	font-weight: normal;
+}
+.klavika-regular() {
+	font-family: 'Klavika-Regular';
+	font-style: normal;
+	font-weight: normal;
+}
+.museo-sans-700() {
+	font-family: 'MuseoSans-700';
+	font-style: normal;
+	font-weight: normal;
+}
+.ws-icon() {
+	font-family: "mattersight-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.connector-badge(){
+	.ws-icon();
+	&:before {
+		content: 'y';
+	}
+}
+.original-badge(){
+	.ws-icon();
+	&:before {
+		content: 'C';
+	}
+}
+.dreamer-badge(){
+	.ws-icon();
+	&:before {
+		content: 'A';
+	}
+}
+.doer-badge(){
+	.ws-icon();
+	&:before {
+		content: 'z';
+	}
+}
+.advisor-badge(){
+	.ws-icon();
+	&:before {
+		content: 'u';
+	}
+}
+.organizer-badge(){
+	.ws-icon();
+	&:before {
+		content: 'B';
+	}
+}
+
+// Quiz Gradient Mixin
+.quiz-gradient(@left-color, @right-color, @left-opacity:1, @left-location:0%, @right-opacity:1, @right-location:97%) {
+	@left-rgba: rgba(red(@left-color), green(@left-color), blue(@left-color), @left-opacity);
+	@right-rgba: rgba(red(@right-color), green(@right-color), blue(@right-color), @right-opacity);
+
+	background: @left-rgba; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: -moz-linear-gradient(45deg,  @left-rgba @left-location, @right-rgba @right-location); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(@left-location,@left-rgba), color-stop(@right-location,@right-rgba)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  @left-rgba @left-location,@right-rgba @right-location); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  @left-rgba @left-location,@right-rgba @right-location); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  @left-rgba @left-location,@right-rgba @right-location); /* IE10+ */
+	background: linear-gradient(45deg,  @left-rgba @left-location,@right-rgba 97%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{left-color}', endColorstr='@{right-color}',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.overlay-opacity(@color,@opacity) {
+	background: rgba(red(@color), green(@color), blue(@color), @opacity);
+}
+.placeholder-font(){
+	&::-moz-placeholder {
+		.klavika-light();
+	}
+	&:-ms-input-placeholder { .klavika-light(); } // Internet Explorer 10+
+	&::-webkit-input-placeholder  { .klavika-light(); } // Safari and Chrome
+}
+.setColorVariables(@progress-theme-color,@icon-content){
+	@percentage-color: lighten(@progress-theme-color,10%);
+	@circle-background: lighten(@progress-theme-color,25%);
+
+	background-color: @circle-background;
+	.score-pq-icon {
+		&:before {
+			content: @icon-content;
+		}
+	}
+	.circle .mask .fill {
+		background-color: @percentage-color;
+	}
+	.inset {
+		background-color: @progress-theme-color;
+		.percentage .numbers span {
+			color: @progress-theme-color;
+		}
+		.pq-tooltip-content {
+		    border:solid 2px @progress-theme-color;
+		    > p {
+		    	color: @progress-theme-color;
+		    }
+		}
+		.tooltip-tail-one {
+    		border-color:@progress-theme-color transparent transparent transparent;
+		}
+	}
+}
+.setDimensions(@circle-size, @inset-size) {
+	width:  @circle-size;
+	height: @circle-size;
+	.circle {
+		.mask, .fill {
+			width:    @circle-size;
+			height:   @circle-size;
+		}
+		.mask {
+			clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+			.fill {
+				clip: rect(0px, @circle-size/2, @circle-size, 0px);
+			}
+		}
+	}
+	.inset {
+		width:       @inset-size;
+		height:      @inset-size;
+		margin-left: (@circle-size - @inset-size)/2;
+		margin-top:  (@circle-size - @inset-size)/2;
+	}
+	
+}
+
+// Contest banner Mixin
+.banner-gradient(@left-color, @right-color, @left-opacity:1, @left-location:0%, @right-opacity:1, @right-location:97%) {
+	@left-rgba: rgba(red(@left-color), green(@left-color), blue(@left-color), @left-opacity);
+	@right-rgba: rgba(red(@right-color), green(@right-color), blue(@right-color), @right-opacity);
+
+	background: @left-rgba; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: -moz-linear-gradient(90deg,  @left-rgba @left-location, @right-rgba @right-location); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(@left-location,@left-rgba), color-stop(@right-location,@right-rgba)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(90deg,  @left-rgba @left-location,@right-rgba @right-location); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(90deg,  @left-rgba @left-location,@right-rgba @right-location); /* Opera 11.10+ */
+	background: -ms-linear-gradient(90deg,  @left-rgba @left-location,@right-rgba @right-location); /* IE10+ */
+	background: linear-gradient(90deg,  @left-rgba @left-location,@right-rgba 97%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{left-color}', endColorstr='@{right-color}',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}

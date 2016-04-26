@@ -1,0 +1,196 @@
+.connector-wrap {
+	background: url('@{image-path-url}/connector_bg.jpg');
+	&.about-me-banner {
+		background: url('@{image-path-url}/connector_banner_bg.png');
+	}
+	&:after {
+		.overlay-opacity(@connector-theme,0.9);
+	}
+	.icon-wrap {
+		.connector-badge();
+	}
+	.superpower-tag {
+		margin: 28px auto;
+	}
+	&.predictor-banner:after {
+		.overlay-opacity(@connector-theme,1);
+	}
+	.ws-btn {
+		&:hover,&:focus {
+			background-color: #fff;
+			border-color: @connector-theme;
+			color: @connector-theme;
+		}
+	}
+	&.pq-banner-wrap {
+		&:after {
+			.quiz-gradient(@connector-theme,@connector-gradient,0.9,40%,0.9,99%);
+		}
+	}
+}
+.connector-pq-wrap {
+	.pq-icon-size {
+		.ws-icon();
+		background-color: @connector-theme;
+		&:before {
+			content: "v";
+		}
+	}
+	.pq-more-link {
+		color: @connector-theme;
+	}
+}
+.connector-slideshow {
+	> a:hover {
+		color: @connector-theme;
+	}
+	.cycle-pager-active {
+		color: @connector-theme;
+	}
+}
+.connector-profile {
+	.profile-unlocked-head {
+		color: @connector-theme;
+	}
+}
+.connector-settings {
+	&.setting-banner-wrap {
+		background: @connector-theme;
+	}
+	.white-round-btn {
+		color: @connector-theme;
+		&:hover {
+			color: @connector-theme;
+		}
+	}
+}
+.connector-public-profile {
+	.workstyle-btn {
+		background: @connector-theme;
+		&:hover {
+			background: lighten(@connector-theme, 5%);
+		}
+	}
+}
+.connector-member-wrap {
+	.member-pq-icon {
+		.ws-icon();
+		background-color: @connector-theme;
+		&:before {
+			content: "v";
+		}
+	}
+	.superpower-detail-wrap {
+		> h2 {
+			color: @connector-theme;
+		}
+	}
+	&:hover {
+		background-color: lighten(@connector-theme,35%);
+	}
+}
+.pq-option-connector {
+	&:hover {
+		color: @connector-theme;
+	}
+	&.active {
+		color: @connector-theme;
+		border-left: 6px solid @connector-theme;
+	}
+}
+.leaderboard-graph-container {
+	&.connector-graph {
+		background: @connector-theme;
+	}
+}
+.connector-stats-wrap {
+	.stats-title {
+		color: @connector-theme;
+	}
+	.glyphicon {
+		color: @connector-theme;
+	}
+	.stats-icon-wrap {
+		.ws-icon();
+		background-color: @connector-theme;
+		&:before {
+			content: 'v';
+		}
+	}
+}
+.team-orange-wrap {
+	&.team-detail-row {
+		&:hover {
+			background-color: lighten(@connector-theme,35%);
+		}
+	}
+	.team-name-section {
+        color: @connector-theme;
+    }
+}
+.connector-pq-summary {
+	.single-pq-icon {
+		.ws-icon();
+		background-color: @connector-theme;
+		&:before {
+			content: 'v';
+		}
+	}
+	.single-pq-text {
+		> a {
+			color: @connector-theme;
+			&:hover, &:focus {
+				color: @connector-theme;
+			}
+		}
+	}
+	&.single-circle-wrap {
+		> .custom-pq-tooltip {
+	        .pq-tooltip-content {
+	            border-color: @connector-theme;
+	            color: @connector-theme;
+	        }
+	        .tooltip-tail-one {
+	            border-color: @connector-theme transparent transparent transparent;
+	        }
+	    }
+	}
+}
+.connector-pq-progress {
+	&.radial-progress {
+		@progress-theme-color: @connector-theme;
+		@icon-content: 'v';
+		.setColorVariables(@progress-theme-color, @icon-content);
+	}
+}
+.connector-theme-text {
+	color: @connector-theme;
+}
+.connector-details-report {
+	.report-pq-icon {
+		.connector-badge();
+		color: @connector-theme;
+	}
+	.report-user-name, .report-pq-details-head {
+		color: @connector-theme;
+	}
+	.report-pq-details {
+		border-color: @connector-theme;
+	}
+	.web-link-wrap {
+		color: @connector-theme;
+		&:hover, &:focus {
+			color: @connector-theme;
+		}
+	}
+}
+.connector-pq-report {
+	.report-pq-tags, .famous-pq-name {
+		color: @connector-theme;
+	}
+}
+.connector-user-detail {
+	.report-username {
+		color: @connector-theme;
+	}
+}

@@ -1,0 +1,37 @@
+@import "variables.less";
+@import "web-fonts.less";
+@import "mixins.less";
+
+html * {
+	max-height: 999999px
+}
+body {
+	.klavika-regular();
+	min-width: 1200px;
+}
+a {
+	cursor: pointer;
+}
+.without-header-footer .content {
+	min-height: 100vh;
+}
+.without-footer {
+	header.transparent + .content {
+		min-height: calc(100vh);
+	}
+	.content {
+		min-height: calc(~"100vh - 80px");
+	}
+}
+header.transparent + .content {
+	min-height: calc(~"100vh - 69px");
+}
+.content{
+	min-height: calc(~"100vh - 149px");
+}
+.container {
+	.clearfix();
+	max-width: 1200px;
+	padding: 0;
+	width: auto;
+}

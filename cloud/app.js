@@ -29,17 +29,29 @@ app.use(cookieSession({keys:[secret.cookie_key]})); // telling express to use se
 app.use(parseExpressCookieSession({ // cookie configuration
     fetchUser: true
 }));
-// Define all the endpoints
-var ParseServer = require('parse-server').ParseServer;
-var path = require('path');
 
+// Serve static assets from the /public/assets folder
+var path = require('path');
+app.use(express.static(path.join(__dirname , '../public')));
+
+
+// Define all the endpoints
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+
+Parse.User.enableUnsafeCurrentUser();
 
 if (!databaseUri) {
     console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-
+// Add Google Analytics, HotJar, SumoMe tracking id in template context
+app.use(function(req, res, next){
+    res.locals = res.locals || {};
+    res.locals.GOOGLE_ANALYTICS_TRACKING_ID = app_settings.GOOGLE_ANALYTICS_TRACKING_ID;
+    res.locals.HOT_JAR_TRACKING_ID = app_settings.HOT_JAR_TRACKING_ID;
+    res.locals.SUMO_ME_TRACKING_ID = app_settings.SUMO_ME_TRACKING_ID;
+    next();
+});
 
 // Middleware to add error callback in req object
 app.use(function(req, res, next){
@@ -94,16 +106,6 @@ app.use(function(req, res, next){
             }
         }
     };
-    next();
-});
-
-// Add Google Analytics, HotJar, SumoMe tracking id in template context
-app.use(function(req, res, next){
-    console.log("app.use");
-    res.locals = res.locals || {};
-    res.locals.GOOGLE_ANALYTICS_TRACKING_ID = app_settings.GOOGLE_ANALYTICS_TRACKING_ID;
-    res.locals.HOT_JAR_TRACKING_ID = app_settings.HOT_JAR_TRACKING_ID;
-    res.locals.SUMO_ME_TRACKING_ID = app_settings.SUMO_ME_TRACKING_ID;
     next();
 });
 
@@ -226,24 +228,6 @@ app.use(function(err, req, res, next) {
     }
 });
 
-/*var api = new ParseServer({
-    databaseURI: databaseUri || 'mongodb://mattersight:Abc123@ds011261.mlab.com:11261/heroku_tn8vd0q9',
-    cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/main.js',
-    appId: process.env.APP_ID || 'emnNcRVhoszLtAzLWWOdcW7O9TjL4KnN7QH7cDQC',
-    masterKey: process.env.MASTER_KEY || 'ELl0QP5W8yL30HmnIECAjSXEmwEL3OoZUt7qVIY4', //Add your master key here. Keep it secret!
-    serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
-    liveQuery: {
-        classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-    }
-});
-
-// Serve static assets from the /public folder
-app.use('/public', express.static(path.join(__dirname, '/public')));
-
-// Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/parse';
-app.use(mountPath, api);
-*/
-app.listen(1337, function () {
-    console.log ("Express listening on 1337");
+app.listen(3000, function () {
+    console.log ("Express listening on 3000");
 });

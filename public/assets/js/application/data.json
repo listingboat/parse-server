@@ -1,0 +1,11 @@
+{
+     "name": "flare",
+     "children": [
+      {"name": "Organizer", "size": 95, "ppi":89},
+      {"name": "Doer","size" : 80, "ppi":54},
+      {"name": "Connector", "size": 85, "ppi":65},
+      {"name": "Original", "size": 70, "ppi":63},
+      {"name": "Advisor", "size": 100, "ppi":60},
+      {"name": "Dreamer","size" : 60, "ppi":45}
+     ]
+}

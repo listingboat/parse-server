@@ -1,0 +1,196 @@
+.dreamer-wrap {
+	background: url('@{image-path-url}/dreamer_bg.jpg');
+	&.about-me-banner {
+		background: url('@{image-path-url}/dreamer_banner_bg.png');
+	}
+	&:after {
+		.overlay-opacity(@dreamer-theme,0.95);
+	}
+	.icon-wrap {
+		.dreamer-badge();
+	}
+	.superpower-tag {
+		margin: 28px auto;
+	}
+	&.predictor-banner:after {
+		.overlay-opacity(@dreamer-theme,1);
+	}
+	.ws-btn {
+		&:hover,&:focus {
+			background-color: #fff;
+			border-color: @dreamer-theme;
+			color: @dreamer-theme;
+		}
+	}
+	&.pq-banner-wrap {
+		&:after {
+			.quiz-gradient(@dreamer-theme,@dreamer-gradient,0.93,40%,0.93,99%);
+		}
+	}
+}
+.dreamer-pq-wrap {
+	.pq-icon-size {
+		.ws-icon();
+		background-color: @dreamer-theme;
+		&:before {
+			content: "d";
+		}
+	}
+	.pq-more-link {
+		color: @dreamer-theme;
+	}
+}
+.dreamer-slideshow {
+	> a:hover {
+		color: @dreamer-theme;
+	}
+	.cycle-pager-active {
+		color: @dreamer-theme;
+	}
+}
+.dreamer-profile {
+	.profile-unlocked-head {
+		color: @dreamer-theme;
+	}
+}
+.dreamer-settings {
+	&.setting-banner-wrap {
+		background: @dreamer-theme;
+	}
+	.white-round-btn {
+		color: @dreamer-theme;
+		&:hover {
+			color: @dreamer-theme;
+		}
+	}
+}
+.dreamer-public-profile {
+	.workstyle-btn {
+		background: @dreamer-theme;
+		&:hover {
+			background: lighten(@dreamer-theme, 5%);
+		}
+	}
+}
+.dreamer-member-wrap {
+	.member-pq-icon {
+		.ws-icon();
+		background-color: @dreamer-theme;
+		&:before {
+			content: "d";
+		}
+	}
+	.superpower-detail-wrap {
+		> h2 {
+			color: @dreamer-theme;
+		}
+	}
+	&:hover {
+		background-color: lighten(@dreamer-theme,60%);
+	}
+}
+.pq-option-dreamer {
+	&:hover {
+		color: @dreamer-theme;
+	}
+	&.active {
+		color: @dreamer-theme;
+		border-left: 6px solid @dreamer-theme;
+	}
+}
+.leaderboard-graph-container {
+	&.dreamer-graph {
+		background: @dreamer-theme;
+	}
+}
+.dreamer-stats-wrap {
+	.stats-title {
+		color: @dreamer-theme;
+	}
+	.glyphicon {
+		color: @dreamer-theme;
+	}
+	.stats-icon-wrap {
+		.ws-icon();
+		background-color: @dreamer-theme;
+		&:before {
+			content: 'd';
+		}
+	}
+}
+.team-green-wrap {
+	&.team-detail-row {
+		&:hover {
+			background-color: lighten(@dreamer-theme,60%);
+		}
+	}
+	.team-name-section {
+        color: @dreamer-theme;
+    }
+}
+.dreamer-pq-summary {
+	.single-pq-icon {
+		.ws-icon();
+		background-color: @dreamer-theme;
+		&:before {
+			content: 'd';
+		}
+	}
+	.single-pq-text {
+		> a {
+			color: @dreamer-theme;
+			&:hover, &:focus {
+				color: @dreamer-theme;
+			}
+		}
+	}
+	&.single-circle-wrap {
+		> .custom-pq-tooltip {
+	        .pq-tooltip-content {
+	            border-color: @dreamer-theme;
+	            color: @dreamer-theme;
+	        }
+	        .tooltip-tail-one {
+	            border-color: @dreamer-theme transparent transparent transparent;
+	        }
+	    }
+	}
+}
+.dreamer-pq-progress {
+	&.radial-progress {
+		@progress-theme-color: @dreamer-theme;
+		@icon-content: 'd';
+		.setColorVariables(@progress-theme-color, @icon-content);
+	}
+}
+.dreamer-theme-text {
+	color: @dreamer-theme;
+}
+.dreamer-details-report {
+	.report-pq-icon {
+		.dreamer-badge();
+		color: @dreamer-theme;
+	}
+	.report-user-name, .report-pq-details-head {
+		color: @dreamer-theme;
+	}
+	.report-pq-details {
+		border-color: @dreamer-theme;
+	}
+	.web-link-wrap {
+		color: @dreamer-theme;
+		&:hover, &:focus {
+			color: @dreamer-theme;
+		}
+	}
+}
+.dreamer-pq-report {
+	.report-pq-tags, .famous-pq-name {
+		color: @dreamer-theme;
+	}
+}
+.dreamer-user-detail {
+	.report-username {
+		color: @dreamer-theme;
+	}
+}

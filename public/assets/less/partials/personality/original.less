@@ -1,0 +1,197 @@
+.original-wrap {
+	background: url('@{image-path-url}/original_bg.jpg');
+	&.about-me-banner {
+		background: url('@{image-path-url}/original_banner_bg.png');
+	}
+	&:after {
+		.overlay-opacity(@original-theme,0.95);
+	}
+	.icon-wrap {
+		.original-badge();
+	}
+	.superpower-tag {
+		margin: 30px auto;
+		padding-right: 18px;
+	}
+	&.predictor-banner:after {
+		.overlay-opacity(@original-theme,1);
+	}
+	.ws-btn {
+		&:hover,&:focus {
+			background-color: #fff;
+			border-color: @original-theme;
+			color: @original-theme;
+		}
+	}
+	&.pq-banner-wrap {
+		&:after {
+			.quiz-gradient(@original-theme,@original-gradient,0.93,20%,0.93,99%);
+		}
+	}
+}
+.original-pq-wrap {
+	.pq-icon-size {
+		.ws-icon();
+		background-color: @original-theme;
+		&:before {
+			content: "n";
+		}
+	}
+	.pq-more-link {
+		color: @original-theme;
+	}
+}
+.original-slideshow {
+	> a:hover {
+		color: @original-theme;
+	}
+	.cycle-pager-active {
+		color: @original-theme;
+	}
+}
+.original-profile {
+	.profile-unlocked-head {
+		color: @original-theme;
+	}
+}
+.original-settings {
+	&.setting-banner-wrap {
+		background: @original-theme;
+	}
+	.white-round-btn {
+		color: @original-theme;
+		&:hover {
+			color: @original-theme;
+		}
+	}
+}
+.original-public-profile {
+	.workstyle-btn {
+		background: @original-theme;
+		&:hover {
+			background: lighten(@original-theme, 5%);
+		}
+	}
+}
+.original-member-wrap {
+	.member-pq-icon {
+		.ws-icon();
+		background-color: @original-theme;
+		&:before {
+			content: "n";
+		}
+	}
+	.superpower-detail-wrap {
+		> h2 {
+			color: @original-theme;
+		}
+	}
+	&:hover {
+		background-color: lighten(@original-theme,50%);
+	}
+}
+.pq-option-original {
+	&:hover {
+		color: @original-theme;
+	}
+	&.active {
+		color: @original-theme;
+		border-left: 6px solid @original-theme;
+	}
+}
+.leaderboard-graph-container {
+	&.original-graph {
+		background: @original-theme;
+	}
+}
+.original-stats-wrap {
+	.stats-title {
+		color: @original-theme;
+	}
+	.glyphicon {
+		color: @original-theme;
+	}
+	.stats-icon-wrap {
+		.ws-icon();
+		background-color: @original-theme;
+		&:before {
+			content: 'n';
+		}
+	}
+}
+.team-yellow-wrap {
+	&.team-detail-row {
+		&:hover {
+			background-color: lighten(@original-theme,50%);
+		}
+	}
+	.team-name-section {
+        color: @original-theme;
+    }
+}
+.original-pq-summary {
+	.single-pq-icon {
+		.ws-icon();
+		background-color: @original-theme;
+		&:before {
+			content: 'n';
+		}
+	}
+	.single-pq-text {
+		> a {
+			color: @original-theme;
+			&:hover, &:focus {
+				color: @original-theme;
+			}
+		}
+	}
+	&.single-circle-wrap {
+		> .custom-pq-tooltip {
+	        .pq-tooltip-content {
+	            border-color: @original-theme;
+	            color: @original-theme;
+	        }
+	        .tooltip-tail-one {
+	            border-color: @original-theme transparent transparent transparent;
+	        }
+	    }
+	}
+}
+.original-pq-progress {
+	&.radial-progress {
+		@progress-theme-color: @original-theme;
+		@icon-content: 'n';
+		.setColorVariables(@progress-theme-color, @icon-content);
+	}
+}
+.original-theme-text {
+	color: @original-theme;
+}
+.original-details-report {
+	.report-pq-icon {
+		.original-badge();
+		color: @original-theme;
+	}
+	.report-user-name, .report-pq-details-head {
+		color: @original-theme;
+	}
+	.report-pq-details {
+		border-color: @original-theme;
+	}
+	.web-link-wrap {
+		color: @original-theme;
+		&:hover, &:focus {
+			color: @original-theme;
+		}
+	}
+}
+.original-pq-report {
+	.report-pq-tags, .famous-pq-name {
+		color: @original-theme;
+	}
+}
+.original-user-detail {
+	.report-username {
+		color: @original-theme;
+	}
+}

@@ -1,0 +1,254 @@
+.organizer-wrap {
+	background: url('@{image-path-url}/organizer_bg.jpg');
+	&.about-me-banner {
+		background: url('@{image-path-url}/organizer_banner_bg.png');
+	}
+	&:after {
+		.overlay-opacity(@organizer-theme,0.9);
+	}
+	.icon-wrap {
+		.organizer-badge();
+	}
+	.superpower-tag {
+		margin: 34px auto 46px;
+		padding-right: 7px;
+	}
+	&.predictor-banner:after {
+		.overlay-opacity(@organizer-theme,1);
+	}
+	.ws-btn {
+		&:hover,&:focus {
+			background-color: #fff;
+			border-color: @organizer-theme;
+			color: @organizer-theme;
+		}
+	}
+	&.pq-banner-wrap {
+		&:after {
+			.quiz-gradient(@organizer-theme,@organizer-gradient,0.95,35%,0.95,99%);
+		}
+	}
+}
+.organizer-pq-wrap {
+	.pq-icon-size {
+		.ws-icon();
+		backgorund-color: @organizer-theme;
+		&:before {
+			content: "g";
+		}
+	}
+	.pq-more-link {
+		color: @organizer-theme;
+	}
+}
+.organizer-slideshow {
+	> a:hover {
+		color: @organizer-theme;
+	}
+	.cycle-pager-active {
+		color: @organizer-theme;
+	}
+}
+.organizer-profile {
+	.profile-unlocked-head {
+		color: @organizer-theme;
+	}
+}
+.organizer-settings {
+	&.setting-banner-wrap {
+		background: @organizer-theme;
+	}
+	.white-round-btn {
+		color: @organizer-theme;
+		&:hover {
+			color: @organizer-theme;
+		}
+	}
+}
+.organizer-public-profile {
+	.workstyle-btn {
+		background: @organizer-theme;
+		&:hover {
+			background: lighten(@organizer-theme, 5%);
+		}
+	}
+}
+.organizer-member-wrap {
+	.member-pq-icon {
+		font-size: 34px;
+		padding-top: 5px;
+		.ws-icon();
+		background-color: @organizer-theme;
+		&:before {
+			content: "g";
+		}
+	}
+	.superpower-detail-wrap {
+		> h2 {
+			color: @organizer-theme;
+		}
+	}
+	&:hover {
+		background-color: lighten(@organizer-theme,35%);
+	}
+}
+.pq-option-organizer {
+	&.pq-options-wrap {
+		> i {
+			font-size: 36px;
+		}
+	}
+	&:hover {
+		color: @organizer-theme;
+	}
+	&.active {
+		color: @organizer-theme;
+		border-left: 6px solid @organizer-theme;
+	}
+}
+.leaderboard-graph-container {
+	&.organizer-graph {
+		background: @organizer-theme;
+	}
+}
+.organizer-stats-wrap {
+	.stats-title {
+		color: @organizer-theme;
+	}
+	.glyphicon {
+		color: @organizer-theme;
+	}
+	.stats-icon-wrap {
+		.ws-icon();
+		background-color: @organizer-theme;
+		&:before {
+			content: 'g';
+		}
+	}
+}
+.team-blue-wrap {
+	&.team-detail-row {
+		&:hover {
+			background-color: lighten(@organizer-theme,35%);
+		}
+	}
+	.team-name-section {
+        color: @organizer-theme;
+    }
+}
+.organizer-pq-summary {
+	.single-pq-icon {
+		.ws-icon();
+		background-color: @organizer-theme;
+		font-size: 58px;
+		line-height: 72px;
+		&:before {
+			content: 'g';
+		}
+	}
+	.single-pq-text {
+		> a {
+			color: @organizer-theme;
+			&:hover, &:focus {
+				color: @organizer-theme;
+			}
+		}
+	}
+	&.single-circle-wrap {
+		> .custom-pq-tooltip {
+	        .pq-tooltip-content {
+	            border-color: @organizer-theme;
+	            color: @organizer-theme;
+	        }
+	        .tooltip-tail-one {
+	            border-color: @organizer-theme transparent transparent transparent;
+	        }
+	    }
+	}
+}
+.organizer-pq-progress {
+	 &.radial-progress {
+		@progress-theme-color: @organizer-theme;
+		@icon-content: 'g';
+		.setColorVariables(@progress-theme-color, @icon-content);
+		&.pq-progress-6x {
+			.inset {
+				.score-pq-icon {
+					font-size: 58px;
+					line-height: 105px;
+				}
+			}
+		}
+		&.pq-progress-5x {
+			.inset {
+				.score-pq-icon {
+					font-size: 54px;
+					line-height: 100px;
+				}
+			}
+		}
+		&.pq-progress-4x {
+			.inset {
+				.score-pq-icon {
+					font-size: 50px;
+					line-height: 92px;
+				}
+			}
+		}
+		&.pq-progress-3x {
+			.inset {
+				.score-pq-icon {
+					font-size: 46px;
+					line-height: 84px;
+				}
+			}
+		}
+		&.pq-progress-2x {
+			.inset {
+				.score-pq-icon {
+					font-size: 42px;
+					line-height: 76px;
+				}
+			}
+		}
+		&.pq-progress-1x {
+			.inset {
+				.score-pq-icon {
+					font-size: 38px;
+					line-height: 72px;
+				}
+			}
+		}
+	}
+}
+.organizer-theme-text {
+	color: @organizer-theme;
+}
+.organizer-details-report {
+	.report-pq-icon {
+		.organizer-badge();
+		color: @organizer-theme;
+	}
+	.report-user-name, .report-pq-details-head {
+		color: @organizer-theme;
+	}
+	.report-pq-details {
+		border-color: @organizer-theme;
+	}
+	.web-link-wrap {
+		color: @organizer-theme;
+		&:hover, &:focus {
+			color: @organizer-theme;
+		}
+	}
+}
+.organizer-pq-report {
+	.report-pq-tags, .famous-pq-name {
+		color: @organizer-theme;
+	}
+}
+.organizer-user-detail {
+	.report-username {
+		color: @organizer-theme;
+	}
+}
