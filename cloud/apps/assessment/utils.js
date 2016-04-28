@@ -1,9 +1,9 @@
-var assessmentConstants = require('./constants'),
-    userConstants = require('../user/constants.js'),
-    commonUtils = require('../common/utils.js'),
-    secret = require('../../secret.js'),
-    appSettings = require('../../app_settings.js'),
-    soap = require('../../packages/soap.js');
+var assessmentConstants = require('cloud/apps/assessment/constants'),
+    userConstants = require('cloud/apps/user/constants.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    secret = require('cloud/secret.js'),
+    appSettings = require('cloud/app_settings.js'),
+    soap = require('cloud/packages/soap.js');
 
 // Function that applies validations on ranks received from user.
 exports.ranksValidationsCheck = function(ranksDict) {

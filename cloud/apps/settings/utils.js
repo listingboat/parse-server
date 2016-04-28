@@ -1,11 +1,11 @@
-var appSettings = require('../../app_settings.js'),
-    commonUtils = require('../common/utils.js'),
-    logger = require('../../packages/loggly.js'),
-    commonConstants = require('../common/constants.js'),
-    userConstants = require('../user/constants.js'),
-    companyConstants = require('../company/constants.js'),
-    userUtils = require('../user/utils.js'),
-    secret = require('../../secret.js'),
+var appSettings = require('cloud/app_settings.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    logger = require('cloud/packages/loggly.js'),
+    commonConstants = require('cloud/apps/common/constants.js'),
+    userConstants = require('cloud/apps/user/constants.js'),
+    companyConstants = require('cloud/apps/company/constants.js'),
+    userUtils = require('cloud/apps/user/utils.js'),
+    secret = require('cloud/secret.js'),
     _ = require('underscore');
 
 // function that adds the given email list in invite list at pardot

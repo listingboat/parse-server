@@ -10,9 +10,11 @@ var express = require('express'), // integrate express framework
     Router = require('./packages/router'), // plugin to override express routes. It supports reversing of url
     app_settings = require('./app_settings.js'),
     asset_helper = (require('./asset_helper.js')).asset_helper(),
-    env = app_settings.PRODUCTION? 'production': 'development';
+    env = app_settings.PRODUCTION? 'production': 'development',
     router = new Router(),
-    app = express();
+    app = express(),
+    cookieOptions = {maxAge: 60 * 24 * 60 * 60 * 1000};
+;
 
 // Configure the app
 router.extendExpress(app); // overriding app routes
@@ -27,6 +29,9 @@ app.use(methodOverride());
 app.use(cookieParser(secret.cookie_key)); // telling express to use secret key for cookie
 app.use(cookieSession({keys:[secret.cookie_key]})); // telling express to use secret key for cookie
 app.use(parseExpressCookieSession({ // cookie configuration
+    cookie: {
+        maxAge: cookieOptions.maxAge
+    },
     fetchUser: true
 }));
 

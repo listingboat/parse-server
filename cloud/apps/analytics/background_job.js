@@ -1,7 +1,7 @@
 // All controllers for user app
 var _ = require('underscore'),
-    commonUtils = require('../common/utils.js'),
-    analyticsUtils = require('./utils.js');
+    commonUtils = require('cloud/apps/common/utils.js'),
+    analyticsUtils = require('cloud/apps/analytics/utils.js');
 
 
 

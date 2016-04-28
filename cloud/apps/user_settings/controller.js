@@ -1,13 +1,13 @@
 var _ = require('underscore'),
-    companyUtils = require('../company/utils.js'),
-    configs = require('../../app_settings.js'),
-    userSettingsConstants = require('./constants.js'),
-    userConstants = require('../user/constants.js'),
-    leaderBoardConstants = require('../leader_board/constants.js'),
-    analyticsUtils = require('../analytics/utils.js'),
-    commonUtils = require('../common/utils.js'),
-    userSettingsUtils = require('./utils.js'),
-    appSettings = require('../../app_settings.js');
+    companyUtils = require('cloud/apps/company/utils.js'),
+    configs = require('cloud/app_settings.js'),
+    userSettingsConstants = require('cloud/apps/user_settings/constants.js'),
+    userConstants = require('cloud/apps/user/constants.js'),
+    leaderBoardConstants = require('cloud/apps/leader_board/constants.js'),
+    analyticsUtils = require('cloud/apps/analytics/utils.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    userSettingsUtils = require('cloud/apps/user_settings/utils.js'),
+    appSettings = require('cloud/app_settings.js');
 
 // renders explore page(s)
 exports.getUserSettingsPageController = function (req, res) {
@@ -652,8 +652,8 @@ exports.editUserDetailController = function(req, res){
             phoneNumber: (typeof req.body.phone_number === "string") ? req.body.phone_number.trim(): "",
             permissionType: (typeof req.body.permission_type === "string") ? req.body.permission_type.trim(): "",
             departmentId: (typeof req.body.department === "string") ? req.body.department.trim(): "",
-            phoneId: (typeof req.body.phoneId === "string") ? req.body.phoneId.trim(): "",
-            identifierSource: (typeof req.body.identifierSource === "string") ? req.body.identifierSource.trim(): ""
+            phoneId: (typeof req.body.phoneId === "string" && req.body.phoneId.trim() !== "") ? req.body.phoneId.trim(): null,
+            identifierSource: (typeof req.body.identifierSource === "string" && req.body.identifierSource.trim() !== "") ? req.body.identifierSource.trim(): null
         };
     userQuery.include("company");
     userQuery.include("department");

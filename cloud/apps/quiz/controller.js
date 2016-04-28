@@ -1,10 +1,10 @@
-var userUtils = require('../user/utils'),
-    quizUtils = require('./utils'),
-    quizConstants = require('./constants'),
-    appSettings = require('../../app_settings.js'),
-    userConstants = require('../user/constants'),
-    secret = require('../../secret.js'),
-    commonUtils = require('../common/utils');
+var userUtils = require('cloud/apps/user/utils'),
+    quizUtils = require('cloud/apps/quiz/utils'),
+    quizConstants = require('cloud/apps/quiz/constants'),
+    appSettings = require('cloud/app_settings.js'),
+    userConstants = require('cloud/apps/user/constants'),
+    secret = require('cloud/secret.js'),
+    commonUtils = require('cloud/apps/common/utils');
 
 // All controllers for quiz app
 

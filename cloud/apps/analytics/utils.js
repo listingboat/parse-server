@@ -1,8 +1,8 @@
 var _ = require('underscore'),
-    commonUtils = require('../common/utils.js'),
-    userUtils = require('../user/utils.js'),
-    analyticsConstants = require('./constants.js'),
-    userConstants = require('../user/constants.js');
+    commonUtils = require('cloud/apps/common/utils.js'),
+    userUtils = require('cloud/apps/user/utils.js'),
+    analyticsConstants = require('cloud/apps/analytics/constants.js'),
+    userConstants = require('cloud/apps/user/constants.js');
 
 // this function returns analytics objects and updated objects for user and department
 exports.getAnalyticsDataAndUpdatedUserDepartmentAndCompany = function (users, responses, lastAnalyticsDate, analyticsTillDate, pqScoreTillDate, successCallback, errorCallback) {

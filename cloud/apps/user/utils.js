@@ -1,12 +1,12 @@
 var _ = require('underscore'),
-    user_constants = require('./constants.js'),
-    quizConstants = require('../quiz/constants.js'),
-    secret = require('../../secret.js'),
-    appSettings = require('../../app_settings.js'),
-    commonUtils = require('../common/utils.js'),
-    commonConstants = require('../common/constants.js'),
-    companyConstants = require('../company/constants.js'),
-    analyticsConstants = require('../analytics/constants.js');
+    user_constants = require('cloud/apps/user/constants.js'),
+    quizConstants = require('cloud/apps/quiz/constants.js'),
+    secret = require('cloud/secret.js'),
+    appSettings = require('cloud/app_settings.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    commonConstants = require('cloud/apps/common/constants.js'),
+    companyConstants = require('cloud/apps/company/constants.js'),
+    analyticsConstants = require('cloud/apps/analytics/constants.js');
 
 // Function that saves the calculated scores in User_Personality_Score class (caching).
 // Arguments: 1. 'familiarityCircleData': final json data that contains score, inner_circle and outer_circle value for personality(s).

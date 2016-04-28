@@ -1,6 +1,6 @@
-var commonUtils = require('./utils.js'),
-    appSettings = require('../../app_settings.js'),
-    secret = require('../../secret.js');
+var commonUtils = require('cloud/apps/common/utils.js'),
+    appSettings = require('cloud/app_settings.js'),
+    secret = require('cloud/secret.js');
 
 exports.report155Controller = function(req, res){
 

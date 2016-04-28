@@ -1,7 +1,7 @@
-var secret = require('../../secret.js'),
-    appSettings = require('../../app_settings.js'),
-    user_constants = require('../user/constants.js'),
-    commonConstants = require('./constants.js'),
+var secret = require('cloud/secret.js'),
+    appSettings = require('cloud/app_settings.js'),
+    user_constants = require('cloud/apps/user/constants.js'),
+    commonConstants = require('cloud/apps/common/constants.js'),
     _ = require('underscore');
 
 

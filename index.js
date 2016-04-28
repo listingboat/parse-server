@@ -1,15 +1,18 @@
 // Example express application adding the parse-server module to expose Parse
 // compatible API routes.
-
+require('app-module-path').addPath(__dirname);
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
+process.env.DATABASE_URI = 'mongodb://mattersight:Abc123@ds011261.mlab.com:11261/heroku_tn8vd0q9';
+process.env.PARSEDEV_APP_PATH = './cloud';
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
+
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://mattersight:Abc123@ds011261.mlab.com:11261/heroku_tn8vd0q9',
@@ -40,4 +43,4 @@ httpServer.listen(port, function() {
 });
 
 
-require('./cloud/main.js');
+//require('./cloud/main.js');

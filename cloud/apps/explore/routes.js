@@ -1,8 +1,8 @@
 // Provides endpoints for explore pages
 
 exports.controllers = function (app) {
-    var controller = require('./controller.js'), // explore app controller path
-        decorators = require('../../decorators');
+    var controller = require('cloud/apps/explore/controller.js'), // explore app controller path
+        decorators = require('cloud/decorators');
 
     app.get('/explore/overview', 'explore.overview', decorators.loginRequired, controller.exploreOverviewController); // route to Overview page of explore app
     app.get('/explore/organizer', 'explore.organizer', decorators.loginRequired, controller.exploreOrganizerController);  // route to Organizer Personality page

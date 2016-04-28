@@ -1,4 +1,4 @@
-var Route = require('./route');
+var Route = require('cloud/packages/route');
 
 exports = module.exports = Router;
 
@@ -269,7 +269,7 @@ Router.prototype.dispatch = function (req, res, next) {
  * @return Router
  */
 Router.prototype.extendExpress = function (app) {
-  var methods = require('./methods');
+  var methods = require('cloud/packages/methods');
   app.namedRoutes = this;
   app._routingContext = [];
 

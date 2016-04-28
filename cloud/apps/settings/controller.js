@@ -1,20 +1,20 @@
 // All controllers for Settings app
 
-var configs =require('../../app_settings.js'),
-    settingUtils = require('./utils.js'),
-    commonUtils = require('../common/utils.js'),
-    companyUtils = require('../company/utils.js'),
-    userUtils = require('../user/utils.js'),
-    analyticsUtils = require('../analytics/utils.js'),
-    quizUtils = require('../quiz/utils.js'),
-    secret = require('../../secret.js'),
-    appSettings = require('../../app_settings.js'),
+var configs =require('cloud/app_settings.js'),
+    settingUtils = require('cloud/apps/settings/utils.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    companyUtils = require('cloud/apps/company/utils.js'),
+    userUtils = require('cloud/apps/user/utils.js'),
+    analyticsUtils = require('cloud/apps/analytics/utils.js'),
+    quizUtils = require('cloud/apps/quiz/utils.js'),
+    secret = require('cloud/secret.js'),
+    appSettings = require('cloud/app_settings.js'),
     _ = require('underscore'),
-    md5 = require('../../packages/md5.js'),
-    settingConstants = require('./constants.js'),
-    userConstants = require('../user/constants.js'),
-    companyConstants = require('../company/constants.js'),
-    commonConstants = require('../common/constants.js');
+    md5 = require('cloud/packages/md5.js'),
+    settingConstants = require('cloud/apps/settings/constants.js'),
+    userConstants = require('cloud/apps/user/constants.js'),
+    companyConstants = require('cloud/apps/company/constants.js'),
+    commonConstants = require('cloud/apps/common/constants.js');
 
 // controller that renders account setting page
 exports.accountSettingsController = function(req, res){

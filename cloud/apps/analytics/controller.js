@@ -1,10 +1,10 @@
 var _ = require('underscore'),
-    analyticsUtils = require('./utils.js'),
-    commonUtils = require('../common/utils.js'),
-    companyUtils = require('../company/utils.js'),
-    analyticsConstants = require('./constants.js'),
-    userConstants = require('../user/constants.js'),
-    leaderBoardConstants = require('../leader_board/constants.js');
+    analyticsUtils = require('cloud/apps/analytics/utils.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    companyUtils = require('cloud/apps/company/utils.js'),
+    analyticsConstants = require('cloud/apps/analytics/constants.js'),
+    userConstants = require('cloud/apps/user/constants.js'),
+    leaderBoardConstants = require('cloud/apps/leader_board/constants.js');
 
 
 // controller to render user's analytics

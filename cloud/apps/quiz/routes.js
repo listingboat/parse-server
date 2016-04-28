@@ -1,8 +1,8 @@
 // Provides endpoints for quiz
 
 exports.controllers = function (app) {
-    var controller = require('./controller.js'), // quiz app controller path
-        decorators = require('../../decorators');
+    var controller = require('cloud/apps/quiz/controller.js'), // quiz app controller path
+        decorators = require('cloud/decorators');
 
     app.get('/quiz', 'quiz.start', [decorators.loginRequired, decorators.assessmentComplete], controller.quizStartController); // quiz start page
     app.get('/quiz/question', 'quiz.question', [decorators.loginRequired, decorators.assessmentComplete], controller.questionStartController); // start page

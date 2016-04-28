@@ -1,16 +1,16 @@
-var userUtils = require('../user/utils.js'),
-    secret = require('../../secret.js'),
-    configs =require('../../app_settings.js'),
+var userUtils = require('cloud/apps/user/utils.js'),
+    secret = require('cloud/secret.js'),
+    configs =require('cloud/app_settings.js'),
     _ = require('underscore'),
-    settingUtils = require('../settings/utils.js'),
-    quizUtils = require('../quiz/utils.js'),
-    companyUtils = require('../company/utils.js'),
-    companyConstants = require('./constants.js'),
-    md5 = require('../../packages/md5.js'),
-    appSettings = require('../../app_settings.js'),
-    commonConstants = require("../common/constants.js"),
-    commonUtils = require("../common/utils.js"),
-    userConstants = require("../user/constants.js");
+    settingUtils = require('cloud/apps/settings/utils.js'),
+    quizUtils = require('cloud/apps/quiz/utils.js'),
+    companyUtils = require('cloud/apps/company/utils.js'),
+    companyConstants = require('cloud/apps/company/constants.js'),
+    md5 = require('cloud/packages/md5.js'),
+    appSettings = require('cloud/app_settings.js'),
+    commonConstants = require("cloud/apps/common/constants.js"),
+    commonUtils = require("cloud/apps/common/utils.js"),
+    userConstants = require("cloud/apps/user/constants.js");
 
 
 // function that renders the department update page where you can add or remove department and edit question type for every department

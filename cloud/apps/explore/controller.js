@@ -1,6 +1,6 @@
 
-var userConstants = require('../user/constants.js'),
-    exploreConstants = require('../explore/constants');
+var userConstants = require('cloud/apps/user/constants.js'),
+    exploreConstants = require('cloud/apps/explore/constants');
 // All controllers for explore app
 
 // renders explore page(s)

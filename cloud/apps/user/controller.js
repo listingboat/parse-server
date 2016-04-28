@@ -1,16 +1,16 @@
 // All controllers for user app
-var utils = require('./utils.js'),
+var utils = require('cloud/apps/user/utils.js'),
     _ = require('underscore'),
     path = require('path'),
-    userConstants = require('./constants.js'),
-    quizConstants = require('../quiz/constants.js'),
-    appSettings = require('../../app_settings.js'),
-    commonUtils = require('../common/utils.js'),
-    secret = require('../../secret.js'),
-    commonConstants = require('../common/constants.js'),
-    quizUtils = require('../quiz/utils.js'),
-    analyticsUtils = require('../analytics/utils.js'),
-    companyUtils = require('../company/utils.js');
+    userConstants = require('cloud/apps/user/constants.js'),
+    quizConstants = require('cloud/apps/quiz/constants.js'),
+    appSettings = require('cloud/app_settings.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    secret = require('cloud/secret.js'),
+    commonConstants = require('cloud/apps/common/constants.js'),
+    quizUtils = require('cloud/apps/quiz/utils.js'),
+    analyticsUtils = require('cloud/apps/analytics/utils.js'),
+    companyUtils = require('cloud/apps/company/utils.js');
 
 exports.homeController = function (req, res) {
     var user = Parse.User.current();

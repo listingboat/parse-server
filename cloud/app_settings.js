@@ -1,7 +1,7 @@
 exports.PRODUCTION =  false;
 exports.CONTACT_US_EMAIL =  "admin@work.style";
-exports.PROTOCOL = "https://";
-exports.DOMAIN = "my.work.style";    // domain for url which generates large badge
+exports.PROTOCOL = "http://";
+exports.DOMAIN = "localhost";    // domain for url which generates large badge
 exports.DOMAIL_FOR_LARGE_BADGE = "node-workstyle.rhcloud.com";    // domain for url which access large badge
 exports.PARDOT_BATCH_SIZE = 50;
 exports.MAX_INVITES_ALLOWED = 5;
@@ -40,7 +40,7 @@ exports.PARDOT_EMAIL_TEMPLATE_NAME = {
     INVITE_USER: "invite_user_email_template_id"
 };
 
-exports.DOMAIN = "my.work.style";    // domain for url which access small badge
+exports.DOMAIN = "localhost";    // domain for url which access small badge
 exports.DOMAIN_FOR_LARGE_BADGE = "node-workstyle.rhcloud.com";    // domain for url which access large badge
 exports.DOMAIN_FOR_WORK_STYLE = "work.style";
 exports.PROTOCOL_FOR_WORK_STYLE = "http://";

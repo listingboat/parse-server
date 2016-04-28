@@ -1,8 +1,8 @@
 // Provides endpoints for user
 
 exports.controllers = function (app) {
-    var controller = require('./controller.js'), // user app controller path
-        decorators = require('../../decorators');
+    var controller = require('cloud/apps/user_settings/controller.js'), // user app controller path
+        decorators = require('cloud/decorators');
 
     app.get('/user-management', 'userSettings.index', [decorators.loginRequired, decorators.adminRequired], controller.getUserSettingsPageController);
     app.get('/user-management/companies/:companyId?', 'userSettings.indexWithCompanyId', [decorators.loginRequired, decorators.adminRequired], controller.getUserSettingsPageController);

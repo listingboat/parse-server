@@ -1,8 +1,8 @@
-var userConstants = require('../user/constants.js'),
-    commonUtils = require('../common/utils.js'),
-    userSettingsConstants = require('./constants.js'),
-    appSettings = require('../../app_settings.js'),
-    secret = require('../../secret.js');
+var userConstants = require('cloud/apps/user/constants.js'),
+    commonUtils = require('cloud/apps/common/utils.js'),
+    userSettingsConstants = require('cloud/apps/user_settings/constants.js'),
+    appSettings = require('cloud/app_settings.js'),
+    secret = require('cloud/secret.js');
 
 exports.getPermissionTypeIndex = function (permissionTypeList, permissionType) {
     var index = null;
@@ -88,14 +88,14 @@ exports.validateUserDetails = function(formData, user, currentUser, callback){
     }
 
     // Validate phoneId
-    if(formData['phoneId'].length > userConstants.PHONE_ID_MAX_LENGTH){
+    if(formData['phoneId'] && formData['phoneId'].length > userConstants.PHONE_ID_MAX_LENGTH){
         form_errors['phoneId'] = true;
         errorMessage += "<p class='error-msg-field js_error_message'>Phone ID cannot be more than <span>"+userConstants.PHONE_ID_MAX_LENGTH+" characters long.</span></p>";
         isValid = false;
     }
 
     // validate identifierSource
-    if(formData['identifierSource'].length > userConstants.IDENTIFIER_SOURCE_MAX_LENGTH){
+    if(formData['identifierSource'] && formData['identifierSource'].length > userConstants.IDENTIFIER_SOURCE_MAX_LENGTH){
         form_errors['identifierSource'] = true;
         errorMessage += "<p class='error-msg-field js_error_message'>Source ID cannot be more than <span>"+userConstants.IDENTIFIER_SOURCE_MAX_LENGTH+" characters long.</span></p>";
         isValid = false;
@@ -129,19 +129,21 @@ exports.updateUserDetails = function(formData, user, successCallback, errorCallb
     user.set("phone_number", formData.phoneNumber);
     user.set("occupation", formData.positionTitle);
     user.set("permission_type", formData.permissionType);
-    if (user.get("department") && user.get("department").get('call_data_type') && formData.phoneId && formData.identifierSource) {
+    if (user.get("department") && user.get("department").get('call_data_type') && (user.get("phoneId") !== formData.phoneId || user.get("identifierSource") !== formData.identifierSource
+    )) {
     // If user's department is Call Center update phoneID and identifierSource and User's Call Data
         user.set("phoneId", formData.phoneId);
         user.set("identifierSource", formData.identifierSource);
-        var userCallData = user.get('call_data');
-        if (!userCallData) {
-            var UserCallData = Parse.Object.extend('User_Calldata');
-            userCallData = new UserCallData();
-            user.set('call_data', userCallData)
-        }
-        userCallData.set("phoneId", formData.phoneId);
-        userCallData.set("identifierSource", formData.identifierSource);
-        objectsToSave.push(userCallData);
+        var userCallDataQuery = new Parse.Query('User_Calldata');
+        userCallDataQuery.equalTo("identifierSource", formData.identifierSource);
+        userCallDataQuery.equalTo("phoneId", formData.phoneId);
+        userCallDataQuery.first().then(function(userCallDataObject) {
+            if (!userCallDataObject) {
+                user.set('call_data', null);
+            } else {
+                user.set('call_data', userCallDataObject);
+            }
+        }, errorCallback);
     }
     if(!user.get("department") || (user.get("department") && user.get("department").id !== formData.department.id)) {
         var userDepartment = user.get("department"),

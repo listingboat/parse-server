@@ -1,8 +1,8 @@
 // Provides endpoints for analytics controllers
 
 exports.controllers = function (app) {
-    var controller = require('./controller.js'), // analytics app controller path
-        decorators = require('../../decorators');
+    var controller = require('cloud/apps/analytics/controller.js'), // analytics app controller path
+        decorators = require('cloud/decorators');
 
     app.get('/analytics/user-analytics', 'analytics.userAnalytics', [decorators.loginRequired, decorators.companyExists], controller.userAnalyticsController); // route to send user analytics page
     app.get('/analytics/account-owner-analytics', 'analytics.accountOwnerAnalytics', [decorators.loginRequired, decorators.companyExists], controller.accountOwnerAnalyticsController); // route to send user analytics page

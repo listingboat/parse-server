@@ -1,8 +1,8 @@
 // Provides endpoints for user
 
 exports.controllers = function (app) {
-    var controller = require('./controller.js'), // user app controller path
-        decorators = require('../../decorators');
+    var controller = require('cloud/apps/contest/controller.js'), // user app controller path
+        decorators = require('cloud/decorators');
 
     app.get('/contest', 'contest.contestPage', [decorators.loginRequired, decorators.superAdminRequired], controller.contestPageController); // routes to render contest page with company list
     app.post('/contest/get-company-contest', 'contest.getCompanyContest', [decorators.loginRequired, decorators.superAdminRequired], controller.getCompanyContestController); // route to get current running contest detail or new contest form
